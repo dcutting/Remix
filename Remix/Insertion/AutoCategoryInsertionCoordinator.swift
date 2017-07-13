@@ -3,4 +3,7 @@
 import Foundation
 
 class AutoCategoryInsertionCoordinator {
+
+    func start() {
+    }
 }

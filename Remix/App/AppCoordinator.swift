@@ -3,4 +3,8 @@
 import Foundation
 
 class AppCoordinator {
+
+    func start() {
+    }
 }
+

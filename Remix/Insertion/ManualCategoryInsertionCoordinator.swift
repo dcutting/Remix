@@ -3,4 +3,7 @@
 import Foundation
 
 class ManualCategoryInsertionCoordinator {
+
+    func start() {
+    }
 }
