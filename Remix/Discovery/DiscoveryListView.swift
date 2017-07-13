@@ -8,7 +8,8 @@ protocol DiscoveryListView: Navigatable {
 }
 
 protocol DiscoveryListViewDelegate: class {
-    func didSelectItem(at: Int)
+    func didSelectItem(at index: Int)
+    func doesWantFilters()
 }
 
 struct DiscoveryListViewData {

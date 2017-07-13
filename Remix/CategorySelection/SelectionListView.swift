@@ -8,7 +8,7 @@ protocol SelectionListView {
 }
 
 protocol SelectionListViewDelegate: class {
-    func didSelectItem(at: Int)
+    func didSelectItem(at index: Int)
 }
 
 struct SelectionListViewData {
