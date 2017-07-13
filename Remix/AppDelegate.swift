@@ -21,7 +21,7 @@ import UIKit
         return true
     }
 
-    func makeNavigator() -> Navigator {
+    private func makeNavigator() -> Navigator {
         return UINavigationController()
     }
 }

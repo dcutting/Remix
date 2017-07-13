@@ -3,6 +3,7 @@
 import Foundation
 
 class DiscoveryFormatter {
+
     func prepare(ads: [ClassifiedAd]) -> DiscoveryListViewData {
         return DiscoveryListViewData(items: [])
     }

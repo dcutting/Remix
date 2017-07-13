@@ -11,7 +11,7 @@ class CategorySelectionCoordinator {
 
     weak var delegate: CategorySelectionCoordinatorDelegate?
 
-    let navigator: Navigator
+    private let navigator: Navigator
 
     init(navigator: Navigator) {
         self.navigator = navigator

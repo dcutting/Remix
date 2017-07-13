@@ -3,7 +3,6 @@
 import Foundation
 
 class DiscoveryListViewFake: DiscoveryListView {
-
     weak var delegate: DiscoveryListViewDelegate?
     var viewData: DiscoveryListViewData?
 }
