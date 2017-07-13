@@ -12,16 +12,14 @@ import UIKit
         window = UIWindow(frame: UIScreen.main.bounds)
         guard let window = window else { return false }
 
-        let navigator = makeNavigator()
+        let navigator = UINavigationController()
+        window.rootViewController = navigator
+
         appCoordinator = AppCoordinator(navigator: navigator)
         appCoordinator?.start()
 
         window.makeKeyAndVisible()
 
         return true
-    }
-
-    private func makeNavigator() -> Navigator {
-        return UINavigationController()
     }
 }
