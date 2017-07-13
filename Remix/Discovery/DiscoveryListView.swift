@@ -2,7 +2,7 @@
 
 import Foundation
 
-protocol DiscoveryListView {
+protocol DiscoveryListView: Navigatable {
     weak var delegate: DiscoveryListViewDelegate? { get set }
     var viewData: DiscoveryListViewData? { get set }
 }

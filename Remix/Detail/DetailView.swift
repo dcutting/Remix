@@ -2,7 +2,7 @@
 
 import Foundation
 
-protocol DetailView {
+protocol DetailView: Navigatable {
     var viewData: DetailViewData? { get set }
 }
 
