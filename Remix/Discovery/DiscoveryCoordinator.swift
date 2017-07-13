@@ -3,4 +3,13 @@
 import Foundation
 
 class DiscoveryCoordinator {
+
+    func start() {
+    }
+}
+
+extension DiscoveryCoordinator: DiscoveryListViewDelegate {
+
+    func didSelectItem(at: Int) {
+    }
 }

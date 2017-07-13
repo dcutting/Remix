@@ -19,6 +19,7 @@
 		C84C234D1F17AE960038E879 /* DiscoveryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23471F17AD6A0038E879 /* DiscoveryCoordinator.swift */; };
 		C84C234E1F17AE980038E879 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C233E1F17AC760038E879 /* AppCoordinator.swift */; };
 		C84C23511F17B0070038E879 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23501F17B0070038E879 /* DetailView.swift */; };
+		C84C23531F17B0C30038E879 /* DiscoveryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23521F17B0C30038E879 /* DiscoveryListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		C84C23491F17ADFD0038E879 /* ManualCategoryInsertionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualCategoryInsertionCoordinator.swift; sourceTree = "<group>"; };
 		C84C234B1F17AE0D0038E879 /* AutoCategoryInsertionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCategoryInsertionCoordinator.swift; sourceTree = "<group>"; };
 		C84C23501F17B0070038E879 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		C84C23521F17B0C30038E879 /* DiscoveryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				C84C23471F17AD6A0038E879 /* DiscoveryCoordinator.swift */,
+				C84C23521F17B0C30038E879 /* DiscoveryListView.swift */,
 			);
 			path = Discovery;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				C84C231D1F17AB770038E879 /* ViewController.swift in Sources */,
 				C84C234C1F17AE0D0038E879 /* AutoCategoryInsertionCoordinator.swift in Sources */,
 				C84C234D1F17AE960038E879 /* DiscoveryCoordinator.swift in Sources */,
+				C84C23531F17B0C30038E879 /* DiscoveryListView.swift in Sources */,
 				C84C234A1F17ADFD0038E879 /* ManualCategoryInsertionCoordinator.swift in Sources */,
 				C84C231B1F17AB770038E879 /* AppDelegate.swift in Sources */,
 				C84C234E1F17AE980038E879 /* AppCoordinator.swift in Sources */,

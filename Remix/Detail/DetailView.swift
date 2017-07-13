@@ -3,4 +3,10 @@
 import Foundation
 
 protocol DetailView {
+    var viewData: DetailViewData? { get set }
+}
+
+struct DetailViewData {
+    let title: String
+    let category: String
 }
