@@ -7,3 +7,7 @@ protocol Navigatable {}
 protocol Navigator {
     func push(view: Navigatable)
 }
+
+protocol HasNavigator {
+    var navigator: Navigator { get }
+}

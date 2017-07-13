@@ -2,6 +2,12 @@
 
 import Foundation
 
+class DiscoveryListViewFakeWireframe: DiscoveryListViewWireframe {
+    var view: DiscoveryListView {
+        return DiscoveryListViewFake()
+    }
+}
+
 class DiscoveryListViewFake: DiscoveryListView {
     weak var delegate: DiscoveryListViewDelegate?
     var viewData: DiscoveryListViewData?

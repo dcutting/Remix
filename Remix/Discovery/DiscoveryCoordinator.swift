@@ -2,16 +2,23 @@
 
 import Foundation
 
+struct DiscoveryCoordinatorDependencies: DiscoveryCoordinator.Dependencies {
+    let navigator: Navigator
+    let discoveryListViewWireframe: DiscoveryListViewWireframe
+}
+
 class DiscoveryCoordinator {
 
-    private let navigator: Navigator
+    typealias Dependencies = HasNavigator & HasDiscoveryListViewWireframe
+
+    private let dependencies: Dependencies
     private let discoveryInteractor: DiscoveryInteractor
     private var discoveryListView: DiscoveryListView?
     private var detailView: DetailView?
     private var categorySelection: CategorySelectionCoordinator?
 
-    init(navigator: Navigator) {
-        self.navigator = navigator
+    init(dependencies: Dependencies) {
+        self.dependencies = dependencies
         discoveryInteractor = DiscoveryInteractor()
     }
 
@@ -21,10 +28,10 @@ class DiscoveryCoordinator {
     }
 
     private func pushDiscoveryListView() {
-        let discoveryListView = DiscoveryListViewFake()
+        var discoveryListView = dependencies.discoveryListViewWireframe.view
         discoveryListView.delegate = self
         self.discoveryListView = discoveryListView
-        navigator.push(view: discoveryListView)
+        dependencies.navigator.push(view: discoveryListView)
     }
 
     private func updateDiscoveryListView(selectedCategoryID: CategoryID? = nil) {
@@ -44,7 +51,7 @@ extension DiscoveryCoordinator: DiscoveryListViewDelegate {
     private func pushDetailView(for index: Int) {
         let detailView = DetailViewFake()
         self.detailView = detailView
-        navigator.push(view: detailView)
+        dependencies.navigator.push(view: detailView)
     }
 
     func doesWantFilters() {
@@ -52,7 +59,7 @@ extension DiscoveryCoordinator: DiscoveryListViewDelegate {
     }
 
     private func startCategorySelection() {
-        let categorySelection = CategorySelectionCoordinator(navigator: navigator)
+        let categorySelection = CategorySelectionCoordinator(navigator: dependencies.navigator)
         categorySelection.delegate = self
         self.categorySelection = categorySelection
         categorySelection.start()
