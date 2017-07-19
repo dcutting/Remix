@@ -22,7 +22,7 @@
 		C84C235B1F17B5C30038E879 /* ClassifiedAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C235A1F17B5C30038E879 /* ClassifiedAd.swift */; };
 		C84C235C1F17B5FF0038E879 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23591F17B5AF0038E879 /* Category.swift */; };
 		C84C23621F17B7DB0038E879 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23611F17B7C70038E879 /* Navigator.swift */; };
-		C84C23641F17B9990038E879 /* UINavigationController+Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23631F17B9990038E879 /* UINavigationController+Navigator.swift */; };
+		C84C23641F17B9990038E879 /* NavigatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23631F17B9990038E879 /* NavigatorController.swift */; };
 		C84C23661F17BBBA0038E879 /* DiscoveryListViewFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23651F17BBBA0038E879 /* DiscoveryListViewFake.swift */; };
 		C84C23681F17BCB00038E879 /* DetailViewFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23671F17BCB00038E879 /* DetailViewFake.swift */; };
 		C87C0A5F1F17C3FA00715A9E /* DiscoveryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C0A5E1F17C3FA00715A9E /* DiscoveryInteractor.swift */; };
@@ -70,7 +70,7 @@
 		C84C23591F17B5AF0038E879 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		C84C235A1F17B5C30038E879 /* ClassifiedAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedAd.swift; sourceTree = "<group>"; };
 		C84C23611F17B7C70038E879 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
-		C84C23631F17B9990038E879 /* UINavigationController+Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Navigator.swift"; sourceTree = "<group>"; };
+		C84C23631F17B9990038E879 /* NavigatorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorController.swift; sourceTree = "<group>"; };
 		C84C23651F17BBBA0038E879 /* DiscoveryListViewFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryListViewFake.swift; sourceTree = "<group>"; };
 		C84C23671F17BCB00038E879 /* DetailViewFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewFake.swift; sourceTree = "<group>"; };
 		C87C0A5E1F17C3FA00715A9E /* DiscoveryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryInteractor.swift; sourceTree = "<group>"; };
@@ -220,7 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				C84C23611F17B7C70038E879 /* Navigator.swift */,
-				C84C23631F17B9990038E879 /* UINavigationController+Navigator.swift */,
+				C84C23631F17B9990038E879 /* NavigatorController.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -346,7 +346,7 @@
 			files = (
 				C8B86F631F1F924700BDCE50 /* CategorySelectionListFormatter.swift in Sources */,
 				C87C0A611F17C52D00715A9E /* DiscoveryFormatter.swift in Sources */,
-				C84C23641F17B9990038E879 /* UINavigationController+Navigator.swift in Sources */,
+				C84C23641F17B9990038E879 /* NavigatorController.swift in Sources */,
 				C84C235B1F17B5C30038E879 /* ClassifiedAd.swift in Sources */,
 				C84C23401F17ACE20038E879 /* CategorySelectionCoordinator.swift in Sources */,
 				C84C23511F17B0070038E879 /* DetailView.swift in Sources */,
