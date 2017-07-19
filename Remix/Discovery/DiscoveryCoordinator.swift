@@ -31,7 +31,7 @@ class DiscoveryCoordinator {
     }
 
     private func pushDiscoveryListView() {
-        var discoveryListView = dependencies.discoveryListViewWireframe.view
+        var discoveryListView = dependencies.discoveryListViewWireframe.make()
         discoveryListView.delegate = self
         self.discoveryListView = discoveryListView
         dependencies.navigator.push(view: discoveryListView)
@@ -54,7 +54,7 @@ extension DiscoveryCoordinator: DiscoveryListViewDelegate {
 
     private func pushDetailView(for index: Int) {
         guard let item = discoveryData?[index] else { preconditionFailure() }
-        var detailView = dependencies.detailViewWireframe.view
+        var detailView = dependencies.detailViewWireframe.make()
         detailView.viewData = DiscoveryDetailFormatter().prepare(item: item)
         self.detailView = detailView
         dependencies.navigator.push(view: detailView)

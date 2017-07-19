@@ -3,7 +3,7 @@
 import UIKit
 
 class DiscoveryListViewControllerWireframe: DiscoveryListViewWireframe {
-    var view: DiscoveryListView {
+    func make() -> DiscoveryListView {
         return DiscoveryListViewController()
     }
 }

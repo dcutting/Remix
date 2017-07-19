@@ -7,7 +7,7 @@ protocol HasDetailViewWireframe {
 }
 
 protocol DetailViewWireframe {
-    var view: DetailView { get }
+    func make() -> DetailView
 }
 
 protocol DetailView: Navigatable {

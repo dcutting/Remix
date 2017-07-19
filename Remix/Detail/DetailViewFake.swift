@@ -3,7 +3,7 @@
 import Foundation
 
 class DetailViewFakeWireframe: DetailViewWireframe {
-    var view: DetailView {
+    func make() -> DetailView {
         return DetailViewFake()
     }
 }

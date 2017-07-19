@@ -3,7 +3,7 @@
 import UIKit
 
 class DetailViewControllerWireframe: DetailViewWireframe {
-    var view: DetailView {
+    func make() -> DetailView {
         let storyboard = UIStoryboard(name: "DetailViewController", bundle: nil)
         guard let viewController = storyboard.instantiateInitialViewController() as? DetailViewController else { preconditionFailure() }
         return viewController

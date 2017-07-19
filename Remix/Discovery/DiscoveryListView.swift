@@ -7,7 +7,7 @@ protocol HasDiscoveryListViewWireframe {
 }
 
 protocol DiscoveryListViewWireframe {
-    var view: DiscoveryListView { get }
+    func make() -> DiscoveryListView
 }
 
 protocol DiscoveryListView: Navigatable {

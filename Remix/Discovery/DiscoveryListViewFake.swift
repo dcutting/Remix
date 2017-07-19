@@ -3,7 +3,7 @@
 import Foundation
 
 class DiscoveryListViewFakeWireframe: DiscoveryListViewWireframe {
-    var view: DiscoveryListView {
+    func make() -> DiscoveryListView {
         return DiscoveryListViewFake()
     }
 }
