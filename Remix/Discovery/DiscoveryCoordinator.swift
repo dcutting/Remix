@@ -18,8 +18,6 @@ class DiscoveryCoordinator {
     private var detailView: DetailView?
     private var categorySelection: CategorySelectionCoordinator?
 
-    private var discoveryData: [ClassifiedAd]?
-
     init(dependencies: Dependencies) {
         self.dependencies = dependencies
         discoveryInteractor = DiscoveryInteractor()
@@ -40,7 +38,6 @@ class DiscoveryCoordinator {
     private func updateDiscoveryListView(selectedCategoryID: CategoryID? = nil) {
         discoveryInteractor.update(selectedCategoryID: selectedCategoryID) { [weak self] ads in
             let viewData = DiscoveryFormatter().prepare(ads: ads)
-            self?.discoveryData = ads
             self?.discoveryListView?.viewData = viewData
         }
     }
@@ -48,16 +45,18 @@ class DiscoveryCoordinator {
 
 extension DiscoveryCoordinator: DiscoveryListViewDelegate {
 
-    func didSelectItem(at index: Int) {
-        pushDetailView(for: index)
+    func didSelect(classifiedAdID: ClassifiedAdID) {
+        pushDetailView(for: classifiedAdID)
     }
 
-    private func pushDetailView(for index: Int) {
-        guard let item = discoveryData?[index] else { preconditionFailure() }
+    private func pushDetailView(for classifiedAdID: ClassifiedAdID) {
         var detailView = dependencies.detailViewWireframe.make()
-        detailView.viewData = DiscoveryDetailFormatter().prepare(item: item)
-        self.detailView = detailView
-        dependencies.navigator.push(view: detailView)
+        discoveryInteractor.fetchDetail(for: classifiedAdID) { [weak self] classifiedAd in
+            guard let classifiedAd = classifiedAd else { preconditionFailure() }
+            detailView.viewData = DiscoveryDetailFormatter().prepare(item: classifiedAd)
+            self?.detailView = detailView
+            self?.dependencies.navigator.push(view: detailView)
+        }
     }
 
     func doesWantFilters() {

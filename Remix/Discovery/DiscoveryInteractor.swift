@@ -3,12 +3,11 @@
 import Foundation
 
 class DiscoveryInteractor {
-    
-    private(set) var selectedCategoryID: CategoryID?
+
+    let classifiedAdService: ClassifiedAdService = SampleClassifiedAdService()
     
     func update(selectedCategoryID: CategoryID?, completion: @escaping ([ClassifiedAd]) -> Void) {
-        self.selectedCategoryID = selectedCategoryID
-        SampleClassifidAdService().fetchClassifiedAds { classifiedAds in
+        classifiedAdService.fetchClassifiedAds { classifiedAds in
             if let selected = selectedCategoryID {
                 let filteredAds = classifiedAds.filter { ad in
                     ad.category == selected
@@ -17,6 +16,12 @@ class DiscoveryInteractor {
             } else {
                 completion(classifiedAds)
             }
+        }
+    }
+
+    func fetchDetail(for classifiedAdID: ClassifiedAdID, completion: (ClassifiedAd?) -> Void) {
+        classifiedAdService.fetchClassifiedAd(for: classifiedAdID) { classifiedAd in
+            completion(classifiedAd)
         }
     }
 }

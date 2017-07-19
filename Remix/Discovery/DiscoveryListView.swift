@@ -16,7 +16,7 @@ protocol DiscoveryListView: Navigatable {
 }
 
 protocol DiscoveryListViewDelegate: class {
-    func didSelectItem(at index: Int)
+    func didSelect(classifiedAdID: ClassifiedAdID)
     func doesWantFilters()
 }
 
@@ -25,6 +25,7 @@ struct DiscoveryListViewData {
 }
 
 struct DiscoveryListItem {
+    let classifiedAdID: ClassifiedAdID
     let title: String
     let category: String
 }

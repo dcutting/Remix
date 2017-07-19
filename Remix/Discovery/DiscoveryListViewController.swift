@@ -45,6 +45,7 @@ class DiscoveryListViewController: UITableViewController, DiscoveryListView {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.didSelectItem(at: indexPath.row)
+        guard let classifiedAdID = viewData?.items[indexPath.row].classifiedAdID else { return }
+        delegate?.didSelect(classifiedAdID: classifiedAdID)
     }
 }

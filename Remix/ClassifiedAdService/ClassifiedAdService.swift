@@ -4,4 +4,5 @@ import Foundation
 
 protocol ClassifiedAdService {
     func fetchClassifiedAds(completion: ([ClassifiedAd]) -> Void)
+    func fetchClassifiedAd(for classifiedAdID: ClassifiedAdID, completion: (ClassifiedAd?) -> Void)
 }

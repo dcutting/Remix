@@ -2,14 +2,22 @@
 
 import Foundation
 
-class SampleClassifidAdService: ClassifiedAdService {
+class SampleClassifiedAdService: ClassifiedAdService {
+
+    let classifieds = [
+        ClassifiedAd(classifiedAdID: "1", title: "Specialized", category: "4"),
+        ClassifiedAd(classifiedAdID: "2", title: "Cervelo R2", category: "5"),
+        ClassifiedAd(classifiedAdID: "3", title: "Fiat 500", category: "10")
+    ]
 
     func fetchClassifiedAds(completion: ([ClassifiedAd]) -> Void) {
-        let classifieds = [
-            ClassifiedAd(classifiedAdID: "1", title: "Specialized", category: "4"),
-            ClassifiedAd(classifiedAdID: "2", title: "Cervelo R2", category: "5"),
-            ClassifiedAd(classifiedAdID: "3", title: "Fiat 500", category: "10")
-        ]
         completion(classifieds)
+    }
+
+    func fetchClassifiedAd(for classifiedAdID: ClassifiedAdID, completion: (ClassifiedAd?) -> Void) {
+        let classifiedAd = classifieds.first { classifiedAd in
+            classifiedAd.classifiedAdID == classifiedAdID
+        }
+        completion(classifiedAd)
     }
 }
