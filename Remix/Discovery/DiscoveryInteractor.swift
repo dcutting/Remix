@@ -9,9 +9,9 @@ class DiscoveryInteractor {
     func update(selectedCategoryID: CategoryID?, completion: @escaping ([ClassifiedAd]) -> Void) {
         self.selectedCategoryID = selectedCategoryID
         let classifieds = [
-            ClassifiedAd(classifiedAdID: "1", title: "Shiny bike", category: "5"),
-            ClassifiedAd(classifiedAdID: "2", title: "Rusty bike", category: "5"),
-            ClassifiedAd(classifiedAdID: "3", title: "Nine inch nails", category: "7")
+            ClassifiedAd(classifiedAdID: "1", title: "Shiny mountain bike", category: "2"),
+            ClassifiedAd(classifiedAdID: "2", title: "Rusty racing bike", category: "3"),
+            ClassifiedAd(classifiedAdID: "3", title: "Fiat 500", category: "4")
         ]
         completion(classifieds)
     }

@@ -2,9 +2,17 @@
 
 import Foundation
 
-protocol SelectionListView {
+protocol HasSelectionListViewWireframe {
+    var selectionListViewWireframe: SelectionListViewWireframe { get }
+}
+
+protocol SelectionListViewWireframe {
+    func make() -> SelectionListView
+}
+
+protocol SelectionListView: Navigatable {
     weak var delegate: SelectionListViewDelegate? { get set }
-    var viewData: SelectionListViewData { get set }
+    var viewData: SelectionListViewData? { get set }
 }
 
 protocol SelectionListViewDelegate: class {
@@ -12,6 +20,7 @@ protocol SelectionListViewDelegate: class {
 }
 
 struct SelectionListViewData {
+    let title: String
     let items: [SelectionListItem]
 }
 

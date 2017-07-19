@@ -2,16 +2,15 @@
 
 import UIKit
 
-class DiscoveryListViewControllerWireframe: DiscoveryListViewWireframe {
-    var view: DiscoveryListView {
-        return DiscoveryListViewController()
+class SelectionListViewControllerWireframe: SelectionListViewWireframe {
+    func make() -> SelectionListView {
+        return SelectionListViewController()
     }
 }
 
-class DiscoveryListViewController: UITableViewController, DiscoveryListView {
-
-    var delegate: DiscoveryListViewDelegate?
-    var viewData: DiscoveryListViewData? {
+class SelectionListViewController: UITableViewController, SelectionListView {
+    var delegate: SelectionListViewDelegate?
+    var viewData: SelectionListViewData? {
         didSet {
             update()
         }
@@ -19,16 +18,12 @@ class DiscoveryListViewController: UITableViewController, DiscoveryListView {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(didTapFilter))
         update()
-    }
-
-    @objc private func didTapFilter() {
-        delegate?.doesWantFilters()
     }
 
     private func update() {
         guard isViewLoaded else { return }
+        title = viewData?.title
         tableView.reloadData()
     }
 
@@ -38,9 +33,9 @@ class DiscoveryListViewController: UITableViewController, DiscoveryListView {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let item = viewData?.items[indexPath.row] else { preconditionFailure() }
-        let cell = UITableViewCell(style: .value1, reuseIdentifier: "")
+        let cell = UITableViewCell(style: .default, reuseIdentifier: "")
         cell.textLabel?.text = item.title
-        cell.detailTextLabel?.text = item.category
+        cell.accessoryType = item.hasChildren ? .disclosureIndicator : .none
         return cell
     }
 

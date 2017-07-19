@@ -27,10 +27,15 @@
 		C84C23681F17BCB00038E879 /* DetailViewFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23671F17BCB00038E879 /* DetailViewFake.swift */; };
 		C87C0A5F1F17C3FA00715A9E /* DiscoveryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C0A5E1F17C3FA00715A9E /* DiscoveryInteractor.swift */; };
 		C87C0A611F17C52D00715A9E /* DiscoveryFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C0A601F17C52D00715A9E /* DiscoveryFormatter.swift */; };
+		C88651CA1F1F99C50085E239 /* SampleCategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88651C91F1F99C50085E239 /* SampleCategoryService.swift */; };
+		C88651CB1F1F99E60085E239 /* CategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88651C81F1F99840085E239 /* CategoryService.swift */; };
 		C8B86F551F1F7C4000BDCE50 /* DiscoveryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B86F541F1F7C4000BDCE50 /* DiscoveryListViewController.swift */; };
 		C8B86F591F1F820B00BDCE50 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B86F581F1F820B00BDCE50 /* DetailViewController.swift */; };
 		C8B86F5B1F1F83CF00BDCE50 /* DetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8B86F5A1F1F83CF00BDCE50 /* DetailViewController.storyboard */; };
 		C8B86F5D1F1F890D00BDCE50 /* DiscoveryDetailFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B86F5C1F1F890D00BDCE50 /* DiscoveryDetailFormatter.swift */; };
+		C8B86F5F1F1F8E7800BDCE50 /* SelectionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B86F5E1F1F8E7800BDCE50 /* SelectionListViewController.swift */; };
+		C8B86F611F1F909400BDCE50 /* CategorySelectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B86F601F1F909400BDCE50 /* CategorySelectionInteractor.swift */; };
+		C8B86F631F1F924700BDCE50 /* CategorySelectionListFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B86F621F1F924700BDCE50 /* CategorySelectionListFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,10 +73,15 @@
 		C84C23671F17BCB00038E879 /* DetailViewFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewFake.swift; sourceTree = "<group>"; };
 		C87C0A5E1F17C3FA00715A9E /* DiscoveryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryInteractor.swift; sourceTree = "<group>"; };
 		C87C0A601F17C52D00715A9E /* DiscoveryFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryFormatter.swift; sourceTree = "<group>"; };
+		C88651C81F1F99840085E239 /* CategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryService.swift; sourceTree = "<group>"; };
+		C88651C91F1F99C50085E239 /* SampleCategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleCategoryService.swift; sourceTree = "<group>"; };
 		C8B86F541F1F7C4000BDCE50 /* DiscoveryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryListViewController.swift; sourceTree = "<group>"; };
 		C8B86F581F1F820B00BDCE50 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		C8B86F5A1F1F83CF00BDCE50 /* DetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailViewController.storyboard; sourceTree = "<group>"; };
 		C8B86F5C1F1F890D00BDCE50 /* DiscoveryDetailFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryDetailFormatter.swift; sourceTree = "<group>"; };
+		C8B86F5E1F1F8E7800BDCE50 /* SelectionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionListViewController.swift; sourceTree = "<group>"; };
+		C8B86F601F1F909400BDCE50 /* CategorySelectionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectionInteractor.swift; sourceTree = "<group>"; };
+		C8B86F621F1F924700BDCE50 /* CategorySelectionListFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectionListFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +131,7 @@
 				C84C23431F17AD060038E879 /* CategorySelection */,
 				C84C23581F17B5AF0038E879 /* Entity */,
 				C84C23601F17B7C70038E879 /* Library */,
+				C88651C71F1F99840085E239 /* CategoryService */,
 				C84C23211F17AB770038E879 /* Assets.xcassets */,
 				C84C23231F17AB770038E879 /* LaunchScreen.storyboard */,
 				C84C23261F17AB770038E879 /* Info.plist */,
@@ -150,6 +161,9 @@
 			children = (
 				C84C233F1F17ACE20038E879 /* CategorySelectionCoordinator.swift */,
 				C84C23541F17B3480038E879 /* SelectionListView.swift */,
+				C8B86F5E1F1F8E7800BDCE50 /* SelectionListViewController.swift */,
+				C8B86F601F1F909400BDCE50 /* CategorySelectionInteractor.swift */,
+				C8B86F621F1F924700BDCE50 /* CategorySelectionListFormatter.swift */,
 			);
 			path = CategorySelection;
 			sourceTree = "<group>";
@@ -204,6 +218,15 @@
 				C84C23631F17B9990038E879 /* UINavigationController+Navigator.swift */,
 			);
 			path = Library;
+			sourceTree = "<group>";
+		};
+		C88651C71F1F99840085E239 /* CategoryService */ = {
+			isa = PBXGroup;
+			children = (
+				C88651C81F1F99840085E239 /* CategoryService.swift */,
+				C88651C91F1F99C50085E239 /* SampleCategoryService.swift */,
+			);
+			path = CategoryService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,6 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8B86F631F1F924700BDCE50 /* CategorySelectionListFormatter.swift in Sources */,
 				C87C0A611F17C52D00715A9E /* DiscoveryFormatter.swift in Sources */,
 				C84C23641F17B9990038E879 /* UINavigationController+Navigator.swift in Sources */,
 				C84C235B1F17B5C30038E879 /* ClassifiedAd.swift in Sources */,
@@ -320,13 +344,17 @@
 				C8B86F591F1F820B00BDCE50 /* DetailViewController.swift in Sources */,
 				C84C234A1F17ADFD0038E879 /* ManualCategoryInsertionCoordinator.swift in Sources */,
 				C84C231B1F17AB770038E879 /* AppDelegate.swift in Sources */,
+				C88651CB1F1F99E60085E239 /* CategoryService.swift in Sources */,
 				C84C23661F17BBBA0038E879 /* DiscoveryListViewFake.swift in Sources */,
 				C8B86F551F1F7C4000BDCE50 /* DiscoveryListViewController.swift in Sources */,
 				C84C234E1F17AE980038E879 /* AppCoordinator.swift in Sources */,
 				C8B86F5D1F1F890D00BDCE50 /* DiscoveryDetailFormatter.swift in Sources */,
 				C84C235C1F17B5FF0038E879 /* Category.swift in Sources */,
 				C84C23681F17BCB00038E879 /* DetailViewFake.swift in Sources */,
+				C8B86F611F1F909400BDCE50 /* CategorySelectionInteractor.swift in Sources */,
+				C88651CA1F1F99C50085E239 /* SampleCategoryService.swift in Sources */,
 				C84C23621F17B7DB0038E879 /* Navigator.swift in Sources */,
+				C8B86F5F1F1F8E7800BDCE50 /* SelectionListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
