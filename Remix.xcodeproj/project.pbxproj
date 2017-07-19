@@ -29,6 +29,8 @@
 		C87C0A611F17C52D00715A9E /* DiscoveryFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C0A601F17C52D00715A9E /* DiscoveryFormatter.swift */; };
 		C88651CA1F1F99C50085E239 /* SampleCategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88651C91F1F99C50085E239 /* SampleCategoryService.swift */; };
 		C88651CB1F1F99E60085E239 /* CategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88651C81F1F99840085E239 /* CategoryService.swift */; };
+		C88651D11F1FB5670085E239 /* ClassifiedAdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88651D01F1FB55E0085E239 /* ClassifiedAdService.swift */; };
+		C88651D31F1FB5A30085E239 /* SampleClassifiedAdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88651D21F1FB5A30085E239 /* SampleClassifiedAdService.swift */; };
 		C8B86F551F1F7C4000BDCE50 /* DiscoveryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B86F541F1F7C4000BDCE50 /* DiscoveryListViewController.swift */; };
 		C8B86F591F1F820B00BDCE50 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B86F581F1F820B00BDCE50 /* DetailViewController.swift */; };
 		C8B86F5B1F1F83CF00BDCE50 /* DetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8B86F5A1F1F83CF00BDCE50 /* DetailViewController.storyboard */; };
@@ -75,6 +77,8 @@
 		C87C0A601F17C52D00715A9E /* DiscoveryFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryFormatter.swift; sourceTree = "<group>"; };
 		C88651C81F1F99840085E239 /* CategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryService.swift; sourceTree = "<group>"; };
 		C88651C91F1F99C50085E239 /* SampleCategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleCategoryService.swift; sourceTree = "<group>"; };
+		C88651D01F1FB55E0085E239 /* ClassifiedAdService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedAdService.swift; sourceTree = "<group>"; };
+		C88651D21F1FB5A30085E239 /* SampleClassifiedAdService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleClassifiedAdService.swift; sourceTree = "<group>"; };
 		C8B86F541F1F7C4000BDCE50 /* DiscoveryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryListViewController.swift; sourceTree = "<group>"; };
 		C8B86F581F1F820B00BDCE50 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		C8B86F5A1F1F83CF00BDCE50 /* DetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailViewController.storyboard; sourceTree = "<group>"; };
@@ -131,6 +135,7 @@
 				C84C23431F17AD060038E879 /* CategorySelection */,
 				C84C23581F17B5AF0038E879 /* Entity */,
 				C84C23601F17B7C70038E879 /* Library */,
+				C88651CF1F1FB55E0085E239 /* ClassifiedAdService */,
 				C88651C71F1F99840085E239 /* CategoryService */,
 				C84C23211F17AB770038E879 /* Assets.xcassets */,
 				C84C23231F17AB770038E879 /* LaunchScreen.storyboard */,
@@ -227,6 +232,15 @@
 				C88651C91F1F99C50085E239 /* SampleCategoryService.swift */,
 			);
 			path = CategoryService;
+			sourceTree = "<group>";
+		};
+		C88651CF1F1FB55E0085E239 /* ClassifiedAdService */ = {
+			isa = PBXGroup;
+			children = (
+				C88651D01F1FB55E0085E239 /* ClassifiedAdService.swift */,
+				C88651D21F1FB5A30085E239 /* SampleClassifiedAdService.swift */,
+			);
+			path = ClassifiedAdService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,6 +351,7 @@
 				C84C23401F17ACE20038E879 /* CategorySelectionCoordinator.swift in Sources */,
 				C84C23511F17B0070038E879 /* DetailView.swift in Sources */,
 				C84C23551F17B3480038E879 /* SelectionListView.swift in Sources */,
+				C88651D31F1FB5A30085E239 /* SampleClassifiedAdService.swift in Sources */,
 				C84C234C1F17AE0D0038E879 /* AutoCategoryInsertionCoordinator.swift in Sources */,
 				C84C234D1F17AE960038E879 /* DiscoveryCoordinator.swift in Sources */,
 				C87C0A5F1F17C3FA00715A9E /* DiscoveryInteractor.swift in Sources */,
@@ -353,6 +368,7 @@
 				C84C23681F17BCB00038E879 /* DetailViewFake.swift in Sources */,
 				C8B86F611F1F909400BDCE50 /* CategorySelectionInteractor.swift in Sources */,
 				C88651CA1F1F99C50085E239 /* SampleCategoryService.swift in Sources */,
+				C88651D11F1FB5670085E239 /* ClassifiedAdService.swift in Sources */,
 				C84C23621F17B7DB0038E879 /* Navigator.swift in Sources */,
 				C8B86F5F1F1F8E7800BDCE50 /* SelectionListViewController.swift in Sources */,
 			);
