@@ -18,7 +18,12 @@ class SelectionListViewController: UITableViewController, SelectionListView {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Reset", style: .plain, target: self, action: #selector(reset))
         update()
+    }
+
+    @objc private func reset() {
+        delegate?.didResetSelection()
     }
 
     private func update() {

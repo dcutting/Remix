@@ -17,6 +17,7 @@ protocol SelectionListView: Navigatable {
 
 protocol SelectionListViewDelegate: class {
     func didSelectItem(at index: Int)
+    func didResetSelection()
 }
 
 struct SelectionListViewData {

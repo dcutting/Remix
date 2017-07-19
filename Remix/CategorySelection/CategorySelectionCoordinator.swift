@@ -3,7 +3,7 @@
 import Foundation
 
 protocol CategorySelectionCoordinatorDelegate: class {
-    func didSelectCategory(id: CategoryID)
+    func didSelectCategory(id: CategoryID?)
 }
 
 struct CategorySelectionDependencies: CategorySelectionCoordinator.Dependencies {
@@ -58,5 +58,10 @@ extension CategorySelectionCoordinator: SelectionListViewDelegate {
         } else {
             pushSelectionList(for: category.categoryID)
         }
+    }
+
+    func didResetSelection() {
+        dependencies.navigator.pop()
+        delegate?.didSelectCategory(id: nil)
     }
 }

@@ -76,7 +76,7 @@ extension DiscoveryCoordinator: DiscoveryListViewDelegate {
 
 extension DiscoveryCoordinator: CategorySelectionCoordinatorDelegate {
 
-    func didSelectCategory(id: CategoryID) {
+    func didSelectCategory(id: CategoryID?) {
         updateDiscoveryListView(selectedCategoryID: id)
     }
 }
