@@ -9,10 +9,25 @@ extension Navigatable {
     }
 }
 
-extension UINavigationController: Navigator {
+class NavigatorController: UINavigationController, Navigator {
+
+    private var popPoints = [UIViewController]()
 
     func push(view: Navigatable) {
         guard let viewController = view.viewController else { return }
         pushViewController(viewController, animated: true)
+    }
+
+    func pop() {
+        if let popPoint = popPoints.popLast() {
+            popToViewController(popPoint, animated: true)
+        } else {
+            popToRootViewController(animated: true)
+        }
+    }
+
+    func setPopPoint() {
+        guard let popPoint = topViewController else { return }
+        popPoints.append(popPoint)
     }
 }

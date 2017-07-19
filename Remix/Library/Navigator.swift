@@ -6,6 +6,8 @@ protocol Navigatable {}
 
 protocol Navigator {
     func push(view: Navigatable)
+    func pop()
+    func setPopPoint()
 }
 
 protocol HasNavigator {

@@ -12,7 +12,7 @@ import UIKit
         window = UIWindow(frame: UIScreen.main.bounds)
         guard let window = window else { return false }
 
-        let navigator = UINavigationController()
+        let navigator = NavigatorController()
         window.rootViewController = navigator
 
         appCoordinator = AppCoordinator(navigator: navigator)

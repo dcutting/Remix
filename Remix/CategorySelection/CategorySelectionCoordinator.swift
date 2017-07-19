@@ -3,7 +3,6 @@
 import Foundation
 
 protocol CategorySelectionCoordinatorDelegate: class {
-
     func didSelectCategory(id: CategoryID)
 }
 
@@ -28,6 +27,7 @@ class CategorySelectionCoordinator {
     }
 
     func start() {
+        dependencies.navigator.setPopPoint()
         pushSelectionList(for: nil)
     }
 
@@ -53,6 +53,7 @@ extension CategorySelectionCoordinator: SelectionListViewDelegate {
     func didSelectItem(at index: Int) {
         guard let category = listData?[index] else { preconditionFailure() }
         if category.children.isEmpty {
+            dependencies.navigator.pop()
             delegate?.didSelectCategory(id: category.categoryID)
         } else {
             pushSelectionList(for: category.categoryID)
