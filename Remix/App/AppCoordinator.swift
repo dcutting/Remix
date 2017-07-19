@@ -12,8 +12,13 @@ class AppCoordinator {
     }
 
     func start() {
-        let wireframe = DiscoveryListViewFakeWireframe()
-        let dependencies = DiscoveryCoordinatorDependencies(navigator: navigator, discoveryListViewWireframe: wireframe)
+        let listWireframe = DiscoveryListViewControllerWireframe()
+        let detailWireframe = DetailViewControllerWireframe()
+        let dependencies = DiscoveryCoordinatorDependencies(
+            navigator: navigator,
+            discoveryListViewWireframe: listWireframe,
+            detailViewWireframe: detailWireframe
+        )
         discovery = DiscoveryCoordinator(dependencies: dependencies)
         discovery?.start()
     }

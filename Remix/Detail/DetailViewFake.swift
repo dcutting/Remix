@@ -2,6 +2,12 @@
 
 import Foundation
 
+class DetailViewFakeWireframe: DetailViewWireframe {
+    var view: DetailView {
+        return DetailViewFake()
+    }
+}
+
 class DetailViewFake: DetailView {
     var viewData: DetailViewData?
 }

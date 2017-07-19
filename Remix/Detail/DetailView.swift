@@ -2,6 +2,14 @@
 
 import Foundation
 
+protocol HasDetailViewWireframe {
+    var detailViewWireframe: DetailViewWireframe { get }
+}
+
+protocol DetailViewWireframe {
+    var view: DetailView { get }
+}
+
 protocol DetailView: Navigatable {
     var viewData: DetailViewData? { get set }
 }

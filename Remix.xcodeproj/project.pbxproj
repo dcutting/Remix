@@ -27,6 +27,10 @@
 		C84C23681F17BCB00038E879 /* DetailViewFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23671F17BCB00038E879 /* DetailViewFake.swift */; };
 		C87C0A5F1F17C3FA00715A9E /* DiscoveryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C0A5E1F17C3FA00715A9E /* DiscoveryInteractor.swift */; };
 		C87C0A611F17C52D00715A9E /* DiscoveryFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C0A601F17C52D00715A9E /* DiscoveryFormatter.swift */; };
+		C8B86F551F1F7C4000BDCE50 /* DiscoveryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B86F541F1F7C4000BDCE50 /* DiscoveryListViewController.swift */; };
+		C8B86F591F1F820B00BDCE50 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B86F581F1F820B00BDCE50 /* DetailViewController.swift */; };
+		C8B86F5B1F1F83CF00BDCE50 /* DetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8B86F5A1F1F83CF00BDCE50 /* DetailViewController.storyboard */; };
+		C8B86F5D1F1F890D00BDCE50 /* DiscoveryDetailFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B86F5C1F1F890D00BDCE50 /* DiscoveryDetailFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +68,10 @@
 		C84C23671F17BCB00038E879 /* DetailViewFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewFake.swift; sourceTree = "<group>"; };
 		C87C0A5E1F17C3FA00715A9E /* DiscoveryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryInteractor.swift; sourceTree = "<group>"; };
 		C87C0A601F17C52D00715A9E /* DiscoveryFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryFormatter.swift; sourceTree = "<group>"; };
+		C8B86F541F1F7C4000BDCE50 /* DiscoveryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryListViewController.swift; sourceTree = "<group>"; };
+		C8B86F581F1F820B00BDCE50 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		C8B86F5A1F1F83CF00BDCE50 /* DetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailViewController.storyboard; sourceTree = "<group>"; };
+		C8B86F5C1F1F890D00BDCE50 /* DiscoveryDetailFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryDetailFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +162,8 @@
 				C87C0A601F17C52D00715A9E /* DiscoveryFormatter.swift */,
 				C84C23521F17B0C30038E879 /* DiscoveryListView.swift */,
 				C84C23651F17BBBA0038E879 /* DiscoveryListViewFake.swift */,
+				C8B86F541F1F7C4000BDCE50 /* DiscoveryListViewController.swift */,
+				C8B86F5C1F1F890D00BDCE50 /* DiscoveryDetailFormatter.swift */,
 			);
 			path = Discovery;
 			sourceTree = "<group>";
@@ -172,6 +182,8 @@
 			children = (
 				C84C23501F17B0070038E879 /* DetailView.swift */,
 				C84C23671F17BCB00038E879 /* DetailViewFake.swift */,
+				C8B86F581F1F820B00BDCE50 /* DetailViewController.swift */,
+				C8B86F5A1F1F83CF00BDCE50 /* DetailViewController.storyboard */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -276,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C84C23251F17AB770038E879 /* LaunchScreen.storyboard in Resources */,
+				C8B86F5B1F1F83CF00BDCE50 /* DetailViewController.storyboard in Resources */,
 				C84C23221F17AB770038E879 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,10 +317,13 @@
 				C84C234D1F17AE960038E879 /* DiscoveryCoordinator.swift in Sources */,
 				C87C0A5F1F17C3FA00715A9E /* DiscoveryInteractor.swift in Sources */,
 				C84C23531F17B0C30038E879 /* DiscoveryListView.swift in Sources */,
+				C8B86F591F1F820B00BDCE50 /* DetailViewController.swift in Sources */,
 				C84C234A1F17ADFD0038E879 /* ManualCategoryInsertionCoordinator.swift in Sources */,
 				C84C231B1F17AB770038E879 /* AppDelegate.swift in Sources */,
 				C84C23661F17BBBA0038E879 /* DiscoveryListViewFake.swift in Sources */,
+				C8B86F551F1F7C4000BDCE50 /* DiscoveryListViewController.swift in Sources */,
 				C84C234E1F17AE980038E879 /* AppCoordinator.swift in Sources */,
+				C8B86F5D1F1F890D00BDCE50 /* DiscoveryDetailFormatter.swift in Sources */,
 				C84C235C1F17B5FF0038E879 /* Category.swift in Sources */,
 				C84C23681F17BCB00038E879 /* DetailViewFake.swift in Sources */,
 				C84C23621F17B7DB0038E879 /* Navigator.swift in Sources */,

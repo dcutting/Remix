@@ -5,17 +5,20 @@ import Foundation
 struct DiscoveryCoordinatorDependencies: DiscoveryCoordinator.Dependencies {
     let navigator: Navigator
     let discoveryListViewWireframe: DiscoveryListViewWireframe
+    let detailViewWireframe: DetailViewWireframe
 }
 
 class DiscoveryCoordinator {
 
-    typealias Dependencies = HasNavigator & HasDiscoveryListViewWireframe
+    typealias Dependencies = HasNavigator & HasDiscoveryListViewWireframe & HasDetailViewWireframe
 
     private let dependencies: Dependencies
     private let discoveryInteractor: DiscoveryInteractor
     private var discoveryListView: DiscoveryListView?
     private var detailView: DetailView?
     private var categorySelection: CategorySelectionCoordinator?
+
+    private var discoveryData: [ClassifiedAd]?
 
     init(dependencies: Dependencies) {
         self.dependencies = dependencies
@@ -37,6 +40,7 @@ class DiscoveryCoordinator {
     private func updateDiscoveryListView(selectedCategoryID: CategoryID? = nil) {
         discoveryInteractor.update(selectedCategoryID: selectedCategoryID) { [weak self] ads in
             let viewData = DiscoveryFormatter().prepare(ads: ads)
+            self?.discoveryData = ads
             self?.discoveryListView?.viewData = viewData
         }
     }
@@ -49,7 +53,9 @@ extension DiscoveryCoordinator: DiscoveryListViewDelegate {
     }
 
     private func pushDetailView(for index: Int) {
-        let detailView = DetailViewFake()
+        guard let item = discoveryData?[index] else { preconditionFailure() }
+        var detailView = dependencies.detailViewWireframe.view
+        detailView.viewData = DiscoveryDetailFormatter().prepare(item: item)
         self.detailView = detailView
         dependencies.navigator.push(view: detailView)
     }

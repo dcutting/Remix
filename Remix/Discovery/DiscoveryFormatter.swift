@@ -5,6 +5,9 @@ import Foundation
 class DiscoveryFormatter {
 
     func prepare(ads: [ClassifiedAd]) -> DiscoveryListViewData {
-        return DiscoveryListViewData(items: [])
+        let items = ads.map { ad in
+            DiscoveryListItem(title: ad.title, category: ad.category)
+        }
+        return DiscoveryListViewData(items: items)
     }
 }

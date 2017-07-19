@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13156.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dhs-Jq-0ue">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13137.5"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Detail View Controller-->
+        <scene sceneID="a8A-Xz-CN0">
+            <objects>
+                <viewController id="Dhs-Jq-0ue" customClass="DetailViewController" customModule="Remix" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="tYp-Vq-H64">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQM-V3-tHE">
+                                <rect key="frame" x="16" y="20" width="343" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="OLl-Dq-XCJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Cq-Au-HcI">
+                                <rect key="frame" x="16" y="118" width="343" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="wRs-TC-KS2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HQM-V3-tHE" firstAttribute="trailing" secondItem="tYp-Vq-H64" secondAttribute="trailingMargin" id="1Ef-pa-kbp"/>
+                            <constraint firstItem="HQM-V3-tHE" firstAttribute="leading" secondItem="tYp-Vq-H64" secondAttribute="leadingMargin" id="PLG-mR-ex3"/>
+                            <constraint firstItem="HQM-V3-tHE" firstAttribute="trailing" secondItem="3Cq-Au-HcI" secondAttribute="trailing" id="ZTv-0G-Oim"/>
+                            <constraint firstItem="HQM-V3-tHE" firstAttribute="leading" secondItem="3Cq-Au-HcI" secondAttribute="leading" id="mSb-es-jRc"/>
+                            <constraint firstItem="3Cq-Au-HcI" firstAttribute="top" secondItem="HQM-V3-tHE" secondAttribute="bottom" constant="8" symbolic="YES" id="pba-2L-YTS"/>
+                            <constraint firstItem="HQM-V3-tHE" firstAttribute="top" secondItem="kIl-iV-gMe" secondAttribute="top" id="uqf-ug-QbQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kIl-iV-gMe"/>
+                    </view>
+                    <connections>
+                        <outlet property="categoryLabel" destination="3Cq-Au-HcI" id="gok-Qp-F9Z"/>
+                        <outlet property="titleLabel" destination="HQM-V3-tHE" id="vKg-XM-z1u"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sfC-3L-u2O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-180" y="247.82608695652175"/>
+        </scene>
+    </scenes>
+</document>
