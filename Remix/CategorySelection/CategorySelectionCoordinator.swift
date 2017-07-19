@@ -3,22 +3,22 @@
 import Foundation
 
 protocol CategorySelectionCoordinatorDelegate: class {
-    func didSelectCategory(id: CategoryID?)
+    func didSelect(categoryID: CategoryID?)
 }
 
 struct CategorySelectionDependencies: CategorySelectionCoordinator.Dependencies {
     let navigator: Navigator
-    let selectionListViewWireframe: SelectionListViewWireframe
+    let categorySelectionListViewWireframe: CategorySelectionListViewWireframe
 }
 
 class CategorySelectionCoordinator {
 
-    typealias Dependencies = HasNavigator & HasSelectionListViewWireframe
+    typealias Dependencies = HasNavigator & HasCategorySelectionListViewWireframe
 
     private let dependencies: Dependencies
-    private var selectionListView: SelectionListView?
     private let categorySelectionInteractor = CategorySelectionInteractor()
-    private var listData: [Category]?
+    private let categorySelectionListFormatter = CategorySelectionListFormatter()
+    private var categorySelectionListView: CategorySelectionListView?
 
     weak var delegate: CategorySelectionCoordinatorDelegate?
 
@@ -28,40 +28,41 @@ class CategorySelectionCoordinator {
 
     func start() {
         dependencies.navigator.setPopPoint()
-        pushSelectionList(for: nil)
+        pushCategorySelectionList()
     }
 
-    private func pushSelectionList(for categoryID: CategoryID?) {
-        var selectionListView = dependencies.selectionListViewWireframe.make()
+    private func pushCategorySelectionList(for categoryID: CategoryID? = nil) {
+        var selectionListView = dependencies.categorySelectionListViewWireframe.make()
         selectionListView.delegate = self
-        self.selectionListView = selectionListView
+        self.categorySelectionListView = selectionListView
         dependencies.navigator.push(view: selectionListView)
         updateSelectionListView(parentCategoryID: categoryID)
     }
 
     private func updateSelectionListView(parentCategoryID: CategoryID?) {
         categorySelectionInteractor.fetchCategories(parentCategoryID: parentCategoryID) { [weak self] categories in
-            let viewData = CategorySelectionListFormatter().prepare(categories: categories)
-            self?.selectionListView?.viewData = viewData
-            self?.listData = categories
+            let viewData = categorySelectionListFormatter.prepare(categories: categories)
+            self?.categorySelectionListView?.viewData = viewData
         }
     }
 }
 
-extension CategorySelectionCoordinator: SelectionListViewDelegate {
+extension CategorySelectionCoordinator: CategorySelectionListViewDelegate {
 
-    func didSelectItem(at index: Int) {
-        guard let category = listData?[index] else { preconditionFailure() }
-        if category.children.isEmpty {
-            dependencies.navigator.pop()
-            delegate?.didSelectCategory(id: category.categoryID)
-        } else {
-            pushSelectionList(for: category.categoryID)
+    func didSelect(categoryID: CategoryID) {
+        categorySelectionInteractor.selectionType(for: categoryID) { selectionType in
+            switch selectionType {
+            case .leafCategory:
+                dependencies.navigator.pop()
+                delegate?.didSelect(categoryID: categoryID)
+            case .parentCategory:
+                pushCategorySelectionList(for: categoryID)
+            }
         }
     }
 
     func didResetSelection() {
         dependencies.navigator.pop()
-        delegate?.didSelectCategory(id: nil)
+        delegate?.didSelect(categoryID: nil)
     }
 }

@@ -2,15 +2,16 @@
 
 import UIKit
 
-class SelectionListViewControllerWireframe: SelectionListViewWireframe {
-    func make() -> SelectionListView {
-        return SelectionListViewController()
+class CategorySelectionListViewControllerWireframe: CategorySelectionListViewWireframe {
+    func make() -> CategorySelectionListView {
+        return CategorySelectionListViewController()
     }
 }
 
-class SelectionListViewController: UITableViewController, SelectionListView {
-    var delegate: SelectionListViewDelegate?
-    var viewData: SelectionListViewData? {
+class CategorySelectionListViewController: UITableViewController, CategorySelectionListView {
+
+    var delegate: CategorySelectionListViewDelegate?
+    var viewData: CategorySelectionListViewData? {
         didSet {
             update()
         }
@@ -45,6 +46,7 @@ class SelectionListViewController: UITableViewController, SelectionListView {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.didSelectItem(at: indexPath.row)
+        guard let categoryID = viewData?.items[indexPath.row].categoryID else { return }
+        delegate?.didSelect(categoryID: categoryID)
     }
 }

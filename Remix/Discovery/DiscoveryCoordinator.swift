@@ -65,8 +65,8 @@ extension DiscoveryCoordinator: DiscoveryListViewDelegate {
     }
 
     private func startCategorySelection() {
-        let wireframe = SelectionListViewControllerWireframe()
-        let categorySelectionDependencies = CategorySelectionDependencies(navigator: dependencies.navigator, selectionListViewWireframe: wireframe)
+        let wireframe = CategorySelectionListViewControllerWireframe()
+        let categorySelectionDependencies = CategorySelectionDependencies(navigator: dependencies.navigator, categorySelectionListViewWireframe: wireframe)
         let categorySelection = CategorySelectionCoordinator(dependencies: categorySelectionDependencies)
         categorySelection.delegate = self
         self.categorySelection = categorySelection
@@ -76,7 +76,7 @@ extension DiscoveryCoordinator: DiscoveryListViewDelegate {
 
 extension DiscoveryCoordinator: CategorySelectionCoordinatorDelegate {
 
-    func didSelectCategory(id: CategoryID?) {
-        updateDiscoveryListView(selectedCategoryID: id)
+    func didSelect(categoryID: CategoryID?) {
+        updateDiscoveryListView(selectedCategoryID: categoryID)
     }
 }

@@ -4,11 +4,11 @@ import Foundation
 
 class CategorySelectionListFormatter {
 
-    func prepare(categories: [Category]) -> SelectionListViewData {
-        let items = categories.map { category -> SelectionListItem in
+    func prepare(categories: [Category]) -> CategorySelectionListViewData {
+        let items = categories.map { category -> CategorySelectionListItem in
             let hasChildren = !category.children.isEmpty
-            return SelectionListItem(title: category.title, hasChildren: hasChildren)
+            return CategorySelectionListItem(categoryID: category.categoryID, title: category.title, hasChildren: hasChildren)
         }
-        return SelectionListViewData(title: "Select category", items: items)
+        return CategorySelectionListViewData(title: "Select category", items: items)
     }
 }

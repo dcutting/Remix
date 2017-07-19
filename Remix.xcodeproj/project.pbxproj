@@ -18,7 +18,7 @@
 		C84C234E1F17AE980038E879 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C233E1F17AC760038E879 /* AppCoordinator.swift */; };
 		C84C23511F17B0070038E879 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23501F17B0070038E879 /* DetailView.swift */; };
 		C84C23531F17B0C30038E879 /* DiscoveryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23521F17B0C30038E879 /* DiscoveryListView.swift */; };
-		C84C23551F17B3480038E879 /* SelectionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23541F17B3480038E879 /* SelectionListView.swift */; };
+		C84C23551F17B3480038E879 /* CategorySelectionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23541F17B3480038E879 /* CategorySelectionListView.swift */; };
 		C84C235B1F17B5C30038E879 /* ClassifiedAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C235A1F17B5C30038E879 /* ClassifiedAd.swift */; };
 		C84C235C1F17B5FF0038E879 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23591F17B5AF0038E879 /* Category.swift */; };
 		C84C23621F17B7DB0038E879 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23611F17B7C70038E879 /* Navigator.swift */; };
@@ -35,7 +35,7 @@
 		C8B86F591F1F820B00BDCE50 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B86F581F1F820B00BDCE50 /* DetailViewController.swift */; };
 		C8B86F5B1F1F83CF00BDCE50 /* DetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8B86F5A1F1F83CF00BDCE50 /* DetailViewController.storyboard */; };
 		C8B86F5D1F1F890D00BDCE50 /* DiscoveryDetailFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B86F5C1F1F890D00BDCE50 /* DiscoveryDetailFormatter.swift */; };
-		C8B86F5F1F1F8E7800BDCE50 /* SelectionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B86F5E1F1F8E7800BDCE50 /* SelectionListViewController.swift */; };
+		C8B86F5F1F1F8E7800BDCE50 /* CategorySelectionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B86F5E1F1F8E7800BDCE50 /* CategorySelectionListViewController.swift */; };
 		C8B86F611F1F909400BDCE50 /* CategorySelectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B86F601F1F909400BDCE50 /* CategorySelectionInteractor.swift */; };
 		C8B86F631F1F924700BDCE50 /* CategorySelectionListFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B86F621F1F924700BDCE50 /* CategorySelectionListFormatter.swift */; };
 /* End PBXBuildFile section */
@@ -66,7 +66,7 @@
 		C84C234B1F17AE0D0038E879 /* AutoCategoryInsertionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCategoryInsertionCoordinator.swift; sourceTree = "<group>"; };
 		C84C23501F17B0070038E879 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		C84C23521F17B0C30038E879 /* DiscoveryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryListView.swift; sourceTree = "<group>"; };
-		C84C23541F17B3480038E879 /* SelectionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionListView.swift; sourceTree = "<group>"; };
+		C84C23541F17B3480038E879 /* CategorySelectionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectionListView.swift; sourceTree = "<group>"; };
 		C84C23591F17B5AF0038E879 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		C84C235A1F17B5C30038E879 /* ClassifiedAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedAd.swift; sourceTree = "<group>"; };
 		C84C23611F17B7C70038E879 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
@@ -83,7 +83,7 @@
 		C8B86F581F1F820B00BDCE50 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		C8B86F5A1F1F83CF00BDCE50 /* DetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailViewController.storyboard; sourceTree = "<group>"; };
 		C8B86F5C1F1F890D00BDCE50 /* DiscoveryDetailFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryDetailFormatter.swift; sourceTree = "<group>"; };
-		C8B86F5E1F1F8E7800BDCE50 /* SelectionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionListViewController.swift; sourceTree = "<group>"; };
+		C8B86F5E1F1F8E7800BDCE50 /* CategorySelectionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectionListViewController.swift; sourceTree = "<group>"; };
 		C8B86F601F1F909400BDCE50 /* CategorySelectionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectionInteractor.swift; sourceTree = "<group>"; };
 		C8B86F621F1F924700BDCE50 /* CategorySelectionListFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectionListFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -165,10 +165,10 @@
 			isa = PBXGroup;
 			children = (
 				C84C233F1F17ACE20038E879 /* CategorySelectionCoordinator.swift */,
-				C84C23541F17B3480038E879 /* SelectionListView.swift */,
-				C8B86F5E1F1F8E7800BDCE50 /* SelectionListViewController.swift */,
 				C8B86F601F1F909400BDCE50 /* CategorySelectionInteractor.swift */,
 				C8B86F621F1F924700BDCE50 /* CategorySelectionListFormatter.swift */,
+				C84C23541F17B3480038E879 /* CategorySelectionListView.swift */,
+				C8B86F5E1F1F8E7800BDCE50 /* CategorySelectionListViewController.swift */,
 			);
 			path = CategorySelection;
 			sourceTree = "<group>";
@@ -350,7 +350,7 @@
 				C84C235B1F17B5C30038E879 /* ClassifiedAd.swift in Sources */,
 				C84C23401F17ACE20038E879 /* CategorySelectionCoordinator.swift in Sources */,
 				C84C23511F17B0070038E879 /* DetailView.swift in Sources */,
-				C84C23551F17B3480038E879 /* SelectionListView.swift in Sources */,
+				C84C23551F17B3480038E879 /* CategorySelectionListView.swift in Sources */,
 				C88651D31F1FB5A30085E239 /* SampleClassifiedAdService.swift in Sources */,
 				C84C234C1F17AE0D0038E879 /* AutoCategoryInsertionCoordinator.swift in Sources */,
 				C84C234D1F17AE960038E879 /* DiscoveryCoordinator.swift in Sources */,
@@ -370,7 +370,7 @@
 				C88651CA1F1F99C50085E239 /* SampleCategoryService.swift in Sources */,
 				C88651D11F1FB5670085E239 /* ClassifiedAdService.swift in Sources */,
 				C84C23621F17B7DB0038E879 /* Navigator.swift in Sources */,
-				C8B86F5F1F1F8E7800BDCE50 /* SelectionListViewController.swift in Sources */,
+				C8B86F5F1F1F8E7800BDCE50 /* CategorySelectionListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

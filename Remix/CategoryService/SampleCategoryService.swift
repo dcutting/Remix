@@ -3,7 +3,6 @@
 import Foundation
 
 class SampleCategoryService: CategoryService {
-
     private let categories = [
         Category(categoryID: "1", parent: nil, children: ["2", "5"], title: "Bicycles"),
         Category(categoryID: "2", parent: "1", children: ["3", "4"], title: "Off road bikes"),
@@ -12,6 +11,13 @@ class SampleCategoryService: CategoryService {
         Category(categoryID: "5", parent: "1", children: [], title: "Racers"),
         Category(categoryID: "10", parent: nil, children: [], title: "Cars")
     ]
+
+    func fetch(categoryID: CategoryID, completion: (Category?) -> Void) {
+        let category = categories.first { category in
+            category.categoryID == categoryID
+        }
+        completion(category)
+    }
 
     func fetch(parentCategoryID: CategoryID?, completion: ([Category]) -> Void) {
         let filteredCategories = categories.filter { category in
