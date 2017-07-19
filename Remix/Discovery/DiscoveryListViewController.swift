@@ -10,7 +10,7 @@ class DiscoveryListViewControllerWireframe: DiscoveryListViewWireframe {
 
 class DiscoveryListViewController: UITableViewController, DiscoveryListView {
 
-    var delegate: DiscoveryListViewDelegate?
+    weak var delegate: DiscoveryListViewDelegate?
     var viewData: DiscoveryListViewData? {
         didSet {
             update()

@@ -10,7 +10,7 @@ class CategorySelectionListViewControllerWireframe: CategorySelectionListViewWir
 
 class CategorySelectionListViewController: UITableViewController, CategorySelectionListView {
 
-    var delegate: CategorySelectionListViewDelegate?
+    weak var delegate: CategorySelectionListViewDelegate?
     var viewData: CategorySelectionListViewData? {
         didSet {
             update()
