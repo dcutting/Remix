@@ -15,7 +15,6 @@ class DiscoveryCoordinator {
     private let dependencies: Dependencies
     private let discoveryInteractor: DiscoveryInteractor
     private var discoveryListView: DiscoveryListView?
-    private var detailView: DetailView?
     private var categorySelection: CategorySelectionCoordinator?
 
     init(dependencies: Dependencies) {
@@ -54,7 +53,6 @@ extension DiscoveryCoordinator: DiscoveryListViewDelegate {
         discoveryInteractor.fetchDetail(for: classifiedAdID) { [weak self] classifiedAd in
             guard let classifiedAd = classifiedAd else { preconditionFailure() }
             detailView.viewData = DiscoveryDetailFormatter().prepare(item: classifiedAd)
-            self?.detailView = detailView
             self?.dependencies.navigator.push(view: detailView)
         }
     }
@@ -77,6 +75,10 @@ extension DiscoveryCoordinator: CategorySelectionCoordinatorDelegate {
 
     func didSelect(categoryID: CategoryID?) {
         updateDiscoveryListView(selectedCategoryID: categoryID)
+        categorySelection = nil
+    }
+
+    func didCancel() {
         categorySelection = nil
     }
 }

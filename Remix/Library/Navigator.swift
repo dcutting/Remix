@@ -6,10 +6,12 @@ protocol Navigatable {}
 
 protocol Navigator {
     func push(view: Navigatable)
+    func push(view: Navigatable, onPop: @escaping () -> Void)
     func pop()
-    func setPopPoint()
+    func setPopCheckpoint()
 }
 
 protocol HasNavigator {
     var navigator: Navigator { get }
 }
+

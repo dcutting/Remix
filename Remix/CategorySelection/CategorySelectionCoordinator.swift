@@ -4,6 +4,7 @@ import Foundation
 
 protocol CategorySelectionCoordinatorDelegate: class {
     func didSelect(categoryID: CategoryID?)
+    func didCancel()
 }
 
 struct CategorySelectionDependencies: CategorySelectionCoordinator.Dependencies {
@@ -18,7 +19,6 @@ class CategorySelectionCoordinator {
     private let dependencies: Dependencies
     private let categorySelectionInteractor = CategorySelectionInteractor()
     private let categorySelectionListFormatter = CategorySelectionListFormatter()
-    private var categorySelectionListView: CategorySelectionListView?
 
     weak var delegate: CategorySelectionCoordinatorDelegate?
 
@@ -27,22 +27,28 @@ class CategorySelectionCoordinator {
     }
 
     func start() {
-        dependencies.navigator.setPopPoint()
+        dependencies.navigator.setPopCheckpoint()
         pushCategorySelectionList()
     }
 
     private func pushCategorySelectionList(for categoryID: CategoryID? = nil) {
-        var selectionListView = dependencies.categorySelectionListViewWireframe.make()
-        selectionListView.delegate = self
-        self.categorySelectionListView = selectionListView
-        dependencies.navigator.push(view: selectionListView)
-        updateSelectionListView(parentCategoryID: categoryID)
+        var categorySelectionListView = dependencies.categorySelectionListViewWireframe.make()
+        categorySelectionListView.delegate = self
+        if categoryID == nil {
+            dependencies.navigator.push(view: categorySelectionListView) { [weak self] in
+                self?.delegate?.didCancel()
+            }
+        } else {
+            dependencies.navigator.push(view: categorySelectionListView)
+        }
+        update(categorySelectionListView: categorySelectionListView, parentCategoryID: categoryID)
     }
 
-    private func updateSelectionListView(parentCategoryID: CategoryID?) {
-        categorySelectionInteractor.fetchCategories(parentCategoryID: parentCategoryID) { [weak self] categories in
+    private func update(categorySelectionListView: CategorySelectionListView, parentCategoryID: CategoryID?) {
+        var view = categorySelectionListView
+        categorySelectionInteractor.fetchCategories(parentCategoryID: parentCategoryID) { categories in
             let viewData = categorySelectionListFormatter.prepare(categories: categories)
-            self?.categorySelectionListView?.viewData = viewData
+            view.viewData = viewData
         }
     }
 }
