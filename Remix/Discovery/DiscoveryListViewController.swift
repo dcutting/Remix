@@ -13,21 +13,21 @@ class DiscoveryListViewController: UITableViewController, DiscoveryListView {
     weak var delegate: DiscoveryListViewDelegate?
     var viewData: DiscoveryListViewData? {
         didSet {
-            update()
+            updateView()
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(didTapFilter))
-        update()
+        updateView()
     }
 
     @objc private func didTapFilter() {
         delegate?.doesWantFilters()
     }
 
-    private func update() {
+    private func updateView() {
         guard isViewLoaded else { return }
         tableView.reloadData()
     }

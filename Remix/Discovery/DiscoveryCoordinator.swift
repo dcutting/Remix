@@ -15,7 +15,7 @@ class DiscoveryCoordinator {
     private let dependencies: Dependencies
     private let discoveryInteractor: DiscoveryInteractor
     private var discoveryListView: DiscoveryListView?
-    private var categorySelection: CategorySelectionCoordinator?
+    private var categorySelectionCoordinator: CategorySelectionCoordinator?
 
     init(dependencies: Dependencies) {
         self.dependencies = dependencies
@@ -66,7 +66,7 @@ extension DiscoveryCoordinator: DiscoveryListViewDelegate {
         let categorySelectionDependencies = CategorySelectionDependencies(navigator: dependencies.navigator, categorySelectionListViewWireframe: wireframe)
         let categorySelection = CategorySelectionCoordinator(dependencies: categorySelectionDependencies)
         categorySelection.delegate = self
-        self.categorySelection = categorySelection
+        self.categorySelectionCoordinator = categorySelection
         categorySelection.start()
     }
 }
@@ -75,10 +75,10 @@ extension DiscoveryCoordinator: CategorySelectionCoordinatorDelegate {
 
     func didSelect(categoryID: CategoryID?) {
         updateDiscoveryListView(selectedCategoryID: categoryID)
-        categorySelection = nil
+        categorySelectionCoordinator = nil
     }
 
     func didCancelSelection() {
-        categorySelection = nil
+        categorySelectionCoordinator = nil
     }
 }

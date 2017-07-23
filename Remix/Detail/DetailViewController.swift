@@ -17,16 +17,16 @@ class DetailViewController: UIViewController, DetailView {
 
     var viewData: DetailViewData? {
         didSet {
-            update()
+            updateView()
         }
     }
 
     override func loadView() {
         super.loadView()
-        update()
+        updateView()
     }
 
-    private func update() {
+    private func updateView() {
         guard isViewLoaded else { return }
         titleLabel.text = viewData?.title
         categoryLabel.text = viewData?.category

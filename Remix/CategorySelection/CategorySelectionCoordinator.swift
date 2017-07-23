@@ -1,6 +1,3 @@
-
-
-
 //  Copyright © 2017 cutting.io. All rights reserved.
 
 import Foundation
@@ -22,6 +19,7 @@ class CategorySelectionCoordinator {
     private let dependencies: Dependencies
     private let categorySelectionInteractor = CategorySelectionInteractor()
     private let categorySelectionListFormatter = CategorySelectionListFormatter()
+
     private var rootCategorySelectionListView: CategorySelectionListView?
 
     weak var delegate: CategorySelectionCoordinatorDelegate?
@@ -55,7 +53,7 @@ class CategorySelectionCoordinator {
 extension CategorySelectionCoordinator: CategorySelectionListViewDelegate {
 
     func didSelect(categoryID: CategoryID) {
-        categorySelectionInteractor.selectionType(for: categoryID) { selectionType in
+        categorySelectionInteractor.findSelectionType(for: categoryID) { selectionType in
             switch selectionType {
             case .leafCategory:
                 dependencies.navigator.pop()
@@ -66,12 +64,12 @@ extension CategorySelectionCoordinator: CategorySelectionListViewDelegate {
         }
     }
 
-    func didResetSelection() {
+    func didDeselectAll() {
         dependencies.navigator.pop()
         delegate?.didSelect(categoryID: nil)
     }
 
-    func didCancelSelection(view: CategorySelectionListView) {
+    func didAbortSelection(view: CategorySelectionListView) {
         if view === rootCategorySelectionListView {
             delegate?.didCancelSelection()
         }

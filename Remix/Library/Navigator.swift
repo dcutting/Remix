@@ -3,11 +3,15 @@
 import Foundation
 
 protocol Navigatable: class {
-    func didGoBack()
+    func navigatorDidGoBack()
 }
 
 extension Navigatable {
-    func didGoBack() {}
+    // Override this in your view if you want to do something when the view is popped
+    // from the navigator, such as notify a delegate that the operation has been aborted.
+    // Typically this is used to handle the case when the user has tapped the
+    // back button in a UINavigationController.
+    func navigatorDidGoBack() {}
 }
 
 protocol Navigator {

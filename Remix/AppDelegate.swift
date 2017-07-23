@@ -13,7 +13,7 @@ import UIKit
         guard let window = window else { return false }
 
         let navigator = NavigatorController()
-        window.rootViewController = navigator.navigationController
+        window.rootViewController = navigator.rootViewController
 
         appCoordinator = AppCoordinator(navigator: navigator)
         appCoordinator?.start()

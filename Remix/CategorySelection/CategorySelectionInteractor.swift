@@ -11,14 +11,11 @@ class CategorySelectionInteractor {
         case parentCategory
     }
 
-    func selectionType(for categoryID: CategoryID, completion: (SelectionType) -> Void) {
+    func findSelectionType(for categoryID: CategoryID, completion: (SelectionType) -> Void) {
         categoryService.fetch(categoryID: categoryID) { category in
             guard let category = category else { preconditionFailure() }
-            if category.children.isEmpty {
-                completion(.leafCategory)
-            } else {
-                completion(.parentCategory)
-            }
+            let type: SelectionType = category.children.isEmpty ? .leafCategory : .parentCategory
+            completion(type)
         }
     }
 

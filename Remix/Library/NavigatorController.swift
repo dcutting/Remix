@@ -9,9 +9,14 @@ extension Navigatable {
     }
 }
 
+// Implements the Navigator for use with UIKit components (using a UINavigationController).
 class NavigatorController: NSObject, Navigator {
 
-    let navigationController = UINavigationController()
+    var rootViewController: UIViewController {
+        return navigationController
+    }
+
+    private let navigationController = UINavigationController()
     private var popCheckpoints = [UIViewController]()
 
     override init() {
@@ -51,6 +56,6 @@ extension NavigatorController: UINavigationControllerDelegate {
 
         guard let navigatable = fromViewController as? Navigatable else { return }
 
-        navigatable.didGoBack()
+        navigatable.navigatorDidGoBack()
     }
 }

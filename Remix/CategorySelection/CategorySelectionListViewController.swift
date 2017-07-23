@@ -13,21 +13,25 @@ class CategorySelectionListViewController: UITableViewController, CategorySelect
     weak var delegate: CategorySelectionListViewDelegate?
     var viewData: CategorySelectionListViewData? {
         didSet {
-            update()
+            updateView()
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Reset", style: .plain, target: self, action: #selector(reset))
-        update()
+        updateView()
     }
 
     @objc private func reset() {
-        delegate?.didResetSelection()
+        delegate?.didDeselectAll()
     }
 
-    private func update() {
+    func navigatorDidGoBack() {
+        delegate?.didAbortSelection(view: self)
+    }
+
+    private func updateView() {
         guard isViewLoaded else { return }
         title = viewData?.title
         tableView.reloadData()
