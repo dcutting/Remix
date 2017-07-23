@@ -81,6 +81,7 @@ extension NavigatorDiscoveryCoordinator: CategorySelectionCoordinatorDelegate {
         let coordinator = makeCategorySelectionCoordinator()
         coordinator.delegate = self
         self.categorySelectionCoordinator = coordinator
+        dependencies.navigator.setPopCheckpoint()
         coordinator.start()
     }
 
@@ -103,6 +104,7 @@ extension NavigatorDiscoveryCoordinator: CategorySelectionCoordinatorDelegate {
     }
 
     private func finishCategorySelection() {
+        dependencies.navigator.pop()
         categorySelectionCoordinator = nil
     }
 }

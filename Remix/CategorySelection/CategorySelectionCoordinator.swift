@@ -29,7 +29,6 @@ class CategorySelectionCoordinator {
     }
 
     func start() {
-        dependencies.navigator.setPopCheckpoint()
         rootCategorySelectionListView = pushAndUpdateCategorySelectionList()
     }
 
@@ -56,7 +55,6 @@ extension CategorySelectionCoordinator: CategorySelectionListViewDelegate {
         categorySelectionInteractor.findSelectionType(for: categoryID) { selectionType in
             switch selectionType {
             case .leafCategory:
-                dependencies.navigator.pop()
                 delegate?.didSelect(categoryID: categoryID)
             case .parentCategory:
                 pushAndUpdateCategorySelectionList(for: categoryID)
@@ -65,7 +63,6 @@ extension CategorySelectionCoordinator: CategorySelectionListViewDelegate {
     }
 
     func didDeselectAll() {
-        dependencies.navigator.pop()
         delegate?.didSelect(categoryID: nil)
     }
 
