@@ -2,15 +2,15 @@
 
 import Foundation
 
-struct NavigatorDiscoveryCoordinatorDependencies: NavigatorDiscoveryCoordinator.Dependencies {
-    let navigator: Navigator
+struct NavigationDiscoveryCoordinatorDependencies: NavigationDiscoveryCoordinator.Dependencies {
+    let navigationCoordinator: NavigationCoordinator
     let discoveryListViewWireframe: DiscoveryListViewWireframe
     let detailViewWireframe: DetailViewWireframe
 }
 
-class NavigatorDiscoveryCoordinator {
+class NavigationDiscoveryCoordinator {
 
-    typealias Dependencies = HasNavigator & HasDiscoveryListViewWireframe & HasDetailViewWireframe
+    typealias Dependencies = HasNavigationCoordinator & HasDiscoveryListViewWireframe & HasDetailViewWireframe
 
     private let dependencies: Dependencies
     private let discoveryInteractor = DiscoveryInteractor()
@@ -30,13 +30,13 @@ class NavigatorDiscoveryCoordinator {
     }
 }
 
-extension NavigatorDiscoveryCoordinator: DiscoveryListViewDelegate {
+extension NavigationDiscoveryCoordinator: DiscoveryListViewDelegate {
 
     private func pushListView() {
         let view = dependencies.discoveryListViewWireframe.make()
         view.delegate = self
         self.discoveryListView = view
-        dependencies.navigator.push(view: view)
+        dependencies.navigationCoordinator.push(view: view)
     }
 
     private func updateListView(forSelectedCategoryID selectedCategoryID: CategoryID? = nil) {
@@ -59,7 +59,7 @@ extension NavigatorDiscoveryCoordinator: DiscoveryListViewDelegate {
     }
 }
 
-extension NavigatorDiscoveryCoordinator {
+extension NavigationDiscoveryCoordinator {
 
     private func pushDetailView(forClassifiedAdID classifiedAdID: ClassifiedAdID) {
         discoveryInteractor.fetchDetail(for: classifiedAdID) { [weak self] ad in
@@ -71,24 +71,24 @@ extension NavigatorDiscoveryCoordinator {
     private func pushDetailView(forAd ad: ClassifiedAd) {
         let detailView = dependencies.detailViewWireframe.make()
         detailView.viewData = discoveryDetailFormatter.prepare(ad: ad)
-        dependencies.navigator.push(view: detailView)
+        dependencies.navigationCoordinator.push(view: detailView)
     }
 }
 
-extension NavigatorDiscoveryCoordinator: CategorySelectionCoordinatorDelegate {
+extension NavigationDiscoveryCoordinator: CategorySelectionCoordinatorDelegate {
 
     private func startCategorySelection() {
         let coordinator = makeCategorySelectionCoordinator()
         coordinator.delegate = self
         self.categorySelectionCoordinator = coordinator
-        dependencies.navigator.setPopCheckpoint()
+        dependencies.navigationCoordinator.setPopCheckpoint()
         coordinator.start()
     }
 
     private func makeCategorySelectionCoordinator() -> CategorySelectionCoordinator {
         let wireframe = CategorySelectionListViewControllerWireframe()
         let coordinatorDependencies = CategorySelectionDependencies(
-            navigator: dependencies.navigator,
+            navigationCoordinator: dependencies.navigationCoordinator,
             categorySelectionListViewWireframe: wireframe
         )
         return CategorySelectionCoordinator(dependencies: coordinatorDependencies)
@@ -104,7 +104,7 @@ extension NavigatorDiscoveryCoordinator: CategorySelectionCoordinatorDelegate {
     }
 
     private func finishCategorySelection() {
-        dependencies.navigator.pop()
+        dependencies.navigationCoordinator.pop()
         categorySelectionCoordinator = nil
     }
 }

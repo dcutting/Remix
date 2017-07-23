@@ -4,12 +4,12 @@ import UIKit
 
 class SplitAppCoordinator {
 
-    private let masterDetailCoordinator = SplitMasterDetailCoordinator()
+    private let splitCoordinator = UISplitCoordinator()
     private let discoveryCoordinator: SplitDiscoveryCoordinator
 
     init(window: UIWindow) {
-        window.rootViewController = masterDetailCoordinator.viewController
-        discoveryCoordinator = SplitDiscoveryCoordinator(splitCoordinator: masterDetailCoordinator)
+        window.rootViewController = splitCoordinator.viewController
+        discoveryCoordinator = SplitDiscoveryCoordinator(splitCoordinator: splitCoordinator)
     }
 
     func start() {

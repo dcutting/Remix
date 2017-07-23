@@ -29,7 +29,7 @@ import UIKit
     }
 
     private func start_iPhone(window: UIWindow) -> Any {
-        let coordinator = NavigatorAppCoordinator(window: window)
+        let coordinator = NavigationAppCoordinator(window: window)
         coordinator.start()
         return coordinator
     }

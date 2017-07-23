@@ -8,13 +8,13 @@ protocol CategorySelectionCoordinatorDelegate: class {
 }
 
 struct CategorySelectionDependencies: CategorySelectionCoordinator.Dependencies {
-    let navigator: Navigator
+    let navigationCoordinator: NavigationCoordinator
     let categorySelectionListViewWireframe: CategorySelectionListViewWireframe
 }
 
 class CategorySelectionCoordinator {
 
-    typealias Dependencies = HasNavigator & HasCategorySelectionListViewWireframe
+    typealias Dependencies = HasNavigationCoordinator & HasCategorySelectionListViewWireframe
 
     private let dependencies: Dependencies
     private let categorySelectionInteractor = CategorySelectionInteractor()
@@ -35,7 +35,7 @@ class CategorySelectionCoordinator {
     @discardableResult private func pushAndUpdateCategorySelectionList(for categoryID: CategoryID? = nil) -> CategorySelectionListView {
         let categorySelectionListView = dependencies.categorySelectionListViewWireframe.make()
         categorySelectionListView.delegate = self
-        dependencies.navigator.push(view: categorySelectionListView)
+        dependencies.navigationCoordinator.push(view: categorySelectionListView)
         update(categorySelectionListView: categorySelectionListView, parentCategoryID: categoryID)
         return categorySelectionListView
     }

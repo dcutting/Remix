@@ -2,7 +2,7 @@
 
 import Foundation
 
-protocol MasterDetailCoordinator {
+protocol SplitCoordinator {
     var master: Viewable? { get set }
     var detail: Viewable? { get set }
 }

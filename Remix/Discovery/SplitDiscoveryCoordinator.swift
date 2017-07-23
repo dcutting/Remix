@@ -4,23 +4,23 @@ import UIKit
 
 class SplitDiscoveryCoordinator {
 
-    var splitCoordinator: MasterDetailCoordinator
+    var splitCoordinator: SplitCoordinator
     let discoveryInteractor = DiscoveryInteractor()
     let discoveryListFormatter = DiscoveryListFormatter()
     let discoveryDetailFormatter = DiscoveryDetailFormatter()
     var discoveryListView: DiscoveryListViewController?
-    let listNavigator = NavigatorController()
+    let listNavigationCoordinator = UINavigationCoordinator()
     var categorySelectionCoordinator: CategorySelectionCoordinator?
 
-    init(splitCoordinator: MasterDetailCoordinator) {
+    init(splitCoordinator: SplitCoordinator) {
         self.splitCoordinator = splitCoordinator
-        self.splitCoordinator.master = listNavigator
+        self.splitCoordinator.master = listNavigationCoordinator
     }
 
     func start() {
         let listView = DiscoveryListViewController()
         listView.delegate = self
-        listNavigator.push(view: listView)
+        listNavigationCoordinator.push(view: listView)
         self.discoveryListView = listView
         updateListView()
     }
@@ -49,20 +49,20 @@ extension SplitDiscoveryCoordinator: DiscoveryListViewDelegate {
     }
 
     func doesWantFilters() {
-        let selectionNavigator = NavigatorController()
-        selectionNavigator.viewController?.modalPresentationStyle = .popover
-        let categorySelectionCoordinator = makeCategorySelectionCoordinator(navigator: selectionNavigator)
+        let selectionNavigationCoordinator = UINavigationCoordinator()
+        selectionNavigationCoordinator.viewController?.modalPresentationStyle = .popover
+        let categorySelectionCoordinator = makeCategorySelectionCoordinator(navigationCoordinator: selectionNavigationCoordinator)
         categorySelectionCoordinator.delegate = self
         self.categorySelectionCoordinator = categorySelectionCoordinator
-        listNavigator.viewController?.present(selectionNavigator.viewController!, animated: true)
-        selectionNavigator.viewController?.popoverPresentationController?.sourceView = selectionNavigator.viewController?.view
+        listNavigationCoordinator.viewController?.present(selectionNavigationCoordinator.viewController!, animated: true)
+        selectionNavigationCoordinator.viewController?.popoverPresentationController?.sourceView = selectionNavigationCoordinator.viewController?.view
         categorySelectionCoordinator.start()
     }
 
-    private func makeCategorySelectionCoordinator(navigator: Navigator) -> CategorySelectionCoordinator {
+    private func makeCategorySelectionCoordinator(navigationCoordinator: NavigationCoordinator) -> CategorySelectionCoordinator {
         let wireframe = CategorySelectionListViewControllerWireframe()
         let coordinatorDependencies = CategorySelectionDependencies(
-            navigator: navigator,
+            navigationCoordinator: navigationCoordinator,
             categorySelectionListViewWireframe: wireframe
         )
         return CategorySelectionCoordinator(dependencies: coordinatorDependencies)
@@ -82,6 +82,6 @@ extension SplitDiscoveryCoordinator: CategorySelectionCoordinatorDelegate {
 
     private func finishCategorySelection() {
         categorySelectionCoordinator = nil
-        listNavigator.viewController?.dismiss(animated: true)
+        listNavigationCoordinator.viewController?.dismiss(animated: true)
     }
 }

@@ -2,8 +2,8 @@
 
 import UIKit
 
-// Implements the Navigator for use with UIKit components (using a UINavigationController).
-class NavigatorController: UINavigationController, Navigator, Viewable {
+// Implements the NavigationCoordinator for use with UIKit components (using a UINavigationController).
+class UINavigationCoordinator: UINavigationController, NavigationCoordinator, Viewable {
 
     private var popCheckpoints = [UIViewController]()
 
@@ -35,7 +35,7 @@ class NavigatorController: UINavigationController, Navigator, Viewable {
     }
 }
 
-extension NavigatorController: UINavigationControllerDelegate {
+extension UINavigationCoordinator: UINavigationControllerDelegate {
 
     func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
 
@@ -48,6 +48,6 @@ extension NavigatorController: UINavigationControllerDelegate {
 
         guard let navigatable = fromViewController as? Navigatable else { return }
 
-        navigatable.navigatorDidGoBack()
+        navigatable.navigationCoordinatorDidGoBack()
     }
 }

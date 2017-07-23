@@ -2,7 +2,7 @@
 
 import UIKit
 
-class SplitMasterDetailCoordinator: UISplitViewController, MasterDetailCoordinator, Viewable {
+class UISplitCoordinator: UISplitViewController, SplitCoordinator, Viewable {
 
     init() {
         super.init(nibName: nil, bundle: nil)
