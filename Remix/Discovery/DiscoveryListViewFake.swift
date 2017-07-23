@@ -9,6 +9,7 @@ class DiscoveryListViewFakeWireframe: DiscoveryListViewWireframe {
 }
 
 class DiscoveryListViewFake: DiscoveryListView {
+    var navigationID = UUID()
     weak var delegate: DiscoveryListViewDelegate?
     var viewData: DiscoveryListViewData?
 }

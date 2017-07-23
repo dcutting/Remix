@@ -9,5 +9,6 @@ class DetailViewFakeWireframe: DetailViewWireframe {
 }
 
 class DetailViewFake: DetailView {
+    var navigationID = UUID()
     var viewData: DetailViewData?
 }

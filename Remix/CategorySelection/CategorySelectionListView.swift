@@ -18,6 +18,13 @@ protocol CategorySelectionListView: Navigatable {
 protocol CategorySelectionListViewDelegate: class {
     func didSelect(categoryID: CategoryID)
     func didResetSelection()
+    func didCancelSelection(navigationID: UUID)
+}
+
+extension CategorySelectionListView {
+    func didGoBack() {
+        delegate?.didCancelSelection(navigationID: navigationID)
+    }
 }
 
 struct CategorySelectionListViewData {

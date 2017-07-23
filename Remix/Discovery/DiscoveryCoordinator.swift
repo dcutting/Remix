@@ -78,7 +78,7 @@ extension DiscoveryCoordinator: CategorySelectionCoordinatorDelegate {
         categorySelection = nil
     }
 
-    func didCancel() {
+    func didCancelSelection() {
         categorySelection = nil
     }
 }

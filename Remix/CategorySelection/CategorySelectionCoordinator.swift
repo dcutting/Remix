@@ -4,7 +4,7 @@ import Foundation
 
 protocol CategorySelectionCoordinatorDelegate: class {
     func didSelect(categoryID: CategoryID?)
-    func didCancel()
+    func didCancelSelection()
 }
 
 struct CategorySelectionDependencies: CategorySelectionCoordinator.Dependencies {
@@ -19,6 +19,7 @@ class CategorySelectionCoordinator {
     private let dependencies: Dependencies
     private let categorySelectionInteractor = CategorySelectionInteractor()
     private let categorySelectionListFormatter = CategorySelectionListFormatter()
+    private var rootNavigationID: UUID?
 
     weak var delegate: CategorySelectionCoordinatorDelegate?
 
@@ -28,20 +29,15 @@ class CategorySelectionCoordinator {
 
     func start() {
         dependencies.navigator.setPopCheckpoint()
-        pushCategorySelectionList()
+        rootNavigationID = pushCategorySelectionList()
     }
 
-    private func pushCategorySelectionList(for categoryID: CategoryID? = nil) {
+    @discardableResult private func pushCategorySelectionList(for categoryID: CategoryID? = nil) -> UUID {
         var categorySelectionListView = dependencies.categorySelectionListViewWireframe.make()
         categorySelectionListView.delegate = self
-        if categoryID == nil {
-            dependencies.navigator.push(view: categorySelectionListView) { [weak self] in
-                self?.delegate?.didCancel()
-            }
-        } else {
-            dependencies.navigator.push(view: categorySelectionListView)
-        }
+        dependencies.navigator.push(view: categorySelectionListView)
         update(categorySelectionListView: categorySelectionListView, parentCategoryID: categoryID)
+        return categorySelectionListView.navigationID
     }
 
     private func update(categorySelectionListView: CategorySelectionListView, parentCategoryID: CategoryID?) {
@@ -70,5 +66,11 @@ extension CategorySelectionCoordinator: CategorySelectionListViewDelegate {
     func didResetSelection() {
         dependencies.navigator.pop()
         delegate?.didSelect(categoryID: nil)
+    }
+
+    func didCancelSelection(navigationID: UUID) {
+        if navigationID == rootNavigationID {
+            delegate?.didCancelSelection()
+        }
     }
 }

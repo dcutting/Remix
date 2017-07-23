@@ -13,7 +13,6 @@ class NavigatorController: NSObject, Navigator {
 
     let navigationController = UINavigationController()
     private var popCheckpoints = [UIViewController]()
-    private var popTriggers = [UIViewController: () -> Void]()
 
     override init() {
         super.init()
@@ -22,12 +21,6 @@ class NavigatorController: NSObject, Navigator {
 
     func push(view: Navigatable) {
         guard let viewController = view.viewController else { return }
-        navigationController.pushViewController(viewController, animated: true)
-    }
-
-    func push(view: Navigatable, onPop: @escaping () -> Void) {
-        guard let viewController = view.viewController else { return }
-        popTriggers[viewController] = onPop
         navigationController.pushViewController(viewController, animated: true)
     }
 
@@ -56,8 +49,8 @@ extension NavigatorController: UINavigationControllerDelegate {
             return
         }
 
-        if let onPop = popTriggers.removeValue(forKey: fromViewController) {
-            onPop()
-        }
+        guard let navigatable = fromViewController as? Navigatable else { return }
+
+        navigatable.didGoBack()
     }
 }

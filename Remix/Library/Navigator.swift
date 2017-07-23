@@ -2,11 +2,17 @@
 
 import Foundation
 
-protocol Navigatable {}
+protocol Navigatable {
+    var navigationID: UUID { get }
+    func didGoBack()
+}
+
+extension Navigatable {
+    func didGoBack() {}
+}
 
 protocol Navigator {
     func push(view: Navigatable)
-    func push(view: Navigatable, onPop: @escaping () -> Void)
     func pop()
     func setPopCheckpoint()
 }
