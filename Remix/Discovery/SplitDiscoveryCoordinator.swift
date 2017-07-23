@@ -2,6 +2,7 @@
 
 import Foundation
 
-class DiscoveryCoordinator_iPad {
+class SplitDiscoveryCoordinator {
+
 
 }

@@ -2,7 +2,7 @@
 
 import UIKit
 
-class AppCoordinator_iPad {
+class SplitAppCoordinator {
 
     private let navigator = NavigatorController()
 

@@ -2,13 +2,13 @@
 
 import Foundation
 
-struct DiscoveryCoordinatorDependencies: DiscoveryCoordinator.Dependencies {
+struct NavigatorDiscoveryCoordinatorDependencies: NavigatorDiscoveryCoordinator.Dependencies {
     let navigator: Navigator
     let discoveryListViewWireframe: DiscoveryListViewWireframe
     let detailViewWireframe: DetailViewWireframe
 }
 
-class DiscoveryCoordinator {
+class NavigatorDiscoveryCoordinator {
 
     typealias Dependencies = HasNavigator & HasDiscoveryListViewWireframe & HasDetailViewWireframe
 
@@ -30,7 +30,7 @@ class DiscoveryCoordinator {
     }
 }
 
-extension DiscoveryCoordinator: DiscoveryListViewDelegate {
+extension NavigatorDiscoveryCoordinator: DiscoveryListViewDelegate {
 
     private func pushListView() {
         let view = dependencies.discoveryListViewWireframe.make()
@@ -59,7 +59,7 @@ extension DiscoveryCoordinator: DiscoveryListViewDelegate {
     }
 }
 
-extension DiscoveryCoordinator {
+extension NavigatorDiscoveryCoordinator {
 
     private func pushDetailView(forClassifiedAdID classifiedAdID: ClassifiedAdID) {
         discoveryInteractor.fetchDetail(for: classifiedAdID) { [weak self] ad in
@@ -75,7 +75,7 @@ extension DiscoveryCoordinator {
     }
 }
 
-extension DiscoveryCoordinator: CategorySelectionCoordinatorDelegate {
+extension NavigatorDiscoveryCoordinator: CategorySelectionCoordinatorDelegate {
 
     private func startCategorySelection() {
         let coordinator = makeCategorySelectionCoordinator()

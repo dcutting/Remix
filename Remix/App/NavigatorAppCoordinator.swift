@@ -2,10 +2,10 @@
 
 import UIKit
 
-class AppCoordinator {
+class NavigatorAppCoordinator {
 
     private let navigator = NavigatorController()
-    private var discovery: DiscoveryCoordinator?
+    private var discovery: NavigatorDiscoveryCoordinator?
 
     init(window: UIWindow) {
         window.rootViewController = navigator.rootViewController
@@ -14,12 +14,12 @@ class AppCoordinator {
     func start() {
         let listWireframe = DiscoveryListViewControllerWireframe()
         let detailWireframe = DetailViewControllerWireframe()
-        let dependencies = DiscoveryCoordinatorDependencies(
+        let dependencies = NavigatorDiscoveryCoordinatorDependencies(
             navigator: navigator,
             discoveryListViewWireframe: listWireframe,
             detailViewWireframe: detailWireframe
         )
-        discovery = DiscoveryCoordinator(dependencies: dependencies)
+        discovery = NavigatorDiscoveryCoordinator(dependencies: dependencies)
         discovery?.start()
     }
 }

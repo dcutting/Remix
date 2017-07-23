@@ -23,13 +23,13 @@ import UIKit
     }
 
     private func start_iPad(window: UIWindow) -> Any {
-        let coordinator = AppCoordinator_iPad(window: window)
+        let coordinator = SplitAppCoordinator(window: window)
         coordinator.start()
         return coordinator
     }
 
     private func start_iPhone(window: UIWindow) -> Any {
-        let coordinator = AppCoordinator(window: window)
+        let coordinator = NavigatorAppCoordinator(window: window)
         coordinator.start()
         return coordinator
     }
