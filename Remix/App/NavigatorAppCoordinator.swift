@@ -8,7 +8,7 @@ class NavigatorAppCoordinator {
     private var discovery: NavigatorDiscoveryCoordinator?
 
     init(window: UIWindow) {
-        window.rootViewController = navigator.rootViewController
+        window.rootViewController = navigator.viewController
     }
 
     func start() {

@@ -3,42 +3,40 @@
 import UIKit
 
 extension Navigatable {
-
-    var viewController: UIViewController? {
+    public var viewController: UIViewController? {
         return self as? UIViewController
     }
 }
 
 // Implements the Navigator for use with UIKit components (using a UINavigationController).
-class NavigatorController: NSObject, Navigator {
+class NavigatorController: UINavigationController, Navigator, Navigatable {
 
-    var rootViewController: UIViewController {
-        return navigationController
-    }
-
-    private let navigationController = UINavigationController()
     private var popCheckpoints = [UIViewController]()
 
-    override init() {
-        super.init()
-        navigationController.delegate = self
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        delegate = self
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        preconditionFailure("use init()")
     }
 
     func push(view: Navigatable) {
         guard let viewController = view.viewController else { return }
-        navigationController.pushViewController(viewController, animated: true)
+        pushViewController(viewController, animated: true)
     }
 
     func pop() {
         if let popCheckpoint = popCheckpoints.popLast() {
-            navigationController.popToViewController(popCheckpoint, animated: true)
+            popToViewController(popCheckpoint, animated: true)
         } else {
-            navigationController.popToRootViewController(animated: true)
+            popToRootViewController(animated: true)
         }
     }
 
     func setPopCheckpoint() {
-        guard let popPoint = navigationController.topViewController else { return }
+        guard let popPoint = topViewController else { return }
         popCheckpoints.append(popPoint)
     }
 }

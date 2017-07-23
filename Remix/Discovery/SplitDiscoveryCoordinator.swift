@@ -4,7 +4,7 @@ import UIKit
 
 class SplitDiscoveryCoordinator {
 
-    let splitCoordinator: UISplitViewController
+    var splitCoordinator: MasterDetailCoordinator
     let discoveryInteractor = DiscoveryInteractor()
     let discoveryListFormatter = DiscoveryListFormatter()
     let discoveryDetailFormatter = DiscoveryDetailFormatter()
@@ -12,10 +12,9 @@ class SplitDiscoveryCoordinator {
     let listNavigator = NavigatorController()
     var categorySelectionCoordinator: CategorySelectionCoordinator?
 
-    init(splitCoordinator: UISplitViewController) {
+    init(splitCoordinator: MasterDetailCoordinator) {
         self.splitCoordinator = splitCoordinator
-        splitCoordinator.viewControllers = [listNavigator.rootViewController]
-        splitCoordinator.preferredDisplayMode = .allVisible
+        self.splitCoordinator.master = listNavigator
     }
 
     func start() {
@@ -45,18 +44,18 @@ extension SplitDiscoveryCoordinator: DiscoveryListViewDelegate {
             guard let ad = ad else { preconditionFailure() }
             let detailView = DetailViewControllerWireframe().make()
             detailView.viewData = discoveryDetailFormatter.prepare(ad: ad)
-            splitCoordinator.showDetailViewController(detailView as! UIViewController, sender: nil)
+            splitCoordinator.detail = detailView
         }
     }
 
     func doesWantFilters() {
         let selectionNavigator = NavigatorController()
-        selectionNavigator.rootViewController.modalPresentationStyle = .popover
+        selectionNavigator.viewController?.modalPresentationStyle = .popover
         let categorySelectionCoordinator = makeCategorySelectionCoordinator(navigator: selectionNavigator)
         categorySelectionCoordinator.delegate = self
         self.categorySelectionCoordinator = categorySelectionCoordinator
-        listNavigator.rootViewController.present(selectionNavigator.rootViewController, animated: true)
-        selectionNavigator.rootViewController.popoverPresentationController?.sourceView = selectionNavigator.rootViewController.view
+        listNavigator.viewController?.present(selectionNavigator.viewController!, animated: true)
+        selectionNavigator.viewController?.popoverPresentationController?.sourceView = selectionNavigator.viewController?.view
         categorySelectionCoordinator.start()
     }
 
@@ -83,6 +82,6 @@ extension SplitDiscoveryCoordinator: CategorySelectionCoordinatorDelegate {
 
     private func finishCategorySelection() {
         categorySelectionCoordinator = nil
-        listNavigator.rootViewController.dismiss(animated: true)
+        listNavigator.viewController?.dismiss(animated: true)
     }
 }
