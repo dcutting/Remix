@@ -25,6 +25,8 @@
 		C84C23641F17B9990038E879 /* NavigatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23631F17B9990038E879 /* NavigatorController.swift */; };
 		C84C23661F17BBBA0038E879 /* DiscoveryListViewFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23651F17BBBA0038E879 /* DiscoveryListViewFake.swift */; };
 		C84C23681F17BCB00038E879 /* DetailViewFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23671F17BCB00038E879 /* DetailViewFake.swift */; };
+		C84D33081F24CEFB005BD99A /* DiscoveryCoordinator_iPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84D33071F24CEFB005BD99A /* DiscoveryCoordinator_iPad.swift */; };
+		C84D330A1F24CFB9005BD99A /* AppCoordinator_iPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84D33091F24CFB9005BD99A /* AppCoordinator_iPad.swift */; };
 		C87C0A5F1F17C3FA00715A9E /* DiscoveryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C0A5E1F17C3FA00715A9E /* DiscoveryInteractor.swift */; };
 		C87C0A611F17C52D00715A9E /* DiscoveryListFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C0A601F17C52D00715A9E /* DiscoveryListFormatter.swift */; };
 		C88651CA1F1F99C50085E239 /* SampleCategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88651C91F1F99C50085E239 /* SampleCategoryService.swift */; };
@@ -73,6 +75,8 @@
 		C84C23631F17B9990038E879 /* NavigatorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorController.swift; sourceTree = "<group>"; };
 		C84C23651F17BBBA0038E879 /* DiscoveryListViewFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryListViewFake.swift; sourceTree = "<group>"; };
 		C84C23671F17BCB00038E879 /* DetailViewFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewFake.swift; sourceTree = "<group>"; };
+		C84D33071F24CEFB005BD99A /* DiscoveryCoordinator_iPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryCoordinator_iPad.swift; sourceTree = "<group>"; };
+		C84D33091F24CFB9005BD99A /* AppCoordinator_iPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator_iPad.swift; sourceTree = "<group>"; };
 		C87C0A5E1F17C3FA00715A9E /* DiscoveryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryInteractor.swift; sourceTree = "<group>"; };
 		C87C0A601F17C52D00715A9E /* DiscoveryListFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryListFormatter.swift; sourceTree = "<group>"; };
 		C88651C81F1F99840085E239 /* CategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryService.swift; sourceTree = "<group>"; };
@@ -157,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				C84C233E1F17AC760038E879 /* AppCoordinator.swift */,
+				C84D33091F24CFB9005BD99A /* AppCoordinator_iPad.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -183,6 +188,7 @@
 				C84C23651F17BBBA0038E879 /* DiscoveryListViewFake.swift */,
 				C8B86F541F1F7C4000BDCE50 /* DiscoveryListViewController.swift */,
 				C8B86F5C1F1F890D00BDCE50 /* DiscoveryDetailFormatter.swift */,
+				C84D33071F24CEFB005BD99A /* DiscoveryCoordinator_iPad.swift */,
 			);
 			path = Discovery;
 			sourceTree = "<group>";
@@ -346,6 +352,7 @@
 			files = (
 				C8B86F631F1F924700BDCE50 /* CategorySelectionListFormatter.swift in Sources */,
 				C87C0A611F17C52D00715A9E /* DiscoveryListFormatter.swift in Sources */,
+				C84D330A1F24CFB9005BD99A /* AppCoordinator_iPad.swift in Sources */,
 				C84C23641F17B9990038E879 /* NavigatorController.swift in Sources */,
 				C84C235B1F17B5C30038E879 /* ClassifiedAd.swift in Sources */,
 				C84C23401F17ACE20038E879 /* CategorySelectionCoordinator.swift in Sources */,
@@ -361,6 +368,7 @@
 				C84C231B1F17AB770038E879 /* AppDelegate.swift in Sources */,
 				C88651CB1F1F99E60085E239 /* CategoryService.swift in Sources */,
 				C84C23661F17BBBA0038E879 /* DiscoveryListViewFake.swift in Sources */,
+				C84D33081F24CEFB005BD99A /* DiscoveryCoordinator_iPad.swift in Sources */,
 				C8B86F551F1F7C4000BDCE50 /* DiscoveryListViewController.swift in Sources */,
 				C84C234E1F17AE980038E879 /* AppCoordinator.swift in Sources */,
 				C8B86F5D1F1F890D00BDCE50 /* DiscoveryDetailFormatter.swift in Sources */,

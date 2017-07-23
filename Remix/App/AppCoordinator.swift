@@ -1,14 +1,14 @@
 //  Copyright © 2017 cutting.io. All rights reserved.
 
-import Foundation
+import UIKit
 
 class AppCoordinator {
 
-    private let navigator: Navigator
+    private let navigator = NavigatorController()
     private var discovery: DiscoveryCoordinator?
 
-    init(navigator: Navigator) {
-        self.navigator = navigator
+    init(window: UIWindow) {
+        window.rootViewController = navigator.rootViewController
     }
 
     func start() {
