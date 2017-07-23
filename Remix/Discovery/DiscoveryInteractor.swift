@@ -5,16 +5,19 @@ import Foundation
 class DiscoveryInteractor {
 
     let classifiedAdService: ClassifiedAdService = SampleClassifiedAdService()
+    let categoryService: CategoryService = SampleCategoryService()
     
-    func update(selectedCategoryID: CategoryID?, completion: @escaping ([ClassifiedAd]) -> Void) {
+    func update(selectedCategoryID: CategoryID?, completion: @escaping ([ClassifiedAd], [Category]) -> Void) {
         classifiedAdService.fetchClassifiedAds { classifiedAds in
-            if let selected = selectedCategoryID {
-                let filteredAds = classifiedAds.filter { ad in
-                    ad.category == selected
+            categoryService.fetchCategories { categories in
+                if let selected = selectedCategoryID {
+                    let filteredAds = classifiedAds.filter { ad in
+                        ad.category == selected
+                    }
+                    completion(filteredAds, categories)
+                } else {
+                    completion(classifiedAds, categories)
                 }
-                completion(filteredAds)
-            } else {
-                completion(classifiedAds)
             }
         }
     }

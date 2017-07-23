@@ -13,6 +13,10 @@ class SampleCategoryService: CategoryService {
         Category(categoryID: "10", parent: nil, children: [], title: "Cars")
     ]
 
+    func fetchCategories(completion: ([Category]) -> Void) {
+        completion(categories)
+    }
+
     func fetch(categoryID: CategoryID, completion: (Category?) -> Void) {
         let category = categories.first { category in
             category.categoryID == categoryID

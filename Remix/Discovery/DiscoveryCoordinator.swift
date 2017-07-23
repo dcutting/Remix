@@ -40,13 +40,13 @@ extension DiscoveryCoordinator: DiscoveryListViewDelegate {
     }
 
     private func updateListView(forSelectedCategoryID selectedCategoryID: CategoryID? = nil) {
-        discoveryInteractor.update(selectedCategoryID: selectedCategoryID) { [weak self] ads in
-            self?.updateListView(withAds: ads)
+        discoveryInteractor.update(selectedCategoryID: selectedCategoryID) { [weak self] (ads, categories) in
+            self?.updateListView(withAds: ads, categories: categories)
         }
     }
 
-    private func updateListView(withAds ads: [ClassifiedAd]) {
-        let viewData = discoveryListFormatter.prepare(ads: ads)
+    private func updateListView(withAds ads: [ClassifiedAd], categories: [Category]) {
+        let viewData = discoveryListFormatter.prepare(ads: ads, categories: categories)
         discoveryListView?.viewData = viewData
     }
 
