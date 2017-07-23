@@ -28,6 +28,9 @@ class SplitDiscoveryCoordinator {
 
 extension SplitDiscoveryCoordinator: DiscoveryListViewDelegate {
 
+    // TODO: consider pulling out the list to its own coordinator since there is a fair amount
+    // of duplicate code from the NavigationDiscoveryCoordinator.
+
     private func pushListView() {
         let view = discoveryListViewWireframe.make()
         view.delegate = self
@@ -54,6 +57,8 @@ extension SplitDiscoveryCoordinator: DiscoveryListViewDelegate {
             splitCoordinator.detail = detailView
         }
     }
+
+    // TODO: consider making a popover coordinator to abstract these details.
 
     func doesWantFilters() {
         let selectionNavigationCoordinator = UINavigationCoordinator()
