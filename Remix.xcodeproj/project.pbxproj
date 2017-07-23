@@ -42,6 +42,7 @@
 		C8E4B7EA1F25397100E9EB44 /* SplitDiscoveryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84D330B1F24D4C1005BD99A /* SplitDiscoveryCoordinator.swift */; };
 		C8E4B7EE1F254C9B00E9EB44 /* MasterDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E4B7ED1F254C4500E9EB44 /* MasterDetailCoordinator.swift */; };
 		C8E4B7F01F254CCE00E9EB44 /* SplitMasterDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E4B7EF1F254CCE00E9EB44 /* SplitMasterDetailCoordinator.swift */; };
+		C8E4B7F21F25533100E9EB44 /* Viewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E4B7F11F25533100E9EB44 /* Viewable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		C8D350D11F24D59B00745FFA /* NavigatorAppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorAppCoordinator.swift; sourceTree = "<group>"; };
 		C8E4B7ED1F254C4500E9EB44 /* MasterDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterDetailCoordinator.swift; sourceTree = "<group>"; };
 		C8E4B7EF1F254CCE00E9EB44 /* SplitMasterDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitMasterDetailCoordinator.swift; sourceTree = "<group>"; };
+		C8E4B7F11F25533100E9EB44 /* Viewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viewable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +231,7 @@
 		C84C23601F17B7C70038E879 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				C8E4B7F11F25533100E9EB44 /* Viewable.swift */,
 				C84C23611F17B7C70038E879 /* Navigator.swift */,
 				C84C23631F17B9990038E879 /* NavigatorController.swift */,
 				C8E4B7ED1F254C4500E9EB44 /* MasterDetailCoordinator.swift */,
@@ -368,6 +371,7 @@
 				C8E4B7F01F254CCE00E9EB44 /* SplitMasterDetailCoordinator.swift in Sources */,
 				C88651D31F1FB5A30085E239 /* SampleClassifiedAdService.swift in Sources */,
 				C84C234C1F17AE0D0038E879 /* AutoCategoryInsertionCoordinator.swift in Sources */,
+				C8E4B7F21F25533100E9EB44 /* Viewable.swift in Sources */,
 				C84C234D1F17AE960038E879 /* NavigatorDiscoveryCoordinator.swift in Sources */,
 				C87C0A5F1F17C3FA00715A9E /* DiscoveryInteractor.swift in Sources */,
 				C8D350D21F24D5D600745FFA /* NavigatorAppCoordinator.swift in Sources */,

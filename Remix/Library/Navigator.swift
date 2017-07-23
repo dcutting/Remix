@@ -2,7 +2,7 @@
 
 import Foundation
 
-protocol Navigatable: class {
+protocol Navigatable: Viewable {
     func navigatorDidGoBack()
 }
 

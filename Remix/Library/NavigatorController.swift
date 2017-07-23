@@ -2,14 +2,8 @@
 
 import UIKit
 
-extension Navigatable {
-    public var viewController: UIViewController? {
-        return self as? UIViewController
-    }
-}
-
 // Implements the Navigator for use with UIKit components (using a UINavigationController).
-class NavigatorController: UINavigationController, Navigator, Navigatable {
+class NavigatorController: UINavigationController, Navigator, Viewable {
 
     private var popCheckpoints = [UIViewController]()
 

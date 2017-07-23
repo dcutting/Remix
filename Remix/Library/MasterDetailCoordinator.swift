@@ -3,6 +3,6 @@
 import Foundation
 
 protocol MasterDetailCoordinator {
-    var master: Navigatable? { get set }
-    var detail: Navigatable? { get set }
+    var master: Viewable? { get set }
+    var detail: Viewable? { get set }
 }

@@ -2,7 +2,7 @@
 
 import UIKit
 
-class SplitMasterDetailCoordinator: UISplitViewController, MasterDetailCoordinator, Navigatable {
+class SplitMasterDetailCoordinator: UISplitViewController, MasterDetailCoordinator, Viewable {
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -13,14 +13,14 @@ class SplitMasterDetailCoordinator: UISplitViewController, MasterDetailCoordinat
         preconditionFailure("use init()")
     }
 
-    var master: Navigatable? {
+    var master: Viewable? {
         didSet {
             guard let viewController = master?.viewController else { return }
             viewControllers = [viewController]
         }
     }
 
-    var detail: Navigatable? {
+    var detail: Viewable? {
         didSet {
             guard let viewController = detail?.viewController else { return }
             showDetailViewController(viewController, sender: nil)
