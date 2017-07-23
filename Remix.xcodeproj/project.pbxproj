@@ -130,7 +130,6 @@
 		C84C23191F17AB770038E879 /* Remix */ = {
 			isa = PBXGroup;
 			children = (
-				C84C231A1F17AB770038E879 /* AppDelegate.swift */,
 				C84C233D1F17AC760038E879 /* App */,
 				C84C23461F17AD6A0038E879 /* Discovery */,
 				C84C234F1F17AFF00038E879 /* Detail */,
@@ -159,6 +158,7 @@
 		C84C233D1F17AC760038E879 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				C84C231A1F17AB770038E879 /* AppDelegate.swift */,
 				C8D350D11F24D59B00745FFA /* NavigatorAppCoordinator.swift */,
 				C84D33091F24CFB9005BD99A /* SplitAppCoordinator.swift */,
 			);
