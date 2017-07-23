@@ -15,8 +15,6 @@ class DetailViewController: UIViewController, DetailView {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
 
-    var navigationID = UUID()
-
     var viewData: DetailViewData? {
         didSet {
             update()

@@ -1,3 +1,6 @@
+
+
+
 //  Copyright © 2017 cutting.io. All rights reserved.
 
 import Foundation
@@ -19,7 +22,7 @@ class CategorySelectionCoordinator {
     private let dependencies: Dependencies
     private let categorySelectionInteractor = CategorySelectionInteractor()
     private let categorySelectionListFormatter = CategorySelectionListFormatter()
-    private var rootNavigationID: UUID?
+    private var rootCategorySelectionListView: CategorySelectionListView?
 
     weak var delegate: CategorySelectionCoordinatorDelegate?
 
@@ -29,19 +32,19 @@ class CategorySelectionCoordinator {
 
     func start() {
         dependencies.navigator.setPopCheckpoint()
-        rootNavigationID = pushCategorySelectionList()
+        rootCategorySelectionListView = pushCategorySelectionList()
     }
 
-    @discardableResult private func pushCategorySelectionList(for categoryID: CategoryID? = nil) -> UUID {
-        var categorySelectionListView = dependencies.categorySelectionListViewWireframe.make()
+    @discardableResult private func pushCategorySelectionList(for categoryID: CategoryID? = nil) -> CategorySelectionListView {
+        let categorySelectionListView = dependencies.categorySelectionListViewWireframe.make()
         categorySelectionListView.delegate = self
         dependencies.navigator.push(view: categorySelectionListView)
         update(categorySelectionListView: categorySelectionListView, parentCategoryID: categoryID)
-        return categorySelectionListView.navigationID
+        return categorySelectionListView
     }
 
     private func update(categorySelectionListView: CategorySelectionListView, parentCategoryID: CategoryID?) {
-        var view = categorySelectionListView
+        let view = categorySelectionListView
         categorySelectionInteractor.fetchCategories(parentCategoryID: parentCategoryID) { categories in
             let viewData = categorySelectionListFormatter.prepare(categories: categories)
             view.viewData = viewData
@@ -68,8 +71,8 @@ extension CategorySelectionCoordinator: CategorySelectionListViewDelegate {
         delegate?.didSelect(categoryID: nil)
     }
 
-    func didCancelSelection(navigationID: UUID) {
-        if navigationID == rootNavigationID {
+    func didCancelSelection(view: CategorySelectionListView) {
+        if view === rootCategorySelectionListView {
             delegate?.didCancelSelection()
         }
     }

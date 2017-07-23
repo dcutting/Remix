@@ -10,7 +10,6 @@ class DiscoveryListViewControllerWireframe: DiscoveryListViewWireframe {
 
 class DiscoveryListViewController: UITableViewController, DiscoveryListView {
 
-    var navigationID = UUID()
     weak var delegate: DiscoveryListViewDelegate?
     var viewData: DiscoveryListViewData? {
         didSet {

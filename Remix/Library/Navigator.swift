@@ -2,8 +2,7 @@
 
 import Foundation
 
-protocol Navigatable {
-    var navigationID: UUID { get }
+protocol Navigatable: class {
     func didGoBack()
 }
 
@@ -20,4 +19,3 @@ protocol Navigator {
 protocol HasNavigator {
     var navigator: Navigator { get }
 }
-

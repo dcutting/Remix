@@ -10,7 +10,6 @@ class CategorySelectionListViewControllerWireframe: CategorySelectionListViewWir
 
 class CategorySelectionListViewController: UITableViewController, CategorySelectionListView {
 
-    var navigationID = UUID()
     weak var delegate: CategorySelectionListViewDelegate?
     var viewData: CategorySelectionListViewData? {
         didSet {
