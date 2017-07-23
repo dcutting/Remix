@@ -2,7 +2,7 @@
 
 import Foundation
 
-class DiscoveryFormatter {
+class DiscoveryListFormatter {
 
     func prepare(ads: [ClassifiedAd]) -> DiscoveryListViewData {
         let items = ads.map { ad in

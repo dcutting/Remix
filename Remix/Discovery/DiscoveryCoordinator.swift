@@ -13,72 +13,96 @@ class DiscoveryCoordinator {
     typealias Dependencies = HasNavigator & HasDiscoveryListViewWireframe & HasDetailViewWireframe
 
     private let dependencies: Dependencies
-    private let discoveryInteractor: DiscoveryInteractor
+    private let discoveryInteractor = DiscoveryInteractor()
+    private let discoveryListFormatter = DiscoveryListFormatter()
+    private let discoveryDetailFormatter = DiscoveryDetailFormatter()
+    
     private var discoveryListView: DiscoveryListView?
     private var categorySelectionCoordinator: CategorySelectionCoordinator?
 
     init(dependencies: Dependencies) {
         self.dependencies = dependencies
-        discoveryInteractor = DiscoveryInteractor()
     }
 
     func start() {
-        pushDiscoveryListView()
-        updateDiscoveryListView()
-    }
-
-    private func pushDiscoveryListView() {
-        let discoveryListView = dependencies.discoveryListViewWireframe.make()
-        discoveryListView.delegate = self
-        self.discoveryListView = discoveryListView
-        dependencies.navigator.push(view: discoveryListView)
-    }
-
-    private func updateDiscoveryListView(selectedCategoryID: CategoryID? = nil) {
-        discoveryInteractor.update(selectedCategoryID: selectedCategoryID) { [weak self] ads in
-            let viewData = DiscoveryFormatter().prepare(ads: ads)
-            self?.discoveryListView?.viewData = viewData
-        }
+        pushListView()
+        updateListView()
     }
 }
 
 extension DiscoveryCoordinator: DiscoveryListViewDelegate {
 
-    func didSelect(classifiedAdID: ClassifiedAdID) {
-        pushDetailView(for: classifiedAdID)
+    private func pushListView() {
+        let view = dependencies.discoveryListViewWireframe.make()
+        view.delegate = self
+        self.discoveryListView = view
+        dependencies.navigator.push(view: view)
     }
 
-    private func pushDetailView(for classifiedAdID: ClassifiedAdID) {
-        let detailView = dependencies.detailViewWireframe.make()
-        discoveryInteractor.fetchDetail(for: classifiedAdID) { [weak self] classifiedAd in
-            guard let classifiedAd = classifiedAd else { preconditionFailure() }
-            detailView.viewData = DiscoveryDetailFormatter().prepare(item: classifiedAd)
-            self?.dependencies.navigator.push(view: detailView)
+    private func updateListView(forSelectedCategoryID selectedCategoryID: CategoryID? = nil) {
+        discoveryInteractor.update(selectedCategoryID: selectedCategoryID) { [weak self] ads in
+            self?.updateListView(withAds: ads)
         }
+    }
+
+    private func updateListView(withAds ads: [ClassifiedAd]) {
+        let viewData = discoveryListFormatter.prepare(ads: ads)
+        discoveryListView?.viewData = viewData
+    }
+
+    func didSelect(classifiedAdID: ClassifiedAdID) {
+        pushDetailView(forClassifiedAdID: classifiedAdID)
     }
 
     func doesWantFilters() {
         startCategorySelection()
     }
+}
 
-    private func startCategorySelection() {
-        let wireframe = CategorySelectionListViewControllerWireframe()
-        let categorySelectionDependencies = CategorySelectionDependencies(navigator: dependencies.navigator, categorySelectionListViewWireframe: wireframe)
-        let categorySelection = CategorySelectionCoordinator(dependencies: categorySelectionDependencies)
-        categorySelection.delegate = self
-        self.categorySelectionCoordinator = categorySelection
-        categorySelection.start()
+extension DiscoveryCoordinator {
+
+    private func pushDetailView(forClassifiedAdID classifiedAdID: ClassifiedAdID) {
+        discoveryInteractor.fetchDetail(for: classifiedAdID) { [weak self] ad in
+            guard let ad = ad else { preconditionFailure() }
+            self?.pushDetailView(forAd: ad)
+        }
+    }
+
+    private func pushDetailView(forAd ad: ClassifiedAd) {
+        let detailView = dependencies.detailViewWireframe.make()
+        detailView.viewData = discoveryDetailFormatter.prepare(ad: ad)
+        dependencies.navigator.push(view: detailView)
     }
 }
 
 extension DiscoveryCoordinator: CategorySelectionCoordinatorDelegate {
 
+    private func startCategorySelection() {
+        let coordinator = makeCategorySelectionCoordinator()
+        coordinator.delegate = self
+        self.categorySelectionCoordinator = coordinator
+        coordinator.start()
+    }
+
+    private func makeCategorySelectionCoordinator() -> CategorySelectionCoordinator {
+        let wireframe = CategorySelectionListViewControllerWireframe()
+        let coordinatorDependencies = CategorySelectionDependencies(
+            navigator: dependencies.navigator,
+            categorySelectionListViewWireframe: wireframe
+        )
+        return CategorySelectionCoordinator(dependencies: coordinatorDependencies)
+    }
+
     func didSelect(categoryID: CategoryID?) {
-        updateDiscoveryListView(selectedCategoryID: categoryID)
-        categorySelectionCoordinator = nil
+        updateListView(forSelectedCategoryID: categoryID)
+        finishCategorySelection()
     }
 
     func didCancelSelection() {
+        finishCategorySelection()
+    }
+
+    private func finishCategorySelection() {
         categorySelectionCoordinator = nil
     }
 }

@@ -26,7 +26,7 @@
 		C84C23661F17BBBA0038E879 /* DiscoveryListViewFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23651F17BBBA0038E879 /* DiscoveryListViewFake.swift */; };
 		C84C23681F17BCB00038E879 /* DetailViewFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23671F17BCB00038E879 /* DetailViewFake.swift */; };
 		C87C0A5F1F17C3FA00715A9E /* DiscoveryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C0A5E1F17C3FA00715A9E /* DiscoveryInteractor.swift */; };
-		C87C0A611F17C52D00715A9E /* DiscoveryFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C0A601F17C52D00715A9E /* DiscoveryFormatter.swift */; };
+		C87C0A611F17C52D00715A9E /* DiscoveryListFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C0A601F17C52D00715A9E /* DiscoveryListFormatter.swift */; };
 		C88651CA1F1F99C50085E239 /* SampleCategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88651C91F1F99C50085E239 /* SampleCategoryService.swift */; };
 		C88651CB1F1F99E60085E239 /* CategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88651C81F1F99840085E239 /* CategoryService.swift */; };
 		C88651D11F1FB5670085E239 /* ClassifiedAdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88651D01F1FB55E0085E239 /* ClassifiedAdService.swift */; };
@@ -74,7 +74,7 @@
 		C84C23651F17BBBA0038E879 /* DiscoveryListViewFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryListViewFake.swift; sourceTree = "<group>"; };
 		C84C23671F17BCB00038E879 /* DetailViewFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewFake.swift; sourceTree = "<group>"; };
 		C87C0A5E1F17C3FA00715A9E /* DiscoveryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryInteractor.swift; sourceTree = "<group>"; };
-		C87C0A601F17C52D00715A9E /* DiscoveryFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryFormatter.swift; sourceTree = "<group>"; };
+		C87C0A601F17C52D00715A9E /* DiscoveryListFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryListFormatter.swift; sourceTree = "<group>"; };
 		C88651C81F1F99840085E239 /* CategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryService.swift; sourceTree = "<group>"; };
 		C88651C91F1F99C50085E239 /* SampleCategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleCategoryService.swift; sourceTree = "<group>"; };
 		C88651D01F1FB55E0085E239 /* ClassifiedAdService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedAdService.swift; sourceTree = "<group>"; };
@@ -178,7 +178,7 @@
 			children = (
 				C84C23471F17AD6A0038E879 /* DiscoveryCoordinator.swift */,
 				C87C0A5E1F17C3FA00715A9E /* DiscoveryInteractor.swift */,
-				C87C0A601F17C52D00715A9E /* DiscoveryFormatter.swift */,
+				C87C0A601F17C52D00715A9E /* DiscoveryListFormatter.swift */,
 				C84C23521F17B0C30038E879 /* DiscoveryListView.swift */,
 				C84C23651F17BBBA0038E879 /* DiscoveryListViewFake.swift */,
 				C8B86F541F1F7C4000BDCE50 /* DiscoveryListViewController.swift */,
@@ -345,7 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8B86F631F1F924700BDCE50 /* CategorySelectionListFormatter.swift in Sources */,
-				C87C0A611F17C52D00715A9E /* DiscoveryFormatter.swift in Sources */,
+				C87C0A611F17C52D00715A9E /* DiscoveryListFormatter.swift in Sources */,
 				C84C23641F17B9990038E879 /* NavigatorController.swift in Sources */,
 				C84C235B1F17B5C30038E879 /* ClassifiedAd.swift in Sources */,
 				C84C23401F17ACE20038E879 /* CategorySelectionCoordinator.swift in Sources */,

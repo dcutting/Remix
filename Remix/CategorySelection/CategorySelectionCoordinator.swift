@@ -30,10 +30,10 @@ class CategorySelectionCoordinator {
 
     func start() {
         dependencies.navigator.setPopCheckpoint()
-        rootCategorySelectionListView = pushCategorySelectionList()
+        rootCategorySelectionListView = pushAndUpdateCategorySelectionList()
     }
 
-    @discardableResult private func pushCategorySelectionList(for categoryID: CategoryID? = nil) -> CategorySelectionListView {
+    @discardableResult private func pushAndUpdateCategorySelectionList(for categoryID: CategoryID? = nil) -> CategorySelectionListView {
         let categorySelectionListView = dependencies.categorySelectionListViewWireframe.make()
         categorySelectionListView.delegate = self
         dependencies.navigator.push(view: categorySelectionListView)
@@ -59,7 +59,7 @@ extension CategorySelectionCoordinator: CategorySelectionListViewDelegate {
                 dependencies.navigator.pop()
                 delegate?.didSelect(categoryID: categoryID)
             case .parentCategory:
-                pushCategorySelectionList(for: categoryID)
+                pushAndUpdateCategorySelectionList(for: categoryID)
             }
         }
     }
