@@ -6,9 +6,12 @@ class SplitDiscoveryCoordinator {
 
     var splitCoordinator: SplitCoordinator
     let discoveryInteractor = DiscoveryInteractor()
+    let discoveryListViewWireframe = DiscoveryListViewControllerWireframe()
     let discoveryListFormatter = DiscoveryListFormatter()
-    let discoveryDetailFormatter = DiscoveryDetailFormatter()
-    var discoveryListView: DiscoveryListViewController?
+    let detailViewWireframe = DetailViewControllerWireframe()
+    let detailFormatter = DiscoveryDetailFormatter()
+
+    var discoveryListView: DiscoveryListView?
     let listNavigationCoordinator = UINavigationCoordinator()
     var categorySelectionCoordinator: CategorySelectionCoordinator?
 
@@ -18,11 +21,18 @@ class SplitDiscoveryCoordinator {
     }
 
     func start() {
-        let listView = DiscoveryListViewController()
-        listView.delegate = self
-        listNavigationCoordinator.push(view: listView)
-        self.discoveryListView = listView
+        pushListView()
         updateListView()
+    }
+}
+
+extension SplitDiscoveryCoordinator: DiscoveryListViewDelegate {
+
+    private func pushListView() {
+        let view = discoveryListViewWireframe.make()
+        view.delegate = self
+        self.discoveryListView = view
+        listNavigationCoordinator.push(view: view)
     }
 
     private func updateListView(forSelectedCategoryID selectedCategoryID: CategoryID? = nil) {
@@ -35,15 +45,12 @@ class SplitDiscoveryCoordinator {
         let viewData = discoveryListFormatter.prepare(ads: ads, categories: categories)
         discoveryListView?.viewData = viewData
     }
-}
-
-extension SplitDiscoveryCoordinator: DiscoveryListViewDelegate {
 
     func didSelect(classifiedAdID: ClassifiedAdID) {
         discoveryInteractor.fetchDetail(for: classifiedAdID) { ad in
             guard let ad = ad else { preconditionFailure() }
-            let detailView = DetailViewControllerWireframe().make()
-            detailView.viewData = discoveryDetailFormatter.prepare(ad: ad)
+            let detailView = detailViewWireframe.make()
+            detailView.viewData = detailFormatter.prepare(ad: ad)
             splitCoordinator.detail = detailView
         }
     }
@@ -81,7 +88,7 @@ extension SplitDiscoveryCoordinator: CategorySelectionCoordinatorDelegate {
     }
 
     private func finishCategorySelection() {
-        categorySelectionCoordinator = nil
         listNavigationCoordinator.viewController?.dismiss(animated: true)
+        categorySelectionCoordinator = nil
     }
 }
