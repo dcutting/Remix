@@ -27,29 +27,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Cq-Au-HcI">
-                                <rect key="frame" x="16" y="118" width="343" height="49"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="49" id="wRs-TC-KS2"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="HQM-V3-tHE" firstAttribute="trailing" secondItem="tYp-Vq-H64" secondAttribute="trailingMargin" id="1Ef-pa-kbp"/>
                             <constraint firstItem="HQM-V3-tHE" firstAttribute="leading" secondItem="tYp-Vq-H64" secondAttribute="leadingMargin" id="PLG-mR-ex3"/>
-                            <constraint firstItem="HQM-V3-tHE" firstAttribute="trailing" secondItem="3Cq-Au-HcI" secondAttribute="trailing" id="ZTv-0G-Oim"/>
-                            <constraint firstItem="HQM-V3-tHE" firstAttribute="leading" secondItem="3Cq-Au-HcI" secondAttribute="leading" id="mSb-es-jRc"/>
-                            <constraint firstItem="3Cq-Au-HcI" firstAttribute="top" secondItem="HQM-V3-tHE" secondAttribute="bottom" constant="8" symbolic="YES" id="pba-2L-YTS"/>
                             <constraint firstItem="HQM-V3-tHE" firstAttribute="top" secondItem="kIl-iV-gMe" secondAttribute="top" id="uqf-ug-QbQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kIl-iV-gMe"/>
                     </view>
                     <connections>
-                        <outlet property="categoryLabel" destination="3Cq-Au-HcI" id="gok-Qp-F9Z"/>
                         <outlet property="titleLabel" destination="HQM-V3-tHE" id="vKg-XM-z1u"/>
                     </connections>
                 </viewController>

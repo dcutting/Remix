@@ -13,7 +13,6 @@ class DetailViewControllerWireframe: DetailViewWireframe {
 class DetailViewController: UIViewController, DetailView {
 
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var categoryLabel: UILabel!
 
     var viewData: DetailViewData? {
         didSet {
@@ -29,6 +28,5 @@ class DetailViewController: UIViewController, DetailView {
     private func updateView() {
         guard isViewLoaded else { return }
         titleLabel.text = viewData?.title
-        categoryLabel.text = viewData?.category
     }
 }

@@ -16,5 +16,4 @@ protocol DetailView: Navigatable {
 
 struct DetailViewData {
     let title: String
-    let category: String
 }
