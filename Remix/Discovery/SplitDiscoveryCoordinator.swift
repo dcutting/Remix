@@ -67,8 +67,8 @@ extension SplitDiscoveryCoordinator: DiscoveryListViewDelegate {
         categorySelectionCoordinator.delegate = self
         self.categorySelectionCoordinator = categorySelectionCoordinator
         listNavigationCoordinator.viewController?.present(selectionNavigationCoordinator.viewController!, animated: true)
-        selectionNavigationCoordinator.viewController?.popoverPresentationController?.sourceView = selectionNavigationCoordinator.viewController?.view
         categorySelectionCoordinator.start()
+        selectionNavigationCoordinator.viewController?.popoverPresentationController?.sourceView = selectionNavigationCoordinator.viewController?.view
     }
 
     private func makeCategorySelectionCoordinator(navigationCoordinator: NavigationCoordinator) -> CategorySelectionCoordinator {
