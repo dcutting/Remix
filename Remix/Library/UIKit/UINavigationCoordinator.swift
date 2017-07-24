@@ -21,7 +21,7 @@ class UINavigationCoordinator: UINavigationController, NavigationCoordinator, Vi
         pushViewController(viewController, animated: true)
     }
 
-    func pop() {
+    func popToLastCheckpoint() {
         if let popCheckpoint = popCheckpoints.popLast() {
             popToViewController(popCheckpoint, animated: true)
         } else {

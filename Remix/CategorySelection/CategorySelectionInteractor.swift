@@ -20,7 +20,7 @@ class CategorySelectionInteractor {
     }
 
     func fetchCategories(parentCategoryID: CategoryID?, completion: ([Category]) -> Void) {
-        categoryService.fetch(parentCategoryID: parentCategoryID) { categories in
+        categoryService.fetchCategories(withParentCategoryID: parentCategoryID) { categories in
             completion(categories)
         }
     }

@@ -12,7 +12,7 @@ class DiscoveryListFormatter {
     }
 
     private func makeItem(from ad: ClassifiedAd, categories: [Category]) -> DiscoveryListItem {
-        let categoryName = name(for: ad.category, categories: categories)
+        let categoryName = name(for: ad.categoryID, categories: categories)
         return DiscoveryListItem(classifiedAdID: ad.classifiedAdID, title: ad.title, category: categoryName)
     }
 

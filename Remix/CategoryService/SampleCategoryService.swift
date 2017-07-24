@@ -24,7 +24,7 @@ class SampleCategoryService: CategoryService {
         completion(category)
     }
 
-    func fetch(parentCategoryID: CategoryID?, completion: ([Category]) -> Void) {
+    func fetchCategories(withParentCategoryID parentCategoryID: CategoryID?, completion: ([Category]) -> Void) {
         let filteredCategories = categories.filter { category in
             category.parent == parentCategoryID
         }

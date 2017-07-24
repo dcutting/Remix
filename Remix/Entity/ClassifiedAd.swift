@@ -7,5 +7,5 @@ typealias ClassifiedAdID = String
 struct ClassifiedAd {
     let classifiedAdID: ClassifiedAdID
     let title: String
-    let category: CategoryID
+    let categoryID: CategoryID
 }

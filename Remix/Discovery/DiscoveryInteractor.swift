@@ -19,7 +19,7 @@ class DiscoveryInteractor {
     private func filter(ads: [ClassifiedAd], for categoryID: CategoryID?) -> [ClassifiedAd] {
         guard let categoryID = categoryID else { return ads }
         let filteredAds = ads.filter { ad in
-            ad.category == categoryID
+            ad.categoryID == categoryID
         }
         return filteredAds
     }

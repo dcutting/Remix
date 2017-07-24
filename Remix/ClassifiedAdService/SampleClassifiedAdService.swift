@@ -5,10 +5,10 @@ import Foundation
 class SampleClassifiedAdService: ClassifiedAdService {
 
     let classifieds = [
-        ClassifiedAd(classifiedAdID: "1", title: "Specialized", category: "4"),
-        ClassifiedAd(classifiedAdID: "2", title: "Cervelo R2", category: "5"),
-        ClassifiedAd(classifiedAdID: "3", title: "Fiat 500", category: "10"),
-        ClassifiedAd(classifiedAdID: "4", title: "Apollo Jewel", category: "4")
+        ClassifiedAd(classifiedAdID: "1", title: "Specialized", categoryID: "4"),
+        ClassifiedAd(classifiedAdID: "2", title: "Cervelo R2", categoryID: "5"),
+        ClassifiedAd(classifiedAdID: "3", title: "Fiat 500", categoryID: "10"),
+        ClassifiedAd(classifiedAdID: "4", title: "Apollo Jewel", categoryID: "4")
     ]
 
     func fetchClassifiedAds(completion: ([ClassifiedAd]) -> Void) {

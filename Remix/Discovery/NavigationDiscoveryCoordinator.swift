@@ -104,7 +104,7 @@ extension NavigationDiscoveryCoordinator: CategorySelectionCoordinatorDelegate {
     }
 
     private func finishCategorySelection() {
-        dependencies.navigationCoordinator.pop()
+        dependencies.navigationCoordinator.popToLastCheckpoint()
         categorySelectionCoordinator = nil
     }
 }

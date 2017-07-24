@@ -17,7 +17,7 @@ extension Navigatable {
 
 protocol NavigationCoordinator {
     func push(view: Navigatable)
-    func pop()
+    func popToLastCheckpoint()
     func setPopCheckpoint()
 }
 
