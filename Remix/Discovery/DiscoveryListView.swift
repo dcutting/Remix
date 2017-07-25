@@ -2,11 +2,11 @@
 
 import Foundation
 
-protocol HasDiscoveryListViewWireframe {
-    var discoveryListViewWireframe: DiscoveryListViewWireframe { get }
+protocol HasDiscoveryListViewFactory {
+    var discoveryListViewFactory: DiscoveryListViewFactory { get }
 }
 
-protocol DiscoveryListViewWireframe {
+protocol DiscoveryListViewFactory {
     func make() -> DiscoveryListView
 }
 

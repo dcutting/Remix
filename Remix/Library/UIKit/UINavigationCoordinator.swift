@@ -2,7 +2,7 @@
 
 import UIKit
 
-class UINavigationCoordinatorWireframe: NavigationCoordinatorWireframe {
+class UINavigationCoordinatorFactory: NavigationCoordinatorFactory {
     func make() -> NavigationCoordinator {
         return UINavigationCoordinator()
     }

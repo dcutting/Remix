@@ -11,9 +11,9 @@ class SplitAppCoordinator {
         window.rootViewController = splitCoordinator.viewController
         let dependencies = SplitDiscoveryCoordinator.Dependencies(
             splitCoordinator: splitCoordinator,
-            navigationCoordinatorWireframe: UINavigationCoordinatorWireframe(),
-            discoveryListViewWireframe: DiscoveryListViewControllerWireframe(),
-            detailViewWireframe: DetailViewControllerWireframe())
+            navigationCoordinatorFactory: UINavigationCoordinatorFactory(),
+            discoveryListViewFactory: DiscoveryListViewControllerFactory(),
+            detailViewFactory: DetailViewControllerFactory())
         discoveryCoordinator = SplitDiscoveryCoordinator(dependencies: dependencies)
     }
 

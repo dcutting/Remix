@@ -2,7 +2,7 @@
 
 import UIKit
 
-class DetailViewControllerWireframe: DetailViewWireframe {
+class DetailViewControllerFactory: DetailViewFactory {
     func make() -> DetailView {
         let storyboard = UIStoryboard(name: "DetailViewController", bundle: nil)
         guard let viewController = storyboard.instantiateInitialViewController() as? DetailViewController else { preconditionFailure() }

@@ -2,11 +2,11 @@
 
 import Foundation
 
-protocol HasDetailViewWireframe {
-    var detailViewWireframe: DetailViewWireframe { get }
+protocol HasDetailViewFactory {
+    var detailViewFactory: DetailViewFactory { get }
 }
 
-protocol DetailViewWireframe {
+protocol DetailViewFactory {
     func make() -> DetailView
 }
 

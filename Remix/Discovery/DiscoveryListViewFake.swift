@@ -2,7 +2,7 @@
 
 import Foundation
 
-class DiscoveryListViewFakeWireframe: DiscoveryListViewWireframe {
+class DiscoveryListViewFakeFactory: DiscoveryListViewFactory {
     func make() -> DiscoveryListView {
         return DiscoveryListViewFake()
     }

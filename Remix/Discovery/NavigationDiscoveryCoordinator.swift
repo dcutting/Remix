@@ -4,13 +4,13 @@ import Foundation
 
 struct NavigationDiscoveryCoordinatorDependencies: NavigationDiscoveryCoordinator.Dependencies {
     let navigationCoordinator: NavigationCoordinator
-    let discoveryListViewWireframe: DiscoveryListViewWireframe
-    let detailViewWireframe: DetailViewWireframe
+    let discoveryListViewFactory: DiscoveryListViewFactory
+    let detailViewFactory: DetailViewFactory
 }
 
 class NavigationDiscoveryCoordinator {
 
-    typealias Dependencies = HasNavigationCoordinator & HasDiscoveryListViewWireframe & HasDetailViewWireframe
+    typealias Dependencies = HasNavigationCoordinator & HasDiscoveryListViewFactory & HasDetailViewFactory
 
     private let dependencies: Dependencies
     private let discoveryInteractor = DiscoveryInteractor()
@@ -33,7 +33,7 @@ class NavigationDiscoveryCoordinator {
 extension NavigationDiscoveryCoordinator: DiscoveryListViewDelegate {
 
     private func pushListView() {
-        let view = dependencies.discoveryListViewWireframe.make()
+        let view = dependencies.discoveryListViewFactory.make()
         view.delegate = self
         self.discoveryListView = view
         dependencies.navigationCoordinator.push(view: view)
@@ -69,7 +69,7 @@ extension NavigationDiscoveryCoordinator {
     }
 
     private func pushDetailView(forAd ad: ClassifiedAd) {
-        let detailView = dependencies.detailViewWireframe.make()
+        let detailView = dependencies.detailViewFactory.make()
         detailView.viewData = discoveryDetailFormatter.prepare(ad: ad)
         dependencies.navigationCoordinator.push(view: detailView)
     }
@@ -86,10 +86,10 @@ extension NavigationDiscoveryCoordinator: CategorySelectionCoordinatorDelegate {
     }
 
     private func makeCategorySelectionCoordinator() -> CategorySelectionCoordinator {
-        let wireframe = CategorySelectionListViewControllerWireframe()
+        let factory = CategorySelectionListViewControllerFactory()
         let coordinatorDependencies = CategorySelectionDependencies(
             navigationCoordinator: dependencies.navigationCoordinator,
-            categorySelectionListViewWireframe: wireframe
+            categorySelectionListViewFactory: factory
         )
         return CategorySelectionCoordinator(dependencies: coordinatorDependencies)
     }

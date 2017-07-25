@@ -15,7 +15,7 @@ extension Navigatable {
     func navigationCoordinatorDidGoBack() {}
 }
 
-protocol NavigationCoordinatorWireframe {
+protocol NavigationCoordinatorFactory {
     func make() -> NavigationCoordinator
 }
 

@@ -2,7 +2,7 @@
 
 import Foundation
 
-class DetailViewFakeWireframe: DetailViewWireframe {
+class DetailViewFakeFactory: DetailViewFactory {
     func make() -> DetailView {
         return DetailViewFake()
     }

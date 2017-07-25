@@ -2,7 +2,7 @@
 
 import UIKit
 
-class CategorySelectionListViewControllerWireframe: CategorySelectionListViewWireframe {
+class CategorySelectionListViewControllerFactory: CategorySelectionListViewFactory {
     func make() -> CategorySelectionListView {
         return CategorySelectionListViewController()
     }

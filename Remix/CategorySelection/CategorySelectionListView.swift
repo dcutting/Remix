@@ -2,11 +2,11 @@
 
 import Foundation
 
-protocol HasCategorySelectionListViewWireframe {
-    var categorySelectionListViewWireframe: CategorySelectionListViewWireframe { get }
+protocol HasCategorySelectionListViewFactory {
+    var categorySelectionListViewFactory: CategorySelectionListViewFactory { get }
 }
 
-protocol CategorySelectionListViewWireframe {
+protocol CategorySelectionListViewFactory {
     func make() -> CategorySelectionListView
 }
 

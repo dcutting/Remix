@@ -2,7 +2,7 @@
 
 import UIKit
 
-class DiscoveryListViewControllerWireframe: DiscoveryListViewWireframe {
+class DiscoveryListViewControllerFactory: DiscoveryListViewFactory {
     func make() -> DiscoveryListView {
         return DiscoveryListViewController()
     }

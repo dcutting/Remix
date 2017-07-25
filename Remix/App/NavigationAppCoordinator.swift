@@ -12,12 +12,12 @@ class NavigationAppCoordinator {
     }
 
     func start() {
-        let listWireframe = DiscoveryListViewControllerWireframe()
-        let detailWireframe = DetailViewControllerWireframe()
+        let listFactory = DiscoveryListViewControllerFactory()
+        let detailFactory = DetailViewControllerFactory()
         let dependencies = NavigationDiscoveryCoordinatorDependencies(
             navigationCoordinator: navigationCoordinator,
-            discoveryListViewWireframe: listWireframe,
-            detailViewWireframe: detailWireframe
+            discoveryListViewFactory: listFactory,
+            detailViewFactory: detailFactory
         )
         discovery = NavigationDiscoveryCoordinator(dependencies: dependencies)
         discovery?.start()
