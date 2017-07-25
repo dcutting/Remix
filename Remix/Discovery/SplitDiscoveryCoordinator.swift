@@ -1,6 +1,6 @@
 //  Copyright © 2017 cutting.io. All rights reserved.
 
-import UIKit
+import Foundation
 
 class SplitDiscoveryCoordinator {
 
@@ -62,13 +62,11 @@ extension SplitDiscoveryCoordinator: DiscoveryListViewDelegate {
 
     func doesWantFilters() {
         let selectionNavigationCoordinator = UINavigationCoordinator()
-        selectionNavigationCoordinator.viewController?.modalPresentationStyle = .popover
         let categorySelectionCoordinator = makeCategorySelectionCoordinator(navigationCoordinator: selectionNavigationCoordinator)
         categorySelectionCoordinator.delegate = self
         self.categorySelectionCoordinator = categorySelectionCoordinator
-        listNavigationCoordinator.viewController?.present(selectionNavigationCoordinator.viewController!, animated: true)
         categorySelectionCoordinator.start()
-        selectionNavigationCoordinator.viewController?.popoverPresentationController?.sourceView = selectionNavigationCoordinator.viewController?.view
+        listNavigationCoordinator.present(view: selectionNavigationCoordinator)
     }
 
     private func makeCategorySelectionCoordinator(navigationCoordinator: NavigationCoordinator) -> CategorySelectionCoordinator {
