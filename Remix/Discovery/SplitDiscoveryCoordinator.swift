@@ -4,25 +4,37 @@ import Foundation
 
 class SplitDiscoveryCoordinator {
 
-    var splitCoordinator: SplitCoordinator
-    let discoveryInteractor = DiscoveryInteractor()
-    let discoveryListViewWireframe = DiscoveryListViewControllerWireframe()
-    let discoveryListFormatter = DiscoveryListFormatter()
-    let detailViewWireframe = DetailViewControllerWireframe()
-    let detailFormatter = DiscoveryDetailFormatter()
+    struct Dependencies {
 
-    var discoveryListView: DiscoveryListView?
-    let listNavigationCoordinator = UINavigationCoordinator()
-    var categorySelectionCoordinator: CategorySelectionCoordinator?
+        var splitCoordinator: SplitCoordinator
 
-    init(splitCoordinator: SplitCoordinator) {
-        self.splitCoordinator = splitCoordinator
-        self.splitCoordinator.master = listNavigationCoordinator
+        let discoveryInteractor = DiscoveryInteractor()
+        let discoveryListFormatter = DiscoveryListFormatter()
+        let detailFormatter = DiscoveryDetailFormatter()
+
+        let navigationCoordinatorWireframe: NavigationCoordinatorWireframe
+        let discoveryListViewWireframe: DiscoveryListViewWireframe
+        let detailViewWireframe: DetailViewWireframe
+    }
+
+    private var dependencies: Dependencies
+    private var discoveryListView: DiscoveryListView?
+    private let listNavigationCoordinator: NavigationCoordinator
+    private var categorySelectionCoordinator: CategorySelectionCoordinator?
+
+    init(dependencies: Dependencies) {
+        self.dependencies = dependencies
+        listNavigationCoordinator = dependencies.navigationCoordinatorWireframe.make()
     }
 
     func start() {
+        configureMasterView()
         pushListView()
         updateListView()
+    }
+
+    private func configureMasterView() {
+        dependencies.splitCoordinator.master = listNavigationCoordinator
     }
 }
 
@@ -32,42 +44,48 @@ extension SplitDiscoveryCoordinator: DiscoveryListViewDelegate {
     // of duplicate code from the NavigationDiscoveryCoordinator.
 
     private func pushListView() {
-        let view = discoveryListViewWireframe.make()
+        let view = dependencies.discoveryListViewWireframe.make()
         view.delegate = self
         self.discoveryListView = view
         listNavigationCoordinator.push(view: view)
     }
 
     private func updateListView(forSelectedCategoryID selectedCategoryID: CategoryID? = nil) {
-        discoveryInteractor.update(selectedCategoryID: selectedCategoryID) { [weak self] (ads, categories) in
+        dependencies.discoveryInteractor.update(selectedCategoryID: selectedCategoryID) { [weak self] (ads, categories) in
             self?.updateListView(withAds: ads, categories: categories)
         }
     }
 
     private func updateListView(withAds ads: [ClassifiedAd], categories: [Category]) {
-        let viewData = discoveryListFormatter.prepare(ads: ads, categories: categories)
+        let viewData = dependencies.discoveryListFormatter.prepare(ads: ads, categories: categories)
         discoveryListView?.viewData = viewData
     }
 
     func didSelect(classifiedAdID: ClassifiedAdID) {
-        discoveryInteractor.fetchDetail(for: classifiedAdID) { ad in
+        dependencies.discoveryInteractor.fetchDetail(for: classifiedAdID) { ad in
             guard let ad = ad else { preconditionFailure() }
-            let detailView = detailViewWireframe.make()
-            detailView.viewData = detailFormatter.prepare(ad: ad)
-            splitCoordinator.detail = detailView
+            configureDetailView(with: ad)
         }
+    }
+
+    private func configureDetailView(with ad: ClassifiedAd) {
+        let detailView = dependencies.detailViewWireframe.make()
+        detailView.viewData = dependencies.detailFormatter.prepare(ad: ad)
+        dependencies.splitCoordinator.detail = detailView
     }
 
     // TODO: consider making a popover coordinator to abstract these details.
 
     func doesWantFilters() {
-        let selectionNavigationCoordinator = UINavigationCoordinator()
+        let selectionNavigationCoordinator = dependencies.navigationCoordinatorWireframe.make()
         let categorySelectionCoordinator = makeCategorySelectionCoordinator(navigationCoordinator: selectionNavigationCoordinator)
         categorySelectionCoordinator.delegate = self
         self.categorySelectionCoordinator = categorySelectionCoordinator
         categorySelectionCoordinator.start()
         listNavigationCoordinator.present(view: selectionNavigationCoordinator)
     }
+
+    // TODO: extract coordinator creation?
 
     private func makeCategorySelectionCoordinator(navigationCoordinator: NavigationCoordinator) -> CategorySelectionCoordinator {
         let wireframe = CategorySelectionListViewControllerWireframe()

@@ -15,7 +15,11 @@ extension Navigatable {
     func navigationCoordinatorDidGoBack() {}
 }
 
-protocol NavigationCoordinator {
+protocol NavigationCoordinatorWireframe {
+    func make() -> NavigationCoordinator
+}
+
+protocol NavigationCoordinator: Viewable {
     func push(view: Navigatable)
     func popToLastCheckpoint()
     func setPopCheckpoint()

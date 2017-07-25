@@ -2,8 +2,14 @@
 
 import UIKit
 
+class UINavigationCoordinatorWireframe: NavigationCoordinatorWireframe {
+    func make() -> NavigationCoordinator {
+        return UINavigationCoordinator()
+    }
+}
+
 // Implements the NavigationCoordinator for use with UIKit components (using a UINavigationController).
-class UINavigationCoordinator: UINavigationController, NavigationCoordinator, Viewable {
+class UINavigationCoordinator: UINavigationController, NavigationCoordinator {
 
     private var popCheckpoints = [UIViewController]()
 

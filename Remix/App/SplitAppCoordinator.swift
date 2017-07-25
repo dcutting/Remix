@@ -9,7 +9,12 @@ class SplitAppCoordinator {
 
     init(window: UIWindow) {
         window.rootViewController = splitCoordinator.viewController
-        discoveryCoordinator = SplitDiscoveryCoordinator(splitCoordinator: splitCoordinator)
+        let dependencies = SplitDiscoveryCoordinator.Dependencies(
+            splitCoordinator: splitCoordinator,
+            navigationCoordinatorWireframe: UINavigationCoordinatorWireframe(),
+            discoveryListViewWireframe: DiscoveryListViewControllerWireframe(),
+            detailViewWireframe: DetailViewControllerWireframe())
+        discoveryCoordinator = SplitDiscoveryCoordinator(dependencies: dependencies)
     }
 
     func start() {
