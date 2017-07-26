@@ -19,35 +19,14 @@ class NavigationAppCoordinator {
     }
 
     func start() {
-        let dependencies = NavigationDiscoveryCoordinator.Dependencies(
-            navigationWireframe: navigationWireframe,
-            interactor: makeInteractor(),
-            detailFormatter: makeDetailFormatter(),
-            detailViewFactory: makeDetailViewFactory(),
-            advertListFeature: makeAdvertListFeature(),
-            categorySelectionFeature: makeCategorySelectionFeature()
-        )
-        discoveryCoordinator = NavigationDiscoveryCoordinator(dependencies: dependencies)
-        discoveryCoordinator?.start()
+        let feature = makeFeature()
+        let coordinator = feature.makeCoordinatorUsing(navigationWireframe: navigationWireframe)
+        discoveryCoordinator = coordinator
+        coordinator.start()
     }
 
-    private func makeInteractor() -> DiscoveryInteractor {
-        return DiscoveryInteractor(advertService: deps.advertService, categoryService: deps.categoryService)
-    }
-
-    private func makeDetailFormatter() -> DiscoveryDetailFormatter {
-        return DiscoveryDetailFormatter()
-    }
-
-    private func makeDetailViewFactory() -> AdvertDetailViewFactory {
-        return AdvertDetailViewControllerFactory()
-    }
-
-    private func makeAdvertListFeature() -> AdvertListFeature {
-        return UIAdvertListFeature(advertService: deps.advertService, categoryService: deps.categoryService)
-    }
-
-    private func makeCategorySelectionFeature() -> CategorySelectionFeature {
-        return UICategorySelectionFeature(categoryService: deps.categoryService)
+    private func makeFeature() -> NavigationDiscoveryFeature {
+        let discoveryDeps = UINavigationDiscoveryFeature.Dependencies(advertService: deps.advertService, categoryService: deps.categoryService)
+        return UINavigationDiscoveryFeature(dependencies: discoveryDeps)
     }
 }
