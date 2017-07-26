@@ -15,6 +15,7 @@ class SplitDiscoveryCoordinator {
         let navigationCoordinatorFactory: NavigationCoordinatorFactory
         let discoveryListViewFactory: DiscoveryListViewFactory
         let detailViewFactory: DetailViewFactory
+        let categorySelectionFeature: CategorySelectionFeature
     }
 
     private var dependencies: Dependencies
@@ -78,22 +79,11 @@ extension SplitDiscoveryCoordinator: DiscoveryListViewDelegate {
 
     func doesWantFilters() {
         let selectionNavigationCoordinator = dependencies.navigationCoordinatorFactory.make()
-        let categorySelectionCoordinator = makeCategorySelectionCoordinator(navigationCoordinator: selectionNavigationCoordinator)
+        let categorySelectionCoordinator = dependencies.categorySelectionFeature.makeCoordinatorUsing(navigationCoordinator: selectionNavigationCoordinator)
         categorySelectionCoordinator.delegate = self
         self.categorySelectionCoordinator = categorySelectionCoordinator
         categorySelectionCoordinator.start()
         listNavigationCoordinator.present(view: selectionNavigationCoordinator)
-    }
-
-    // TODO: extract coordinator creation?
-
-    private func makeCategorySelectionCoordinator(navigationCoordinator: NavigationCoordinator) -> CategorySelectionCoordinator {
-        let factory = CategorySelectionListViewControllerFactory()
-        let coordinatorDependencies = CategorySelectionDependencies(
-            navigationCoordinator: navigationCoordinator,
-            categorySelectionListViewFactory: factory
-        )
-        return CategorySelectionCoordinator(dependencies: coordinatorDependencies)
     }
 }
 

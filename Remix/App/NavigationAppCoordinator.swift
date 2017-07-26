@@ -14,10 +14,11 @@ class NavigationAppCoordinator {
     func start() {
         let listFactory = DiscoveryListViewControllerFactory()
         let detailFactory = DetailViewControllerFactory()
-        let dependencies = NavigationDiscoveryCoordinatorDependencies(
+        let dependencies = NavigationDiscoveryCoordinator.Dependencies(
             navigationCoordinator: navigationCoordinator,
             discoveryListViewFactory: listFactory,
-            detailViewFactory: detailFactory
+            detailViewFactory: detailFactory,
+            categorySelectionFeature: UICategorySelectionFeature()
         )
         discovery = NavigationDiscoveryCoordinator(dependencies: dependencies)
         discovery?.start()

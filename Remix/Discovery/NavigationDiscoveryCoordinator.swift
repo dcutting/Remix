@@ -2,15 +2,14 @@
 
 import Foundation
 
-struct NavigationDiscoveryCoordinatorDependencies: NavigationDiscoveryCoordinator.Dependencies {
-    let navigationCoordinator: NavigationCoordinator
-    let discoveryListViewFactory: DiscoveryListViewFactory
-    let detailViewFactory: DetailViewFactory
-}
-
 class NavigationDiscoveryCoordinator {
 
-    typealias Dependencies = HasNavigationCoordinator & HasDiscoveryListViewFactory & HasDetailViewFactory
+    struct Dependencies {
+        let navigationCoordinator: NavigationCoordinator
+        let discoveryListViewFactory: DiscoveryListViewFactory
+        let detailViewFactory: DetailViewFactory
+        let categorySelectionFeature: CategorySelectionFeature
+    }
 
     private let dependencies: Dependencies
     private let discoveryInteractor = DiscoveryInteractor()
@@ -78,20 +77,11 @@ extension NavigationDiscoveryCoordinator {
 extension NavigationDiscoveryCoordinator: CategorySelectionCoordinatorDelegate {
 
     private func startCategorySelection() {
-        let coordinator = makeCategorySelectionCoordinator()
+        let coordinator = dependencies.categorySelectionFeature.makeCoordinatorUsing(navigationCoordinator: dependencies.navigationCoordinator)
         coordinator.delegate = self
         self.categorySelectionCoordinator = coordinator
         dependencies.navigationCoordinator.setPopCheckpoint()
         coordinator.start()
-    }
-
-    private func makeCategorySelectionCoordinator() -> CategorySelectionCoordinator {
-        let factory = CategorySelectionListViewControllerFactory()
-        let coordinatorDependencies = CategorySelectionDependencies(
-            navigationCoordinator: dependencies.navigationCoordinator,
-            categorySelectionListViewFactory: factory
-        )
-        return CategorySelectionCoordinator(dependencies: coordinatorDependencies)
     }
 
     func didSelect(categoryID: CategoryID?) {

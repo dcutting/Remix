@@ -13,7 +13,9 @@ class SplitAppCoordinator {
             splitCoordinator: splitCoordinator,
             navigationCoordinatorFactory: UINavigationCoordinatorFactory(),
             discoveryListViewFactory: DiscoveryListViewControllerFactory(),
-            detailViewFactory: DetailViewControllerFactory())
+            detailViewFactory: DetailViewControllerFactory(),
+            categorySelectionFeature: UICategorySelectionFeature()
+        )
         discoveryCoordinator = SplitDiscoveryCoordinator(dependencies: dependencies)
     }
 

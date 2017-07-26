@@ -7,22 +7,19 @@ protocol CategorySelectionCoordinatorDelegate: class {
     func didCancelSelection()
 }
 
-struct CategorySelectionDependencies: CategorySelectionCoordinator.Dependencies {
-    let navigationCoordinator: NavigationCoordinator
-    let categorySelectionListViewFactory: CategorySelectionListViewFactory
-}
-
 class CategorySelectionCoordinator {
 
-    typealias Dependencies = HasNavigationCoordinator & HasCategorySelectionListViewFactory
+    struct Dependencies {
+        let navigationCoordinator: NavigationCoordinator
+        let categorySelectionListViewFactory: CategorySelectionListViewFactory
+        let interactor: CategorySelectionInteractor
+        let formatter: CategorySelectionListFormatter
+    }
 
     private let dependencies: Dependencies
-    private let categorySelectionInteractor = CategorySelectionInteractor()
-    private let categorySelectionListFormatter = CategorySelectionListFormatter()
+    weak var delegate: CategorySelectionCoordinatorDelegate?
 
     private var rootCategorySelectionListView: CategorySelectionListView?
-
-    weak var delegate: CategorySelectionCoordinatorDelegate?
 
     init(dependencies: Dependencies) {
         self.dependencies = dependencies
@@ -42,8 +39,8 @@ class CategorySelectionCoordinator {
 
     private func update(categorySelectionListView: CategorySelectionListView, parentCategoryID: CategoryID?) {
         let view = categorySelectionListView
-        categorySelectionInteractor.fetchCategories(parentCategoryID: parentCategoryID) { categories in
-            let viewData = categorySelectionListFormatter.prepare(categories: categories)
+        dependencies.interactor.fetchCategories(parentCategoryID: parentCategoryID) { categories in
+            let viewData = dependencies.formatter.prepare(categories: categories)
             view.viewData = viewData
         }
     }
@@ -52,7 +49,7 @@ class CategorySelectionCoordinator {
 extension CategorySelectionCoordinator: CategorySelectionListViewDelegate {
 
     func didSelect(categoryID: CategoryID) {
-        categorySelectionInteractor.findSelectionType(for: categoryID) { selectionType in
+        dependencies.interactor.findSelectionType(for: categoryID) { selectionType in
             switch selectionType {
             case .leafCategory:
                 delegate?.didSelect(categoryID: categoryID)
