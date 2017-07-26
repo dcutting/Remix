@@ -2,16 +2,16 @@
 
 import UIKit
 
-class DiscoveryListViewControllerFactory: DiscoveryListViewFactory {
-    func make() -> DiscoveryListView {
-        return DiscoveryListViewController()
+class AdvertListViewControllerFactory: AdvertListViewFactory {
+    func make() -> AdvertListView {
+        return AdvertListViewController()
     }
 }
 
-class DiscoveryListViewController: UITableViewController, DiscoveryListView {
+class AdvertListViewController: UITableViewController, AdvertListView {
 
-    weak var delegate: DiscoveryListViewDelegate?
-    var viewData: DiscoveryListViewData? {
+    weak var delegate: AdvertListViewDelegate?
+    var viewData: AdvertListViewData? {
         didSet {
             updateView()
         }

@@ -19,14 +19,14 @@ class NavigationAppCoordinator {
     }
 
     func start() {
-        let listFactory = DiscoveryListViewControllerFactory()
-        let detailFactory = DetailViewControllerFactory()
+        let listFactory = AdvertListViewControllerFactory()
+        let detailFactory = AdvertDetailViewControllerFactory()
         let dependencies = NavigationDiscoveryCoordinator.Dependencies(
             navigationWireframe: navigationWireframe,
             interactor: DiscoveryInteractor(advertService: deps.advertService, categoryService: deps.categoryService),
-            listFormatter: DiscoveryListFormatter(),
+            listFormatter: AdvertListFormatter(),
             detailFormatter: DiscoveryDetailFormatter(),
-            discoveryListViewFactory: listFactory,
+            listViewFactory: listFactory,
             detailViewFactory: detailFactory,
             categorySelectionFeature: UICategorySelectionFeature(categoryService: deps.categoryService)
         )

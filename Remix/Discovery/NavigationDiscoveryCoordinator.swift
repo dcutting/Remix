@@ -9,20 +9,20 @@ class NavigationDiscoveryCoordinator {
         let navigationWireframe: NavigationWireframe
 
         let interactor: DiscoveryInteractor
-        let listFormatter: DiscoveryListFormatter
+        let listFormatter: AdvertListFormatter
         let detailFormatter: DiscoveryDetailFormatter
 
-        let discoveryListViewFactory: DiscoveryListViewFactory
-        let detailViewFactory: DetailViewFactory
+        let listViewFactory: AdvertListViewFactory
+        let detailViewFactory: AdvertDetailViewFactory
         let categorySelectionFeature: CategorySelectionFeature
     }
 
     private let deps: Dependencies
-    private var discoveryListView: DiscoveryListView?
+    private var listView: AdvertListView?
     private var categorySelectionCoordinator: CategorySelectionCoordinator?
 
     init(dependencies: Dependencies) {
-        self.deps = dependencies
+        deps = dependencies
     }
 
     func start() {
@@ -31,12 +31,12 @@ class NavigationDiscoveryCoordinator {
     }
 }
 
-extension NavigationDiscoveryCoordinator: DiscoveryListViewDelegate {
+extension NavigationDiscoveryCoordinator: AdvertListViewDelegate {
 
     private func pushListView() {
-        let view = deps.discoveryListViewFactory.make()
+        let view = deps.listViewFactory.make()
         view.delegate = self
-        self.discoveryListView = view
+        listView = view
         deps.navigationWireframe.push(view: view)
     }
 
@@ -48,7 +48,7 @@ extension NavigationDiscoveryCoordinator: DiscoveryListViewDelegate {
 
     private func updateListView(with adverts: [Advert], categories: [Category]) {
         let viewData = deps.listFormatter.prepare(adverts: adverts, categories: categories)
-        discoveryListView?.viewData = viewData
+        listView?.viewData = viewData
     }
 
     func didSelect(advertID: AdvertID) {
@@ -81,7 +81,7 @@ extension NavigationDiscoveryCoordinator: CategorySelectionCoordinatorDelegate {
     private func startCategorySelection() {
         let coordinator = deps.categorySelectionFeature.makeCoordinatorUsing(navigationWireframe: deps.navigationWireframe)
         coordinator.delegate = self
-        self.categorySelectionCoordinator = coordinator
+        categorySelectionCoordinator = coordinator
         deps.navigationWireframe.setPopCheckpoint()
         coordinator.start()
     }

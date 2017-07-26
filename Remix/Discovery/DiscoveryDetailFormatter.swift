@@ -3,7 +3,7 @@
 import Foundation
 
 class DiscoveryDetailFormatter {
-    func prepare(advert: Advert) -> DetailViewData {
-        return DetailViewData(title: advert.title)
+    func prepare(advert: Advert) -> AdvertDetailViewData {
+        return AdvertDetailViewData(title: advert.title)
     }
 }

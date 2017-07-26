@@ -9,22 +9,22 @@ class SplitDiscoveryCoordinator {
         var splitWireframe: SplitWireframe
 
         let interactor: DiscoveryInteractor
-        let listFormatter: DiscoveryListFormatter
+        let listFormatter: AdvertListFormatter
         let detailFormatter: DiscoveryDetailFormatter
 
         let navigationWireframeFactory: NavigationWireframeFactory
-        let discoveryListViewFactory: DiscoveryListViewFactory
-        let detailViewFactory: DetailViewFactory
+        let listViewFactory: AdvertListViewFactory
+        let detailViewFactory: AdvertDetailViewFactory
         let categorySelectionFeature: CategorySelectionFeature
     }
 
-    private var dependencies: Dependencies
-    private var discoveryListView: DiscoveryListView?
+    private var deps: Dependencies
+    private var listView: AdvertListView?
     private let listNavigationWireframe: NavigationWireframe
     private var categorySelectionCoordinator: CategorySelectionCoordinator?
 
     init(dependencies: Dependencies) {
-        self.dependencies = dependencies
+        deps = dependencies
         listNavigationWireframe = dependencies.navigationWireframeFactory.make()
     }
 
@@ -35,54 +35,54 @@ class SplitDiscoveryCoordinator {
     }
 
     private func configureMasterView() {
-        dependencies.splitWireframe.master = listNavigationWireframe
+        deps.splitWireframe.master = listNavigationWireframe
     }
 }
 
-extension SplitDiscoveryCoordinator: DiscoveryListViewDelegate {
+extension SplitDiscoveryCoordinator: AdvertListViewDelegate {
 
     // TODO: consider pulling out the list to its own coordinator since there is a fair amount
     // of duplicate code from the NavigationDiscoveryCoordinator.
 
     private func pushListView() {
-        let view = dependencies.discoveryListViewFactory.make()
+        let view = deps.listViewFactory.make()
         view.delegate = self
-        self.discoveryListView = view
+        listView = view
         listNavigationWireframe.push(view: view)
     }
 
     private func updateListView(forSelectedCategoryID selectedCategoryID: CategoryID? = nil) {
-        dependencies.interactor.update(selectedCategoryID: selectedCategoryID) { [weak self] (adverts, categories) in
+        deps.interactor.update(selectedCategoryID: selectedCategoryID) { [weak self] (adverts, categories) in
             self?.updateListView(with: adverts, categories: categories)
         }
     }
 
     private func updateListView(with adverts: [Advert], categories: [Category]) {
-        let viewData = dependencies.listFormatter.prepare(adverts: adverts, categories: categories)
-        discoveryListView?.viewData = viewData
+        let viewData = deps.listFormatter.prepare(adverts: adverts, categories: categories)
+        listView?.viewData = viewData
     }
 
     func didSelect(advertID: AdvertID) {
-        dependencies.interactor.fetchDetail(for: advertID) { advert in
+        deps.interactor.fetchDetail(for: advertID) { advert in
             guard let advert = advert else { preconditionFailure() }
             configureDetailView(with: advert)
         }
     }
 
     private func configureDetailView(with advert: Advert) {
-        let detailView = dependencies.detailViewFactory.make()
-        detailView.viewData = dependencies.detailFormatter.prepare(advert: advert)
-        dependencies.splitWireframe.detail = detailView
+        let detailView = deps.detailViewFactory.make()
+        detailView.viewData = deps.detailFormatter.prepare(advert: advert)
+        deps.splitWireframe.detail = detailView
     }
 
     // TODO: consider making a popover coordinator to abstract these details.
 
     func doesWantFilters() {
-        let selectionNavigationWireframe = dependencies.navigationWireframeFactory.make()
-        let categorySelectionCoordinator = dependencies.categorySelectionFeature.makeCoordinatorUsing(navigationWireframe: selectionNavigationWireframe)
-        categorySelectionCoordinator.delegate = self
-        self.categorySelectionCoordinator = categorySelectionCoordinator
-        categorySelectionCoordinator.start()
+        let selectionNavigationWireframe = deps.navigationWireframeFactory.make()
+        let coordinator = deps.categorySelectionFeature.makeCoordinatorUsing(navigationWireframe: selectionNavigationWireframe)
+        coordinator.delegate = self
+        categorySelectionCoordinator = coordinator
+        coordinator.start()
         listNavigationWireframe.present(view: selectionNavigationWireframe)
     }
 }

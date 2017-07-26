@@ -2,18 +2,18 @@
 
 import Foundation
 
-class DiscoveryListFormatter {
+class AdvertListFormatter {
 
-    func prepare(adverts: [Advert], categories: [Category]) -> DiscoveryListViewData {
+    func prepare(adverts: [Advert], categories: [Category]) -> AdvertListViewData {
         let items = adverts.map { advert in
             makeItem(from: advert, categories: categories)
         }
-        return DiscoveryListViewData(items: items)
+        return AdvertListViewData(items: items)
     }
 
-    private func makeItem(from advert: Advert, categories: [Category]) -> DiscoveryListViewDataItem {
+    private func makeItem(from advert: Advert, categories: [Category]) -> AdvertListViewDataItem {
         let categoryName = name(for: advert.categoryID, categories: categories)
-        return DiscoveryListViewDataItem(advertID: advert.advertID, title: advert.title, category: categoryName)
+        return AdvertListViewDataItem(advertID: advert.advertID, title: advert.title, category: categoryName)
     }
 
     private func name(for categoryID: CategoryID, categories: [Category]) -> String {

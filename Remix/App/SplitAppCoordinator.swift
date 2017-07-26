@@ -22,11 +22,11 @@ class SplitAppCoordinator {
         let discoveryDeps = SplitDiscoveryCoordinator.Dependencies(
             splitWireframe: splitWireframe,
             interactor: DiscoveryInteractor(advertService: deps.advertService, categoryService: deps.categoryService),
-            listFormatter: DiscoveryListFormatter(),
+            listFormatter: AdvertListFormatter(),
             detailFormatter: DiscoveryDetailFormatter(),
             navigationWireframeFactory: UINavigationWireframeFactory(),
-            discoveryListViewFactory: DiscoveryListViewControllerFactory(),
-            detailViewFactory: DetailViewControllerFactory(),
+            listViewFactory: AdvertListViewControllerFactory(),
+            detailViewFactory: AdvertDetailViewControllerFactory(),
             categorySelectionFeature: UICategorySelectionFeature(categoryService: deps.categoryService)
         )
         discoveryCoordinator = SplitDiscoveryCoordinator(dependencies: discoveryDeps)
