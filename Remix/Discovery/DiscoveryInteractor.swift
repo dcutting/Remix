@@ -25,7 +25,7 @@ class DiscoveryInteractor {
     }
 
     func fetchDetail(for advertID: AdvertID, completion: (Advert?) -> Void) {
-        advertService.fetchAdverts(for: advertID) { advert in
+        advertService.fetchAdvert(for: advertID) { advert in
             completion(advert)
         }
     }

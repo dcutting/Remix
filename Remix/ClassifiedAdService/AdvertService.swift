@@ -4,5 +4,5 @@ import Foundation
 
 protocol AdvertService {
     func fetchAdverts(completion: ([Advert]) -> Void)
-    func fetchAdverts(for advertID: AdvertID, completion: (Advert?) -> Void)
+    func fetchAdvert(for advertID: AdvertID, completion: (Advert?) -> Void)
 }

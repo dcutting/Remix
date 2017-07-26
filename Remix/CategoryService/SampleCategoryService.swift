@@ -17,7 +17,7 @@ class SampleCategoryService: CategoryService {
         completion(categories)
     }
 
-    func fetch(categoryID: CategoryID, completion: (Category?) -> Void) {
+    func fetchCategory(for categoryID: CategoryID, completion: (Category?) -> Void) {
         let category = categories.first { category in
             category.categoryID == categoryID
         }

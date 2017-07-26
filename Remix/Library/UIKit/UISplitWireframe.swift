@@ -2,6 +2,7 @@
 
 import UIKit
 
+// Implements the SplitWireframe for use with UIKit components (using a UISplitViewController).
 class UISplitWireframe: UISplitViewController, SplitWireframe, Viewable {
 
     var master: Viewable? {

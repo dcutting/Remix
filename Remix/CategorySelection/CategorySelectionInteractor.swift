@@ -16,7 +16,7 @@ class CategorySelectionInteractor {
     }
 
     func findSelectionType(for categoryID: CategoryID, completion: (SelectionType) -> Void) {
-        categoryService.fetch(categoryID: categoryID) { category in
+        categoryService.fetchCategory(for: categoryID) { category in
             guard let category = category else { preconditionFailure() }
             let type: SelectionType = category.children.isEmpty ? .leafCategory : .parentCategory
             completion(type)

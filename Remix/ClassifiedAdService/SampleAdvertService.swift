@@ -15,7 +15,7 @@ class SampleAdvertService: AdvertService {
         completion(adverts)
     }
 
-    func fetchAdverts(for advertID: AdvertID, completion: (Advert?) -> Void) {
+    func fetchAdvert(for advertID: AdvertID, completion: (Advert?) -> Void) {
         let advert = adverts.first { advert in
             advert.advertID == advertID
         }

@@ -230,8 +230,7 @@
 			children = (
 				C84C23501F17B0070038E879 /* DetailView.swift */,
 				C84C23671F17BCB00038E879 /* DetailViewFake.swift */,
-				C8B86F581F1F820B00BDCE50 /* DetailViewController.swift */,
-				C8B86F5A1F1F83CF00BDCE50 /* DetailViewController.storyboard */,
+				C87ACD771F28AE1400B1A73C /* UIKit */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -254,6 +253,15 @@
 				C8026F711F25566900732BAE /* UIKit */,
 			);
 			path = Library;
+			sourceTree = "<group>";
+		};
+		C87ACD771F28AE1400B1A73C /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				C8B86F581F1F820B00BDCE50 /* DetailViewController.swift */,
+				C8B86F5A1F1F83CF00BDCE50 /* DetailViewController.storyboard */,
+			);
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 		C88651C71F1F99840085E239 /* CategoryService */ = {
