@@ -4,13 +4,31 @@ import Foundation
 
 class UICategorySelectionFeature: CategorySelectionFeature {
 
+    let categoryService: CategoryService
+
+    init(categoryService: CategoryService) {
+        self.categoryService = categoryService
+    }
+
     func makeCoordinatorUsing(navigationCoordinator: NavigationCoordinator) -> CategorySelectionCoordinator {
         let dependencies = CategorySelectionCoordinator.Dependencies(
             navigationCoordinator: navigationCoordinator,
-            categorySelectionListViewFactory: CategorySelectionListViewControllerFactory(),
-            interactor: CategorySelectionInteractor(),
-            formatter: CategorySelectionListFormatter()
+            categorySelectionViewFactory: makeViewFactory(),
+            interactor: makeInteractor(),
+            formatter: makeFormatter()
         )
         return CategorySelectionCoordinator(dependencies: dependencies)
+    }
+
+    private func makeViewFactory() -> CategorySelectionViewFactory {
+        return CategorySelectionViewControllerFactory()
+    }
+
+    private func makeInteractor() -> CategorySelectionInteractor {
+        return CategorySelectionInteractor(categoryService: categoryService)
+    }
+
+    private func makeFormatter() -> CategorySelectionFormatter {
+        return CategorySelectionFormatter()
     }
 }

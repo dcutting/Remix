@@ -7,6 +7,8 @@ import UIKit
     var window: UIWindow?
     var appCoordinator: Any?
 
+    let categoryService = SampleCategoryService()
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
         window = UIWindow(frame: UIScreen.main.bounds)
@@ -23,13 +25,15 @@ import UIKit
     }
 
     private func start_iPad(window: UIWindow) -> Any {
-        let coordinator = SplitAppCoordinator(window: window)
+        let deps = SplitAppCoordinator.Dependencies(categoryService: categoryService)
+        let coordinator = SplitAppCoordinator(window: window, dependencies: deps)
         coordinator.start()
         return coordinator
     }
 
     private func start_iPhone(window: UIWindow) -> Any {
-        let coordinator = NavigationAppCoordinator(window: window)
+        let deps = NavigationAppCoordinator.Dependencies(categoryService: categoryService)
+        let coordinator = NavigationAppCoordinator(window: window, dependencies: deps)
         coordinator.start()
         return coordinator
     }

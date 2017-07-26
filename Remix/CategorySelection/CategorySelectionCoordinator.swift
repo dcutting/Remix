@@ -11,50 +11,49 @@ class CategorySelectionCoordinator {
 
     struct Dependencies {
         let navigationCoordinator: NavigationCoordinator
-        let categorySelectionListViewFactory: CategorySelectionListViewFactory
+        let categorySelectionViewFactory: CategorySelectionViewFactory
         let interactor: CategorySelectionInteractor
-        let formatter: CategorySelectionListFormatter
+        let formatter: CategorySelectionFormatter
     }
 
-    private let dependencies: Dependencies
+    private let deps: Dependencies
     weak var delegate: CategorySelectionCoordinatorDelegate?
 
-    private var rootCategorySelectionListView: CategorySelectionListView?
+    private var rootView: CategorySelectionView?
 
     init(dependencies: Dependencies) {
-        self.dependencies = dependencies
+        deps = dependencies
     }
 
     func start() {
-        rootCategorySelectionListView = pushAndUpdateCategorySelectionList()
+        rootView = pushAndUpdateView()
     }
 
-    @discardableResult private func pushAndUpdateCategorySelectionList(for categoryID: CategoryID? = nil) -> CategorySelectionListView {
-        let categorySelectionListView = dependencies.categorySelectionListViewFactory.make()
-        categorySelectionListView.delegate = self
-        dependencies.navigationCoordinator.push(view: categorySelectionListView)
-        update(categorySelectionListView: categorySelectionListView, parentCategoryID: categoryID)
-        return categorySelectionListView
+    @discardableResult private func pushAndUpdateView(for categoryID: CategoryID? = nil) -> CategorySelectionView {
+        let view = deps.categorySelectionViewFactory.make()
+        view.delegate = self
+        deps.navigationCoordinator.push(view: view)
+        update(view: view, for: categoryID)
+        return view
     }
 
-    private func update(categorySelectionListView: CategorySelectionListView, parentCategoryID: CategoryID?) {
-        let view = categorySelectionListView
-        dependencies.interactor.fetchCategories(parentCategoryID: parentCategoryID) { categories in
-            let viewData = dependencies.formatter.prepare(categories: categories)
+    private func update(view: CategorySelectionView, for parentCategoryID: CategoryID?) {
+        deps.interactor.fetchCategories(parentCategoryID: parentCategoryID) { categories in
+            let viewData = deps.formatter.prepare(categories: categories)
             view.viewData = viewData
         }
     }
 }
 
-extension CategorySelectionCoordinator: CategorySelectionListViewDelegate {
+extension CategorySelectionCoordinator: CategorySelectionViewDelegate {
 
     func didSelect(categoryID: CategoryID) {
-        dependencies.interactor.findSelectionType(for: categoryID) { selectionType in
+        deps.interactor.findSelectionType(for: categoryID) { selectionType in
             switch selectionType {
             case .leafCategory:
                 delegate?.didSelect(categoryID: categoryID)
             case .parentCategory:
-                pushAndUpdateCategorySelectionList(for: categoryID)
+                pushAndUpdateView(for: categoryID)
             }
         }
     }
@@ -63,8 +62,8 @@ extension CategorySelectionCoordinator: CategorySelectionListViewDelegate {
         delegate?.didSelect(categoryID: nil)
     }
 
-    func didAbortSelection(view: CategorySelectionListView) {
-        if view === rootCategorySelectionListView {
+    func didAbortSelection(fromView: CategorySelectionView) {
+        if fromView === rootView {
             delegate?.didCancelSelection()
         }
     }

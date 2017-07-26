@@ -4,11 +4,15 @@ import Foundation
 
 class CategorySelectionInteractor {
 
-    let categoryService: CategoryService = SampleCategoryService()
-
     enum SelectionType {
         case leafCategory
         case parentCategory
+    }
+
+    let categoryService: CategoryService
+
+    init(categoryService: CategoryService) {
+        self.categoryService = categoryService
     }
 
     func findSelectionType(for categoryID: CategoryID, completion: (SelectionType) -> Void) {

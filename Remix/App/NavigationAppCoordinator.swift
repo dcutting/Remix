@@ -4,10 +4,16 @@ import UIKit
 
 class NavigationAppCoordinator {
 
-    private let navigationCoordinator = UINavigationCoordinator()
-    private var discovery: NavigationDiscoveryCoordinator?
+    struct Dependencies {
+        let categoryService: CategoryService
+    }
 
-    init(window: UIWindow) {
+    private let deps: Dependencies
+    private let navigationCoordinator = UINavigationCoordinator()
+    private var discoveryCoordinator: NavigationDiscoveryCoordinator?
+
+    init(window: UIWindow, dependencies: Dependencies) {
+        deps = dependencies
         window.rootViewController = navigationCoordinator.viewController
     }
 
@@ -18,9 +24,9 @@ class NavigationAppCoordinator {
             navigationCoordinator: navigationCoordinator,
             discoveryListViewFactory: listFactory,
             detailViewFactory: detailFactory,
-            categorySelectionFeature: UICategorySelectionFeature()
+            categorySelectionFeature: UICategorySelectionFeature(categoryService: deps.categoryService)
         )
-        discovery = NavigationDiscoveryCoordinator(dependencies: dependencies)
-        discovery?.start()
+        discoveryCoordinator = NavigationDiscoveryCoordinator(dependencies: dependencies)
+        discoveryCoordinator?.start()
     }
 }

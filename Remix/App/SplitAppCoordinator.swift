@@ -4,22 +4,28 @@ import UIKit
 
 class SplitAppCoordinator {
 
-    private let splitCoordinator = UISplitCoordinator()
-    private let discoveryCoordinator: SplitDiscoveryCoordinator
+    struct Dependencies {
+        let categoryService: CategoryService
+    }
 
-    init(window: UIWindow) {
+    private let deps: Dependencies
+    private let splitCoordinator = UISplitCoordinator()
+    private var discoveryCoordinator: SplitDiscoveryCoordinator?
+
+    init(window: UIWindow, dependencies: Dependencies) {
+        deps = dependencies
         window.rootViewController = splitCoordinator.viewController
-        let dependencies = SplitDiscoveryCoordinator.Dependencies(
+    }
+
+    func start() {
+        let discoveryDeps = SplitDiscoveryCoordinator.Dependencies(
             splitCoordinator: splitCoordinator,
             navigationCoordinatorFactory: UINavigationCoordinatorFactory(),
             discoveryListViewFactory: DiscoveryListViewControllerFactory(),
             detailViewFactory: DetailViewControllerFactory(),
-            categorySelectionFeature: UICategorySelectionFeature()
+            categorySelectionFeature: UICategorySelectionFeature(categoryService: deps.categoryService)
         )
-        discoveryCoordinator = SplitDiscoveryCoordinator(dependencies: dependencies)
-    }
-
-    func start() {
-        discoveryCoordinator.start()
+        discoveryCoordinator = SplitDiscoveryCoordinator(dependencies: discoveryDeps)
+        discoveryCoordinator?.start()
     }
 }

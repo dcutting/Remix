@@ -2,16 +2,16 @@
 
 import UIKit
 
-class CategorySelectionListViewControllerFactory: CategorySelectionListViewFactory {
-    func make() -> CategorySelectionListView {
-        return CategorySelectionListViewController()
+class CategorySelectionViewControllerFactory: CategorySelectionViewFactory {
+    func make() -> CategorySelectionView {
+        return CategorySelectionViewController()
     }
 }
 
-class CategorySelectionListViewController: UITableViewController, CategorySelectionListView {
+class CategorySelectionViewController: UITableViewController, CategorySelectionView {
 
-    weak var delegate: CategorySelectionListViewDelegate?
-    var viewData: CategorySelectionListViewData? {
+    weak var delegate: CategorySelectionViewDelegate?
+    var viewData: CategorySelectionViewData? {
         didSet {
             updateView()
         }
@@ -29,7 +29,7 @@ class CategorySelectionListViewController: UITableViewController, CategorySelect
     }
 
     func navigationCoordinatorDidGoBack() {
-        delegate?.didAbortSelection(view: self)
+        delegate?.didAbortSelection(fromView: self)
     }
 
     private func updateView() {
