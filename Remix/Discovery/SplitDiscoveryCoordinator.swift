@@ -6,13 +6,13 @@ class SplitDiscoveryCoordinator {
 
     struct Dependencies {
 
-        var splitCoordinator: SplitCoordinator
+        var splitWireframe: SplitWireframe
 
         let discoveryInteractor = DiscoveryInteractor()
         let discoveryListFormatter = DiscoveryListFormatter()
         let detailFormatter = DiscoveryDetailFormatter()
 
-        let navigationCoordinatorFactory: NavigationCoordinatorFactory
+        let navigationWireframeFactory: NavigationWireframeFactory
         let discoveryListViewFactory: DiscoveryListViewFactory
         let detailViewFactory: DetailViewFactory
         let categorySelectionFeature: CategorySelectionFeature
@@ -20,12 +20,12 @@ class SplitDiscoveryCoordinator {
 
     private var dependencies: Dependencies
     private var discoveryListView: DiscoveryListView?
-    private let listNavigationCoordinator: NavigationCoordinator
+    private let listNavigationWireframe: NavigationWireframe
     private var categorySelectionCoordinator: CategorySelectionCoordinator?
 
     init(dependencies: Dependencies) {
         self.dependencies = dependencies
-        listNavigationCoordinator = dependencies.navigationCoordinatorFactory.make()
+        listNavigationWireframe = dependencies.navigationWireframeFactory.make()
     }
 
     func start() {
@@ -35,7 +35,7 @@ class SplitDiscoveryCoordinator {
     }
 
     private func configureMasterView() {
-        dependencies.splitCoordinator.master = listNavigationCoordinator
+        dependencies.splitWireframe.master = listNavigationWireframe
     }
 }
 
@@ -48,7 +48,7 @@ extension SplitDiscoveryCoordinator: DiscoveryListViewDelegate {
         let view = dependencies.discoveryListViewFactory.make()
         view.delegate = self
         self.discoveryListView = view
-        listNavigationCoordinator.push(view: view)
+        listNavigationWireframe.push(view: view)
     }
 
     private func updateListView(forSelectedCategoryID selectedCategoryID: CategoryID? = nil) {
@@ -72,18 +72,18 @@ extension SplitDiscoveryCoordinator: DiscoveryListViewDelegate {
     private func configureDetailView(with ad: Advert) {
         let detailView = dependencies.detailViewFactory.make()
         detailView.viewData = dependencies.detailFormatter.prepare(ad: ad)
-        dependencies.splitCoordinator.detail = detailView
+        dependencies.splitWireframe.detail = detailView
     }
 
     // TODO: consider making a popover coordinator to abstract these details.
 
     func doesWantFilters() {
-        let selectionNavigationCoordinator = dependencies.navigationCoordinatorFactory.make()
-        let categorySelectionCoordinator = dependencies.categorySelectionFeature.makeCoordinatorUsing(navigationCoordinator: selectionNavigationCoordinator)
+        let selectionNavigationWireframe = dependencies.navigationWireframeFactory.make()
+        let categorySelectionCoordinator = dependencies.categorySelectionFeature.makeCoordinatorUsing(navigationWireframe: selectionNavigationWireframe)
         categorySelectionCoordinator.delegate = self
         self.categorySelectionCoordinator = categorySelectionCoordinator
         categorySelectionCoordinator.start()
-        listNavigationCoordinator.present(view: selectionNavigationCoordinator)
+        listNavigationWireframe.present(view: selectionNavigationWireframe)
     }
 }
 
@@ -99,7 +99,7 @@ extension SplitDiscoveryCoordinator: CategorySelectionCoordinatorDelegate {
     }
 
     private func finishCategorySelection() {
-        listNavigationCoordinator.viewController?.dismiss(animated: true)
+        listNavigationWireframe.viewController?.dismiss(animated: true)
         categorySelectionCoordinator = nil
     }
 }

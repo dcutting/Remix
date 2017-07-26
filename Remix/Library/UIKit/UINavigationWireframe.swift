@@ -2,14 +2,14 @@
 
 import UIKit
 
-class UINavigationCoordinatorFactory: NavigationCoordinatorFactory {
-    func make() -> NavigationCoordinator {
-        return UINavigationCoordinator()
+class UINavigationWireframeFactory: NavigationWireframeFactory {
+    func make() -> NavigationWireframe {
+        return UINavigationWireframe()
     }
 }
 
-// Implements the NavigationCoordinator for use with UIKit components (using a UINavigationController).
-class UINavigationCoordinator: UINavigationController, NavigationCoordinator {
+// Implements the NavigationWireframe for use with UIKit components (using a UINavigationController).
+class UINavigationWireframe: UINavigationController, NavigationWireframe {
 
     private var popCheckpoints = [UIViewController]()
 
@@ -41,7 +41,7 @@ class UINavigationCoordinator: UINavigationController, NavigationCoordinator {
     }
 }
 
-extension UINavigationCoordinator: UINavigationControllerDelegate {
+extension UINavigationWireframe: UINavigationControllerDelegate {
 
     func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
 
@@ -54,6 +54,6 @@ extension UINavigationCoordinator: UINavigationControllerDelegate {
 
         guard let navigatable = fromViewController as? Navigatable else { return }
 
-        navigatable.navigationCoordinatorDidGoBack()
+        navigatable.navigationWireframeDidGoBack()
     }
 }

@@ -9,18 +9,18 @@ class SplitAppCoordinator {
     }
 
     private let deps: Dependencies
-    private let splitCoordinator = UISplitCoordinator()
+    private let splitWireframe = UISplitWireframe()
     private var discoveryCoordinator: SplitDiscoveryCoordinator?
 
     init(window: UIWindow, dependencies: Dependencies) {
         deps = dependencies
-        window.rootViewController = splitCoordinator.viewController
+        window.rootViewController = splitWireframe.viewController
     }
 
     func start() {
         let discoveryDeps = SplitDiscoveryCoordinator.Dependencies(
-            splitCoordinator: splitCoordinator,
-            navigationCoordinatorFactory: UINavigationCoordinatorFactory(),
+            splitWireframe: splitWireframe,
+            navigationWireframeFactory: UINavigationWireframeFactory(),
             discoveryListViewFactory: DiscoveryListViewControllerFactory(),
             detailViewFactory: DetailViewControllerFactory(),
             categorySelectionFeature: UICategorySelectionFeature(categoryService: deps.categoryService)

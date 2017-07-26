@@ -2,7 +2,7 @@
 
 import Foundation
 
-protocol SplitCoordinator {
+protocol SplitWireframe {
     var master: Viewable? { get set }
     var detail: Viewable? { get set }
 }

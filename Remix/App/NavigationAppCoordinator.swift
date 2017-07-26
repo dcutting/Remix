@@ -9,19 +9,19 @@ class NavigationAppCoordinator {
     }
 
     private let deps: Dependencies
-    private let navigationCoordinator = UINavigationCoordinator()
+    private let navigationWireframe = UINavigationWireframe()
     private var discoveryCoordinator: NavigationDiscoveryCoordinator?
 
     init(window: UIWindow, dependencies: Dependencies) {
         deps = dependencies
-        window.rootViewController = navigationCoordinator.viewController
+        window.rootViewController = navigationWireframe.viewController
     }
 
     func start() {
         let listFactory = DiscoveryListViewControllerFactory()
         let detailFactory = DetailViewControllerFactory()
         let dependencies = NavigationDiscoveryCoordinator.Dependencies(
-            navigationCoordinator: navigationCoordinator,
+            navigationWireframe: navigationWireframe,
             discoveryListViewFactory: listFactory,
             detailViewFactory: detailFactory,
             categorySelectionFeature: UICategorySelectionFeature(categoryService: deps.categoryService)

@@ -10,9 +10,9 @@ class UICategorySelectionFeature: CategorySelectionFeature {
         self.categoryService = categoryService
     }
 
-    func makeCoordinatorUsing(navigationCoordinator: NavigationCoordinator) -> CategorySelectionCoordinator {
+    func makeCoordinatorUsing(navigationWireframe: NavigationWireframe) -> CategorySelectionCoordinator {
         let dependencies = CategorySelectionCoordinator.Dependencies(
-            navigationCoordinator: navigationCoordinator,
+            navigationWireframe: navigationWireframe,
             categorySelectionViewFactory: makeViewFactory(),
             interactor: makeInteractor(),
             formatter: makeFormatter()

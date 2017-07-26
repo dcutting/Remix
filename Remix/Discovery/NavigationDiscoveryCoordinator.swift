@@ -5,7 +5,7 @@ import Foundation
 class NavigationDiscoveryCoordinator {
 
     struct Dependencies {
-        let navigationCoordinator: NavigationCoordinator
+        let navigationWireframe: NavigationWireframe
         let discoveryListViewFactory: DiscoveryListViewFactory
         let detailViewFactory: DetailViewFactory
         let categorySelectionFeature: CategorySelectionFeature
@@ -35,7 +35,7 @@ extension NavigationDiscoveryCoordinator: DiscoveryListViewDelegate {
         let view = dependencies.discoveryListViewFactory.make()
         view.delegate = self
         self.discoveryListView = view
-        dependencies.navigationCoordinator.push(view: view)
+        dependencies.navigationWireframe.push(view: view)
     }
 
     private func updateListView(forSelectedCategoryID selectedCategoryID: CategoryID? = nil) {
@@ -70,17 +70,17 @@ extension NavigationDiscoveryCoordinator {
     private func pushDetailView(forAd ad: Advert) {
         let detailView = dependencies.detailViewFactory.make()
         detailView.viewData = discoveryDetailFormatter.prepare(ad: ad)
-        dependencies.navigationCoordinator.push(view: detailView)
+        dependencies.navigationWireframe.push(view: detailView)
     }
 }
 
 extension NavigationDiscoveryCoordinator: CategorySelectionCoordinatorDelegate {
 
     private func startCategorySelection() {
-        let coordinator = dependencies.categorySelectionFeature.makeCoordinatorUsing(navigationCoordinator: dependencies.navigationCoordinator)
+        let coordinator = dependencies.categorySelectionFeature.makeCoordinatorUsing(navigationWireframe: dependencies.navigationWireframe)
         coordinator.delegate = self
         self.categorySelectionCoordinator = coordinator
-        dependencies.navigationCoordinator.setPopCheckpoint()
+        dependencies.navigationWireframe.setPopCheckpoint()
         coordinator.start()
     }
 
@@ -94,7 +94,7 @@ extension NavigationDiscoveryCoordinator: CategorySelectionCoordinatorDelegate {
     }
 
     private func finishCategorySelection() {
-        dependencies.navigationCoordinator.popToLastCheckpoint()
+        dependencies.navigationWireframe.popToLastCheckpoint()
         categorySelectionCoordinator = nil
     }
 }

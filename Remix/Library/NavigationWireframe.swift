@@ -7,19 +7,19 @@ protocol Navigatable: Viewable {
     // from the navigation coordinator, such as notify a delegate that the operation
     // has been aborted. Typically this is used to handle the case when the user has
     // tapped the back button in a UINavigationController.
-    func navigationCoordinatorDidGoBack()
+    func navigationWireframeDidGoBack()
 }
 
 extension Navigatable {
     // By default, ignore back events.
-    func navigationCoordinatorDidGoBack() {}
+    func navigationWireframeDidGoBack() {}
 }
 
-protocol NavigationCoordinatorFactory {
-    func make() -> NavigationCoordinator
+protocol NavigationWireframeFactory {
+    func make() -> NavigationWireframe
 }
 
-protocol NavigationCoordinator: Viewable {
+protocol NavigationWireframe: Viewable {
     func push(view: Navigatable)
     func popToLastCheckpoint()
     func setPopCheckpoint()

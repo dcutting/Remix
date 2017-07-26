@@ -2,7 +2,7 @@
 
 import UIKit
 
-class UISplitCoordinator: UISplitViewController, SplitCoordinator, Viewable {
+class UISplitWireframe: UISplitViewController, SplitWireframe, Viewable {
 
     var master: Viewable? {
         didSet {

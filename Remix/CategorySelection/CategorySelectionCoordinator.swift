@@ -10,7 +10,7 @@ protocol CategorySelectionCoordinatorDelegate: class {
 class CategorySelectionCoordinator {
 
     struct Dependencies {
-        let navigationCoordinator: NavigationCoordinator
+        let navigationWireframe: NavigationWireframe
         let categorySelectionViewFactory: CategorySelectionViewFactory
         let interactor: CategorySelectionInteractor
         let formatter: CategorySelectionFormatter
@@ -32,7 +32,7 @@ class CategorySelectionCoordinator {
     @discardableResult private func pushAndUpdateView(for categoryID: CategoryID? = nil) -> CategorySelectionView {
         let view = deps.categorySelectionViewFactory.make()
         view.delegate = self
-        deps.navigationCoordinator.push(view: view)
+        deps.navigationWireframe.push(view: view)
         update(view: view, for: categoryID)
         return view
     }

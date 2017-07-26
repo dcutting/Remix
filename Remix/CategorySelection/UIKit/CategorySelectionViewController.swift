@@ -28,7 +28,7 @@ class CategorySelectionViewController: UITableViewController, CategorySelectionV
         delegate?.didDeselectAll()
     }
 
-    func navigationCoordinatorDidGoBack() {
+    func navigationWireframeDidGoBack() {
         delegate?.didAbortSelection(fromView: self)
     }
 
