@@ -44,13 +44,13 @@ extension NavigationDiscoveryCoordinator: DiscoveryListViewDelegate {
         }
     }
 
-    private func updateListView(withAds ads: [ClassifiedAd], categories: [Category]) {
+    private func updateListView(withAds ads: [Advert], categories: [Category]) {
         let viewData = discoveryListFormatter.prepare(ads: ads, categories: categories)
         discoveryListView?.viewData = viewData
     }
 
-    func didSelect(classifiedAdID: ClassifiedAdID) {
-        pushDetailView(forClassifiedAdID: classifiedAdID)
+    func didSelect(advertID: AdvertID) {
+        pushDetailView(forAdvertID: advertID)
     }
 
     func doesWantFilters() {
@@ -60,14 +60,14 @@ extension NavigationDiscoveryCoordinator: DiscoveryListViewDelegate {
 
 extension NavigationDiscoveryCoordinator {
 
-    private func pushDetailView(forClassifiedAdID classifiedAdID: ClassifiedAdID) {
-        discoveryInteractor.fetchDetail(for: classifiedAdID) { [weak self] ad in
+    private func pushDetailView(forAdvertID advertID: AdvertID) {
+        discoveryInteractor.fetchDetail(for: advertID) { [weak self] ad in
             guard let ad = ad else { preconditionFailure() }
             self?.pushDetailView(forAd: ad)
         }
     }
 
-    private func pushDetailView(forAd ad: ClassifiedAd) {
+    private func pushDetailView(forAd ad: Advert) {
         let detailView = dependencies.detailViewFactory.make()
         detailView.viewData = discoveryDetailFormatter.prepare(ad: ad)
         dependencies.navigationCoordinator.push(view: detailView)

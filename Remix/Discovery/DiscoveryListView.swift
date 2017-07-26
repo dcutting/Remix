@@ -12,7 +12,7 @@ protocol DiscoveryListView: Navigatable {
 }
 
 protocol DiscoveryListViewDelegate: class {
-    func didSelect(classifiedAdID: ClassifiedAdID)
+    func didSelect(advertID: AdvertID)
     func doesWantFilters()
 }
 
@@ -21,7 +21,7 @@ struct DiscoveryListViewData {
 }
 
 struct DiscoveryListItem {
-    let classifiedAdID: ClassifiedAdID
+    let advertID: AdvertID
     let title: String
     let category: String
 }

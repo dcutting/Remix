@@ -4,16 +4,16 @@ import Foundation
 
 class DiscoveryListFormatter {
 
-    func prepare(ads: [ClassifiedAd], categories: [Category]) -> DiscoveryListViewData {
+    func prepare(ads: [Advert], categories: [Category]) -> DiscoveryListViewData {
         let items = ads.map { ad in
             makeItem(from: ad, categories: categories)
         }
         return DiscoveryListViewData(items: items)
     }
 
-    private func makeItem(from ad: ClassifiedAd, categories: [Category]) -> DiscoveryListItem {
+    private func makeItem(from ad: Advert, categories: [Category]) -> DiscoveryListItem {
         let categoryName = name(for: ad.categoryID, categories: categories)
-        return DiscoveryListItem(classifiedAdID: ad.classifiedAdID, title: ad.title, category: categoryName)
+        return DiscoveryListItem(advertID: ad.advertID, title: ad.title, category: categoryName)
     }
 
     private func name(for adCategoryID: CategoryID, categories: [Category]) -> String {

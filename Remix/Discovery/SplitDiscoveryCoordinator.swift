@@ -57,19 +57,19 @@ extension SplitDiscoveryCoordinator: DiscoveryListViewDelegate {
         }
     }
 
-    private func updateListView(withAds ads: [ClassifiedAd], categories: [Category]) {
+    private func updateListView(withAds ads: [Advert], categories: [Category]) {
         let viewData = dependencies.discoveryListFormatter.prepare(ads: ads, categories: categories)
         discoveryListView?.viewData = viewData
     }
 
-    func didSelect(classifiedAdID: ClassifiedAdID) {
-        dependencies.discoveryInteractor.fetchDetail(for: classifiedAdID) { ad in
+    func didSelect(advertID: AdvertID) {
+        dependencies.discoveryInteractor.fetchDetail(for: advertID) { ad in
             guard let ad = ad else { preconditionFailure() }
             configureDetailView(with: ad)
         }
     }
 
-    private func configureDetailView(with ad: ClassifiedAd) {
+    private func configureDetailView(with ad: Advert) {
         let detailView = dependencies.detailViewFactory.make()
         detailView.viewData = dependencies.detailFormatter.prepare(ad: ad)
         dependencies.splitCoordinator.detail = detailView

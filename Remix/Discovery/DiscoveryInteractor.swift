@@ -4,11 +4,11 @@ import Foundation
 
 class DiscoveryInteractor {
 
-    let classifiedAdService: ClassifiedAdService = SampleClassifiedAdService()
+    let advertService: AdvertService = SampleAdvertService()
     let categoryService: CategoryService = SampleCategoryService()
     
-    func update(selectedCategoryID: CategoryID?, completion: @escaping ([ClassifiedAd], [Category]) -> Void) {
-        classifiedAdService.fetchClassifiedAds { ads in
+    func update(selectedCategoryID: CategoryID?, completion: @escaping ([Advert], [Category]) -> Void) {
+        advertService.fetchAdverts { ads in
             categoryService.fetchCategories { categories in
                 let filteredAds = filter(ads: ads, for: selectedCategoryID)
                 completion(filteredAds, categories)
@@ -16,7 +16,7 @@ class DiscoveryInteractor {
         }
     }
 
-    private func filter(ads: [ClassifiedAd], for categoryID: CategoryID?) -> [ClassifiedAd] {
+    private func filter(ads: [Advert], for categoryID: CategoryID?) -> [Advert] {
         guard let categoryID = categoryID else { return ads }
         let filteredAds = ads.filter { ad in
             ad.categoryID == categoryID
@@ -24,9 +24,9 @@ class DiscoveryInteractor {
         return filteredAds
     }
 
-    func fetchDetail(for classifiedAdID: ClassifiedAdID, completion: (ClassifiedAd?) -> Void) {
-        classifiedAdService.fetchClassifiedAd(for: classifiedAdID) { classifiedAd in
-            completion(classifiedAd)
+    func fetchDetail(for advertID: AdvertID, completion: (Advert?) -> Void) {
+        advertService.fetchAdverts(for: advertID) { advert in
+            completion(advert)
         }
     }
 }

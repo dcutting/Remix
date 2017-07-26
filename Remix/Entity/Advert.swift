@@ -2,10 +2,10 @@
 
 import Foundation
 
-typealias ClassifiedAdID = String
+typealias AdvertID = String
 
-struct ClassifiedAd {
-    let classifiedAdID: ClassifiedAdID
+struct Advert {
+    let advertID: AdvertID
     let title: String
     let categoryID: CategoryID
 }
