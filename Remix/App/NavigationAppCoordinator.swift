@@ -5,6 +5,7 @@ import UIKit
 class NavigationAppCoordinator {
 
     struct Dependencies {
+        let advertService: AdvertService
         let categoryService: CategoryService
     }
 
@@ -22,6 +23,9 @@ class NavigationAppCoordinator {
         let detailFactory = DetailViewControllerFactory()
         let dependencies = NavigationDiscoveryCoordinator.Dependencies(
             navigationWireframe: navigationWireframe,
+            interactor: DiscoveryInteractor(advertService: deps.advertService, categoryService: deps.categoryService),
+            listFormatter: DiscoveryListFormatter(),
+            detailFormatter: DiscoveryDetailFormatter(),
             discoveryListViewFactory: listFactory,
             detailViewFactory: detailFactory,
             categorySelectionFeature: UICategorySelectionFeature(categoryService: deps.categoryService)

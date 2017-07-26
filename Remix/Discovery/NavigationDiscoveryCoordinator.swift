@@ -5,22 +5,24 @@ import Foundation
 class NavigationDiscoveryCoordinator {
 
     struct Dependencies {
+
         let navigationWireframe: NavigationWireframe
+
+        let interactor: DiscoveryInteractor
+        let listFormatter: DiscoveryListFormatter
+        let detailFormatter: DiscoveryDetailFormatter
+
         let discoveryListViewFactory: DiscoveryListViewFactory
         let detailViewFactory: DetailViewFactory
         let categorySelectionFeature: CategorySelectionFeature
     }
 
-    private let dependencies: Dependencies
-    private let discoveryInteractor = DiscoveryInteractor()
-    private let discoveryListFormatter = DiscoveryListFormatter()
-    private let discoveryDetailFormatter = DiscoveryDetailFormatter()
-    
+    private let deps: Dependencies
     private var discoveryListView: DiscoveryListView?
     private var categorySelectionCoordinator: CategorySelectionCoordinator?
 
     init(dependencies: Dependencies) {
-        self.dependencies = dependencies
+        self.deps = dependencies
     }
 
     func start() {
@@ -32,20 +34,20 @@ class NavigationDiscoveryCoordinator {
 extension NavigationDiscoveryCoordinator: DiscoveryListViewDelegate {
 
     private func pushListView() {
-        let view = dependencies.discoveryListViewFactory.make()
+        let view = deps.discoveryListViewFactory.make()
         view.delegate = self
         self.discoveryListView = view
-        dependencies.navigationWireframe.push(view: view)
+        deps.navigationWireframe.push(view: view)
     }
 
     private func updateListView(forSelectedCategoryID selectedCategoryID: CategoryID? = nil) {
-        discoveryInteractor.update(selectedCategoryID: selectedCategoryID) { [weak self] (adverts, categories) in
+        deps.interactor.update(selectedCategoryID: selectedCategoryID) { [weak self] (adverts, categories) in
             self?.updateListView(with: adverts, categories: categories)
         }
     }
 
     private func updateListView(with adverts: [Advert], categories: [Category]) {
-        let viewData = discoveryListFormatter.prepare(adverts: adverts, categories: categories)
+        let viewData = deps.listFormatter.prepare(adverts: adverts, categories: categories)
         discoveryListView?.viewData = viewData
     }
 
@@ -61,26 +63,26 @@ extension NavigationDiscoveryCoordinator: DiscoveryListViewDelegate {
 extension NavigationDiscoveryCoordinator {
 
     private func pushDetailView(forAdvertID advertID: AdvertID) {
-        discoveryInteractor.fetchDetail(for: advertID) { [weak self] advert in
+        deps.interactor.fetchDetail(for: advertID) { [weak self] advert in
             guard let advert = advert else { preconditionFailure() }
             self?.pushDetailView(for: advert)
         }
     }
 
     private func pushDetailView(for advert: Advert) {
-        let detailView = dependencies.detailViewFactory.make()
-        detailView.viewData = discoveryDetailFormatter.prepare(advert: advert)
-        dependencies.navigationWireframe.push(view: detailView)
+        let detailView = deps.detailViewFactory.make()
+        detailView.viewData = deps.detailFormatter.prepare(advert: advert)
+        deps.navigationWireframe.push(view: detailView)
     }
 }
 
 extension NavigationDiscoveryCoordinator: CategorySelectionCoordinatorDelegate {
 
     private func startCategorySelection() {
-        let coordinator = dependencies.categorySelectionFeature.makeCoordinatorUsing(navigationWireframe: dependencies.navigationWireframe)
+        let coordinator = deps.categorySelectionFeature.makeCoordinatorUsing(navigationWireframe: deps.navigationWireframe)
         coordinator.delegate = self
         self.categorySelectionCoordinator = coordinator
-        dependencies.navigationWireframe.setPopCheckpoint()
+        deps.navigationWireframe.setPopCheckpoint()
         coordinator.start()
     }
 
@@ -94,7 +96,7 @@ extension NavigationDiscoveryCoordinator: CategorySelectionCoordinatorDelegate {
     }
 
     private func finishCategorySelection() {
-        dependencies.navigationWireframe.popToLastCheckpoint()
+        deps.navigationWireframe.popToLastCheckpoint()
         categorySelectionCoordinator = nil
     }
 }

@@ -4,8 +4,13 @@ import Foundation
 
 class DiscoveryInteractor {
 
-    let advertService: AdvertService = SampleAdvertService()
-    let categoryService: CategoryService = SampleCategoryService()
+    let advertService: AdvertService
+    let categoryService: CategoryService
+
+    init(advertService: AdvertService, categoryService: CategoryService) {
+        self.advertService = advertService
+        self.categoryService = categoryService
+    }
     
     func update(selectedCategoryID: CategoryID?, completion: @escaping ([Advert], [Category]) -> Void) {
         advertService.fetchAdverts { adverts in

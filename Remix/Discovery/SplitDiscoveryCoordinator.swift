@@ -8,9 +8,9 @@ class SplitDiscoveryCoordinator {
 
         var splitWireframe: SplitWireframe
 
-        let discoveryInteractor = DiscoveryInteractor()
-        let discoveryListFormatter = DiscoveryListFormatter()
-        let detailFormatter = DiscoveryDetailFormatter()
+        let interactor: DiscoveryInteractor
+        let listFormatter: DiscoveryListFormatter
+        let detailFormatter: DiscoveryDetailFormatter
 
         let navigationWireframeFactory: NavigationWireframeFactory
         let discoveryListViewFactory: DiscoveryListViewFactory
@@ -52,18 +52,18 @@ extension SplitDiscoveryCoordinator: DiscoveryListViewDelegate {
     }
 
     private func updateListView(forSelectedCategoryID selectedCategoryID: CategoryID? = nil) {
-        dependencies.discoveryInteractor.update(selectedCategoryID: selectedCategoryID) { [weak self] (adverts, categories) in
+        dependencies.interactor.update(selectedCategoryID: selectedCategoryID) { [weak self] (adverts, categories) in
             self?.updateListView(with: adverts, categories: categories)
         }
     }
 
     private func updateListView(with adverts: [Advert], categories: [Category]) {
-        let viewData = dependencies.discoveryListFormatter.prepare(adverts: adverts, categories: categories)
+        let viewData = dependencies.listFormatter.prepare(adverts: adverts, categories: categories)
         discoveryListView?.viewData = viewData
     }
 
     func didSelect(advertID: AdvertID) {
-        dependencies.discoveryInteractor.fetchDetail(for: advertID) { advert in
+        dependencies.interactor.fetchDetail(for: advertID) { advert in
             guard let advert = advert else { preconditionFailure() }
             configureDetailView(with: advert)
         }

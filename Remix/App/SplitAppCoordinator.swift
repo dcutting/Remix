@@ -5,6 +5,7 @@ import UIKit
 class SplitAppCoordinator {
 
     struct Dependencies {
+        let advertService: AdvertService
         let categoryService: CategoryService
     }
 
@@ -20,6 +21,9 @@ class SplitAppCoordinator {
     func start() {
         let discoveryDeps = SplitDiscoveryCoordinator.Dependencies(
             splitWireframe: splitWireframe,
+            interactor: DiscoveryInteractor(advertService: deps.advertService, categoryService: deps.categoryService),
+            listFormatter: DiscoveryListFormatter(),
+            detailFormatter: DiscoveryDetailFormatter(),
             navigationWireframeFactory: UINavigationWireframeFactory(),
             discoveryListViewFactory: DiscoveryListViewControllerFactory(),
             detailViewFactory: DetailViewControllerFactory(),
