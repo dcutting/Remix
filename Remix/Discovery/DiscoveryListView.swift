@@ -17,10 +17,10 @@ protocol DiscoveryListViewDelegate: class {
 }
 
 struct DiscoveryListViewData {
-    let items: [DiscoveryListItem]
+    let items: [DiscoveryListViewDataItem]
 }
 
-struct DiscoveryListItem {
+struct DiscoveryListViewDataItem {
     let advertID: AdvertID
     let title: String
     let category: String

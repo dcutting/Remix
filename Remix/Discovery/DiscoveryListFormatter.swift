@@ -11,9 +11,9 @@ class DiscoveryListFormatter {
         return DiscoveryListViewData(items: items)
     }
 
-    private func makeItem(from advert: Advert, categories: [Category]) -> DiscoveryListItem {
+    private func makeItem(from advert: Advert, categories: [Category]) -> DiscoveryListViewDataItem {
         let categoryName = name(for: advert.categoryID, categories: categories)
-        return DiscoveryListItem(advertID: advert.advertID, title: advert.title, category: categoryName)
+        return DiscoveryListViewDataItem(advertID: advert.advertID, title: advert.title, category: categoryName)
     }
 
     private func name(for categoryID: CategoryID, categories: [Category]) -> String {
