@@ -52,26 +52,26 @@ extension SplitDiscoveryCoordinator: DiscoveryListViewDelegate {
     }
 
     private func updateListView(forSelectedCategoryID selectedCategoryID: CategoryID? = nil) {
-        dependencies.discoveryInteractor.update(selectedCategoryID: selectedCategoryID) { [weak self] (ads, categories) in
-            self?.updateListView(withAds: ads, categories: categories)
+        dependencies.discoveryInteractor.update(selectedCategoryID: selectedCategoryID) { [weak self] (adverts, categories) in
+            self?.updateListView(with: adverts, categories: categories)
         }
     }
 
-    private func updateListView(withAds ads: [Advert], categories: [Category]) {
-        let viewData = dependencies.discoveryListFormatter.prepare(ads: ads, categories: categories)
+    private func updateListView(with adverts: [Advert], categories: [Category]) {
+        let viewData = dependencies.discoveryListFormatter.prepare(adverts: adverts, categories: categories)
         discoveryListView?.viewData = viewData
     }
 
     func didSelect(advertID: AdvertID) {
-        dependencies.discoveryInteractor.fetchDetail(for: advertID) { ad in
-            guard let ad = ad else { preconditionFailure() }
-            configureDetailView(with: ad)
+        dependencies.discoveryInteractor.fetchDetail(for: advertID) { advert in
+            guard let advert = advert else { preconditionFailure() }
+            configureDetailView(with: advert)
         }
     }
 
-    private func configureDetailView(with ad: Advert) {
+    private func configureDetailView(with advert: Advert) {
         let detailView = dependencies.detailViewFactory.make()
-        detailView.viewData = dependencies.detailFormatter.prepare(ad: ad)
+        detailView.viewData = dependencies.detailFormatter.prepare(advert: advert)
         dependencies.splitWireframe.detail = detailView
     }
 

@@ -39,13 +39,13 @@ extension NavigationDiscoveryCoordinator: DiscoveryListViewDelegate {
     }
 
     private func updateListView(forSelectedCategoryID selectedCategoryID: CategoryID? = nil) {
-        discoveryInteractor.update(selectedCategoryID: selectedCategoryID) { [weak self] (ads, categories) in
-            self?.updateListView(withAds: ads, categories: categories)
+        discoveryInteractor.update(selectedCategoryID: selectedCategoryID) { [weak self] (adverts, categories) in
+            self?.updateListView(with: adverts, categories: categories)
         }
     }
 
-    private func updateListView(withAds ads: [Advert], categories: [Category]) {
-        let viewData = discoveryListFormatter.prepare(ads: ads, categories: categories)
+    private func updateListView(with adverts: [Advert], categories: [Category]) {
+        let viewData = discoveryListFormatter.prepare(adverts: adverts, categories: categories)
         discoveryListView?.viewData = viewData
     }
 
@@ -61,15 +61,15 @@ extension NavigationDiscoveryCoordinator: DiscoveryListViewDelegate {
 extension NavigationDiscoveryCoordinator {
 
     private func pushDetailView(forAdvertID advertID: AdvertID) {
-        discoveryInteractor.fetchDetail(for: advertID) { [weak self] ad in
-            guard let ad = ad else { preconditionFailure() }
-            self?.pushDetailView(forAd: ad)
+        discoveryInteractor.fetchDetail(for: advertID) { [weak self] advert in
+            guard let advert = advert else { preconditionFailure() }
+            self?.pushDetailView(for: advert)
         }
     }
 
-    private func pushDetailView(forAd ad: Advert) {
+    private func pushDetailView(for advert: Advert) {
         let detailView = dependencies.detailViewFactory.make()
-        detailView.viewData = discoveryDetailFormatter.prepare(ad: ad)
+        detailView.viewData = discoveryDetailFormatter.prepare(advert: advert)
         dependencies.navigationWireframe.push(view: detailView)
     }
 }

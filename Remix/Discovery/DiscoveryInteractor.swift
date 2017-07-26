@@ -8,20 +8,20 @@ class DiscoveryInteractor {
     let categoryService: CategoryService = SampleCategoryService()
     
     func update(selectedCategoryID: CategoryID?, completion: @escaping ([Advert], [Category]) -> Void) {
-        advertService.fetchAdverts { ads in
+        advertService.fetchAdverts { adverts in
             categoryService.fetchCategories { categories in
-                let filteredAds = filter(ads: ads, for: selectedCategoryID)
-                completion(filteredAds, categories)
+                let filteredAdverts = filter(adverts: adverts, for: selectedCategoryID)
+                completion(filteredAdverts, categories)
             }
         }
     }
 
-    private func filter(ads: [Advert], for categoryID: CategoryID?) -> [Advert] {
-        guard let categoryID = categoryID else { return ads }
-        let filteredAds = ads.filter { ad in
-            ad.categoryID == categoryID
+    private func filter(adverts: [Advert], for categoryID: CategoryID?) -> [Advert] {
+        guard let categoryID = categoryID else { return adverts }
+        let filteredAdverts = adverts.filter { advert in
+            advert.categoryID == categoryID
         }
-        return filteredAds
+        return filteredAdverts
     }
 
     func fetchDetail(for advertID: AdvertID, completion: (Advert?) -> Void) {
