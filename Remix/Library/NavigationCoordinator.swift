@@ -24,7 +24,3 @@ protocol NavigationCoordinator: Viewable {
     func popToLastCheckpoint()
     func setPopCheckpoint()
 }
-
-protocol HasNavigationCoordinator {
-    var navigationCoordinator: NavigationCoordinator { get }
-}

@@ -2,10 +2,6 @@
 
 import Foundation
 
-protocol HasDiscoveryListViewFactory {
-    var discoveryListViewFactory: DiscoveryListViewFactory { get }
-}
-
 protocol DiscoveryListViewFactory {
     func make() -> DiscoveryListView
 }

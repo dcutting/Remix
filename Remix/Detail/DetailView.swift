@@ -2,10 +2,6 @@
 
 import Foundation
 
-protocol HasDetailViewFactory {
-    var detailViewFactory: DetailViewFactory { get }
-}
-
 protocol DetailViewFactory {
     func make() -> DetailView
 }

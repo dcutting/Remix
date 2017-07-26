@@ -2,10 +2,6 @@
 
 import Foundation
 
-protocol HasCategorySelectionListViewFactory {
-    var categorySelectionListViewFactory: CategorySelectionListViewFactory { get }
-}
-
 protocol CategorySelectionListViewFactory {
     func make() -> CategorySelectionListView
 }
