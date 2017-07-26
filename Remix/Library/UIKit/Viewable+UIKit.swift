@@ -12,4 +12,8 @@ extension Viewable {
         presented.modalPresentationStyle = .formSheet
         viewController?.present(presented, animated: true)
     }
+
+    func dismiss() {
+        viewController?.dismiss(animated: true)
+    }
 }

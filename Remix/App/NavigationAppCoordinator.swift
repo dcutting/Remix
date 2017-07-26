@@ -19,18 +19,35 @@ class NavigationAppCoordinator {
     }
 
     func start() {
-        let listFactory = AdvertListViewControllerFactory()
-        let detailFactory = AdvertDetailViewControllerFactory()
         let dependencies = NavigationDiscoveryCoordinator.Dependencies(
             navigationWireframe: navigationWireframe,
-            interactor: DiscoveryInteractor(advertService: deps.advertService, categoryService: deps.categoryService),
-            listFormatter: AdvertListFormatter(),
-            detailFormatter: DiscoveryDetailFormatter(),
-            listViewFactory: listFactory,
-            detailViewFactory: detailFactory,
-            categorySelectionFeature: UICategorySelectionFeature(categoryService: deps.categoryService)
+            interactor: makeInteractor(),
+            detailFormatter: makeDetailFormatter(),
+            detailViewFactory: makeDetailViewFactory(),
+            advertListFeature: makeAdvertListFeature(),
+            categorySelectionFeature: makeCategorySelectionFeature()
         )
         discoveryCoordinator = NavigationDiscoveryCoordinator(dependencies: dependencies)
         discoveryCoordinator?.start()
+    }
+
+    private func makeInteractor() -> DiscoveryInteractor {
+        return DiscoveryInteractor(advertService: deps.advertService, categoryService: deps.categoryService)
+    }
+
+    private func makeDetailFormatter() -> DiscoveryDetailFormatter {
+        return DiscoveryDetailFormatter()
+    }
+
+    private func makeDetailViewFactory() -> AdvertDetailViewFactory {
+        return AdvertDetailViewControllerFactory()
+    }
+
+    private func makeAdvertListFeature() -> AdvertListFeature {
+        return UIAdvertListFeature(advertService: deps.advertService, categoryService: deps.categoryService)
+    }
+
+    private func makeCategorySelectionFeature() -> CategorySelectionFeature {
+        return UICategorySelectionFeature(categoryService: deps.categoryService)
     }
 }

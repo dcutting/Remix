@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		C8026F701F25563D00732BAE /* Viewable+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8026F6F1F25563D00732BAE /* Viewable+UIKit.swift */; };
+		C8289F711F28C09000D96136 /* AdvertListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8289F701F28C09000D96136 /* AdvertListInteractor.swift */; };
+		C8289F731F28C17900D96136 /* AdvertListFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8289F721F28C17900D96136 /* AdvertListFeature.swift */; };
+		C8289F751F28C37900D96136 /* UIAdvertListFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8289F741F28C37900D96136 /* UIAdvertListFeature.swift */; };
 		C849396D1F28AB3800F6348B /* Advert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C849396C1F28AB3700F6348B /* Advert.swift */; };
 		C84C231B1F17AB770038E879 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C231A1F17AB770038E879 /* AppDelegate.swift */; };
 		C84C23221F17AB770038E879 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C84C23211F17AB770038E879 /* Assets.xcassets */; };
@@ -38,6 +41,7 @@
 		C8B86F5D1F1F890D00BDCE50 /* DiscoveryDetailFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B86F5C1F1F890D00BDCE50 /* DiscoveryDetailFormatter.swift */; };
 		C8B86F5F1F1F8E7800BDCE50 /* CategorySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B86F5E1F1F8E7800BDCE50 /* CategorySelectionViewController.swift */; };
 		C8B86F611F1F909400BDCE50 /* CategorySelectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B86F601F1F909400BDCE50 /* CategorySelectionInteractor.swift */; };
+		C8C2CACB1F28BDF800F37288 /* AdvertListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C2CACA1F28BDF800F37288 /* AdvertListCoordinator.swift */; };
 		C8D0B9D61F28A085006C35A8 /* UICategorySelectionFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D0B9D51F28A085006C35A8 /* UICategorySelectionFeature.swift */; };
 		C8D0B9D81F28A41D006C35A8 /* CategorySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D0B9D71F28A41D006C35A8 /* CategorySelectionView.swift */; };
 		C8D0B9DA1F28A476006C35A8 /* CategorySelectionFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D0B9D91F28A476006C35A8 /* CategorySelectionFormatter.swift */; };
@@ -60,6 +64,9 @@
 
 /* Begin PBXFileReference section */
 		C8026F6F1F25563D00732BAE /* Viewable+UIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Viewable+UIKit.swift"; sourceTree = "<group>"; };
+		C8289F701F28C09000D96136 /* AdvertListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListInteractor.swift; sourceTree = "<group>"; };
+		C8289F721F28C17900D96136 /* AdvertListFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListFeature.swift; sourceTree = "<group>"; };
+		C8289F741F28C37900D96136 /* UIAdvertListFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAdvertListFeature.swift; sourceTree = "<group>"; };
 		C849396C1F28AB3700F6348B /* Advert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Advert.swift; sourceTree = "<group>"; };
 		C84C23171F17AB770038E879 /* Remix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Remix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C84C231A1F17AB770038E879 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +102,7 @@
 		C8B86F5C1F1F890D00BDCE50 /* DiscoveryDetailFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryDetailFormatter.swift; sourceTree = "<group>"; };
 		C8B86F5E1F1F8E7800BDCE50 /* CategorySelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectionViewController.swift; sourceTree = "<group>"; };
 		C8B86F601F1F909400BDCE50 /* CategorySelectionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectionInteractor.swift; sourceTree = "<group>"; };
+		C8C2CACA1F28BDF800F37288 /* AdvertListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListCoordinator.swift; sourceTree = "<group>"; };
 		C8D0B9D51F28A085006C35A8 /* UICategorySelectionFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICategorySelectionFeature.swift; sourceTree = "<group>"; };
 		C8D0B9D71F28A41D006C35A8 /* CategorySelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySelectionView.swift; sourceTree = "<group>"; };
 		C8D0B9D91F28A476006C35A8 /* CategorySelectionFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySelectionFormatter.swift; sourceTree = "<group>"; };
@@ -280,6 +288,7 @@
 		C87ACD7A1F28AF2D00B1A73C /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				C8289F741F28C37900D96136 /* UIAdvertListFeature.swift */,
 				C8B86F541F1F7C4000BDCE50 /* AdvertListViewController.swift */,
 			);
 			path = UIKit;
@@ -306,6 +315,9 @@
 		C8C2CAC91F28B3E800F37288 /* AdvertList */ = {
 			isa = PBXGroup;
 			children = (
+				C8289F721F28C17900D96136 /* AdvertListFeature.swift */,
+				C8C2CACA1F28BDF800F37288 /* AdvertListCoordinator.swift */,
+				C8289F701F28C09000D96136 /* AdvertListInteractor.swift */,
 				C87C0A601F17C52D00715A9E /* AdvertListFormatter.swift */,
 				C84C23521F17B0C30038E879 /* AdvertListView.swift */,
 				C87ACD7A1F28AF2D00B1A73C /* UIKit */,
@@ -436,6 +448,7 @@
 				C88651D31F1FB5A30085E239 /* SampleAdvertService.swift in Sources */,
 				C84C234C1F17AE0D0038E879 /* AutoCategoryInsertionCoordinator.swift in Sources */,
 				C8E4B7F21F25533100E9EB44 /* Viewable.swift in Sources */,
+				C8289F731F28C17900D96136 /* AdvertListFeature.swift in Sources */,
 				C8026F701F25563D00732BAE /* Viewable+UIKit.swift in Sources */,
 				C84C234D1F17AE960038E879 /* NavigationDiscoveryCoordinator.swift in Sources */,
 				C87C0A5F1F17C3FA00715A9E /* DiscoveryInteractor.swift in Sources */,
@@ -444,15 +457,18 @@
 				C8E4B7EE1F254C9B00E9EB44 /* SplitWireframe.swift in Sources */,
 				C8B86F591F1F820B00BDCE50 /* AdvertDetailViewController.swift in Sources */,
 				C84C234A1F17ADFD0038E879 /* ManualCategoryInsertionCoordinator.swift in Sources */,
+				C8C2CACB1F28BDF800F37288 /* AdvertListCoordinator.swift in Sources */,
 				C84C231B1F17AB770038E879 /* AppDelegate.swift in Sources */,
 				C8D0B9D61F28A085006C35A8 /* UICategorySelectionFeature.swift in Sources */,
 				C88651CB1F1F99E60085E239 /* CategoryService.swift in Sources */,
 				C84C23661F17BBBA0038E879 /* AdvertListViewFake.swift in Sources */,
 				C8D0B9DA1F28A476006C35A8 /* CategorySelectionFormatter.swift in Sources */,
+				C8289F711F28C09000D96136 /* AdvertListInteractor.swift in Sources */,
 				C89D3E591F28839500E0E264 /* CategorySelectionFeature.swift in Sources */,
 				C8B86F551F1F7C4000BDCE50 /* AdvertListViewController.swift in Sources */,
 				C8B86F5D1F1F890D00BDCE50 /* DiscoveryDetailFormatter.swift in Sources */,
 				C84C235C1F17B5FF0038E879 /* Category.swift in Sources */,
+				C8289F751F28C37900D96136 /* UIAdvertListFeature.swift in Sources */,
 				C84C23681F17BCB00038E879 /* AdvertDetailViewFake.swift in Sources */,
 				C8B86F611F1F909400BDCE50 /* CategorySelectionInteractor.swift in Sources */,
 				C88651CA1F1F99C50085E239 /* SampleCategoryService.swift in Sources */,

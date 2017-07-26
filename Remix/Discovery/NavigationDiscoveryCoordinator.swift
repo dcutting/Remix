@@ -9,16 +9,15 @@ class NavigationDiscoveryCoordinator {
         let navigationWireframe: NavigationWireframe
 
         let interactor: DiscoveryInteractor
-        let listFormatter: AdvertListFormatter
         let detailFormatter: DiscoveryDetailFormatter
-
-        let listViewFactory: AdvertListViewFactory
         let detailViewFactory: AdvertDetailViewFactory
+
+        let advertListFeature: AdvertListFeature
         let categorySelectionFeature: CategorySelectionFeature
     }
 
     private let deps: Dependencies
-    private var listView: AdvertListView?
+    private var advertListCoordinator: AdvertListCoordinator?
     private var categorySelectionCoordinator: CategorySelectionCoordinator?
 
     init(dependencies: Dependencies) {
@@ -26,43 +25,23 @@ class NavigationDiscoveryCoordinator {
     }
 
     func start() {
-        pushListView()
-        updateListView()
+        startAdvertList()
     }
 }
 
-extension NavigationDiscoveryCoordinator: AdvertListViewDelegate {
+extension NavigationDiscoveryCoordinator: AdvertListCoordinatorDelegate {
 
-    private func pushListView() {
-        let view = deps.listViewFactory.make()
-        view.delegate = self
-        listView = view
-        deps.navigationWireframe.push(view: view)
-    }
-
-    private func updateListView(forSelectedCategoryID selectedCategoryID: CategoryID? = nil) {
-        deps.interactor.update(selectedCategoryID: selectedCategoryID) { [weak self] (adverts, categories) in
-            self?.updateListView(with: adverts, categories: categories)
-        }
-    }
-
-    private func updateListView(with adverts: [Advert], categories: [Category]) {
-        let viewData = deps.listFormatter.prepare(adverts: adverts, categories: categories)
-        listView?.viewData = viewData
+    func startAdvertList() {
+        advertListCoordinator = deps.advertListFeature.makeCoordinatorUsing(navigationWireframe: deps.navigationWireframe)
+        advertListCoordinator?.delegate = self
+        advertListCoordinator?.start()
     }
 
     func didSelect(advertID: AdvertID) {
-        pushDetailView(forAdvertID: advertID)
+        pushDetailView(for: advertID)
     }
 
-    func doesWantFilters() {
-        startCategorySelection()
-    }
-}
-
-extension NavigationDiscoveryCoordinator {
-
-    private func pushDetailView(forAdvertID advertID: AdvertID) {
+    private func pushDetailView(for advertID: AdvertID) {
         deps.interactor.fetchDetail(for: advertID) { [weak self] advert in
             guard let advert = advert else { preconditionFailure() }
             self?.pushDetailView(for: advert)
@@ -73,6 +52,10 @@ extension NavigationDiscoveryCoordinator {
         let detailView = deps.detailViewFactory.make()
         detailView.viewData = deps.detailFormatter.prepare(advert: advert)
         deps.navigationWireframe.push(view: detailView)
+    }
+
+    func doesWantFilters() {
+        startCategorySelection()
     }
 }
 
@@ -87,7 +70,7 @@ extension NavigationDiscoveryCoordinator: CategorySelectionCoordinatorDelegate {
     }
 
     func didSelect(categoryID: CategoryID?) {
-        updateListView(forSelectedCategoryID: categoryID)
+        advertListCoordinator?.updateAdverts(for: categoryID)
         finishCategorySelection()
     }
 

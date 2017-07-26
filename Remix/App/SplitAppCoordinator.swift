@@ -21,15 +21,38 @@ class SplitAppCoordinator {
     func start() {
         let discoveryDeps = SplitDiscoveryCoordinator.Dependencies(
             splitWireframe: splitWireframe,
-            interactor: DiscoveryInteractor(advertService: deps.advertService, categoryService: deps.categoryService),
-            listFormatter: AdvertListFormatter(),
-            detailFormatter: DiscoveryDetailFormatter(),
-            navigationWireframeFactory: UINavigationWireframeFactory(),
-            listViewFactory: AdvertListViewControllerFactory(),
-            detailViewFactory: AdvertDetailViewControllerFactory(),
-            categorySelectionFeature: UICategorySelectionFeature(categoryService: deps.categoryService)
+            navigationWireframeFactory: makeNavigationWireframeFactory(),
+            interactor: makeInteractor(),
+            detailFormatter: makeDetailFormatter(),
+            detailViewFactory: makeDetailViewFactory(),
+            advertListFeature: makeAdvertListFeature(),
+            categorySelectionFeature: makeCategorySelectionFeature()
         )
         discoveryCoordinator = SplitDiscoveryCoordinator(dependencies: discoveryDeps)
         discoveryCoordinator?.start()
+    }
+
+    private func makeInteractor() -> DiscoveryInteractor {
+        return DiscoveryInteractor(advertService: deps.advertService, categoryService: deps.categoryService)
+    }
+
+    private func makeDetailFormatter() -> DiscoveryDetailFormatter {
+        return DiscoveryDetailFormatter()
+    }
+
+    private func makeNavigationWireframeFactory() -> NavigationWireframeFactory {
+        return UINavigationWireframeFactory()
+    }
+
+    private func makeDetailViewFactory() -> AdvertDetailViewFactory {
+        return AdvertDetailViewControllerFactory()
+    }
+
+    private func makeAdvertListFeature() -> AdvertListFeature {
+        return UIAdvertListFeature(advertService: deps.advertService, categoryService: deps.categoryService)
+    }
+
+    private func makeCategorySelectionFeature() -> CategorySelectionFeature {
+        return UICategorySelectionFeature(categoryService: deps.categoryService)
     }
 }
