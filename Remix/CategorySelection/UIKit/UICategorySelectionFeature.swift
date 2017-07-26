@@ -4,10 +4,14 @@ import Foundation
 
 class UICategorySelectionFeature: CategorySelectionFeature {
 
-    let categoryService: CategoryService
+    struct Dependencies {
+        let categoryService: CategoryService
+    }
 
-    init(categoryService: CategoryService) {
-        self.categoryService = categoryService
+    private let deps: Dependencies
+
+    init(dependencies: Dependencies) {
+        deps = dependencies
     }
 
     func makeCoordinatorUsing(navigationWireframe: NavigationWireframe) -> CategorySelectionCoordinator {
@@ -25,7 +29,7 @@ class UICategorySelectionFeature: CategorySelectionFeature {
     }
 
     private func makeInteractor() -> CategorySelectionInteractor {
-        return CategorySelectionInteractor(categoryService: categoryService)
+        return CategorySelectionInteractor(categoryService: deps.categoryService)
     }
 
     private func makeFormatter() -> CategorySelectionFormatter {

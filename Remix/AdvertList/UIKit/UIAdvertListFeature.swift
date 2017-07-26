@@ -4,12 +4,15 @@ import Foundation
 
 class UIAdvertListFeature: AdvertListFeature {
 
-    let advertService: AdvertService
-    let categoryService: CategoryService
+    struct Dependencies {
+        let advertService: AdvertService
+        let categoryService: CategoryService
+    }
 
-    init(advertService: AdvertService, categoryService: CategoryService) {
-        self.advertService = advertService
-        self.categoryService = categoryService
+    private let deps: Dependencies
+
+    init(dependencies: Dependencies) {
+        deps = dependencies
     }
 
     func makeCoordinatorUsing(navigationWireframe: NavigationWireframe) -> AdvertListCoordinator {
@@ -23,7 +26,7 @@ class UIAdvertListFeature: AdvertListFeature {
     }
 
     private func makeInteractor() -> AdvertListInteractor {
-        return AdvertListInteractor(advertService: advertService, categoryService: categoryService)
+        return AdvertListInteractor(advertService: deps.advertService, categoryService: deps.categoryService)
     }
 
     private func makeFormatter() -> AdvertListFormatter {

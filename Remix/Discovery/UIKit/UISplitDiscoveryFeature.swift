@@ -45,10 +45,12 @@ class UISplitDiscoveryFeature: SplitDiscoveryFeature {
     }
 
     private func makeAdvertListFeature() -> AdvertListFeature {
-        return UIAdvertListFeature(advertService: deps.advertService, categoryService: deps.categoryService)
+        let featureDeps = UIAdvertListFeature.Dependencies(advertService: deps.advertService, categoryService: deps.categoryService)
+        return UIAdvertListFeature(dependencies: featureDeps)
     }
 
     private func makeCategorySelectionFeature() -> CategorySelectionFeature {
-        return UICategorySelectionFeature(categoryService: deps.categoryService)
+        let featureDeps = UICategorySelectionFeature.Dependencies(categoryService: deps.categoryService)
+        return UICategorySelectionFeature(dependencies: featureDeps)
     }
 }
