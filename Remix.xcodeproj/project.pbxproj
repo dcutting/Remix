@@ -55,13 +55,11 @@
 		C8DB6C781F2A1AF2000EFA3E /* DiscoveryInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DB6C771F2A1AF2000EFA3E /* DiscoveryInteractorTests.swift */; };
 		C8E4B7EA1F25397100E9EB44 /* SplitDiscoveryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84D330B1F24D4C1005BD99A /* SplitDiscoveryCoordinator.swift */; };
 		DB6C496DFCF9FC07E5AE750A /* Pods_LogicTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9114D7BE59BDE078516E9BE9 /* Pods_LogicTests.framework */; };
-		F66E796AF8538868873AF6E3 /* Pods_RemixLogicTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FC2ACC69A68D291B28D0A3 /* Pods_RemixLogicTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		06DC4658A54F932C0655AC7F /* Pods-LogicTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LogicTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LogicTests/Pods-LogicTests.release.xcconfig"; sourceTree = "<group>"; };
 		27C148F0CCBF988C7E375A81 /* Pods-Remix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Remix.release.xcconfig"; path = "Pods/Target Support Files/Pods-Remix/Pods-Remix.release.xcconfig"; sourceTree = "<group>"; };
-		65FC2ACC69A68D291B28D0A3 /* Pods_RemixLogicTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RemixLogicTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AEF6ED3EA7AB8909F5D4114 /* Pods_Remix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Remix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85B4912FF4B9CF29512701CE /* Pods-LogicTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LogicTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LogicTests/Pods-LogicTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9114D7BE59BDE078516E9BE9 /* Pods_LogicTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LogicTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,7 +106,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F66E796AF8538868873AF6E3 /* Pods_RemixLogicTests.framework in Frameworks */,
 				DB6C496DFCF9FC07E5AE750A /* Pods_LogicTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -128,7 +125,6 @@
 			isa = PBXGroup;
 			children = (
 				7AEF6ED3EA7AB8909F5D4114 /* Pods_Remix.framework */,
-				65FC2ACC69A68D291B28D0A3 /* Pods_RemixLogicTests.framework */,
 				9114D7BE59BDE078516E9BE9 /* Pods_LogicTests.framework */,
 			);
 			name = Frameworks;
@@ -335,7 +331,7 @@
 			dependencies = (
 			);
 			name = LogicTests;
-			productName = RemixLogicTests;
+			productName = LogicTests;
 			productReference = C81D0F3F1F28E499007481A2 /* LogicTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
