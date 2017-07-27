@@ -184,12 +184,9 @@
 			isa = PBXGroup;
 			children = (
 				C81D0F431F28E499007481A2 /* Info.plist */,
-				C81D0F6B1F293FC2007481A2 /* ViewableFake.swift */,
-				C81D0F411F28E499007481A2 /* CategorySelectionFormatterTests.swift */,
-				C81D0F6D1F29DEA0007481A2 /* CategorySelectionInteractorTests.swift */,
-				C84DBC971F2A12B500C26AF6 /* AdvertListInteractorTests.swift */,
-				C8B48D4B1F2A14840014671F /* CategoryHelpers.swift */,
-				C8B48D4D1F2A15C20014671F /* AdvertHelpers.swift */,
+				C8B48D501F2A170D0014671F /* AdvertList */,
+				C8B48D511F2A17140014671F /* CategorySelection */,
+				C8B48D4F1F2A17050014671F /* Helpers */,
 			);
 			path = RemixLogicTests;
 			sourceTree = "<group>";
@@ -359,6 +356,33 @@
 				C88651D21F1FB5A30085E239 /* MockAdvertService.swift */,
 			);
 			path = ClassifiedAdService;
+			sourceTree = "<group>";
+		};
+		C8B48D4F1F2A17050014671F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C81D0F6B1F293FC2007481A2 /* ViewableFake.swift */,
+				C8B48D4B1F2A14840014671F /* CategoryHelpers.swift */,
+				C8B48D4D1F2A15C20014671F /* AdvertHelpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		C8B48D501F2A170D0014671F /* AdvertList */ = {
+			isa = PBXGroup;
+			children = (
+				C84DBC971F2A12B500C26AF6 /* AdvertListInteractorTests.swift */,
+			);
+			path = AdvertList;
+			sourceTree = "<group>";
+		};
+		C8B48D511F2A17140014671F /* CategorySelection */ = {
+			isa = PBXGroup;
+			children = (
+				C81D0F411F28E499007481A2 /* CategorySelectionFormatterTests.swift */,
+				C81D0F6D1F29DEA0007481A2 /* CategorySelectionInteractorTests.swift */,
+			);
+			path = CategorySelection;
 			sourceTree = "<group>";
 		};
 		C8B8FE521F28D0A1005B4BB9 /* UIKit */ = {
