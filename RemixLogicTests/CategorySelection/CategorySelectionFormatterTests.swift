@@ -1,6 +1,7 @@
 //  Copyright © 2017 cutting.io. All rights reserved.
 
 import XCTest
+import Core
 
 class CategorySelectionFormatterTests: XCTestCase {
 
@@ -8,9 +9,9 @@ class CategorySelectionFormatterTests: XCTestCase {
 
         let formatter = CategorySelectionFormatter()
         let categories = [
-            Category(categoryID: "1", parent: nil, children: ["1"], title: "Cars"),
-            Category(categoryID: "2", parent: "1", children: [], title: "Racing cars"),
-            Category(categoryID: "3", parent: nil, children: [], title: "Bicycles"),
+            Core.Category(categoryID: "1", parent: nil, children: ["1"], title: "Cars"),
+            Core.Category(categoryID: "2", parent: "1", children: [], title: "Racing cars"),
+            Core.Category(categoryID: "3", parent: nil, children: [], title: "Bicycles"),
         ]
 
         let actual = formatter.prepare(categories: categories)

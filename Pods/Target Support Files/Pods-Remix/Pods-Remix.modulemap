@@ -1,0 +1,6 @@
+framework module Pods_Remix {
+  umbrella header "Pods-Remix-umbrella.h"
+
+  export *
+  module * { export * }
+}

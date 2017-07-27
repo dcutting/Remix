@@ -1,6 +1,7 @@
 //  Copyright © 2017 cutting.io. All rights reserved.
 
 import Foundation
+import Core
 
 protocol AdvertListCoordinatorDelegate: class {
     func didSelect(advertID: AdvertID)
@@ -47,7 +48,7 @@ class AdvertListCoordinator {
         }
     }
 
-    private func updateListView(with adverts: [Advert], categories: [Category]) {
+    private func updateListView(with adverts: [Advert], categories: [Core.Category]) {
         let viewData = deps.formatter.prepare(adverts: adverts, categories: categories)
         view?.viewData = viewData
     }

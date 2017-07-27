@@ -36,4 +36,3 @@ class AdvertTests: XCTestCase {
         XCTAssertNotEqual(advertA, advertB)
     }
 }
-

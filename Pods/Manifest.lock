@@ -1,0 +1,23 @@
+PODS:
+  - Core (0.0.1):
+    - Core/Entity (= 0.0.1)
+    - Core/Tests (= 0.0.1)
+  - Core/Entity (0.0.1)
+  - Core/Tests (0.0.1):
+    - Core/Entity
+
+DEPENDENCIES:
+  - Core (from `Core`)
+  - Core/Entity (from `Core`)
+  - Core/Tests (from `Core`)
+
+EXTERNAL SOURCES:
+  Core:
+    :path: Core
+
+SPEC CHECKSUMS:
+  Core: 49b9b5624a39d7a8ab936b7486f4065e93f6d7cd
+
+PODFILE CHECKSUM: 5e00f005c5225ee75e3cebc8067d9733d07a333c
+
+COCOAPODS: 1.2.1

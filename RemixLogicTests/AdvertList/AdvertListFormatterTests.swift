@@ -1,6 +1,7 @@
 //  Copyright © 2017 cutting.io. All rights reserved.
 
 import XCTest
+import Core
 
 class AdvertListFormatterTests: XCTestCase {
 
@@ -44,7 +45,7 @@ class AdvertListFormatterTests: XCTestCase {
         let adverts = [
             makeAdvert(advertID: "1", title: "First", categoryID: "5")
         ]
-        let categories = [Category]()
+        let categories = [Core.Category]()
 
         let actual = subjectUnderTest.prepare(adverts: adverts, categories: categories)
 

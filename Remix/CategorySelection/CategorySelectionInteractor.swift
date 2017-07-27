@@ -1,6 +1,7 @@
 //  Copyright © 2017 cutting.io. All rights reserved.
 
 import Foundation
+import Core
 
 class CategorySelectionInteractor {
 
@@ -27,14 +28,14 @@ class CategorySelectionInteractor {
         }
     }
 
-    func fetchCategories(parentCategoryID: CategoryID?, completion: ([Category]) -> Void) {
+    func fetchCategories(parentCategoryID: CategoryID?, completion: ([Core.Category]) -> Void) {
         categoryService.fetchCategories() { categories in
             let filteredCategories = filter(categories: categories, withParentCategoryID: parentCategoryID)
             completion(filteredCategories)
         }
     }
 
-    private func filter(categories: [Category], withParentCategoryID parentCategoryID: CategoryID?) -> [Category] {
+    private func filter(categories: [Core.Category], withParentCategoryID parentCategoryID: CategoryID?) -> [Core.Category] {
         let filteredCategories = categories.filter { category in
             category.parent == parentCategoryID
         }

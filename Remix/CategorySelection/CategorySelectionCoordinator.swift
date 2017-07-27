@@ -1,6 +1,7 @@
 //  Copyright © 2017 cutting.io. All rights reserved.
 
 import Foundation
+import Core
 
 protocol CategorySelectionCoordinatorDelegate: class {
     func didSelect(categoryID: CategoryID?)

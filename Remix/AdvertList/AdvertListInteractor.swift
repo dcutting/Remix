@@ -1,6 +1,7 @@
 //  Copyright © 2017 cutting.io. All rights reserved.
 
 import Foundation
+import Core
 
 class AdvertListInteractor {
     
@@ -12,7 +13,7 @@ class AdvertListInteractor {
         self.categoryService = categoryService
     }
 
-    func update(for categoryID: CategoryID?, completion: @escaping ([Advert], [Category]) -> Void) {
+    func update(for categoryID: CategoryID?, completion: @escaping ([Advert], [Core.Category]) -> Void) {
         advertService.fetchAdverts { adverts in
             categoryService.fetchCategories { categories in
                 let filteredAdverts = filter(adverts: adverts, for: categoryID)
