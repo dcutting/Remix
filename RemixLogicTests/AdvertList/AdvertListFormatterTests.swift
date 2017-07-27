@@ -25,7 +25,7 @@ class AdvertListFormatterTests: XCTestCase {
         let actual = subjectUnderTest.prepare(adverts: adverts, categories: categories)
 
         XCTAssertEqual(3, actual.items.count)
-        
+
         XCTAssertEqual("1", actual.items[0].advertID)
         XCTAssertEqual("First", actual.items[0].title)
         XCTAssertEqual("Pets", actual.items[0].category)
@@ -37,5 +37,19 @@ class AdvertListFormatterTests: XCTestCase {
         XCTAssertEqual("3", actual.items[2].advertID)
         XCTAssertEqual("Third", actual.items[2].title)
         XCTAssertEqual("Vehicles", actual.items[2].category)
+    }
+
+    func test_prepare_missingCategory_returnsEmptyStringAsCategoryName() {
+
+        let adverts = [
+            makeAdvert(advertID: "1", title: "First", categoryID: "5")
+        ]
+        let categories = [Category]()
+
+        let actual = subjectUnderTest.prepare(adverts: adverts, categories: categories)
+
+        XCTAssertEqual("1", actual.items[0].advertID)
+        XCTAssertEqual("First", actual.items[0].title)
+        XCTAssertEqual("", actual.items[0].category)
     }
 }
