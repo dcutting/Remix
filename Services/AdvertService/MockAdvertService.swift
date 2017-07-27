@@ -3,15 +3,17 @@
 import Foundation
 import Entity
 
-class MockAdvertService: AdvertService {
+public class MockAdvertService: AdvertService {
 
-    var adverts = [Advert]()
+    public var adverts = [Advert]()
 
-    func fetchAdverts(completion: ([Advert]) -> Void) {
+    public init() {}
+
+    public func fetchAdverts(completion: ([Advert]) -> Void) {
         completion(adverts)
     }
 
-    func fetchAdvert(for advertID: AdvertID, completion: (Advert?) -> Void) {
+    public func fetchAdvert(for advertID: AdvertID, completion: (Advert?) -> Void) {
         let advert = adverts.first { advert in
             advert.advertID == advertID
         }

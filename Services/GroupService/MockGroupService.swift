@@ -3,15 +3,17 @@
 import Foundation
 import Entity
 
-class MockGroupService: GroupService {
+public class MockGroupService: GroupService {
 
-    var groups = [Group]()
+    public var groups = [Group]()
 
-    func fetchGroups(completion: ([Group]) -> Void) {
+    public init() {}
+
+    public func fetchGroups(completion: ([Group]) -> Void) {
         completion(groups)
     }
 
-    func fetchGroup(for groupID: GroupID, completion: (Group?) -> Void) {
+    public func fetchGroup(for groupID: GroupID, completion: (Group?) -> Void) {
         let group = groups.first { group in
             group.groupID == groupID
         }

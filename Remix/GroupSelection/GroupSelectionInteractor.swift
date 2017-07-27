@@ -2,6 +2,7 @@
 
 import Foundation
 import Entity
+import Services
 
 class GroupSelectionInteractor {
 

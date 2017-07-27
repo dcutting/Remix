@@ -3,7 +3,7 @@
 import Foundation
 import Entity
 
-protocol AdvertService {
+public protocol AdvertService {
     func fetchAdverts(completion: ([Advert]) -> Void)
     func fetchAdvert(for advertID: AdvertID, completion: (Advert?) -> Void)
 }

@@ -5,6 +5,13 @@ PODS:
   - Entity/Core (0.0.1)
   - Entity/Tests (0.0.1):
     - Entity/Core
+  - Services (0.0.1):
+    - Services/AdvertService (= 0.0.1)
+    - Services/GroupService (= 0.0.1)
+  - Services/AdvertService (0.0.1):
+    - Entity/Core
+  - Services/GroupService (0.0.1):
+    - Entity/Core
   - Wireframe (0.0.1):
     - Wireframe/Core (= 0.0.1)
     - Wireframe/Tests (= 0.0.1)
@@ -18,6 +25,7 @@ DEPENDENCIES:
   - Entity (from `Entity`)
   - Entity/Core (from `Entity`)
   - Entity/Tests (from `Entity`)
+  - Services (from `Services`)
   - Wireframe (from `Wireframe`)
   - Wireframe/Tests (from `Wireframe`)
   - Wireframe/UIKit (from `Wireframe`)
@@ -25,13 +33,16 @@ DEPENDENCIES:
 EXTERNAL SOURCES:
   Entity:
     :path: Entity
+  Services:
+    :path: Services
   Wireframe:
     :path: Wireframe
 
 SPEC CHECKSUMS:
   Entity: c37ab88da33a740b50a4f896a34796853b7f4cc6
+  Services: c76f04776dd841baecb35e60954a56a4ca1ff80e
   Wireframe: b109fad3bb2b8dbe29463f401fea8d01d2eb460a
 
-PODFILE CHECKSUM: 64976d97314a432ce78e1b71dea60f08144c0add
+PODFILE CHECKSUM: d121f85d8cf8671ffda9f88bb0d8699f7515c577
 
 COCOAPODS: 1.2.1

@@ -3,7 +3,7 @@
 import Foundation
 import Entity
 
-protocol GroupService {
+public protocol GroupService {
     func fetchGroups(completion: ([Group]) -> Void)
     func fetchGroup(for groupID: GroupID, completion: (Group?) -> Void)
 }

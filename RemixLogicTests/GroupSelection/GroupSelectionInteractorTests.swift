@@ -2,6 +2,7 @@
 
 import XCTest
 @testable import Entity
+@testable import Services
 
 class GroupSelectionInteractorTests: XCTestCase {
 
