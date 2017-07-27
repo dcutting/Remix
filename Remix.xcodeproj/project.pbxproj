@@ -230,7 +230,7 @@
 				C84C23431F17AD060038E879 /* CategorySelection */,
 				C84C23581F17B5AF0038E879 /* Entity */,
 				C84C23601F17B7C70038E879 /* Library */,
-				C88651CF1F1FB55E0085E239 /* ClassifiedAdService */,
+				C88651CF1F1FB55E0085E239 /* AdvertService */,
 				C88651C71F1F99840085E239 /* CategoryService */,
 				C84C23211F17AB770038E879 /* Assets.xcassets */,
 				C84C23231F17AB770038E879 /* LaunchScreen.storyboard */,
@@ -359,13 +359,13 @@
 			path = CategoryService;
 			sourceTree = "<group>";
 		};
-		C88651CF1F1FB55E0085E239 /* ClassifiedAdService */ = {
+		C88651CF1F1FB55E0085E239 /* AdvertService */ = {
 			isa = PBXGroup;
 			children = (
 				C88651D01F1FB55E0085E239 /* AdvertService.swift */,
 				C88651D21F1FB5A30085E239 /* MockAdvertService.swift */,
 			);
-			path = ClassifiedAdService;
+			path = AdvertService;
 			sourceTree = "<group>";
 		};
 		C8B48D4F1F2A17050014671F /* Helpers */ = {
