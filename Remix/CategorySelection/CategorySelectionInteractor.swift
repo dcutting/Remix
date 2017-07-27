@@ -7,6 +7,7 @@ class CategorySelectionInteractor {
     enum SelectionType {
         case leafCategory
         case parentCategory
+        case notFound
     }
 
     let categoryService: CategoryService
@@ -17,7 +18,10 @@ class CategorySelectionInteractor {
 
     func findSelectionType(for categoryID: CategoryID, completion: (SelectionType) -> Void) {
         categoryService.fetchCategory(for: categoryID) { category in
-            guard let category = category else { preconditionFailure() }
+            guard let category = category else {
+                completion(.notFound)
+                return
+            }
             let type: SelectionType = category.children.isEmpty ? .leafCategory : .parentCategory
             completion(type)
         }

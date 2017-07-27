@@ -54,6 +54,8 @@ extension CategorySelectionCoordinator: CategorySelectionViewDelegate {
                 delegate?.didSelect(categoryID: categoryID)
             case .parentCategory:
                 pushAndUpdateView(for: categoryID)
+            case .notFound:
+                delegate?.didCancelSelection()
             }
         }
     }

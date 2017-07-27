@@ -12,6 +12,12 @@ class CategorySelectionInteractorTests: XCTestCase {
         subjectUnderTest = CategorySelectionInteractor(categoryService: mockCategoryService)
     }
 
+    func test_findSelectionType_categoryDoesNotExist_crashes() {
+        subjectUnderTest.findSelectionType(for: "1") { actual in
+            XCTAssertEqual(CategorySelectionInteractor.SelectionType.notFound, actual)
+        }
+    }
+
     func test_findSelectionType_categoryWithoutChildren_returnsLeafCategory() {
         mockCategoryService.categories = [
             makeCategory(categoryID: "1", children: [])
