@@ -6,7 +6,7 @@ class DiscoveryInteractor {
 
     let advertService: AdvertService
 
-    init(advertService: AdvertService, categoryService: CategoryService) {
+    init(advertService: AdvertService) {
         self.advertService = advertService
     }
     

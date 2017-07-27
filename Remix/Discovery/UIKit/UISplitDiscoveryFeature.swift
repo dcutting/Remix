@@ -29,7 +29,7 @@ class UISplitDiscoveryFeature: SplitDiscoveryFeature {
     }
 
     private func makeInteractor() -> DiscoveryInteractor {
-        return DiscoveryInteractor(advertService: deps.advertService, categoryService: deps.categoryService)
+        return DiscoveryInteractor(advertService: deps.advertService)
     }
 
     private func makeDetailFormatter() -> DiscoveryDetailFormatter {
