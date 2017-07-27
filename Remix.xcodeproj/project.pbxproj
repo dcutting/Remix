@@ -89,6 +89,7 @@
 		C8D350D21F24D5D600745FFA /* NavigationAppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D350D11F24D59B00745FFA /* NavigationAppCoordinator.swift */; };
 		C8DB6C761F2A1A07000EFA3E /* DiscoveryDetailFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DB6C751F2A1A07000EFA3E /* DiscoveryDetailFormatterTests.swift */; };
 		C8DB6C781F2A1AF2000EFA3E /* DiscoveryInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DB6C771F2A1AF2000EFA3E /* DiscoveryInteractorTests.swift */; };
+		C8DB6C7D1F2A2113000EFA3E /* CategoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DB6C7C1F2A2113000EFA3E /* CategoryTests.swift */; };
 		C8E4B7EA1F25397100E9EB44 /* SplitDiscoveryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84D330B1F24D4C1005BD99A /* SplitDiscoveryCoordinator.swift */; };
 		C8E4B7EE1F254C9B00E9EB44 /* SplitWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E4B7ED1F254C4500E9EB44 /* SplitWireframe.swift */; };
 		C8E4B7F01F254CCE00E9EB44 /* UISplitWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E4B7EF1F254CCE00E9EB44 /* UISplitWireframe.swift */; };
@@ -153,6 +154,7 @@
 		C8D350D11F24D59B00745FFA /* NavigationAppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationAppCoordinator.swift; sourceTree = "<group>"; };
 		C8DB6C751F2A1A07000EFA3E /* DiscoveryDetailFormatterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoveryDetailFormatterTests.swift; sourceTree = "<group>"; };
 		C8DB6C771F2A1AF2000EFA3E /* DiscoveryInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryInteractorTests.swift; sourceTree = "<group>"; };
+		C8DB6C7C1F2A2113000EFA3E /* CategoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTests.swift; sourceTree = "<group>"; };
 		C8E4B7ED1F254C4500E9EB44 /* SplitWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitWireframe.swift; sourceTree = "<group>"; };
 		C8E4B7EF1F254CCE00E9EB44 /* UISplitWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISplitWireframe.swift; sourceTree = "<group>"; };
 		C8E4B7F11F25533100E9EB44 /* Viewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viewable.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				C8DB6C741F2A1A07000EFA3E /* Discovery */,
 				C8B48D501F2A170D0014671F /* AdvertList */,
 				C8B48D511F2A17140014671F /* CategorySelection */,
+				C8DB6C7B1F2A2113000EFA3E /* Entity */,
 				C8B48D4F1F2A17050014671F /* Helpers */,
 			);
 			path = RemixLogicTests;
@@ -434,6 +437,14 @@
 			path = Discovery;
 			sourceTree = "<group>";
 		};
+		C8DB6C7B1F2A2113000EFA3E /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				C8DB6C7C1F2A2113000EFA3E /* CategoryTests.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -572,6 +583,7 @@
 				C81D0F4F1F28E603007481A2 /* NavigationDiscoveryCoordinator.swift in Sources */,
 				C81D0F631F28E628007481A2 /* Category.swift in Sources */,
 				C81D0F681F28E636007481A2 /* MockAdvertService.swift in Sources */,
+				C8DB6C7D1F2A2113000EFA3E /* CategoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
