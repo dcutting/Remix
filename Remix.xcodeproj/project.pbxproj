@@ -42,7 +42,6 @@
 		C87C0A611F17C52D00715A9E /* AdvertListFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C0A601F17C52D00715A9E /* AdvertListFormatter.swift */; };
 		C87C49E61F2A9EE500799AD3 /* AcceptanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C87C49E51F2A9EE500799AD3 /* AcceptanceTests.m */; };
 		C87C49E91F2A9EE500799AD3 /* FixtureExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C49E81F2A9EE500799AD3 /* FixtureExample.swift */; };
-		C87C49F51F2AA6F500799AD3 /* Empty.xib in Resources */ = {isa = PBXBuildFile; fileRef = C87C49F41F2AA6F500799AD3 /* Empty.xib */; };
 		C8B48D531F2A17500014671F /* AdvertListFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B48D521F2A17500014671F /* AdvertListFormatterTests.swift */; };
 		C8B86F551F1F7C4000BDCE50 /* AdvertListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B86F541F1F7C4000BDCE50 /* AdvertListViewController.swift */; };
 		C8B86F591F1F820B00BDCE50 /* AdvertDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B86F581F1F820B00BDCE50 /* AdvertDetailViewController.swift */; };
@@ -99,7 +98,6 @@
 		C87C49EA1F2A9EE500799AD3 /* SlimTables.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SlimTables.h; sourceTree = "<group>"; };
 		C87C49EB1F2A9EE500799AD3 /* AcceptanceTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AcceptanceTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		C87C49EE1F2A9EE500799AD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C87C49F41F2AA6F500799AD3 /* Empty.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Empty.xib; sourceTree = "<group>"; };
 		C8B48D521F2A17500014671F /* AdvertListFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListFormatterTests.swift; sourceTree = "<group>"; };
 		C8B86F541F1F7C4000BDCE50 /* AdvertListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListViewController.swift; sourceTree = "<group>"; };
 		C8B86F581F1F820B00BDCE50 /* AdvertDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertDetailViewController.swift; sourceTree = "<group>"; };
@@ -281,7 +279,6 @@
 		C87C49E31F2A9EE400799AD3 /* AcceptanceTests */ = {
 			isa = PBXGroup;
 			children = (
-				C87C49EE1F2A9EE500799AD3 /* Info.plist */,
 				C87C49E71F2A9EE500799AD3 /* Fixtures */,
 				C87C49E41F2A9EE500799AD3 /* Supporting Files */,
 			);
@@ -291,10 +288,10 @@
 		C87C49E41F2A9EE500799AD3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C87C49EE1F2A9EE500799AD3 /* Info.plist */,
 				C87C49E51F2A9EE500799AD3 /* AcceptanceTests.m */,
 				C87C49EA1F2A9EE500799AD3 /* SlimTables.h */,
 				C87C49EB1F2A9EE500799AD3 /* AcceptanceTests-Bridging-Header.h */,
-				C87C49F41F2AA6F500799AD3 /* Empty.xib */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -495,7 +492,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C87C49F51F2AA6F500799AD3 /* Empty.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
