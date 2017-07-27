@@ -38,8 +38,9 @@
 		C81D0F671F28E636007481A2 /* AdvertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88651D01F1FB55E0085E239 /* AdvertService.swift */; };
 		C81D0F681F28E636007481A2 /* SampleAdvertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88651D21F1FB5A30085E239 /* SampleAdvertService.swift */; };
 		C81D0F691F28E63A007481A2 /* CategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88651C81F1F99840085E239 /* CategoryService.swift */; };
-		C81D0F6A1F28E63A007481A2 /* SampleCategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88651C91F1F99C50085E239 /* SampleCategoryService.swift */; };
+		C81D0F6A1F28E63A007481A2 /* MockCategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88651C91F1F99C50085E239 /* MockCategoryService.swift */; };
 		C81D0F6C1F293FC2007481A2 /* ViewableFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81D0F6B1F293FC2007481A2 /* ViewableFake.swift */; };
+		C81D0F6E1F29DEA0007481A2 /* CategorySelectionInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81D0F6D1F29DEA0007481A2 /* CategorySelectionInteractorTests.swift */; };
 		C8289F711F28C09000D96136 /* AdvertListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8289F701F28C09000D96136 /* AdvertListInteractor.swift */; };
 		C8289F731F28C17900D96136 /* AdvertListFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8289F721F28C17900D96136 /* AdvertListFeature.swift */; };
 		C8289F751F28C37900D96136 /* UIAdvertListFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8289F741F28C37900D96136 /* UIAdvertListFeature.swift */; };
@@ -61,7 +62,7 @@
 		C84D330A1F24CFB9005BD99A /* SplitAppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84D33091F24CFB9005BD99A /* SplitAppCoordinator.swift */; };
 		C87C0A5F1F17C3FA00715A9E /* DiscoveryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C0A5E1F17C3FA00715A9E /* DiscoveryInteractor.swift */; };
 		C87C0A611F17C52D00715A9E /* AdvertListFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C0A601F17C52D00715A9E /* AdvertListFormatter.swift */; };
-		C88651CA1F1F99C50085E239 /* SampleCategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88651C91F1F99C50085E239 /* SampleCategoryService.swift */; };
+		C88651CA1F1F99C50085E239 /* MockCategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88651C91F1F99C50085E239 /* MockCategoryService.swift */; };
 		C88651CB1F1F99E60085E239 /* CategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88651C81F1F99840085E239 /* CategoryService.swift */; };
 		C88651D11F1FB5670085E239 /* AdvertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88651D01F1FB55E0085E239 /* AdvertService.swift */; };
 		C88651D31F1FB5A30085E239 /* SampleAdvertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88651D21F1FB5A30085E239 /* SampleAdvertService.swift */; };
@@ -93,6 +94,7 @@
 		C81D0F411F28E499007481A2 /* CategorySelectionFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectionFormatterTests.swift; sourceTree = "<group>"; };
 		C81D0F431F28E499007481A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C81D0F6B1F293FC2007481A2 /* ViewableFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewableFake.swift; sourceTree = "<group>"; };
+		C81D0F6D1F29DEA0007481A2 /* CategorySelectionInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectionInteractorTests.swift; sourceTree = "<group>"; };
 		C8289F701F28C09000D96136 /* AdvertListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListInteractor.swift; sourceTree = "<group>"; };
 		C8289F721F28C17900D96136 /* AdvertListFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListFeature.swift; sourceTree = "<group>"; };
 		C8289F741F28C37900D96136 /* UIAdvertListFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAdvertListFeature.swift; sourceTree = "<group>"; };
@@ -118,7 +120,7 @@
 		C87C0A5E1F17C3FA00715A9E /* DiscoveryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryInteractor.swift; sourceTree = "<group>"; };
 		C87C0A601F17C52D00715A9E /* AdvertListFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListFormatter.swift; sourceTree = "<group>"; };
 		C88651C81F1F99840085E239 /* CategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryService.swift; sourceTree = "<group>"; };
-		C88651C91F1F99C50085E239 /* SampleCategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleCategoryService.swift; sourceTree = "<group>"; };
+		C88651C91F1F99C50085E239 /* MockCategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCategoryService.swift; sourceTree = "<group>"; };
 		C88651D01F1FB55E0085E239 /* AdvertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertService.swift; sourceTree = "<group>"; };
 		C88651D21F1FB5A30085E239 /* SampleAdvertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleAdvertService.swift; sourceTree = "<group>"; };
 		C89D3E581F28839500E0E264 /* CategorySelectionFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectionFeature.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				C81D0F431F28E499007481A2 /* Info.plist */,
 				C81D0F6B1F293FC2007481A2 /* ViewableFake.swift */,
 				C81D0F411F28E499007481A2 /* CategorySelectionFormatterTests.swift */,
+				C81D0F6D1F29DEA0007481A2 /* CategorySelectionInteractorTests.swift */,
 			);
 			path = RemixLogicTests;
 			sourceTree = "<group>";
@@ -332,7 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				C88651C81F1F99840085E239 /* CategoryService.swift */,
-				C88651C91F1F99C50085E239 /* SampleCategoryService.swift */,
+				C88651C91F1F99C50085E239 /* MockCategoryService.swift */,
 			);
 			path = CategoryService;
 			sourceTree = "<group>";
@@ -481,7 +484,7 @@
 				C81D0F671F28E636007481A2 /* AdvertService.swift in Sources */,
 				C81D0F551F28E609007481A2 /* AdvertListInteractor.swift in Sources */,
 				C81D0F621F28E628007481A2 /* Advert.swift in Sources */,
-				C81D0F6A1F28E63A007481A2 /* SampleCategoryService.swift in Sources */,
+				C81D0F6A1F28E63A007481A2 /* MockCategoryService.swift in Sources */,
 				C81D0F531F28E609007481A2 /* AdvertListFeature.swift in Sources */,
 				C81D0F561F28E609007481A2 /* AdvertListFormatter.swift in Sources */,
 				C81D0F591F28E619007481A2 /* AdvertDetailView.swift in Sources */,
@@ -499,6 +502,7 @@
 				C81D0F6C1F293FC2007481A2 /* ViewableFake.swift in Sources */,
 				C81D0F421F28E499007481A2 /* CategorySelectionFormatterTests.swift in Sources */,
 				C81D0F501F28E603007481A2 /* SplitDiscoveryCoordinator.swift in Sources */,
+				C81D0F6E1F29DEA0007481A2 /* CategorySelectionInteractorTests.swift in Sources */,
 				C81D0F5A1F28E619007481A2 /* AdvertDetailViewFake.swift in Sources */,
 				C81D0F5D1F28E623007481A2 /* CategorySelectionFeature.swift in Sources */,
 				C81D0F521F28E603007481A2 /* DiscoveryDetailFormatter.swift in Sources */,
@@ -555,7 +559,7 @@
 				C8289F751F28C37900D96136 /* UIAdvertListFeature.swift in Sources */,
 				C84C23681F17BCB00038E879 /* AdvertDetailViewFake.swift in Sources */,
 				C8B86F611F1F909400BDCE50 /* CategorySelectionInteractor.swift in Sources */,
-				C88651CA1F1F99C50085E239 /* SampleCategoryService.swift in Sources */,
+				C88651CA1F1F99C50085E239 /* MockCategoryService.swift in Sources */,
 				C88651D11F1FB5670085E239 /* AdvertService.swift in Sources */,
 				C84C23621F17B7DB0038E879 /* NavigationWireframe.swift in Sources */,
 				C8B86F5F1F1F8E7800BDCE50 /* CategorySelectionViewController.swift in Sources */,

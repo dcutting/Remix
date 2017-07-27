@@ -2,16 +2,9 @@
 
 import Foundation
 
-class SampleCategoryService: CategoryService {
+class MockCategoryService: CategoryService {
 
-    private let categories = [
-        Category(categoryID: "1", parent: nil, children: ["2", "5"], title: "Bicycles"),
-        Category(categoryID: "2", parent: "1", children: ["3", "4"], title: "Off road bikes"),
-        Category(categoryID: "3", parent: "2", children: [], title: "Trail bikes"),
-        Category(categoryID: "4", parent: "2", children: [], title: "Mountain bikes"),
-        Category(categoryID: "5", parent: "1", children: [], title: "Racers"),
-        Category(categoryID: "10", parent: nil, children: [], title: "Cars")
-    ]
+    var categories = [Category]()
 
     func fetchCategories(completion: ([Category]) -> Void) {
         completion(categories)
