@@ -3,17 +3,18 @@
 import UIKit
 
 extension Viewable {
-    var viewController: UIViewController? {
+    
+    public var viewController: UIViewController? {
         return self as? UIViewController
     }
 
-    func present(view: Viewable) {
+    public func present(view: Viewable) {
         guard let presented = view.viewController else { return }
         presented.modalPresentationStyle = .formSheet
         viewController?.present(presented, animated: true)
     }
 
-    func dismiss() {
+    public func dismiss() {
         viewController?.dismiss(animated: true)
     }
 }

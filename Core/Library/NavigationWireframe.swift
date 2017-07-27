@@ -2,7 +2,7 @@
 
 import Foundation
 
-protocol Navigatable: Viewable {
+public protocol Navigatable: Viewable {
     // Implement this in your view if you want to do something when the view is popped
     // from the navigation coordinator, such as notify a delegate that the operation
     // has been aborted. Typically this is used to handle the case when the user has
@@ -10,16 +10,16 @@ protocol Navigatable: Viewable {
     func navigationWireframeDidGoBack()
 }
 
-extension Navigatable {
+public extension Navigatable {
     // By default, ignore back events.
     func navigationWireframeDidGoBack() {}
 }
 
-protocol NavigationWireframeFactory {
+public protocol NavigationWireframeFactory {
     func make() -> NavigationWireframe
 }
 
-protocol NavigationWireframe: Viewable {
+public protocol NavigationWireframe: Viewable {
     func push(view: Navigatable)
     func popToLastCheckpoint()
     func setPopCheckpoint()

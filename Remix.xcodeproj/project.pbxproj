@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		31D79EC511E9E11079FA4464 /* Pods_Remix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AEF6ED3EA7AB8909F5D4114 /* Pods_Remix.framework */; };
-		C8026F701F25563D00732BAE /* Viewable+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8026F6F1F25563D00732BAE /* Viewable+UIKit.swift */; };
 		C81D0F421F28E499007481A2 /* GroupSelectionFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81D0F411F28E499007481A2 /* GroupSelectionFormatterTests.swift */; };
 		C81D0F4D1F28E603007481A2 /* NavigationDiscoveryFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B8FE501F28D080005B4BB9 /* NavigationDiscoveryFeature.swift */; };
 		C81D0F4E1F28E603007481A2 /* SplitDiscoveryFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D02AE31F28D3E600E3EA7B /* SplitDiscoveryFeature.swift */; };
@@ -31,9 +30,6 @@
 		C81D0F5F1F28E623007481A2 /* GroupSelectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B86F601F1F909400BDCE50 /* GroupSelectionInteractor.swift */; };
 		C81D0F601F28E623007481A2 /* GroupSelectionFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D0B9D91F28A476006C35A8 /* GroupSelectionFormatter.swift */; };
 		C81D0F611F28E623007481A2 /* GroupSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D0B9D71F28A41D006C35A8 /* GroupSelectionView.swift */; };
-		C81D0F641F28E62F007481A2 /* Viewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E4B7F11F25533100E9EB44 /* Viewable.swift */; };
-		C81D0F651F28E62F007481A2 /* NavigationWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23611F17B7C70038E879 /* NavigationWireframe.swift */; };
-		C81D0F661F28E62F007481A2 /* SplitWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E4B7ED1F254C4500E9EB44 /* SplitWireframe.swift */; };
 		C81D0F671F28E636007481A2 /* AdvertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88651D01F1FB55E0085E239 /* AdvertService.swift */; };
 		C81D0F681F28E636007481A2 /* MockAdvertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88651D21F1FB5A30085E239 /* MockAdvertService.swift */; };
 		C81D0F691F28E63A007481A2 /* GroupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88651C81F1F99840085E239 /* GroupService.swift */; };
@@ -52,8 +48,6 @@
 		C84C234D1F17AE960038E879 /* NavigationDiscoveryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23471F17AD6A0038E879 /* NavigationDiscoveryCoordinator.swift */; };
 		C84C23511F17B0070038E879 /* AdvertDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23501F17B0070038E879 /* AdvertDetailView.swift */; };
 		C84C23531F17B0C30038E879 /* AdvertListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23521F17B0C30038E879 /* AdvertListView.swift */; };
-		C84C23621F17B7DB0038E879 /* NavigationWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23611F17B7C70038E879 /* NavigationWireframe.swift */; };
-		C84C23641F17B9990038E879 /* UINavigationWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23631F17B9990038E879 /* UINavigationWireframe.swift */; };
 		C84C23661F17BBBA0038E879 /* AdvertListViewFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23651F17BBBA0038E879 /* AdvertListViewFake.swift */; };
 		C84C23681F17BCB00038E879 /* AdvertDetailViewFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23671F17BCB00038E879 /* AdvertDetailViewFake.swift */; };
 		C84D330A1F24CFB9005BD99A /* SplitAppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84D33091F24CFB9005BD99A /* SplitAppCoordinator.swift */; };
@@ -85,9 +79,6 @@
 		C8DB6C761F2A1A07000EFA3E /* DiscoveryDetailFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DB6C751F2A1A07000EFA3E /* DiscoveryDetailFormatterTests.swift */; };
 		C8DB6C781F2A1AF2000EFA3E /* DiscoveryInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DB6C771F2A1AF2000EFA3E /* DiscoveryInteractorTests.swift */; };
 		C8E4B7EA1F25397100E9EB44 /* SplitDiscoveryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84D330B1F24D4C1005BD99A /* SplitDiscoveryCoordinator.swift */; };
-		C8E4B7EE1F254C9B00E9EB44 /* SplitWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E4B7ED1F254C4500E9EB44 /* SplitWireframe.swift */; };
-		C8E4B7F01F254CCE00E9EB44 /* UISplitWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E4B7EF1F254CCE00E9EB44 /* UISplitWireframe.swift */; };
-		C8E4B7F21F25533100E9EB44 /* Viewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E4B7F11F25533100E9EB44 /* Viewable.swift */; };
 		F66E796AF8538868873AF6E3 /* Pods_RemixLogicTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FC2ACC69A68D291B28D0A3 /* Pods_RemixLogicTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -98,7 +89,6 @@
 		66877CA29D474E25F8EA4B51 /* Pods-RemixLogicTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemixLogicTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RemixLogicTests/Pods-RemixLogicTests.release.xcconfig"; sourceTree = "<group>"; };
 		7AEF6ED3EA7AB8909F5D4114 /* Pods_Remix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Remix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE375153B2F6C2B9A2E95C37 /* Pods-Remix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Remix.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Remix/Pods-Remix.debug.xcconfig"; sourceTree = "<group>"; };
-		C8026F6F1F25563D00732BAE /* Viewable+UIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Viewable+UIKit.swift"; sourceTree = "<group>"; };
 		C81D0F3F1F28E499007481A2 /* RemixLogicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RemixLogicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C81D0F411F28E499007481A2 /* GroupSelectionFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSelectionFormatterTests.swift; sourceTree = "<group>"; };
 		C81D0F431F28E499007481A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -118,8 +108,6 @@
 		C84C234B1F17AE0D0038E879 /* AutoGroupInsertionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoGroupInsertionCoordinator.swift; sourceTree = "<group>"; };
 		C84C23501F17B0070038E879 /* AdvertDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertDetailView.swift; sourceTree = "<group>"; };
 		C84C23521F17B0C30038E879 /* AdvertListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListView.swift; sourceTree = "<group>"; };
-		C84C23611F17B7C70038E879 /* NavigationWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationWireframe.swift; sourceTree = "<group>"; };
-		C84C23631F17B9990038E879 /* UINavigationWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationWireframe.swift; sourceTree = "<group>"; };
 		C84C23651F17BBBA0038E879 /* AdvertListViewFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListViewFake.swift; sourceTree = "<group>"; };
 		C84C23671F17BCB00038E879 /* AdvertDetailViewFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertDetailViewFake.swift; sourceTree = "<group>"; };
 		C84D33091F24CFB9005BD99A /* SplitAppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitAppCoordinator.swift; sourceTree = "<group>"; };
@@ -151,9 +139,6 @@
 		C8D350D11F24D59B00745FFA /* NavigationAppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationAppCoordinator.swift; sourceTree = "<group>"; };
 		C8DB6C751F2A1A07000EFA3E /* DiscoveryDetailFormatterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoveryDetailFormatterTests.swift; sourceTree = "<group>"; };
 		C8DB6C771F2A1AF2000EFA3E /* DiscoveryInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryInteractorTests.swift; sourceTree = "<group>"; };
-		C8E4B7ED1F254C4500E9EB44 /* SplitWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitWireframe.swift; sourceTree = "<group>"; };
-		C8E4B7EF1F254CCE00E9EB44 /* UISplitWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISplitWireframe.swift; sourceTree = "<group>"; };
-		C8E4B7F11F25533100E9EB44 /* Viewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viewable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,16 +179,6 @@
 				66877CA29D474E25F8EA4B51 /* Pods-RemixLogicTests.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		C8026F711F25566900732BAE /* UIKit */ = {
-			isa = PBXGroup;
-			children = (
-				C8026F6F1F25563D00732BAE /* Viewable+UIKit.swift */,
-				C84C23631F17B9990038E879 /* UINavigationWireframe.swift */,
-				C8E4B7EF1F254CCE00E9EB44 /* UISplitWireframe.swift */,
-			);
-			path = UIKit;
 			sourceTree = "<group>";
 		};
 		C81D0F401F28E499007481A2 /* RemixLogicTests */ = {
@@ -247,7 +222,6 @@
 				C84C234F1F17AFF00038E879 /* AdvertDetail */,
 				C84C23481F17ADDA0038E879 /* Insertion */,
 				C84C23431F17AD060038E879 /* GroupSelection */,
-				C84C23601F17B7C70038E879 /* Library */,
 				C88651CF1F1FB55E0085E239 /* AdvertService */,
 				C88651C71F1F99840085E239 /* GroupService */,
 				C84C23211F17AB770038E879 /* Assets.xcassets */,
@@ -312,17 +286,6 @@
 				C87ACD781F28AEFF00B1A73C /* Fakes */,
 			);
 			path = AdvertDetail;
-			sourceTree = "<group>";
-		};
-		C84C23601F17B7C70038E879 /* Library */ = {
-			isa = PBXGroup;
-			children = (
-				C8E4B7F11F25533100E9EB44 /* Viewable.swift */,
-				C84C23611F17B7C70038E879 /* NavigationWireframe.swift */,
-				C8E4B7ED1F254C4500E9EB44 /* SplitWireframe.swift */,
-				C8026F711F25566900732BAE /* UIKit */,
-			);
-			path = Library;
 			sourceTree = "<group>";
 		};
 		C87ACD771F28AE1400B1A73C /* UIKit */ = {
@@ -572,7 +535,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "declare -a DEPENDENCIES=('Core.root-Entity');\nIFS=\" \" read -r -a SPLIT <<< \"$ARCHS\"\nfor ARCH in \"${SPLIT[@]}\"; do\n  cd \"$OBJROOT/Pods.build\"\n  filelist=\"\"\n  for dependency in \"${DEPENDENCIES[@]}\"; do\n    path=\"${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${dependency}.build/Objects-normal/${ARCH}\"\n    if [ -d \"$path\" ]; then\n      search_path=\"$path/*.o\"\n      for obj_file in $search_path; do\n        filelist+=\"${OBJROOT}/Pods.build/${obj_file}\"\n        filelist+=$'\\n'\n      done\n    fi\n  done\n  filelist=${filelist%$'\\n'}\n  echo \"$filelist\" > \"${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}-${TARGET_NAME}-${ARCH}.objects.filelist\"\ndone\n";
+			shellScript = "declare -a DEPENDENCIES=('Core.root-Entity-Library');\nIFS=\" \" read -r -a SPLIT <<< \"$ARCHS\"\nfor ARCH in \"${SPLIT[@]}\"; do\n  cd \"$OBJROOT/Pods.build\"\n  filelist=\"\"\n  for dependency in \"${DEPENDENCIES[@]}\"; do\n    path=\"${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${dependency}.build/Objects-normal/${ARCH}\"\n    if [ -d \"$path\" ]; then\n      search_path=\"$path/*.o\"\n      for obj_file in $search_path; do\n        filelist+=\"${OBJROOT}/Pods.build/${obj_file}\"\n        filelist+=$'\\n'\n      done\n    fi\n  done\n  filelist=${filelist%$'\\n'}\n  echo \"$filelist\" > \"${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}-${TARGET_NAME}-${ARCH}.objects.filelist\"\ndone\n";
 		};
 		4A4C8F76EB5BBB9F6C04A888 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -650,14 +613,11 @@
 				C81D0F561F28E609007481A2 /* AdvertListFormatter.swift in Sources */,
 				C81D0F591F28E619007481A2 /* AdvertDetailView.swift in Sources */,
 				C81D0F4D1F28E603007481A2 /* NavigationDiscoveryFeature.swift in Sources */,
-				C81D0F641F28E62F007481A2 /* Viewable.swift in Sources */,
 				C81D0F691F28E63A007481A2 /* GroupService.swift in Sources */,
 				C81D0F5C1F28E623007481A2 /* AutoGroupInsertionCoordinator.swift in Sources */,
 				C81D0F571F28E609007481A2 /* AdvertListView.swift in Sources */,
 				C81D0F541F28E609007481A2 /* AdvertListCoordinator.swift in Sources */,
 				C81D0F581F28E611007481A2 /* AdvertListViewFake.swift in Sources */,
-				C81D0F651F28E62F007481A2 /* NavigationWireframe.swift in Sources */,
-				C81D0F661F28E62F007481A2 /* SplitWireframe.swift in Sources */,
 				C81D0F5F1F28E623007481A2 /* GroupSelectionInteractor.swift in Sources */,
 				C81D0F511F28E603007481A2 /* DiscoveryInteractor.swift in Sources */,
 				C81D0F6C1F293FC2007481A2 /* ViewableFake.swift in Sources */,
@@ -686,24 +646,19 @@
 				C84DBC961F2A02FC00C26AF6 /* AppCoordinator.swift in Sources */,
 				C87C0A611F17C52D00715A9E /* AdvertListFormatter.swift in Sources */,
 				C84D330A1F24CFB9005BD99A /* SplitAppCoordinator.swift in Sources */,
-				C84C23641F17B9990038E879 /* UINavigationWireframe.swift in Sources */,
 				C84C23401F17ACE20038E879 /* GroupSelectionCoordinator.swift in Sources */,
 				C8D0B9D81F28A41D006C35A8 /* GroupSelectionView.swift in Sources */,
 				C8E4B7EA1F25397100E9EB44 /* SplitDiscoveryCoordinator.swift in Sources */,
 				C84C23511F17B0070038E879 /* AdvertDetailView.swift in Sources */,
 				C8D02AE41F28D3E600E3EA7B /* SplitDiscoveryFeature.swift in Sources */,
-				C8E4B7F01F254CCE00E9EB44 /* UISplitWireframe.swift in Sources */,
 				C88651D31F1FB5A30085E239 /* MockAdvertService.swift in Sources */,
 				C84C234C1F17AE0D0038E879 /* AutoGroupInsertionCoordinator.swift in Sources */,
-				C8E4B7F21F25533100E9EB44 /* Viewable.swift in Sources */,
 				C8289F731F28C17900D96136 /* AdvertListFeature.swift in Sources */,
-				C8026F701F25563D00732BAE /* Viewable+UIKit.swift in Sources */,
 				C8B8FE511F28D080005B4BB9 /* NavigationDiscoveryFeature.swift in Sources */,
 				C84C234D1F17AE960038E879 /* NavigationDiscoveryCoordinator.swift in Sources */,
 				C87C0A5F1F17C3FA00715A9E /* DiscoveryInteractor.swift in Sources */,
 				C8D350D21F24D5D600745FFA /* NavigationAppCoordinator.swift in Sources */,
 				C84C23531F17B0C30038E879 /* AdvertListView.swift in Sources */,
-				C8E4B7EE1F254C9B00E9EB44 /* SplitWireframe.swift in Sources */,
 				C8B86F591F1F820B00BDCE50 /* AdvertDetailViewController.swift in Sources */,
 				C84C234A1F17ADFD0038E879 /* ManualGroupInsertionCoordinator.swift in Sources */,
 				C8C2CACB1F28BDF800F37288 /* AdvertListCoordinator.swift in Sources */,
@@ -723,7 +678,6 @@
 				C8B86F611F1F909400BDCE50 /* GroupSelectionInteractor.swift in Sources */,
 				C88651CA1F1F99C50085E239 /* MockGroupService.swift in Sources */,
 				C88651D11F1FB5670085E239 /* AdvertService.swift in Sources */,
-				C84C23621F17B7DB0038E879 /* NavigationWireframe.swift in Sources */,
 				C8B86F5F1F1F8E7800BDCE50 /* GroupSelectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

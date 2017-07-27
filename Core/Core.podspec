@@ -9,7 +9,11 @@ Pod::Spec.new do |s|
   s.source       = { :path => '.' }
 
   s.subspec "Entity" do |sp|
-    sp.source_files = "Entity"
+    sp.source_files = "Entity/**/*"
+  end
+
+  s.subspec "Library" do |sp|
+    sp.source_files = "Library/**/*"
   end
 
   s.subspec "Tests" do |sp|
@@ -17,6 +21,7 @@ Pod::Spec.new do |s|
     sp.framework = 'XCTest'
     sp.source_files = "Tests"
     sp.dependency "Core/Entity"
+    sp.dependency "Core/Library"
     sp.pod_target_xcconfig = { 'ENABLE_BITCODE' => 'NO' }
   end
 end

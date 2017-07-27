@@ -1,10 +1,13 @@
 PODS:
   - Core (0.0.1):
     - Core/Entity (= 0.0.1)
+    - Core/Library (= 0.0.1)
     - Core/Tests (= 0.0.1)
   - Core/Entity (0.0.1)
+  - Core/Library (0.0.1)
   - Core/Tests (0.0.1):
     - Core/Entity
+    - Core/Library
 
 DEPENDENCIES:
   - Core (from `Core`)
@@ -16,7 +19,7 @@ EXTERNAL SOURCES:
     :path: Core
 
 SPEC CHECKSUMS:
-  Core: 49b9b5624a39d7a8ab936b7486f4065e93f6d7cd
+  Core: a90d5b6cc9c033917157deaa7511e52554bbbe66
 
 PODFILE CHECKSUM: 5e00f005c5225ee75e3cebc8067d9733d07a333c
 

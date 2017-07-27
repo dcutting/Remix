@@ -17,7 +17,11 @@
   "subspecs": [
     {
       "name": "Entity",
-      "source_files": "Entity"
+      "source_files": "Entity/**/*"
+    },
+    {
+      "name": "Library",
+      "source_files": "Library/**/*"
     },
     {
       "name": "Tests",
@@ -28,6 +32,9 @@
       "source_files": "Tests",
       "dependencies": {
         "Core/Entity": [
+
+        ],
+        "Core/Library": [
 
         ]
       },

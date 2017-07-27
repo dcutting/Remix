@@ -2,32 +2,35 @@
 
 import UIKit
 
-class UINavigationWireframeFactory: NavigationWireframeFactory {
-    func make() -> NavigationWireframe {
+public class UINavigationWireframeFactory: NavigationWireframeFactory {
+
+    public init() {}
+
+    public func make() -> NavigationWireframe {
         return UINavigationWireframe()
     }
 }
 
 // Implements the NavigationWireframe for use with UIKit components (using a UINavigationController).
-class UINavigationWireframe: UINavigationController, NavigationWireframe {
+public class UINavigationWireframe: UINavigationController, NavigationWireframe {
 
     private var popCheckpoints = [UIViewController]()
 
-    init() {
+    public init() {
         super.init(nibName: nil, bundle: nil)
         delegate = self
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         preconditionFailure("use init()")
     }
 
-    func push(view: Navigatable) {
+    public func push(view: Navigatable) {
         guard let viewController = view.viewController else { return }
         pushViewController(viewController, animated: true)
     }
 
-    func popToLastCheckpoint() {
+    public func popToLastCheckpoint() {
         if let popCheckpoint = popCheckpoints.popLast() {
             popToViewController(popCheckpoint, animated: true)
         } else {
@@ -35,7 +38,7 @@ class UINavigationWireframe: UINavigationController, NavigationWireframe {
         }
     }
 
-    func setPopCheckpoint() {
+    public func setPopCheckpoint() {
         guard let popPoint = topViewController else { return }
         popCheckpoints.append(popPoint)
     }
@@ -43,7 +46,7 @@ class UINavigationWireframe: UINavigationController, NavigationWireframe {
 
 extension UINavigationWireframe: UINavigationControllerDelegate {
 
-    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+    public func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
 
         guard
             let fromViewController = navigationController.transitionCoordinator?.viewController(forKey: .from),

@@ -3,9 +3,9 @@
 import UIKit
 
 // Implements the SplitWireframe for use with UIKit components (using a UISplitViewController).
-class UISplitWireframe: UISplitViewController, SplitWireframe, Viewable {
+public class UISplitWireframe: UISplitViewController, SplitWireframe, Viewable {
 
-    var master: Viewable? {
+    public var master: Viewable? {
         didSet {
             guard let viewController = master?.viewController else { return }
             viewControllers = [viewController]
@@ -13,7 +13,7 @@ class UISplitWireframe: UISplitViewController, SplitWireframe, Viewable {
         }
     }
 
-    var detail: Viewable? {
+    public var detail: Viewable? {
         didSet {
             guard let viewController = detail?.viewController else { return }
             showDetailViewController(viewController, sender: nil)
