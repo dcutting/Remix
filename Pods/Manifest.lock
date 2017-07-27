@@ -8,17 +8,19 @@ PODS:
   - Wireframe (0.0.1):
     - Wireframe/Core (= 0.0.1)
     - Wireframe/Tests (= 0.0.1)
+    - Wireframe/UIKit (= 0.0.1)
   - Wireframe/Core (0.0.1)
   - Wireframe/Tests (0.0.1):
     - Wireframe/Core
+  - Wireframe/UIKit (0.0.1)
 
 DEPENDENCIES:
   - Entity (from `Entity`)
   - Entity/Core (from `Entity`)
   - Entity/Tests (from `Entity`)
   - Wireframe (from `Wireframe`)
-  - Wireframe/Core (from `Wireframe`)
   - Wireframe/Tests (from `Wireframe`)
+  - Wireframe/UIKit (from `Wireframe`)
 
 EXTERNAL SOURCES:
   Entity:
@@ -28,8 +30,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Entity: c37ab88da33a740b50a4f896a34796853b7f4cc6
-  Wireframe: '0795b427479e34e3659cb7048945d3a92c078369'
+  Wireframe: b109fad3bb2b8dbe29463f401fea8d01d2eb460a
 
-PODFILE CHECKSUM: aba0609a27ac241810c5791908d03d82170f7cf7
+PODFILE CHECKSUM: 64976d97314a432ce78e1b71dea60f08144c0add
 
 COCOAPODS: 1.2.1

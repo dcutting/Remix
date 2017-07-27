@@ -6,7 +6,7 @@ plugin 'cocoapods-amimono'
 
 target :Remix do
   pod 'Entity/Core', :path => 'Entity'
-  pod 'Wireframe/Core', :path => 'Wireframe'
+  pod 'Wireframe/UIKit', :path => 'Wireframe'
 end
 
 target :RemixLogicTests do

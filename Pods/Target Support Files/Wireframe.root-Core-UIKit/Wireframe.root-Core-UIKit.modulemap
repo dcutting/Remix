@@ -1,5 +1,5 @@
 framework module Wireframe {
-  umbrella header "Wireframe.root-Core-umbrella.h"
+  umbrella header "Wireframe.root-Core-UIKit-umbrella.h"
 
   export *
   module * { export * }

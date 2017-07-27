@@ -34,7 +34,6 @@
 		C81D0F681F28E636007481A2 /* MockAdvertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88651D21F1FB5A30085E239 /* MockAdvertService.swift */; };
 		C81D0F691F28E63A007481A2 /* GroupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88651C81F1F99840085E239 /* GroupService.swift */; };
 		C81D0F6A1F28E63A007481A2 /* MockGroupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88651C91F1F99C50085E239 /* MockGroupService.swift */; };
-		C81D0F6C1F293FC2007481A2 /* ViewableFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81D0F6B1F293FC2007481A2 /* ViewableFake.swift */; };
 		C81D0F6E1F29DEA0007481A2 /* GroupSelectionInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81D0F6D1F29DEA0007481A2 /* GroupSelectionInteractorTests.swift */; };
 		C8289F711F28C09000D96136 /* AdvertListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8289F701F28C09000D96136 /* AdvertListInteractor.swift */; };
 		C8289F731F28C17900D96136 /* AdvertListFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8289F721F28C17900D96136 /* AdvertListFeature.swift */; };
@@ -92,7 +91,6 @@
 		C81D0F3F1F28E499007481A2 /* RemixLogicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RemixLogicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C81D0F411F28E499007481A2 /* GroupSelectionFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSelectionFormatterTests.swift; sourceTree = "<group>"; };
 		C81D0F431F28E499007481A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C81D0F6B1F293FC2007481A2 /* ViewableFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewableFake.swift; sourceTree = "<group>"; };
 		C81D0F6D1F29DEA0007481A2 /* GroupSelectionInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSelectionInteractorTests.swift; sourceTree = "<group>"; };
 		C8289F701F28C09000D96136 /* AdvertListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListInteractor.swift; sourceTree = "<group>"; };
 		C8289F721F28C17900D96136 /* AdvertListFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListFeature.swift; sourceTree = "<group>"; };
@@ -188,7 +186,6 @@
 				C8DB6C741F2A1A07000EFA3E /* Discovery */,
 				C8B48D501F2A170D0014671F /* AdvertList */,
 				C8B48D511F2A17140014671F /* GroupSelection */,
-				C8B48D4F1F2A17050014671F /* Helpers */,
 			);
 			path = RemixLogicTests;
 			sourceTree = "<group>";
@@ -338,14 +335,6 @@
 				C88651D21F1FB5A30085E239 /* MockAdvertService.swift */,
 			);
 			path = AdvertService;
-			sourceTree = "<group>";
-		};
-		C8B48D4F1F2A17050014671F /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				C81D0F6B1F293FC2007481A2 /* ViewableFake.swift */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		C8B48D501F2A170D0014671F /* AdvertList */ = {
@@ -535,7 +524,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "declare -a DEPENDENCIES=('Entity.root-Core' 'Wireframe.root-Core');\nIFS=\" \" read -r -a SPLIT <<< \"$ARCHS\"\nfor ARCH in \"${SPLIT[@]}\"; do\n  cd \"$OBJROOT/Pods.build\"\n  filelist=\"\"\n  for dependency in \"${DEPENDENCIES[@]}\"; do\n    path=\"${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${dependency}.build/Objects-normal/${ARCH}\"\n    if [ -d \"$path\" ]; then\n      search_path=\"$path/*.o\"\n      for obj_file in $search_path; do\n        filelist+=\"${OBJROOT}/Pods.build/${obj_file}\"\n        filelist+=$'\\n'\n      done\n    fi\n  done\n  filelist=${filelist%$'\\n'}\n  echo \"$filelist\" > \"${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}-${TARGET_NAME}-${ARCH}.objects.filelist\"\ndone\n";
+			shellScript = "declare -a DEPENDENCIES=('Entity.root-Core' 'Wireframe.root-Core-UIKit');\nIFS=\" \" read -r -a SPLIT <<< \"$ARCHS\"\nfor ARCH in \"${SPLIT[@]}\"; do\n  cd \"$OBJROOT/Pods.build\"\n  filelist=\"\"\n  for dependency in \"${DEPENDENCIES[@]}\"; do\n    path=\"${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${dependency}.build/Objects-normal/${ARCH}\"\n    if [ -d \"$path\" ]; then\n      search_path=\"$path/*.o\"\n      for obj_file in $search_path; do\n        filelist+=\"${OBJROOT}/Pods.build/${obj_file}\"\n        filelist+=$'\\n'\n      done\n    fi\n  done\n  filelist=${filelist%$'\\n'}\n  echo \"$filelist\" > \"${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}-${TARGET_NAME}-${ARCH}.objects.filelist\"\ndone\n";
 		};
 		4A4C8F76EB5BBB9F6C04A888 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -620,7 +609,6 @@
 				C81D0F581F28E611007481A2 /* AdvertListViewFake.swift in Sources */,
 				C81D0F5F1F28E623007481A2 /* GroupSelectionInteractor.swift in Sources */,
 				C81D0F511F28E603007481A2 /* DiscoveryInteractor.swift in Sources */,
-				C81D0F6C1F293FC2007481A2 /* ViewableFake.swift in Sources */,
 				C81D0F421F28E499007481A2 /* GroupSelectionFormatterTests.swift in Sources */,
 				C81D0F501F28E603007481A2 /* SplitDiscoveryCoordinator.swift in Sources */,
 				C81D0F6E1F29DEA0007481A2 /* GroupSelectionInteractorTests.swift in Sources */,

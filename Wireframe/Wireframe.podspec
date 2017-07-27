@@ -9,7 +9,11 @@ Pod::Spec.new do |s|
   s.source       = { :path => '.' }
 
   s.subspec "Core" do |sp|
-    sp.source_files = "Source/**/*"
+    sp.source_files = "Source/Core/**/*"
+  end
+
+  s.subspec "UIKit" do |sp|
+    sp.source_files = "Source/UIKit/**/*"
   end
 
   s.subspec "Tests" do |sp|
