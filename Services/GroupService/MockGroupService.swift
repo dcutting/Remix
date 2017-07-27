@@ -9,11 +9,11 @@ public class MockGroupService: GroupService {
 
     public init() {}
 
-    public func fetchGroups(completion: ([Group]) -> Void) {
+    public func fetchGroups(completion: @escaping ([Group]) -> Void) {
         completion(groups)
     }
 
-    public func fetchGroup(for groupID: GroupID, completion: (Group?) -> Void) {
+    public func fetchGroup(for groupID: GroupID, completion: @escaping (Group?) -> Void) {
         let group = groups.first { group in
             group.groupID == groupID
         }

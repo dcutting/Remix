@@ -12,7 +12,7 @@ class DiscoveryInteractor {
         self.advertService = advertService
     }
     
-    func fetchDetail(for advertID: AdvertID, completion: (Advert?) -> Void) {
+    func fetchDetail(for advertID: AdvertID, completion: @escaping (Advert?) -> Void) {
         advertService.fetchAdvert(for: advertID) { advert in
             completion(advert)
         }

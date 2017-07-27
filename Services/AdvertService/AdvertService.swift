@@ -4,6 +4,6 @@ import Foundation
 import Entity
 
 public protocol AdvertService {
-    func fetchAdverts(completion: ([Advert]) -> Void)
-    func fetchAdvert(for advertID: AdvertID, completion: (Advert?) -> Void)
+    func fetchAdverts(completion: @escaping ([Advert]) -> Void)
+    func fetchAdvert(for advertID: AdvertID, completion: @escaping (Advert?) -> Void)
 }

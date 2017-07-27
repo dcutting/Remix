@@ -16,8 +16,8 @@ class AdvertListInteractor {
 
     func update(for groupID: GroupID?, completion: @escaping ([Advert], [Group]) -> Void) {
         advertService.fetchAdverts { adverts in
-            groupService.fetchGroups { groups in
-                let filteredAdverts = filter(adverts: adverts, for: groupID)
+            self.groupService.fetchGroups { groups in
+                let filteredAdverts = self.filter(adverts: adverts, for: groupID)
                 completion(filteredAdverts, groups)
             }
         }

@@ -4,6 +4,6 @@ import Foundation
 import Entity
 
 public protocol GroupService {
-    func fetchGroups(completion: ([Group]) -> Void)
-    func fetchGroup(for groupID: GroupID, completion: (Group?) -> Void)
+    func fetchGroups(completion: @escaping ([Group]) -> Void)
+    func fetchGroup(for groupID: GroupID, completion: @escaping (Group?) -> Void)
 }

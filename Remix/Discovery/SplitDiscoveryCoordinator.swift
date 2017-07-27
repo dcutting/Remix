@@ -51,7 +51,7 @@ extension SplitDiscoveryCoordinator: AdvertListCoordinatorDelegate {
     private func showDetailView(for advertID: AdvertID) {
         deps.interactor.fetchDetail(for: advertID) { advert in
             guard let advert = advert else { preconditionFailure() }
-            showDetailView(for: advert)
+            self.showDetailView(for: advert)
         }
     }
 

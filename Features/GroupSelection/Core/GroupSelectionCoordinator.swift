@@ -41,7 +41,7 @@ public class GroupSelectionCoordinator {
 
     private func update(view: GroupSelectionView, for parentGroupID: GroupID?) {
         deps.interactor.fetchGroups(parentGroupID: parentGroupID) { groups in
-            let viewData = deps.formatter.prepare(groups: groups)
+            let viewData = self.deps.formatter.prepare(groups: groups)
             view.viewData = viewData
         }
     }
@@ -53,11 +53,11 @@ extension GroupSelectionCoordinator: GroupSelectionViewDelegate {
         deps.interactor.findSelectionType(for: groupID) { selectionType in
             switch selectionType {
             case .leafGroup:
-                delegate?.didSelect(groupID: groupID)
+                self.delegate?.didSelect(groupID: groupID)
             case .parentGroup:
-                pushAndUpdateView(for: groupID)
+                self.pushAndUpdateView(for: groupID)
             case .notFound:
-                delegate?.didCancelSelection()
+                self.delegate?.didCancelSelection()
             }
         }
     }

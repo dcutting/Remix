@@ -9,11 +9,11 @@ public class MockAdvertService: AdvertService {
 
     public init() {}
 
-    public func fetchAdverts(completion: ([Advert]) -> Void) {
+    public func fetchAdverts(completion: @escaping ([Advert]) -> Void) {
         completion(adverts)
     }
 
-    public func fetchAdvert(for advertID: AdvertID, completion: (Advert?) -> Void) {
+    public func fetchAdvert(for advertID: AdvertID, completion: @escaping (Advert?) -> Void) {
         let advert = adverts.first { advert in
             advert.advertID == advertID
         }

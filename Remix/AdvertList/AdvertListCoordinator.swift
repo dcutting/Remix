@@ -44,8 +44,8 @@ class AdvertListCoordinator {
     }
 
     func updateAdverts(for groupID: GroupID?) {
-        deps.interactor.update(for: groupID) { [weak self] (adverts, groups) in
-            self?.updateListView(with: adverts, groups: groups)
+        deps.interactor.update(for: groupID) { (adverts, groups) in
+            self.updateListView(with: adverts, groups: groups)
         }
     }
 

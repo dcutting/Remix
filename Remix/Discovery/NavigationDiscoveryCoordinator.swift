@@ -45,9 +45,9 @@ extension NavigationDiscoveryCoordinator: AdvertListCoordinatorDelegate {
     }
 
     private func pushDetailView(for advertID: AdvertID) {
-        deps.interactor.fetchDetail(for: advertID) { [weak self] advert in
+        deps.interactor.fetchDetail(for: advertID) { advert in
             guard let advert = advert else { preconditionFailure() }
-            self?.pushDetailView(for: advert)
+            self.pushDetailView(for: advert)
         }
     }
 
