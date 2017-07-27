@@ -5,6 +5,19 @@ PODS:
   - Entity/Core (0.0.1)
   - Entity/Tests (0.0.1):
     - Entity/Core
+  - GroupSelection (0.0.1):
+    - GroupSelection/Core (= 0.0.1)
+    - GroupSelection/Tests (= 0.0.1)
+    - GroupSelection/UIKit (= 0.0.1)
+  - GroupSelection/Core (0.0.1):
+    - Entity/Core
+    - Services/GroupService
+    - Wireframe/Core
+  - GroupSelection/Tests (0.0.1):
+    - GroupSelection/Core
+  - GroupSelection/UIKit (0.0.1):
+    - GroupSelection/Core
+    - Wireframe/UIKit
   - Services (0.0.1):
     - Services/AdvertService (= 0.0.1)
     - Services/GroupService (= 0.0.1)
@@ -25,6 +38,9 @@ DEPENDENCIES:
   - Entity (from `Entity`)
   - Entity/Core (from `Entity`)
   - Entity/Tests (from `Entity`)
+  - GroupSelection (from `Features/GroupSelection`)
+  - GroupSelection/Tests (from `Features/GroupSelection`)
+  - GroupSelection/UIKit (from `Features/GroupSelection`)
   - Services (from `Services`)
   - Wireframe (from `Wireframe`)
   - Wireframe/Tests (from `Wireframe`)
@@ -33,16 +49,19 @@ DEPENDENCIES:
 EXTERNAL SOURCES:
   Entity:
     :path: Entity
+  GroupSelection:
+    :path: Features/GroupSelection
   Services:
     :path: Services
   Wireframe:
     :path: Wireframe
 
 SPEC CHECKSUMS:
-  Entity: c37ab88da33a740b50a4f896a34796853b7f4cc6
+  Entity: ab4a825981db20c164fa49aeafa4d7ccec9af6cc
+  GroupSelection: bad77e50c06ecd8d45e7b1efd5060baa1fd0295b
   Services: c76f04776dd841baecb35e60954a56a4ca1ff80e
-  Wireframe: b109fad3bb2b8dbe29463f401fea8d01d2eb460a
+  Wireframe: ce32eb58f55d43f3bb09fca161a50e8d42ba043e
 
-PODFILE CHECKSUM: d121f85d8cf8671ffda9f88bb0d8699f7515c577
+PODFILE CHECKSUM: 06f248279df430a9f3093a652c3321ea0d2ce34d
 
 COCOAPODS: 1.2.1

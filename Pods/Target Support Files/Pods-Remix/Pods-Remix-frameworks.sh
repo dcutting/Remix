@@ -90,11 +90,13 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Entity.root-Core/Entity.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/GroupSelection.root-Core-UIKit/GroupSelection.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Services-iOS/Services.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Wireframe.root-Core-UIKit/Wireframe.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Entity.root-Core/Entity.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/GroupSelection.root-Core-UIKit/GroupSelection.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Services-iOS/Services.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Wireframe.root-Core-UIKit/Wireframe.framework"
 fi

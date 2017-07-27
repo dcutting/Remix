@@ -3,6 +3,7 @@
 import Foundation
 import Wireframe
 import Entity
+import GroupSelection
 
 class SplitDiscoveryCoordinator {
 

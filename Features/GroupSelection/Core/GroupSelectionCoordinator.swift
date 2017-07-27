@@ -4,14 +4,14 @@ import Foundation
 import Wireframe
 import Entity
 
-protocol GroupSelectionCoordinatorDelegate: class {
+public protocol GroupSelectionCoordinatorDelegate: class {
     func didSelect(groupID: GroupID?)
     func didCancelSelection()
 }
 
-class GroupSelectionCoordinator {
+public class GroupSelectionCoordinator {
 
-    struct Dependencies {
+    public struct Dependencies {
         let navigationWireframe: NavigationWireframe
         let groupSelectionViewFactory: GroupSelectionViewFactory
         let interactor: GroupSelectionInteractor
@@ -19,15 +19,15 @@ class GroupSelectionCoordinator {
     }
 
     private let deps: Dependencies
-    weak var delegate: GroupSelectionCoordinatorDelegate?
+    public weak var delegate: GroupSelectionCoordinatorDelegate?
 
     private var rootView: GroupSelectionView?
 
-    init(dependencies: Dependencies) {
+    public init(dependencies: Dependencies) {
         deps = dependencies
     }
 
-    func start() {
+    public func start() {
         rootView = pushAndUpdateView()
     }
 
@@ -49,7 +49,7 @@ class GroupSelectionCoordinator {
 
 extension GroupSelectionCoordinator: GroupSelectionViewDelegate {
 
-    func didSelect(groupID: GroupID) {
+    public func didSelect(groupID: GroupID) {
         deps.interactor.findSelectionType(for: groupID) { selectionType in
             switch selectionType {
             case .leafGroup:
@@ -62,11 +62,11 @@ extension GroupSelectionCoordinator: GroupSelectionViewDelegate {
         }
     }
 
-    func didDeselectAll() {
+    public func didDeselectAll() {
         delegate?.didSelect(groupID: nil)
     }
 
-    func didAbortSelection(fromView: GroupSelectionView) {
+    public func didAbortSelection(fromView: GroupSelectionView) {
         if fromView === rootView {
             delegate?.didCancelSelection()
         }

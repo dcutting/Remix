@@ -4,6 +4,7 @@ import UIKit
 import Wireframe
 import Entity
 import Services
+import GroupSelection
 
 class UISplitDiscoveryFeature: SplitDiscoveryFeature {
 

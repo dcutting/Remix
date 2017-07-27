@@ -3,6 +3,6 @@
 import Wireframe
 import Entity
 
-protocol GroupSelectionFeature {
+public protocol GroupSelectionFeature {
     func makeCoordinatorUsing(navigationWireframe: NavigationWireframe) -> GroupSelectionCoordinator
 }

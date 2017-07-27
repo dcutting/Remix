@@ -2,22 +2,22 @@
 
 import UIKit
 
-class GroupSelectionViewControllerFactory: GroupSelectionViewFactory {
-    func make() -> GroupSelectionView {
+public class GroupSelectionViewControllerFactory: GroupSelectionViewFactory {
+    public func make() -> GroupSelectionView {
         return GroupSelectionViewController()
     }
 }
 
-class GroupSelectionViewController: UITableViewController, GroupSelectionView {
+public class GroupSelectionViewController: UITableViewController, GroupSelectionView {
 
-    weak var delegate: GroupSelectionViewDelegate?
-    var viewData: GroupSelectionViewData? {
+    public weak var delegate: GroupSelectionViewDelegate?
+    public var viewData: GroupSelectionViewData? {
         didSet {
             updateView()
         }
     }
 
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Reset", style: .plain, target: self, action: #selector(reset))
         navigationItem.backBarButtonItem = UIBarButtonItem(title: nil, style: .plain, target: nil, action: nil)
@@ -28,7 +28,7 @@ class GroupSelectionViewController: UITableViewController, GroupSelectionView {
         delegate?.didDeselectAll()
     }
 
-    func navigationWireframeDidGoBack() {
+    public func navigationWireframeDidGoBack() {
         delegate?.didAbortSelection(fromView: self)
     }
 
@@ -38,11 +38,11 @@ class GroupSelectionViewController: UITableViewController, GroupSelectionView {
         tableView.reloadData()
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewData?.items.count ?? 0
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let item = viewData?.items[indexPath.row] else { preconditionFailure() }
         let cell = UITableViewCell(style: .default, reuseIdentifier: "")
         cell.textLabel?.text = item.title
@@ -50,7 +50,7 @@ class GroupSelectionViewController: UITableViewController, GroupSelectionView {
         return cell
     }
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let groupID = viewData?.items[indexPath.row].groupID else { return }
         delegate?.didSelect(groupID: groupID)
     }

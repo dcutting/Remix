@@ -5,19 +5,23 @@ import Wireframe
 import Entity
 import Services
 
-class UIGroupSelectionFeature: GroupSelectionFeature {
+public class UIGroupSelectionFeature: GroupSelectionFeature {
 
-    struct Dependencies {
+    public struct Dependencies {
         let groupService: GroupService
+
+        public init(groupService: GroupService) {
+            self.groupService = groupService
+        }
     }
 
     private let deps: Dependencies
 
-    init(dependencies: Dependencies) {
+    public init(dependencies: Dependencies) {
         deps = dependencies
     }
 
-    func makeCoordinatorUsing(navigationWireframe: NavigationWireframe) -> GroupSelectionCoordinator {
+    public func makeCoordinatorUsing(navigationWireframe: NavigationWireframe) -> GroupSelectionCoordinator {
         let dependencies = GroupSelectionCoordinator.Dependencies(
             navigationWireframe: navigationWireframe,
             groupSelectionViewFactory: makeViewFactory(),

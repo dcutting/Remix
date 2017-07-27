@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		31D79EC511E9E11079FA4464 /* Pods_Remix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AEF6ED3EA7AB8909F5D4114 /* Pods_Remix.framework */; };
-		C81D0F421F28E499007481A2 /* GroupSelectionFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81D0F411F28E499007481A2 /* GroupSelectionFormatterTests.swift */; };
 		C81D0F4D1F28E603007481A2 /* NavigationDiscoveryFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B8FE501F28D080005B4BB9 /* NavigationDiscoveryFeature.swift */; };
 		C81D0F4E1F28E603007481A2 /* SplitDiscoveryFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D02AE31F28D3E600E3EA7B /* SplitDiscoveryFeature.swift */; };
 		C81D0F4F1F28E603007481A2 /* NavigationDiscoveryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23471F17AD6A0038E879 /* NavigationDiscoveryCoordinator.swift */; };
@@ -25,19 +24,12 @@
 		C81D0F5A1F28E619007481A2 /* AdvertDetailViewFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23671F17BCB00038E879 /* AdvertDetailViewFake.swift */; };
 		C81D0F5B1F28E623007481A2 /* ManualGroupInsertionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23491F17ADFD0038E879 /* ManualGroupInsertionCoordinator.swift */; };
 		C81D0F5C1F28E623007481A2 /* AutoGroupInsertionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C234B1F17AE0D0038E879 /* AutoGroupInsertionCoordinator.swift */; };
-		C81D0F5D1F28E623007481A2 /* GroupSelectionFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89D3E581F28839500E0E264 /* GroupSelectionFeature.swift */; };
-		C81D0F5E1F28E623007481A2 /* GroupSelectionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C233F1F17ACE20038E879 /* GroupSelectionCoordinator.swift */; };
-		C81D0F5F1F28E623007481A2 /* GroupSelectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B86F601F1F909400BDCE50 /* GroupSelectionInteractor.swift */; };
-		C81D0F601F28E623007481A2 /* GroupSelectionFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D0B9D91F28A476006C35A8 /* GroupSelectionFormatter.swift */; };
-		C81D0F611F28E623007481A2 /* GroupSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D0B9D71F28A41D006C35A8 /* GroupSelectionView.swift */; };
-		C81D0F6E1F29DEA0007481A2 /* GroupSelectionInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81D0F6D1F29DEA0007481A2 /* GroupSelectionInteractorTests.swift */; };
 		C8289F711F28C09000D96136 /* AdvertListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8289F701F28C09000D96136 /* AdvertListInteractor.swift */; };
 		C8289F731F28C17900D96136 /* AdvertListFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8289F721F28C17900D96136 /* AdvertListFeature.swift */; };
 		C8289F751F28C37900D96136 /* UIAdvertListFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8289F741F28C37900D96136 /* UIAdvertListFeature.swift */; };
 		C84C231B1F17AB770038E879 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C231A1F17AB770038E879 /* AppDelegate.swift */; };
 		C84C23221F17AB770038E879 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C84C23211F17AB770038E879 /* Assets.xcassets */; };
 		C84C23251F17AB770038E879 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C84C23231F17AB770038E879 /* LaunchScreen.storyboard */; };
-		C84C23401F17ACE20038E879 /* GroupSelectionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C233F1F17ACE20038E879 /* GroupSelectionCoordinator.swift */; };
 		C84C234A1F17ADFD0038E879 /* ManualGroupInsertionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23491F17ADFD0038E879 /* ManualGroupInsertionCoordinator.swift */; };
 		C84C234C1F17AE0D0038E879 /* AutoGroupInsertionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C234B1F17AE0D0038E879 /* AutoGroupInsertionCoordinator.swift */; };
 		C84C234D1F17AE960038E879 /* NavigationDiscoveryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23471F17AD6A0038E879 /* NavigationDiscoveryCoordinator.swift */; };
@@ -50,22 +42,16 @@
 		C84DBC981F2A12B500C26AF6 /* AdvertListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84DBC971F2A12B500C26AF6 /* AdvertListInteractorTests.swift */; };
 		C87C0A5F1F17C3FA00715A9E /* DiscoveryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C0A5E1F17C3FA00715A9E /* DiscoveryInteractor.swift */; };
 		C87C0A611F17C52D00715A9E /* AdvertListFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C0A601F17C52D00715A9E /* AdvertListFormatter.swift */; };
-		C89D3E591F28839500E0E264 /* GroupSelectionFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89D3E581F28839500E0E264 /* GroupSelectionFeature.swift */; };
 		C8B48D531F2A17500014671F /* AdvertListFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B48D521F2A17500014671F /* AdvertListFormatterTests.swift */; };
 		C8B86F551F1F7C4000BDCE50 /* AdvertListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B86F541F1F7C4000BDCE50 /* AdvertListViewController.swift */; };
 		C8B86F591F1F820B00BDCE50 /* AdvertDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B86F581F1F820B00BDCE50 /* AdvertDetailViewController.swift */; };
 		C8B86F5B1F1F83CF00BDCE50 /* AdvertDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8B86F5A1F1F83CF00BDCE50 /* AdvertDetailViewController.storyboard */; };
 		C8B86F5D1F1F890D00BDCE50 /* DiscoveryDetailFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B86F5C1F1F890D00BDCE50 /* DiscoveryDetailFormatter.swift */; };
-		C8B86F5F1F1F8E7800BDCE50 /* GroupSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B86F5E1F1F8E7800BDCE50 /* GroupSelectionViewController.swift */; };
-		C8B86F611F1F909400BDCE50 /* GroupSelectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B86F601F1F909400BDCE50 /* GroupSelectionInteractor.swift */; };
 		C8B8FE4F1F28D022005B4BB9 /* UINavigationDiscoveryFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B8FE4E1F28D022005B4BB9 /* UINavigationDiscoveryFeature.swift */; };
 		C8B8FE511F28D080005B4BB9 /* NavigationDiscoveryFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B8FE501F28D080005B4BB9 /* NavigationDiscoveryFeature.swift */; };
 		C8C2CACB1F28BDF800F37288 /* AdvertListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C2CACA1F28BDF800F37288 /* AdvertListCoordinator.swift */; };
 		C8D02AE41F28D3E600E3EA7B /* SplitDiscoveryFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D02AE31F28D3E600E3EA7B /* SplitDiscoveryFeature.swift */; };
 		C8D02AE61F28D40900E3EA7B /* UISplitDiscoveryFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D02AE51F28D40900E3EA7B /* UISplitDiscoveryFeature.swift */; };
-		C8D0B9D61F28A085006C35A8 /* UIGroupSelectionFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D0B9D51F28A085006C35A8 /* UIGroupSelectionFeature.swift */; };
-		C8D0B9D81F28A41D006C35A8 /* GroupSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D0B9D71F28A41D006C35A8 /* GroupSelectionView.swift */; };
-		C8D0B9DA1F28A476006C35A8 /* GroupSelectionFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D0B9D91F28A476006C35A8 /* GroupSelectionFormatter.swift */; };
 		C8D350D21F24D5D600745FFA /* NavigationAppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D350D11F24D59B00745FFA /* NavigationAppCoordinator.swift */; };
 		C8DB6C761F2A1A07000EFA3E /* DiscoveryDetailFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DB6C751F2A1A07000EFA3E /* DiscoveryDetailFormatterTests.swift */; };
 		C8DB6C781F2A1AF2000EFA3E /* DiscoveryInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DB6C771F2A1AF2000EFA3E /* DiscoveryInteractorTests.swift */; };
@@ -81,9 +67,7 @@
 		7AEF6ED3EA7AB8909F5D4114 /* Pods_Remix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Remix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE375153B2F6C2B9A2E95C37 /* Pods-Remix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Remix.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Remix/Pods-Remix.debug.xcconfig"; sourceTree = "<group>"; };
 		C81D0F3F1F28E499007481A2 /* RemixLogicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RemixLogicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C81D0F411F28E499007481A2 /* GroupSelectionFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSelectionFormatterTests.swift; sourceTree = "<group>"; };
 		C81D0F431F28E499007481A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C81D0F6D1F29DEA0007481A2 /* GroupSelectionInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSelectionInteractorTests.swift; sourceTree = "<group>"; };
 		C8289F701F28C09000D96136 /* AdvertListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListInteractor.swift; sourceTree = "<group>"; };
 		C8289F721F28C17900D96136 /* AdvertListFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListFeature.swift; sourceTree = "<group>"; };
 		C8289F741F28C37900D96136 /* UIAdvertListFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAdvertListFeature.swift; sourceTree = "<group>"; };
@@ -92,7 +76,6 @@
 		C84C23211F17AB770038E879 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C84C23241F17AB770038E879 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C84C23261F17AB770038E879 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C84C233F1F17ACE20038E879 /* GroupSelectionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSelectionCoordinator.swift; sourceTree = "<group>"; };
 		C84C23471F17AD6A0038E879 /* NavigationDiscoveryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDiscoveryCoordinator.swift; sourceTree = "<group>"; };
 		C84C23491F17ADFD0038E879 /* ManualGroupInsertionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualGroupInsertionCoordinator.swift; sourceTree = "<group>"; };
 		C84C234B1F17AE0D0038E879 /* AutoGroupInsertionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoGroupInsertionCoordinator.swift; sourceTree = "<group>"; };
@@ -106,22 +89,16 @@
 		C84DBC971F2A12B500C26AF6 /* AdvertListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListInteractorTests.swift; sourceTree = "<group>"; };
 		C87C0A5E1F17C3FA00715A9E /* DiscoveryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryInteractor.swift; sourceTree = "<group>"; };
 		C87C0A601F17C52D00715A9E /* AdvertListFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListFormatter.swift; sourceTree = "<group>"; };
-		C89D3E581F28839500E0E264 /* GroupSelectionFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSelectionFeature.swift; sourceTree = "<group>"; };
 		C8B48D521F2A17500014671F /* AdvertListFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListFormatterTests.swift; sourceTree = "<group>"; };
 		C8B86F541F1F7C4000BDCE50 /* AdvertListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListViewController.swift; sourceTree = "<group>"; };
 		C8B86F581F1F820B00BDCE50 /* AdvertDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertDetailViewController.swift; sourceTree = "<group>"; };
 		C8B86F5A1F1F83CF00BDCE50 /* AdvertDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdvertDetailViewController.storyboard; sourceTree = "<group>"; };
 		C8B86F5C1F1F890D00BDCE50 /* DiscoveryDetailFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryDetailFormatter.swift; sourceTree = "<group>"; };
-		C8B86F5E1F1F8E7800BDCE50 /* GroupSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSelectionViewController.swift; sourceTree = "<group>"; };
-		C8B86F601F1F909400BDCE50 /* GroupSelectionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSelectionInteractor.swift; sourceTree = "<group>"; };
 		C8B8FE4E1F28D022005B4BB9 /* UINavigationDiscoveryFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationDiscoveryFeature.swift; sourceTree = "<group>"; };
 		C8B8FE501F28D080005B4BB9 /* NavigationDiscoveryFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDiscoveryFeature.swift; sourceTree = "<group>"; };
 		C8C2CACA1F28BDF800F37288 /* AdvertListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListCoordinator.swift; sourceTree = "<group>"; };
 		C8D02AE31F28D3E600E3EA7B /* SplitDiscoveryFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitDiscoveryFeature.swift; sourceTree = "<group>"; };
 		C8D02AE51F28D40900E3EA7B /* UISplitDiscoveryFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISplitDiscoveryFeature.swift; sourceTree = "<group>"; };
-		C8D0B9D51F28A085006C35A8 /* UIGroupSelectionFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIGroupSelectionFeature.swift; sourceTree = "<group>"; };
-		C8D0B9D71F28A41D006C35A8 /* GroupSelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupSelectionView.swift; sourceTree = "<group>"; };
-		C8D0B9D91F28A476006C35A8 /* GroupSelectionFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupSelectionFormatter.swift; sourceTree = "<group>"; };
 		C8D350D11F24D59B00745FFA /* NavigationAppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationAppCoordinator.swift; sourceTree = "<group>"; };
 		C8DB6C751F2A1A07000EFA3E /* DiscoveryDetailFormatterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoveryDetailFormatterTests.swift; sourceTree = "<group>"; };
 		C8DB6C771F2A1AF2000EFA3E /* DiscoveryInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryInteractorTests.swift; sourceTree = "<group>"; };
@@ -173,7 +150,6 @@
 				C81D0F431F28E499007481A2 /* Info.plist */,
 				C8DB6C741F2A1A07000EFA3E /* Discovery */,
 				C8B48D501F2A170D0014671F /* AdvertList */,
-				C8B48D511F2A17140014671F /* GroupSelection */,
 			);
 			path = RemixLogicTests;
 			sourceTree = "<group>";
@@ -206,7 +182,6 @@
 				C8C2CAC91F28B3E800F37288 /* AdvertList */,
 				C84C234F1F17AFF00038E879 /* AdvertDetail */,
 				C84C23481F17ADDA0038E879 /* Insertion */,
-				C84C23431F17AD060038E879 /* GroupSelection */,
 				C84C23211F17AB770038E879 /* Assets.xcassets */,
 				C84C23231F17AB770038E879 /* LaunchScreen.storyboard */,
 				C84C23261F17AB770038E879 /* Info.plist */,
@@ -223,19 +198,6 @@
 				C84D33091F24CFB9005BD99A /* SplitAppCoordinator.swift */,
 			);
 			path = App;
-			sourceTree = "<group>";
-		};
-		C84C23431F17AD060038E879 /* GroupSelection */ = {
-			isa = PBXGroup;
-			children = (
-				C89D3E581F28839500E0E264 /* GroupSelectionFeature.swift */,
-				C84C233F1F17ACE20038E879 /* GroupSelectionCoordinator.swift */,
-				C8B86F601F1F909400BDCE50 /* GroupSelectionInteractor.swift */,
-				C8D0B9D91F28A476006C35A8 /* GroupSelectionFormatter.swift */,
-				C8D0B9D71F28A41D006C35A8 /* GroupSelectionView.swift */,
-				C8D0B9D41F28A085006C35A8 /* UIKit */,
-			);
-			path = GroupSelection;
 			sourceTree = "<group>";
 		};
 		C84C23461F17AD6A0038E879 /* Discovery */ = {
@@ -314,15 +276,6 @@
 			path = AdvertList;
 			sourceTree = "<group>";
 		};
-		C8B48D511F2A17140014671F /* GroupSelection */ = {
-			isa = PBXGroup;
-			children = (
-				C81D0F6D1F29DEA0007481A2 /* GroupSelectionInteractorTests.swift */,
-				C81D0F411F28E499007481A2 /* GroupSelectionFormatterTests.swift */,
-			);
-			path = GroupSelection;
-			sourceTree = "<group>";
-		};
 		C8B8FE521F28D0A1005B4BB9 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -344,15 +297,6 @@
 				C87ACD791F28AF2500B1A73C /* Fakes */,
 			);
 			path = AdvertList;
-			sourceTree = "<group>";
-		};
-		C8D0B9D41F28A085006C35A8 /* UIKit */ = {
-			isa = PBXGroup;
-			children = (
-				C8D0B9D51F28A085006C35A8 /* UIGroupSelectionFeature.swift */,
-				C8B86F5E1F1F8E7800BDCE50 /* GroupSelectionViewController.swift */,
-			);
-			path = UIKit;
 			sourceTree = "<group>";
 		};
 		C8DB6C741F2A1A07000EFA3E /* Discovery */ = {
@@ -492,7 +436,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "declare -a DEPENDENCIES=('Entity.root-Core' 'Services-iOS' 'Wireframe.root-Core-UIKit');\nIFS=\" \" read -r -a SPLIT <<< \"$ARCHS\"\nfor ARCH in \"${SPLIT[@]}\"; do\n  cd \"$OBJROOT/Pods.build\"\n  filelist=\"\"\n  for dependency in \"${DEPENDENCIES[@]}\"; do\n    path=\"${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${dependency}.build/Objects-normal/${ARCH}\"\n    if [ -d \"$path\" ]; then\n      search_path=\"$path/*.o\"\n      for obj_file in $search_path; do\n        filelist+=\"${OBJROOT}/Pods.build/${obj_file}\"\n        filelist+=$'\\n'\n      done\n    fi\n  done\n  filelist=${filelist%$'\\n'}\n  echo \"$filelist\" > \"${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}-${TARGET_NAME}-${ARCH}.objects.filelist\"\ndone\n";
+			shellScript = "declare -a DEPENDENCIES=('Entity.root-Core' 'GroupSelection.root-Core-UIKit' 'Services-iOS' 'Wireframe.root-Core-UIKit');\nIFS=\" \" read -r -a SPLIT <<< \"$ARCHS\"\nfor ARCH in \"${SPLIT[@]}\"; do\n  cd \"$OBJROOT/Pods.build\"\n  filelist=\"\"\n  for dependency in \"${DEPENDENCIES[@]}\"; do\n    path=\"${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${dependency}.build/Objects-normal/${ARCH}\"\n    if [ -d \"$path\" ]; then\n      search_path=\"$path/*.o\"\n      for obj_file in $search_path; do\n        filelist+=\"${OBJROOT}/Pods.build/${obj_file}\"\n        filelist+=$'\\n'\n      done\n    fi\n  done\n  filelist=${filelist%$'\\n'}\n  echo \"$filelist\" > \"${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}-${TARGET_NAME}-${ARCH}.objects.filelist\"\ndone\n";
 		};
 		4A4C8F76EB5BBB9F6C04A888 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -562,7 +506,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8DB6C761F2A1A07000EFA3E /* DiscoveryDetailFormatterTests.swift in Sources */,
-				C81D0F601F28E623007481A2 /* GroupSelectionFormatter.swift in Sources */,
 				C81D0F551F28E609007481A2 /* AdvertListInteractor.swift in Sources */,
 				C81D0F531F28E609007481A2 /* AdvertListFeature.swift in Sources */,
 				C81D0F561F28E609007481A2 /* AdvertListFormatter.swift in Sources */,
@@ -572,20 +515,14 @@
 				C81D0F571F28E609007481A2 /* AdvertListView.swift in Sources */,
 				C81D0F541F28E609007481A2 /* AdvertListCoordinator.swift in Sources */,
 				C81D0F581F28E611007481A2 /* AdvertListViewFake.swift in Sources */,
-				C81D0F5F1F28E623007481A2 /* GroupSelectionInteractor.swift in Sources */,
 				C81D0F511F28E603007481A2 /* DiscoveryInteractor.swift in Sources */,
-				C81D0F421F28E499007481A2 /* GroupSelectionFormatterTests.swift in Sources */,
 				C81D0F501F28E603007481A2 /* SplitDiscoveryCoordinator.swift in Sources */,
-				C81D0F6E1F29DEA0007481A2 /* GroupSelectionInteractorTests.swift in Sources */,
 				C81D0F5A1F28E619007481A2 /* AdvertDetailViewFake.swift in Sources */,
 				C84DBC981F2A12B500C26AF6 /* AdvertListInteractorTests.swift in Sources */,
-				C81D0F5D1F28E623007481A2 /* GroupSelectionFeature.swift in Sources */,
 				C8DB6C781F2A1AF2000EFA3E /* DiscoveryInteractorTests.swift in Sources */,
 				C81D0F521F28E603007481A2 /* DiscoveryDetailFormatter.swift in Sources */,
 				C8B48D531F2A17500014671F /* AdvertListFormatterTests.swift in Sources */,
 				C81D0F4E1F28E603007481A2 /* SplitDiscoveryFeature.swift in Sources */,
-				C81D0F5E1F28E623007481A2 /* GroupSelectionCoordinator.swift in Sources */,
-				C81D0F611F28E623007481A2 /* GroupSelectionView.swift in Sources */,
 				C81D0F5B1F28E623007481A2 /* ManualGroupInsertionCoordinator.swift in Sources */,
 				C81D0F4F1F28E603007481A2 /* NavigationDiscoveryCoordinator.swift in Sources */,
 			);
@@ -598,8 +535,6 @@
 				C84DBC961F2A02FC00C26AF6 /* AppCoordinator.swift in Sources */,
 				C87C0A611F17C52D00715A9E /* AdvertListFormatter.swift in Sources */,
 				C84D330A1F24CFB9005BD99A /* SplitAppCoordinator.swift in Sources */,
-				C84C23401F17ACE20038E879 /* GroupSelectionCoordinator.swift in Sources */,
-				C8D0B9D81F28A41D006C35A8 /* GroupSelectionView.swift in Sources */,
 				C8E4B7EA1F25397100E9EB44 /* SplitDiscoveryCoordinator.swift in Sources */,
 				C84C23511F17B0070038E879 /* AdvertDetailView.swift in Sources */,
 				C8D02AE41F28D3E600E3EA7B /* SplitDiscoveryFeature.swift in Sources */,
@@ -615,18 +550,13 @@
 				C8C2CACB1F28BDF800F37288 /* AdvertListCoordinator.swift in Sources */,
 				C8B8FE4F1F28D022005B4BB9 /* UINavigationDiscoveryFeature.swift in Sources */,
 				C84C231B1F17AB770038E879 /* AppDelegate.swift in Sources */,
-				C8D0B9D61F28A085006C35A8 /* UIGroupSelectionFeature.swift in Sources */,
 				C84C23661F17BBBA0038E879 /* AdvertListViewFake.swift in Sources */,
-				C8D0B9DA1F28A476006C35A8 /* GroupSelectionFormatter.swift in Sources */,
 				C8289F711F28C09000D96136 /* AdvertListInteractor.swift in Sources */,
-				C89D3E591F28839500E0E264 /* GroupSelectionFeature.swift in Sources */,
 				C8B86F551F1F7C4000BDCE50 /* AdvertListViewController.swift in Sources */,
 				C8D02AE61F28D40900E3EA7B /* UISplitDiscoveryFeature.swift in Sources */,
 				C8B86F5D1F1F890D00BDCE50 /* DiscoveryDetailFormatter.swift in Sources */,
 				C8289F751F28C37900D96136 /* UIAdvertListFeature.swift in Sources */,
 				C84C23681F17BCB00038E879 /* AdvertDetailViewFake.swift in Sources */,
-				C8B86F611F1F909400BDCE50 /* GroupSelectionInteractor.swift in Sources */,
-				C8B86F5F1F1F8E7800BDCE50 /* GroupSelectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
