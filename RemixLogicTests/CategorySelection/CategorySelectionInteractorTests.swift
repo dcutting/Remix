@@ -35,4 +35,21 @@ class CategorySelectionInteractorTests: XCTestCase {
             XCTAssertEqual(CategorySelectionInteractor.SelectionType.parentCategory, actual)
         }
     }
+
+    func test_fetchCategories_nilParentCategoryID_returnsRootCategories() {
+        let mockCategories = [
+            makeCategory(categoryID: "1", parent: nil),
+            makeCategory(categoryID: "2", parent: "1"),
+            makeCategory(categoryID: "3", parent: nil)
+        ]
+        mockCategoryService.categories = mockCategories
+
+        subjectUnderTest.fetchCategories(parentCategoryID: nil) { actual in
+            let expected = [
+                mockCategories[0],
+                mockCategories[2]
+            ]
+            XCTAssertEqual(expected, actual)
+        }
+    }
 }

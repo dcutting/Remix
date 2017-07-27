@@ -16,11 +16,4 @@ class MockCategoryService: CategoryService {
         }
         completion(category)
     }
-
-    func fetchCategories(withParentCategoryID parentCategoryID: CategoryID?, completion: ([Category]) -> Void) {
-        let filteredCategories = categories.filter { category in
-            category.parent == parentCategoryID
-        }
-        completion(filteredCategories)
-    }
 }

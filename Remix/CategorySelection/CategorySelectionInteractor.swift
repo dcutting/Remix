@@ -28,8 +28,16 @@ class CategorySelectionInteractor {
     }
 
     func fetchCategories(parentCategoryID: CategoryID?, completion: ([Category]) -> Void) {
-        categoryService.fetchCategories(withParentCategoryID: parentCategoryID) { categories in
-            completion(categories)
+        categoryService.fetchCategories() { categories in
+            let filteredCategories = filter(categories: categories, withParentCategoryID: parentCategoryID)
+            completion(filteredCategories)
         }
+    }
+
+    private func filter(categories: [Category], withParentCategoryID parentCategoryID: CategoryID?) -> [Category] {
+        let filteredCategories = categories.filter { category in
+            category.parent == parentCategoryID
+        }
+        return filteredCategories
     }
 }
