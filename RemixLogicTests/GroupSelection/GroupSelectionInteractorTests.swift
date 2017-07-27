@@ -1,7 +1,7 @@
 //  Copyright © 2017 cutting.io. All rights reserved.
 
 import XCTest
-@testable import Core
+@testable import Entity
 
 class GroupSelectionInteractorTests: XCTestCase {
 

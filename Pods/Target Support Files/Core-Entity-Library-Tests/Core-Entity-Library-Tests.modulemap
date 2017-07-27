@@ -1,6 +1,0 @@
-framework module Core {
-  umbrella header "Core-Entity-Library-Tests-umbrella.h"
-
-  export *
-  module * { export * }
-}

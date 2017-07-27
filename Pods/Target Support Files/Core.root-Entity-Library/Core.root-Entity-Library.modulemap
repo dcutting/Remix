@@ -1,6 +1,0 @@
-framework module Core {
-  umbrella header "Core.root-Entity-Library-umbrella.h"
-
-  export *
-  module * { export * }
-}

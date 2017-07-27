@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double CoreVersionNumber;
-FOUNDATION_EXPORT const unsigned char CoreVersionString[];
+FOUNDATION_EXPORT double WireframeVersionNumber;
+FOUNDATION_EXPORT const unsigned char WireframeVersionString[];
 

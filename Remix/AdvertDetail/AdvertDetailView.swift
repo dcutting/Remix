@@ -1,7 +1,8 @@
 //  Copyright © 2017 cutting.io. All rights reserved.
 
 import Foundation
-import Core
+import Entity
+import Wireframe
 
 protocol AdvertDetailViewFactory {
     func make() -> AdvertDetailView

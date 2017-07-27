@@ -5,17 +5,20 @@ use_frameworks!
 plugin 'cocoapods-amimono'
 
 target :Remix do
-  pod 'Core/Entity', :path => 'Core'
+  pod 'Entity/Core', :path => 'Entity'
+  pod 'Wireframe/Core', :path => 'Wireframe'
 end
 
 target :RemixLogicTests do
   platform :osx, '10.12'
-  pod 'Core/Tests', :path => 'Core'
+  pod 'Entity/Tests', :path => 'Entity'
+  pod 'Wireframe/Tests', :path => 'Wireframe'
 end
 
 # Need to list all dependencies here so CocoaPods can find them.
 
-pod 'Core', :path => 'Core'
+pod 'Entity', :path => 'Entity'
+pod 'Wireframe', :path => 'Wireframe'
 
 post_install do |installer|
   require 'cocoapods-amimono/patcher'

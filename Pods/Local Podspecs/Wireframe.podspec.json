@@ -1,0 +1,39 @@
+{
+  "name": "Wireframe",
+  "version": "0.0.1",
+  "summary": "Wireframe abstractions for coordinators",
+  "homepage": "http://cutting.io",
+  "license": {
+    "type": "MIT"
+  },
+  "authors": "Dan Cutting",
+  "platforms": {
+    "ios": "10.3",
+    "osx": "10.12"
+  },
+  "source": {
+    "path": "."
+  },
+  "subspecs": [
+    {
+      "name": "Core",
+      "source_files": "Source/**/*"
+    },
+    {
+      "name": "Tests",
+      "platforms": {
+        "osx": "10.12"
+      },
+      "frameworks": "XCTest",
+      "source_files": "Tests",
+      "dependencies": {
+        "Wireframe/Core": [
+
+        ]
+      },
+      "pod_target_xcconfig": {
+        "ENABLE_BITCODE": "NO"
+      }
+    }
+  ]
+}

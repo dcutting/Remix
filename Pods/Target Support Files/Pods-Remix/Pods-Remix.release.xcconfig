@@ -1,8 +1,8 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
-FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/Core.root-Entity-Library"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/Entity.root-Core" "$PODS_CONFIGURATION_BUILD_DIR/Wireframe.root-Core"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/Core.root-Entity-Library/Core.framework/Headers"
+OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/Entity.root-Core/Entity.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Wireframe.root-Core/Wireframe.framework/Headers"
 OTHER_LDFLAGS[arch=arm64] = $(inherited) -filelist "$(OBJROOT)/Pods.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)-$(TARGET_NAME)-arm64.objects.filelist"
 OTHER_LDFLAGS[arch=armv7] = $(inherited) -filelist "$(OBJROOT)/Pods.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)-$(TARGET_NAME)-armv7.objects.filelist"
 OTHER_LDFLAGS[arch=armv7s] = $(inherited) -filelist "$(OBJROOT)/Pods.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)-$(TARGET_NAME)-armv7s.objects.filelist"

@@ -1,7 +1,7 @@
 //  Copyright © 2017 cutting.io. All rights reserved.
 
 import Foundation
-import Core
+import Entity
 
 class MockAdvertService: AdvertService {
 
