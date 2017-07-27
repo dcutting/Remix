@@ -1,4 +1,5 @@
 PODS:
+  - cslim (1.1.5)
   - Entity (0.0.1):
     - Entity/Core (= 0.0.1)
     - Entity/Tests (= 0.0.1)
@@ -18,6 +19,8 @@ PODS:
   - GroupSelection/UIKit (0.0.1):
     - GroupSelection/Core
     - Wireframe/UIKit
+  - OCSlimProject (1.3):
+    - cslim
   - Services (0.0.1):
     - Services/AdvertService (= 0.0.1)
     - Services/GroupService (= 0.0.1)
@@ -41,6 +44,7 @@ DEPENDENCIES:
   - GroupSelection (from `Features/GroupSelection`)
   - GroupSelection/Tests (from `Features/GroupSelection`)
   - GroupSelection/UIKit (from `Features/GroupSelection`)
+  - OCSlimProject
   - Services (from `Services`)
   - Wireframe (from `Wireframe`)
   - Wireframe/Tests (from `Wireframe`)
@@ -57,11 +61,13 @@ EXTERNAL SOURCES:
     :path: Wireframe
 
 SPEC CHECKSUMS:
+  cslim: 75bc8dc738cdc5b7d51303f94544dad486bd9d3c
   Entity: ab4a825981db20c164fa49aeafa4d7ccec9af6cc
   GroupSelection: bad77e50c06ecd8d45e7b1efd5060baa1fd0295b
+  OCSlimProject: a24337484ec168d7983ef507f75624bb8de21c15
   Services: c76f04776dd841baecb35e60954a56a4ca1ff80e
   Wireframe: ce32eb58f55d43f3bb09fca161a50e8d42ba043e
 
-PODFILE CHECKSUM: de7bd7a653ce7732eabeadf611e73a223149058d
+PODFILE CHECKSUM: aae09b7e621736af02069d3d99cf3eb37c865d0d
 
 COCOAPODS: 1.2.1

@@ -19,6 +19,11 @@ target :LogicTests do
   pod 'GroupSelection/Tests', :path => 'Features/GroupSelection'
 end
 
+target :AcceptanceTests do
+  platform :osx, '10.12'
+  pod 'OCSlimProject'
+end
+
 # Need to list all dependencies here so CocoaPods can find them.
 
 pod 'Wireframe', :path => 'Wireframe'

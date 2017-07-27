@@ -1,0 +1,1 @@
+[[Front Page][.FrontPage]] | [[User Guide][http://www.fitnesse.org/FitNesse.UserGuide]] | [[root][root]] (for global !-!path's-!, ''etc.'') | Press '?' for keyboard shortcuts [[(edit)][.PageFooter?edit]]
