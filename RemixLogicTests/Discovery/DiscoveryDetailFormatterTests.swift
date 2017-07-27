@@ -1,7 +1,7 @@
 //  Copyright © 2017 cutting.io. All rights reserved.
 
 import XCTest
-@testable import Entity
+import Entity
 
 class DiscoveryDetailFormatterTests: XCTestCase {
 
