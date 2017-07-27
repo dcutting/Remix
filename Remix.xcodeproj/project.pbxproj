@@ -35,15 +35,11 @@
 		C84C234D1F17AE960038E879 /* NavigationDiscoveryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23471F17AD6A0038E879 /* NavigationDiscoveryCoordinator.swift */; };
 		C84C23511F17B0070038E879 /* AdvertDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23501F17B0070038E879 /* AdvertDetailView.swift */; };
 		C84C23531F17B0C30038E879 /* AdvertListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23521F17B0C30038E879 /* AdvertListView.swift */; };
-		C84C23661F17BBBA0038E879 /* AdvertListViewFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23651F17BBBA0038E879 /* AdvertListViewFake.swift */; };
-		C84C23681F17BCB00038E879 /* AdvertDetailViewFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23671F17BCB00038E879 /* AdvertDetailViewFake.swift */; };
 		C84D330A1F24CFB9005BD99A /* SplitAppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84D33091F24CFB9005BD99A /* SplitAppCoordinator.swift */; };
 		C84DBC961F2A02FC00C26AF6 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84DBC951F2A02FC00C26AF6 /* AppCoordinator.swift */; };
 		C84DBC981F2A12B500C26AF6 /* AdvertListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84DBC971F2A12B500C26AF6 /* AdvertListInteractorTests.swift */; };
 		C87C0A5F1F17C3FA00715A9E /* DiscoveryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C0A5E1F17C3FA00715A9E /* DiscoveryInteractor.swift */; };
 		C87C0A611F17C52D00715A9E /* AdvertListFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C0A601F17C52D00715A9E /* AdvertListFormatter.swift */; };
-		C8A6967A1F2A90A100C0DEDD /* AdvertListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84DBC971F2A12B500C26AF6 /* AdvertListInteractorTests.swift */; };
-		C8A6967B1F2A90A100C0DEDD /* AdvertListFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B48D521F2A17500014671F /* AdvertListFormatterTests.swift */; };
 		C8B48D531F2A17500014671F /* AdvertListFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B48D521F2A17500014671F /* AdvertListFormatterTests.swift */; };
 		C8B86F551F1F7C4000BDCE50 /* AdvertListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B86F541F1F7C4000BDCE50 /* AdvertListViewController.swift */; };
 		C8B86F591F1F820B00BDCE50 /* AdvertDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B86F581F1F820B00BDCE50 /* AdvertDetailViewController.swift */; };
@@ -58,17 +54,19 @@
 		C8DB6C761F2A1A07000EFA3E /* DiscoveryDetailFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DB6C751F2A1A07000EFA3E /* DiscoveryDetailFormatterTests.swift */; };
 		C8DB6C781F2A1AF2000EFA3E /* DiscoveryInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DB6C771F2A1AF2000EFA3E /* DiscoveryInteractorTests.swift */; };
 		C8E4B7EA1F25397100E9EB44 /* SplitDiscoveryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84D330B1F24D4C1005BD99A /* SplitDiscoveryCoordinator.swift */; };
+		DB6C496DFCF9FC07E5AE750A /* Pods_LogicTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9114D7BE59BDE078516E9BE9 /* Pods_LogicTests.framework */; };
 		F66E796AF8538868873AF6E3 /* Pods_RemixLogicTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FC2ACC69A68D291B28D0A3 /* Pods_RemixLogicTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		06DC4658A54F932C0655AC7F /* Pods-LogicTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LogicTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LogicTests/Pods-LogicTests.release.xcconfig"; sourceTree = "<group>"; };
 		27C148F0CCBF988C7E375A81 /* Pods-Remix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Remix.release.xcconfig"; path = "Pods/Target Support Files/Pods-Remix/Pods-Remix.release.xcconfig"; sourceTree = "<group>"; };
-		3A81DE7023E8999BB4BBED5D /* Pods-RemixLogicTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemixLogicTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RemixLogicTests/Pods-RemixLogicTests.debug.xcconfig"; sourceTree = "<group>"; };
 		65FC2ACC69A68D291B28D0A3 /* Pods_RemixLogicTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RemixLogicTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		66877CA29D474E25F8EA4B51 /* Pods-RemixLogicTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemixLogicTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RemixLogicTests/Pods-RemixLogicTests.release.xcconfig"; sourceTree = "<group>"; };
 		7AEF6ED3EA7AB8909F5D4114 /* Pods_Remix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Remix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		85B4912FF4B9CF29512701CE /* Pods-LogicTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LogicTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LogicTests/Pods-LogicTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9114D7BE59BDE078516E9BE9 /* Pods_LogicTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LogicTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE375153B2F6C2B9A2E95C37 /* Pods-Remix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Remix.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Remix/Pods-Remix.debug.xcconfig"; sourceTree = "<group>"; };
-		C81D0F3F1F28E499007481A2 /* RemixLogicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RemixLogicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C81D0F3F1F28E499007481A2 /* LogicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8289F701F28C09000D96136 /* AdvertListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListInteractor.swift; sourceTree = "<group>"; };
 		C8289F721F28C17900D96136 /* AdvertListFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListFeature.swift; sourceTree = "<group>"; };
 		C8289F741F28C37900D96136 /* UIAdvertListFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAdvertListFeature.swift; sourceTree = "<group>"; };
@@ -111,6 +109,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F66E796AF8538868873AF6E3 /* Pods_RemixLogicTests.framework in Frameworks */,
+				DB6C496DFCF9FC07E5AE750A /* Pods_LogicTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +129,7 @@
 			children = (
 				7AEF6ED3EA7AB8909F5D4114 /* Pods_Remix.framework */,
 				65FC2ACC69A68D291B28D0A3 /* Pods_RemixLogicTests.framework */,
+				9114D7BE59BDE078516E9BE9 /* Pods_LogicTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -139,8 +139,8 @@
 			children = (
 				AE375153B2F6C2B9A2E95C37 /* Pods-Remix.debug.xcconfig */,
 				27C148F0CCBF988C7E375A81 /* Pods-Remix.release.xcconfig */,
-				3A81DE7023E8999BB4BBED5D /* Pods-RemixLogicTests.debug.xcconfig */,
-				66877CA29D474E25F8EA4B51 /* Pods-RemixLogicTests.release.xcconfig */,
+				85B4912FF4B9CF29512701CE /* Pods-LogicTests.debug.xcconfig */,
+				06DC4658A54F932C0655AC7F /* Pods-LogicTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -159,7 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				C84C23171F17AB770038E879 /* Remix.app */,
-				C81D0F3F1F28E499007481A2 /* RemixLogicTests.xctest */,
+				C81D0F3F1F28E499007481A2 /* LogicTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -319,9 +319,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C81D0F3E1F28E499007481A2 /* RemixLogicTests */ = {
+		C81D0F3E1F28E499007481A2 /* LogicTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C81D0F441F28E499007481A2 /* Build configuration list for PBXNativeTarget "RemixLogicTests" */;
+			buildConfigurationList = C81D0F441F28E499007481A2 /* Build configuration list for PBXNativeTarget "LogicTests" */;
 			buildPhases = (
 				4A4C8F76EB5BBB9F6C04A888 /* [CP] Check Pods Manifest.lock */,
 				C81D0F3B1F28E499007481A2 /* Sources */,
@@ -334,9 +334,9 @@
 			);
 			dependencies = (
 			);
-			name = RemixLogicTests;
+			name = LogicTests;
 			productName = RemixLogicTests;
-			productReference = C81D0F3F1F28E499007481A2 /* RemixLogicTests.xctest */;
+			productReference = C81D0F3F1F28E499007481A2 /* LogicTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		C84C23161F17AB770038E879 /* Remix */ = {
@@ -391,7 +391,7 @@
 			projectRoot = "";
 			targets = (
 				C84C23161F17AB770038E879 /* Remix */,
-				C81D0F3E1F28E499007481A2 /* RemixLogicTests */,
+				C81D0F3E1F28E499007481A2 /* LogicTests */,
 			);
 		};
 /* End PBXProject section */
@@ -473,7 +473,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RemixLogicTests/Pods-RemixLogicTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LogicTests/Pods-LogicTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8A6422B3E23A5E5FE44BE60A /* [CP] Copy Pods Resources */ = {
@@ -488,7 +488,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RemixLogicTests/Pods-RemixLogicTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LogicTests/Pods-LogicTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9062CA3AD5CCAA0581F9DDD6 /* [CP] Check Pods Manifest.lock */ = {
@@ -547,7 +547,6 @@
 				C84C23511F17B0070038E879 /* AdvertDetailView.swift in Sources */,
 				C8D02AE41F28D3E600E3EA7B /* SplitDiscoveryFeature.swift in Sources */,
 				C84C234C1F17AE0D0038E879 /* AutoGroupInsertionCoordinator.swift in Sources */,
-				C8A6967B1F2A90A100C0DEDD /* AdvertListFormatterTests.swift in Sources */,
 				C8289F731F28C17900D96136 /* AdvertListFeature.swift in Sources */,
 				C8B8FE511F28D080005B4BB9 /* NavigationDiscoveryFeature.swift in Sources */,
 				C84C234D1F17AE960038E879 /* NavigationDiscoveryCoordinator.swift in Sources */,
@@ -559,14 +558,11 @@
 				C8C2CACB1F28BDF800F37288 /* AdvertListCoordinator.swift in Sources */,
 				C8B8FE4F1F28D022005B4BB9 /* UINavigationDiscoveryFeature.swift in Sources */,
 				C84C231B1F17AB770038E879 /* AppDelegate.swift in Sources */,
-				C84C23661F17BBBA0038E879 /* AdvertListViewFake.swift in Sources */,
 				C8289F711F28C09000D96136 /* AdvertListInteractor.swift in Sources */,
 				C8B86F551F1F7C4000BDCE50 /* AdvertListViewController.swift in Sources */,
 				C8D02AE61F28D40900E3EA7B /* UISplitDiscoveryFeature.swift in Sources */,
-				C8A6967A1F2A90A100C0DEDD /* AdvertListInteractorTests.swift in Sources */,
 				C8B86F5D1F1F890D00BDCE50 /* DiscoveryDetailFormatter.swift in Sources */,
 				C8289F751F28C37900D96136 /* UIAdvertListFeature.swift in Sources */,
-				C84C23681F17BCB00038E879 /* AdvertDetailViewFake.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,14 +582,14 @@
 /* Begin XCBuildConfiguration section */
 		C81D0F451F28E499007481A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3A81DE7023E8999BB4BBED5D /* Pods-RemixLogicTests.debug.xcconfig */;
+			baseConfigurationReference = 85B4912FF4B9CF29512701CE /* Pods-LogicTests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 3H86HRS574;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = io.cutting.RemixLogicTests;
+				PRODUCT_BUNDLE_IDENTIFIER = io.cutting.Remix.LogicTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 4.0;
@@ -602,14 +598,14 @@
 		};
 		C81D0F461F28E499007481A2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 66877CA29D474E25F8EA4B51 /* Pods-RemixLogicTests.release.xcconfig */;
+			baseConfigurationReference = 06DC4658A54F932C0655AC7F /* Pods-LogicTests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 3H86HRS574;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = io.cutting.RemixLogicTests;
+				PRODUCT_BUNDLE_IDENTIFIER = io.cutting.Remix.LogicTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 4.0;
@@ -756,7 +752,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C81D0F441F28E499007481A2 /* Build configuration list for PBXNativeTarget "RemixLogicTests" */ = {
+		C81D0F441F28E499007481A2 /* Build configuration list for PBXNativeTarget "LogicTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C81D0F451F28E499007481A2 /* Debug */,

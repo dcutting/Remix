@@ -11,7 +11,7 @@ target :Remix do
   pod 'GroupSelection/UIKit', :path => 'Features/GroupSelection'
 end
 
-target :RemixLogicTests do
+target :LogicTests do
   platform :osx, '10.12'
   pod 'Wireframe/Tests', :path => 'Wireframe'
   pod 'Entity/Tests', :path => 'Entity'

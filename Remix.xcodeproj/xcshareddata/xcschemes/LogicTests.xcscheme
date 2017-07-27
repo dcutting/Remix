@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C81D0F3E1F28E499007481A2"
-               BuildableName = "RemixLogicTests.xctest"
-               BlueprintName = "RemixLogicTests"
+               BuildableName = "LogicTests.xctest"
+               BlueprintName = "LogicTests"
                ReferencedContainer = "container:Remix.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -35,8 +35,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C81D0F3E1F28E499007481A2"
-               BuildableName = "RemixLogicTests.xctest"
-               BlueprintName = "RemixLogicTests"
+               BuildableName = "LogicTests.xctest"
+               BlueprintName = "LogicTests"
                ReferencedContainer = "container:Remix.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -59,8 +59,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C81D0F3E1F28E499007481A2"
-            BuildableName = "RemixLogicTests.xctest"
-            BlueprintName = "RemixLogicTests"
+            BuildableName = "LogicTests.xctest"
+            BlueprintName = "LogicTests"
             ReferencedContainer = "container:Remix.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -77,8 +77,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C81D0F3E1F28E499007481A2"
-            BuildableName = "RemixLogicTests.xctest"
-            BlueprintName = "RemixLogicTests"
+            BuildableName = "LogicTests.xctest"
+            BlueprintName = "LogicTests"
             ReferencedContainer = "container:Remix.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

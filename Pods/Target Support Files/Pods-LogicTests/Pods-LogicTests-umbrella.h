@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_RemixLogicTestsVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_RemixLogicTestsVersionString[];
+FOUNDATION_EXPORT double Pods_LogicTestsVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_LogicTestsVersionString[];
 
