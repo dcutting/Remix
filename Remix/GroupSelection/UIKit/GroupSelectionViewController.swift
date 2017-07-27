@@ -2,16 +2,16 @@
 
 import UIKit
 
-class CategorySelectionViewControllerFactory: CategorySelectionViewFactory {
-    func make() -> CategorySelectionView {
-        return CategorySelectionViewController()
+class GroupSelectionViewControllerFactory: GroupSelectionViewFactory {
+    func make() -> GroupSelectionView {
+        return GroupSelectionViewController()
     }
 }
 
-class CategorySelectionViewController: UITableViewController, CategorySelectionView {
+class GroupSelectionViewController: UITableViewController, GroupSelectionView {
 
-    weak var delegate: CategorySelectionViewDelegate?
-    var viewData: CategorySelectionViewData? {
+    weak var delegate: GroupSelectionViewDelegate?
+    var viewData: GroupSelectionViewData? {
         didSet {
             updateView()
         }
@@ -51,7 +51,7 @@ class CategorySelectionViewController: UITableViewController, CategorySelectionV
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let categoryID = viewData?.items[indexPath.row].categoryID else { return }
-        delegate?.didSelect(categoryID: categoryID)
+        guard let groupID = viewData?.items[indexPath.row].groupID else { return }
+        delegate?.didSelect(groupID: groupID)
     }
 }

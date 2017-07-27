@@ -6,7 +6,7 @@ class NavigationAppCoordinator {
 
     struct Dependencies {
         let advertService: AdvertService
-        let categoryService: CategoryService
+        let groupService: GroupService
     }
 
     private let deps: Dependencies
@@ -26,7 +26,7 @@ class NavigationAppCoordinator {
     }
 
     private func makeFeature() -> NavigationDiscoveryFeature {
-        let discoveryDeps = UINavigationDiscoveryFeature.Dependencies(advertService: deps.advertService, categoryService: deps.categoryService)
+        let discoveryDeps = UINavigationDiscoveryFeature.Dependencies(advertService: deps.advertService, groupService: deps.groupService)
         return UINavigationDiscoveryFeature(dependencies: discoveryDeps)
     }
 }

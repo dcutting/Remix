@@ -24,5 +24,5 @@ struct AdvertListViewData {
 struct AdvertListViewDataItem {
     let advertID: AdvertID
     let title: String
-    let category: String
+    let group: String
 }

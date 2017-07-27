@@ -6,7 +6,7 @@ class UIAdvertListFeature: AdvertListFeature {
 
     struct Dependencies {
         let advertService: AdvertService
-        let categoryService: CategoryService
+        let groupService: GroupService
     }
 
     private let deps: Dependencies
@@ -26,7 +26,7 @@ class UIAdvertListFeature: AdvertListFeature {
     }
 
     private func makeInteractor() -> AdvertListInteractor {
-        return AdvertListInteractor(advertService: deps.advertService, categoryService: deps.categoryService)
+        return AdvertListInteractor(advertService: deps.advertService, groupService: deps.groupService)
     }
 
     private func makeFormatter() -> AdvertListFormatter {

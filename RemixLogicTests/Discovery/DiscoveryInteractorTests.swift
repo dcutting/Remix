@@ -1,7 +1,7 @@
 //  Copyright © 2017 cutting.io. All rights reserved.
 
 import XCTest
-import Core
+@testable import Core
 
 class DicoveryInteractorTests: XCTestCase {
 
@@ -26,7 +26,7 @@ class DicoveryInteractorTests: XCTestCase {
     func test_fetchDetail_advertFound_returnsAdvert() {
 
         let mockAdverts = [
-            makeAdvert(advertID: "1", title: "hello", categoryID: "9")
+            makeAdvert(advertID: "1", title: "hello", groupID: "9")
         ]
         mockAdvertService.adverts = mockAdverts
 

@@ -1,72 +1,73 @@
 //  Copyright © 2017 cutting.io. All rights reserved.
 
 import XCTest
+@testable import Core
 
 class AdvertListInteractorTests: XCTestCase {
 
     var mockAdvertService: MockAdvertService!
-    var mockCategoryService: MockCategoryService!
+    var mockGroupService: MockGroupService!
     var subjectUnderTest: AdvertListInteractor!
 
     override func setUp() {
         mockAdvertService = MockAdvertService()
-        mockCategoryService = MockCategoryService()
-        subjectUnderTest = AdvertListInteractor(advertService: mockAdvertService, categoryService: mockCategoryService)
+        mockGroupService = MockGroupService()
+        subjectUnderTest = AdvertListInteractor(advertService: mockAdvertService, groupService: mockGroupService)
     }
 
-    func test_update_nilCategory_returnsAllAdvertsAndCategories() {
+    func test_update_nilGroup_returnsAllAdvertsAndGroups() {
 
         let mockAdverts = [
-            makeAdvert(advertID: "1", categoryID: "1"),
-            makeAdvert(advertID: "2", categoryID: "1"),
-            makeAdvert(advertID: "3", categoryID: "2"),
-            makeAdvert(advertID: "4", categoryID: "3")
+            makeAdvert(advertID: "1", groupID: "1"),
+            makeAdvert(advertID: "2", groupID: "1"),
+            makeAdvert(advertID: "3", groupID: "2"),
+            makeAdvert(advertID: "4", groupID: "3")
         ]
-        let mockCategories = [
-            makeCategory(categoryID: "1"),
-            makeCategory(categoryID: "2"),
-            makeCategory(categoryID: "3")
+        let mockGroups = [
+            makeGroup(groupID: "1"),
+            makeGroup(groupID: "2"),
+            makeGroup(groupID: "3")
         ]
 
         mockAdvertService.adverts = mockAdverts
-        mockCategoryService.categories = mockCategories
+        mockGroupService.groups = mockGroups
 
-        subjectUnderTest.update(for: nil) { (actualAdverts, actualCategories) in
+        subjectUnderTest.update(for: nil) { (actualAdverts, actualGroups) in
 
             let expectedAdverts = mockAdverts
             XCTAssertEqual(expectedAdverts, actualAdverts)
 
-            let expectedCategories = mockCategories
-            XCTAssertEqual(expectedCategories, actualCategories)
+            let expectedGroups = mockGroups
+            XCTAssertEqual(expectedGroups, actualGroups)
         }
     }
 
-    func test_update_setCategory_returnsAllCategoriesAndAdvertsInThatCategory() {
+    func test_update_setGroup_returnsAllGroupsAndAdvertsInThatGroup() {
 
         let mockAdverts = [
-            makeAdvert(advertID: "1", categoryID: "1"),
-            makeAdvert(advertID: "2", categoryID: "1"),
-            makeAdvert(advertID: "3", categoryID: "2"),
-            makeAdvert(advertID: "4", categoryID: "3")
+            makeAdvert(advertID: "1", groupID: "1"),
+            makeAdvert(advertID: "2", groupID: "1"),
+            makeAdvert(advertID: "3", groupID: "2"),
+            makeAdvert(advertID: "4", groupID: "3")
         ]
-        let mockCategories = [
-            makeCategory(categoryID: "1"),
-            makeCategory(categoryID: "2"),
-            makeCategory(categoryID: "3")
+        let mockGroups = [
+            makeGroup(groupID: "1"),
+            makeGroup(groupID: "2"),
+            makeGroup(groupID: "3")
         ]
 
         mockAdvertService.adverts = mockAdverts
-        mockCategoryService.categories = mockCategories
+        mockGroupService.groups = mockGroups
 
-        subjectUnderTest.update(for: "1") { (actualAdverts, actualCategories) in
+        subjectUnderTest.update(for: "1") { (actualAdverts, actualGroups) in
 
             let expectedAdverts = [
                 mockAdverts[0], mockAdverts[1]
             ]
             XCTAssertEqual(expectedAdverts, actualAdverts)
 
-            let expectedCategories = mockCategories
-            XCTAssertEqual(expectedCategories, actualCategories)
+            let expectedGroups = mockGroups
+            XCTAssertEqual(expectedGroups, actualGroups)
         }
     }
 }

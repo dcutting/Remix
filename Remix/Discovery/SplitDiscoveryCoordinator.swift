@@ -15,12 +15,12 @@ class SplitDiscoveryCoordinator {
         let detailViewFactory: AdvertDetailViewFactory
 
         let advertListFeature: AdvertListFeature
-        let categorySelectionFeature: CategorySelectionFeature
+        let groupSelectionFeature: GroupSelectionFeature
     }
 
     private var deps: Dependencies
     private var advertListCoordinator: AdvertListCoordinator?
-    private var categorySelectionCoordinator: CategorySelectionCoordinator?
+    private var groupSelectionCoordinator: GroupSelectionCoordinator?
 
     init(dependencies: Dependencies) {
         deps = dependencies
@@ -60,32 +60,32 @@ extension SplitDiscoveryCoordinator: AdvertListCoordinatorDelegate {
     }
 
     func doesWantFilters() {
-        startCategorySelection()
+        startGroupSelection()
     }
 }
 
-extension SplitDiscoveryCoordinator: CategorySelectionCoordinatorDelegate {
+extension SplitDiscoveryCoordinator: GroupSelectionCoordinatorDelegate {
 
-    private func startCategorySelection() {
+    private func startGroupSelection() {
         let navigationWireframe = deps.navigationWireframeFactory.make()
-        let coordinator = deps.categorySelectionFeature.makeCoordinatorUsing(navigationWireframe: navigationWireframe)
+        let coordinator = deps.groupSelectionFeature.makeCoordinatorUsing(navigationWireframe: navigationWireframe)
         coordinator.delegate = self
-        categorySelectionCoordinator = coordinator
+        groupSelectionCoordinator = coordinator
         coordinator.start()
         deps.splitWireframe.present(view: navigationWireframe)
     }
 
-    func didSelect(categoryID: CategoryID?) {
-        advertListCoordinator?.updateAdverts(for: categoryID)
-        finishCategorySelection()
+    func didSelect(groupID: GroupID?) {
+        advertListCoordinator?.updateAdverts(for: groupID)
+        finishGroupSelection()
     }
 
     func didCancelSelection() {
-        finishCategorySelection()
+        finishGroupSelection()
     }
 
-    private func finishCategorySelection() {
+    private func finishGroupSelection() {
         deps.splitWireframe.dismiss()
-        categorySelectionCoordinator = nil
+        groupSelectionCoordinator = nil
     }
 }

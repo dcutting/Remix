@@ -5,23 +5,23 @@ import Core
 
 class AdvertListFormatter {
 
-    func prepare(adverts: [Advert], categories: [Core.Category]) -> AdvertListViewData {
+    func prepare(adverts: [Advert], groups: [Group]) -> AdvertListViewData {
         let items = adverts.map { advert in
-            makeItem(from: advert, categories: categories)
+            makeItem(from: advert, groups: groups)
         }
         return AdvertListViewData(items: items)
     }
 
-    private func makeItem(from advert: Advert, categories: [Core.Category]) -> AdvertListViewDataItem {
-        let categoryName = name(for: advert.categoryID, categories: categories)
-        return AdvertListViewDataItem(advertID: advert.advertID, title: advert.title, category: categoryName)
+    private func makeItem(from advert: Advert, groups: [Group]) -> AdvertListViewDataItem {
+        let groupName = name(for: advert.groupID, groups: groups)
+        return AdvertListViewDataItem(advertID: advert.advertID, title: advert.title, group: groupName)
     }
 
-    private func name(for categoryID: CategoryID, categories: [Core.Category]) -> String {
-        let category = categories.first { category in
-            category.categoryID == categoryID
+    private func name(for groupID: GroupID, groups: [Group]) -> String {
+        let group = groups.first { group in
+            group.groupID == groupID
         }
-        let categoryName = category?.title ?? ""
-        return categoryName
+        let groupName = group?.title ?? ""
+        return groupName
     }
 }

@@ -6,7 +6,7 @@ class SplitAppCoordinator {
 
     struct Dependencies {
         let advertService: AdvertService
-        let categoryService: CategoryService
+        let groupService: GroupService
     }
 
     private let deps: Dependencies
@@ -26,7 +26,7 @@ class SplitAppCoordinator {
     }
 
     private func makeFeature() -> SplitDiscoveryFeature {
-        let discoveryDeps = UISplitDiscoveryFeature.Dependencies(advertService: deps.advertService, categoryService: deps.categoryService)
+        let discoveryDeps = UISplitDiscoveryFeature.Dependencies(advertService: deps.advertService, groupService: deps.groupService)
         return UISplitDiscoveryFeature(dependencies: discoveryDeps)
     }
 }

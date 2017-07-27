@@ -2,7 +2,7 @@
 
 import Foundation
 
-class AutoCategoryInsertionCoordinator {
+class AutoGroupInsertionCoordinator {
 
     func start() {
     }

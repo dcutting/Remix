@@ -6,7 +6,7 @@ class UISplitDiscoveryFeature: SplitDiscoveryFeature {
 
     struct Dependencies {
         let advertService: AdvertService
-        let categoryService: CategoryService
+        let groupService: GroupService
     }
 
     private let deps: Dependencies
@@ -23,7 +23,7 @@ class UISplitDiscoveryFeature: SplitDiscoveryFeature {
             detailFormatter: makeDetailFormatter(),
             detailViewFactory: makeDetailViewFactory(),
             advertListFeature: makeAdvertListFeature(),
-            categorySelectionFeature: makeCategorySelectionFeature()
+            groupSelectionFeature: makeGroupSelectionFeature()
         )
         return SplitDiscoveryCoordinator(dependencies: discoveryDeps)
     }
@@ -45,12 +45,12 @@ class UISplitDiscoveryFeature: SplitDiscoveryFeature {
     }
 
     private func makeAdvertListFeature() -> AdvertListFeature {
-        let featureDeps = UIAdvertListFeature.Dependencies(advertService: deps.advertService, categoryService: deps.categoryService)
+        let featureDeps = UIAdvertListFeature.Dependencies(advertService: deps.advertService, groupService: deps.groupService)
         return UIAdvertListFeature(dependencies: featureDeps)
     }
 
-    private func makeCategorySelectionFeature() -> CategorySelectionFeature {
-        let featureDeps = UICategorySelectionFeature.Dependencies(categoryService: deps.categoryService)
-        return UICategorySelectionFeature(dependencies: featureDeps)
+    private func makeGroupSelectionFeature() -> GroupSelectionFeature {
+        let featureDeps = UIGroupSelectionFeature.Dependencies(groupService: deps.groupService)
+        return UIGroupSelectionFeature(dependencies: featureDeps)
     }
 }

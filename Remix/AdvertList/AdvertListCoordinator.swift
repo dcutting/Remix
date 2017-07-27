@@ -42,14 +42,14 @@ class AdvertListCoordinator {
         updateAdverts(for: nil)
     }
 
-    func updateAdverts(for categoryID: CategoryID?) {
-        deps.interactor.update(for: categoryID) { [weak self] (adverts, categories) in
-            self?.updateListView(with: adverts, categories: categories)
+    func updateAdverts(for groupID: GroupID?) {
+        deps.interactor.update(for: groupID) { [weak self] (adverts, groups) in
+            self?.updateListView(with: adverts, groups: groups)
         }
     }
 
-    private func updateListView(with adverts: [Advert], categories: [Core.Category]) {
-        let viewData = deps.formatter.prepare(adverts: adverts, categories: categories)
+    private func updateListView(with adverts: [Advert], groups: [Group]) {
+        let viewData = deps.formatter.prepare(adverts: adverts, groups: groups)
         view?.viewData = viewData
     }
 }

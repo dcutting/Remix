@@ -14,12 +14,12 @@ class NavigationDiscoveryCoordinator {
         let detailViewFactory: AdvertDetailViewFactory
 
         let advertListFeature: AdvertListFeature
-        let categorySelectionFeature: CategorySelectionFeature
+        let groupSelectionFeature: GroupSelectionFeature
     }
 
     private let deps: Dependencies
     private var advertListCoordinator: AdvertListCoordinator?
-    private var categorySelectionCoordinator: CategorySelectionCoordinator?
+    private var groupSelectionCoordinator: GroupSelectionCoordinator?
 
     init(dependencies: Dependencies) {
         deps = dependencies
@@ -56,31 +56,31 @@ extension NavigationDiscoveryCoordinator: AdvertListCoordinatorDelegate {
     }
 
     func doesWantFilters() {
-        startCategorySelection()
+        startGroupSelection()
     }
 }
 
-extension NavigationDiscoveryCoordinator: CategorySelectionCoordinatorDelegate {
+extension NavigationDiscoveryCoordinator: GroupSelectionCoordinatorDelegate {
 
-    private func startCategorySelection() {
-        let coordinator = deps.categorySelectionFeature.makeCoordinatorUsing(navigationWireframe: deps.navigationWireframe)
+    private func startGroupSelection() {
+        let coordinator = deps.groupSelectionFeature.makeCoordinatorUsing(navigationWireframe: deps.navigationWireframe)
         coordinator.delegate = self
-        categorySelectionCoordinator = coordinator
+        groupSelectionCoordinator = coordinator
         deps.navigationWireframe.setPopCheckpoint()
         coordinator.start()
     }
 
-    func didSelect(categoryID: CategoryID?) {
-        advertListCoordinator?.updateAdverts(for: categoryID)
-        finishCategorySelection()
+    func didSelect(groupID: GroupID?) {
+        advertListCoordinator?.updateAdverts(for: groupID)
+        finishGroupSelection()
     }
 
     func didCancelSelection() {
-        finishCategorySelection()
+        finishGroupSelection()
     }
 
-    private func finishCategorySelection() {
+    private func finishGroupSelection() {
         deps.navigationWireframe.popToLastCheckpoint()
-        categorySelectionCoordinator = nil
+        groupSelectionCoordinator = nil
     }
 }

@@ -40,7 +40,7 @@ class AdvertListViewController: UITableViewController, AdvertListView {
         guard let item = viewData?.items[indexPath.row] else { preconditionFailure() }
         let cell = UITableViewCell(style: .value1, reuseIdentifier: "")
         cell.textLabel?.text = item.title
-        cell.detailTextLabel?.text = item.category
+        cell.detailTextLabel?.text = item.group
         return cell
     }
 

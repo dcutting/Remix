@@ -6,26 +6,26 @@ import Core
 class AdvertListInteractor {
     
     let advertService: AdvertService
-    let categoryService: CategoryService
+    let groupService: GroupService
 
-    init(advertService: AdvertService, categoryService: CategoryService) {
+    init(advertService: AdvertService, groupService: GroupService) {
         self.advertService = advertService
-        self.categoryService = categoryService
+        self.groupService = groupService
     }
 
-    func update(for categoryID: CategoryID?, completion: @escaping ([Advert], [Core.Category]) -> Void) {
+    func update(for groupID: GroupID?, completion: @escaping ([Advert], [Group]) -> Void) {
         advertService.fetchAdverts { adverts in
-            categoryService.fetchCategories { categories in
-                let filteredAdverts = filter(adverts: adverts, for: categoryID)
-                completion(filteredAdverts, categories)
+            groupService.fetchGroups { groups in
+                let filteredAdverts = filter(adverts: adverts, for: groupID)
+                completion(filteredAdverts, groups)
             }
         }
     }
 
-    private func filter(adverts: [Advert], for categoryID: CategoryID?) -> [Advert] {
-        guard let categoryID = categoryID else { return adverts }
+    private func filter(adverts: [Advert], for groupID: GroupID?) -> [Advert] {
+        guard let groupID = groupID else { return adverts }
         let filteredAdverts = adverts.filter { advert in
-            advert.categoryID == categoryID
+            advert.groupID == groupID
         }
         return filteredAdverts
     }
