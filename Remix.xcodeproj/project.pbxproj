@@ -61,6 +61,7 @@
 		C84C23681F17BCB00038E879 /* AdvertDetailViewFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23671F17BCB00038E879 /* AdvertDetailViewFake.swift */; };
 		C84D330A1F24CFB9005BD99A /* SplitAppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84D33091F24CFB9005BD99A /* SplitAppCoordinator.swift */; };
 		C84DBC961F2A02FC00C26AF6 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84DBC951F2A02FC00C26AF6 /* AppCoordinator.swift */; };
+		C84DBC981F2A12B500C26AF6 /* AdvertListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84DBC971F2A12B500C26AF6 /* AdvertListInteractorTests.swift */; };
 		C87C0A5F1F17C3FA00715A9E /* DiscoveryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C0A5E1F17C3FA00715A9E /* DiscoveryInteractor.swift */; };
 		C87C0A611F17C52D00715A9E /* AdvertListFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C0A601F17C52D00715A9E /* AdvertListFormatter.swift */; };
 		C88651CA1F1F99C50085E239 /* MockCategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88651C91F1F99C50085E239 /* MockCategoryService.swift */; };
@@ -68,6 +69,8 @@
 		C88651D11F1FB5670085E239 /* AdvertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88651D01F1FB55E0085E239 /* AdvertService.swift */; };
 		C88651D31F1FB5A30085E239 /* MockAdvertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88651D21F1FB5A30085E239 /* MockAdvertService.swift */; };
 		C89D3E591F28839500E0E264 /* CategorySelectionFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89D3E581F28839500E0E264 /* CategorySelectionFeature.swift */; };
+		C8B48D4C1F2A14840014671F /* CategoryHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B48D4B1F2A14840014671F /* CategoryHelpers.swift */; };
+		C8B48D4E1F2A15C20014671F /* AdvertHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B48D4D1F2A15C20014671F /* AdvertHelpers.swift */; };
 		C8B86F551F1F7C4000BDCE50 /* AdvertListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B86F541F1F7C4000BDCE50 /* AdvertListViewController.swift */; };
 		C8B86F591F1F820B00BDCE50 /* AdvertDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B86F581F1F820B00BDCE50 /* AdvertDetailViewController.swift */; };
 		C8B86F5B1F1F83CF00BDCE50 /* AdvertDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8B86F5A1F1F83CF00BDCE50 /* AdvertDetailViewController.storyboard */; };
@@ -119,6 +122,7 @@
 		C84D33091F24CFB9005BD99A /* SplitAppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitAppCoordinator.swift; sourceTree = "<group>"; };
 		C84D330B1F24D4C1005BD99A /* SplitDiscoveryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitDiscoveryCoordinator.swift; sourceTree = "<group>"; };
 		C84DBC951F2A02FC00C26AF6 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		C84DBC971F2A12B500C26AF6 /* AdvertListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListInteractorTests.swift; sourceTree = "<group>"; };
 		C87C0A5E1F17C3FA00715A9E /* DiscoveryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryInteractor.swift; sourceTree = "<group>"; };
 		C87C0A601F17C52D00715A9E /* AdvertListFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListFormatter.swift; sourceTree = "<group>"; };
 		C88651C81F1F99840085E239 /* CategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryService.swift; sourceTree = "<group>"; };
@@ -126,6 +130,8 @@
 		C88651D01F1FB55E0085E239 /* AdvertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertService.swift; sourceTree = "<group>"; };
 		C88651D21F1FB5A30085E239 /* MockAdvertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAdvertService.swift; sourceTree = "<group>"; };
 		C89D3E581F28839500E0E264 /* CategorySelectionFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectionFeature.swift; sourceTree = "<group>"; };
+		C8B48D4B1F2A14840014671F /* CategoryHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryHelpers.swift; sourceTree = "<group>"; };
+		C8B48D4D1F2A15C20014671F /* AdvertHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertHelpers.swift; sourceTree = "<group>"; };
 		C8B86F541F1F7C4000BDCE50 /* AdvertListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListViewController.swift; sourceTree = "<group>"; };
 		C8B86F581F1F820B00BDCE50 /* AdvertDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertDetailViewController.swift; sourceTree = "<group>"; };
 		C8B86F5A1F1F83CF00BDCE50 /* AdvertDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdvertDetailViewController.storyboard; sourceTree = "<group>"; };
@@ -181,6 +187,9 @@
 				C81D0F6B1F293FC2007481A2 /* ViewableFake.swift */,
 				C81D0F411F28E499007481A2 /* CategorySelectionFormatterTests.swift */,
 				C81D0F6D1F29DEA0007481A2 /* CategorySelectionInteractorTests.swift */,
+				C84DBC971F2A12B500C26AF6 /* AdvertListInteractorTests.swift */,
+				C8B48D4B1F2A14840014671F /* CategoryHelpers.swift */,
+				C8B48D4D1F2A15C20014671F /* AdvertHelpers.swift */,
 			);
 			path = RemixLogicTests;
 			sourceTree = "<group>";
@@ -490,6 +499,7 @@
 				C81D0F6A1F28E63A007481A2 /* MockCategoryService.swift in Sources */,
 				C81D0F531F28E609007481A2 /* AdvertListFeature.swift in Sources */,
 				C81D0F561F28E609007481A2 /* AdvertListFormatter.swift in Sources */,
+				C8B48D4C1F2A14840014671F /* CategoryHelpers.swift in Sources */,
 				C81D0F591F28E619007481A2 /* AdvertDetailView.swift in Sources */,
 				C81D0F4D1F28E603007481A2 /* NavigationDiscoveryFeature.swift in Sources */,
 				C81D0F641F28E62F007481A2 /* Viewable.swift in Sources */,
@@ -507,11 +517,13 @@
 				C81D0F501F28E603007481A2 /* SplitDiscoveryCoordinator.swift in Sources */,
 				C81D0F6E1F29DEA0007481A2 /* CategorySelectionInteractorTests.swift in Sources */,
 				C81D0F5A1F28E619007481A2 /* AdvertDetailViewFake.swift in Sources */,
+				C84DBC981F2A12B500C26AF6 /* AdvertListInteractorTests.swift in Sources */,
 				C81D0F5D1F28E623007481A2 /* CategorySelectionFeature.swift in Sources */,
 				C81D0F521F28E603007481A2 /* DiscoveryDetailFormatter.swift in Sources */,
 				C81D0F4E1F28E603007481A2 /* SplitDiscoveryFeature.swift in Sources */,
 				C81D0F5E1F28E623007481A2 /* CategorySelectionCoordinator.swift in Sources */,
 				C81D0F611F28E623007481A2 /* CategorySelectionView.swift in Sources */,
+				C8B48D4E1F2A15C20014671F /* AdvertHelpers.swift in Sources */,
 				C81D0F5B1F28E623007481A2 /* ManualCategoryInsertionCoordinator.swift in Sources */,
 				C81D0F4F1F28E603007481A2 /* NavigationDiscoveryCoordinator.swift in Sources */,
 				C81D0F631F28E628007481A2 /* Category.swift in Sources */,

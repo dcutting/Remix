@@ -10,3 +10,12 @@ struct Category {
     let children: [CategoryID]
     let title: String
 }
+
+extension Category: Equatable {
+    static func ==(lhs: Category, rhs: Category) -> Bool {
+        return lhs.categoryID == rhs.categoryID &&
+            lhs.parent == rhs.parent &&
+            lhs.children == rhs.children &&
+            lhs.title == rhs.title
+    }
+}

@@ -35,8 +35,4 @@ class CategorySelectionInteractorTests: XCTestCase {
             XCTAssertEqual(CategorySelectionInteractor.SelectionType.parentCategory, actual)
         }
     }
-
-    private func makeCategory(categoryID: CategoryID, children: [CategoryID]) -> Category {
-        return Category(categoryID: categoryID, parent: nil, children: children, title: "dummy title")
-    }
 }
