@@ -5,7 +5,7 @@ import Entity
 
 class GroupSelectionFormatterTests: XCTestCase {
 
-    func testFormatter() {
+    func test_prepare() {
 
         let formatter = GroupSelectionFormatter()
         let groups = [
