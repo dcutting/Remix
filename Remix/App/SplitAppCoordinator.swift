@@ -4,6 +4,7 @@ import UIKit
 import Wireframe
 import Entity
 import Services
+import GroupSelection
 
 class SplitAppCoordinator {
 
@@ -29,7 +30,19 @@ class SplitAppCoordinator {
     }
 
     private func makeFeature() -> SplitDiscoveryFeature {
-        let discoveryDeps = UISplitDiscoveryFeature.Dependencies(advertService: deps.advertService, groupService: deps.groupService, advertListViewFactory: AdvertListViewControllerFactory())
-        return UISplitDiscoveryFeature(dependencies: discoveryDeps)
+        let discoveryDeps = SplitDiscoveryFeature.Dependencies(
+            advertService: deps.advertService,
+            groupService: deps.groupService,
+            advertListViewFactory: AdvertListViewControllerFactory(),
+            advertDetailViewFactory: AdvertDetailViewControllerFactory(),
+            navigationWireframeFactory: UINavigationWireframeFactory(),
+            groupSelectionFeature: makeGroupSelectionFeature()
+        )
+        return SplitDiscoveryFeature(dependencies: discoveryDeps)
+    }
+
+    private func makeGroupSelectionFeature() -> GroupSelectionFeature {
+        let featureDeps = GroupSelectionFeature.Dependencies(groupService: deps.groupService, groupSelectionViewFactory: GroupSelectionViewControllerFactory())
+        return GroupSelectionFeature(dependencies: featureDeps)
     }
 }
