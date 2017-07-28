@@ -10,29 +10,27 @@ class ListDisplaysAdverts: NSObject {
 
     @objc func query() -> [[[String]]] {
 
-//        let spyAdvertListView = AdvertListViewSpy()
-//        let fakeAdvertListViewFactory = FakeAdvertListViewFactory(fake: spyAdvertListView)
-//
-//        let mockNavigationWireframe = NavigationWireframeSpy()
-//
-//        let deps = AdvertListCoordinator.Dependencies(
-//            navigationWireframe: mockNavigationWireframe,
-//            interactor: AdvertListInteractor(advertService: mockAdvertService, groupService: mockGroupService),
-//            formatter: AdvertListFormatter(),
-//            viewFactory: fakeAdvertListViewFactory)
-//        let advertListCoordinator = AdvertListCoordinator(dependencies: deps)
-//
-//        advertListCoordinator.start()
-//
-//        wait(seconds: 0.5)
-//
-//        guard let viewData = spyAdvertListView.viewData else {
-//            return []
-//        }
+        let spyAdvertListView = AdvertListViewSpy()
+        let fakeAdvertListViewFactory = FakeAdvertListViewFactory(fake: spyAdvertListView)
 
-//        return spyAdvertListView.viewData?.items.map { item in [["title", item.title], ["group", item.group]] }
-//
-        return []
+        let mockNavigationWireframe = NavigationWireframeSpy()
+
+        let deps = AdvertListCoordinator.Dependencies(
+            navigationWireframe: mockNavigationWireframe,
+            interactor: AdvertListInteractor(advertService: mockAdvertService, groupService: mockGroupService),
+            formatter: AdvertListFormatter(),
+            viewFactory: fakeAdvertListViewFactory)
+        let advertListCoordinator = AdvertListCoordinator(dependencies: deps)
+
+        advertListCoordinator.start()
+
+        wait(seconds: 0.5)
+
+        guard let viewData = spyAdvertListView.viewData else {
+            return []
+        }
+
+        return viewData.items.map { item in [["title", item.title], ["group", item.group]] }
     }
 
     private func wait(seconds: TimeInterval) {

@@ -11,6 +11,6 @@ The Discovery feature lets the user browse a list of adverts, optionally filtere
 |101     |Puppy       |2      |
 
 |Query:List displays adverts|
-|title?         |group?     |
+|title          |group      |
 |Scrappy bike   |Vehicles   |
 |Puppy          |Pets       |
