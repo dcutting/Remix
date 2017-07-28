@@ -4,8 +4,8 @@ import Foundation
 import Wireframe
 import GroupSelection
 
-@objc(SelectAdvert)
-class SelectAdvert: NSObject {
+@objc(SelectAdvertOnTablet)
+class SelectAdvertOnTablet: NSObject {
 
     @objc var title: String?
     @objc var group: String?
@@ -13,13 +13,16 @@ class SelectAdvert: NSObject {
     let advertListViewSpy = AdvertListViewSpy()
     let advertDetailViewSpy = AdvertDetailViewSpy()
     let navigationWireframeSpy = NavigationWireframeSpy()
+    let splitWireframeSpy = SplitWireframeSpy()
 
-    var navigationDiscoveryCoordinator: NavigationDiscoveryCoordinator?
+    var splitDiscoveryCoordinator: SplitDiscoveryCoordinator?
 
     @objc override init() {
         let fakeAdvertListViewFactory = FakeAdvertListViewFactory(fake: advertListViewSpy)
 
         let fakeAdvertDetailViewFactory = FakeAdvertDetailViewFactory(fake: advertDetailViewSpy)
+
+        let fakeNavigationWireframeFactory = FakeNavigationWireframeFactory(fake: navigationWireframeSpy)
 
         let groupSelectionViewSpy = GroupSelectionViewSpy()
         let fakeGroupSelectionViewFactory = FakeGroupSelectionViewFactory(fake: groupSelectionViewSpy)
@@ -29,19 +32,20 @@ class SelectAdvert: NSObject {
             groupSelectionViewFactory: fakeGroupSelectionViewFactory)
         let groupSelectionFeature = GroupSelectionFeature(dependencies: groupSelectionDependencies)
 
-        let deps = NavigationDiscoveryFeature.Dependencies(
+        let deps = SplitDiscoveryFeature.Dependencies(
             advertService: mockAdvertService,
             groupService: mockGroupService,
             advertListViewFactory: fakeAdvertListViewFactory,
             advertDetailViewFactory: fakeAdvertDetailViewFactory,
+            navigationWireframeFactory: fakeNavigationWireframeFactory,
             groupSelectionFeature: groupSelectionFeature)
-        let feature = NavigationDiscoveryFeature(dependencies: deps)
-        navigationDiscoveryCoordinator = feature.makeCoordinatorUsing(navigationWireframe: navigationWireframeSpy)
+        let feature = SplitDiscoveryFeature(dependencies: deps)
+        splitDiscoveryCoordinator = feature.makeCoordinatorUsing(splitWireframe: splitWireframeSpy)
     }
 
     @objc func selectAdvert(_ advertID: String) -> Bool {
 
-        guard let coordinator = navigationDiscoveryCoordinator else { return false }
+        guard let coordinator = splitDiscoveryCoordinator else { return false }
         coordinator.start()
 
         guard let delegate = advertListViewSpy.delegate else { return false }
@@ -50,11 +54,12 @@ class SelectAdvert: NSObject {
         return true
     }
 
-    @objc func pushesDetailView() -> Bool {
-        return navigationWireframeSpy.topView === advertDetailViewSpy
+    @objc func displaysAdvertInSplitDetailView() -> Bool {
+        return splitWireframeSpy.detail === advertDetailViewSpy
     }
 
     @objc func detailViewTitle() -> String {
         return advertDetailViewSpy.viewData?.title ?? ""
     }
 }
+

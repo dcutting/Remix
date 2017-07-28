@@ -17,7 +17,14 @@ The Discovery feature displays a list of adverts.
 
 On iPhone and Android phone, selecting an advert pushes to a screen with more detail.
 
-|script       |select advert          |
-|select advert|101                    |
-|ensure       |pushes detail view     |
-|check        |detail view title|Puppy|
+|script       |select advert on phone                  |
+|select advert|101                                     |
+|ensure       |pushes detail view onto navigation stack|
+|check        |detail view title         |Puppy        |
+
+On iPad, selecting an advert shows it in the detail panel of a split view.
+
+|script       |select advert on tablet             |
+|select advert|101                                 |
+|ensure       |displays advert in split detail view|
+|check        |detail view title       |Puppy      |
