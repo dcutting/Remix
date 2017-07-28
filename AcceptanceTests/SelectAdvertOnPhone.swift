@@ -50,7 +50,7 @@ class SelectAdvertOnPhone: NSObject {
         return true
     }
 
-    @objc func pushesDetailViewOntoNavigationStack() -> Bool {
+    @objc func pushesAdvertOntoNavigationStack() -> Bool {
         return navigationWireframeSpy.topView === advertDetailViewSpy
     }
 
