@@ -19,7 +19,7 @@
       "name": "AdvertService",
       "source_files": "AdvertService/**/*",
       "dependencies": {
-        "Entity": [
+        "Entity/Core": [
 
         ]
       }
@@ -28,7 +28,7 @@
       "name": "GroupService",
       "source_files": "GroupService/**/*",
       "dependencies": {
-        "Entity": [
+        "Entity/Core": [
 
         ]
       }

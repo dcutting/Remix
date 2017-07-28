@@ -2,7 +2,6 @@
 
 import XCTest
 import Entity
-import EntityTests
 
 class AdvertListFormatterTests: XCTestCase {
 

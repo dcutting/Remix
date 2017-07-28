@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double EntityTestsVersionNumber;
-FOUNDATION_EXPORT const unsigned char EntityTestsVersionString[];
+FOUNDATION_EXPORT double EntityVersionNumber;
+FOUNDATION_EXPORT const unsigned char EntityVersionString[];
 

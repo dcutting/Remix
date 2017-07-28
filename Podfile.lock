@@ -1,14 +1,14 @@
 PODS:
   - cslim (1.1.5)
-  - Entity (0.0.1)
-  - EntityTests (0.0.1):
-    - Entity
+  - Entity/Core (0.0.1)
+  - Entity/Tests (0.0.1):
+    - Entity/Core
   - GroupSelection/Core (0.0.1):
-    - Entity
+    - Entity/Core
     - Services/GroupService
     - Wireframe/Core
   - GroupSelection/Tests (0.0.1):
-    - EntityTests
+    - Entity/Tests
     - GroupSelection/Core
   - GroupSelection/UIKit (0.0.1):
     - GroupSelection/Core
@@ -19,17 +19,17 @@ PODS:
     - Services/AdvertService (= 0.0.1)
     - Services/GroupService (= 0.0.1)
   - Services/AdvertService (0.0.1):
-    - Entity
+    - Entity/Core
   - Services/GroupService (0.0.1):
-    - Entity
+    - Entity/Core
   - Wireframe/Core (0.0.1)
   - Wireframe/Fakes (0.0.1):
     - Wireframe/Core
   - Wireframe/UIKit (0.0.1)
 
 DEPENDENCIES:
-  - Entity (from `Entity`)
-  - EntityTests (from `Entity`)
+  - Entity/Core (from `Entity`)
+  - Entity/Tests (from `Entity`)
   - GroupSelection/Core (from `Features/GroupSelection`)
   - GroupSelection/Tests (from `Features/GroupSelection`)
   - GroupSelection/UIKit (from `Features/GroupSelection`)
@@ -41,8 +41,6 @@ DEPENDENCIES:
 EXTERNAL SOURCES:
   Entity:
     :path: Entity
-  EntityTests:
-    :path: Entity
   GroupSelection:
     :path: Features/GroupSelection
   Services:
@@ -52,13 +50,12 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   cslim: 75bc8dc738cdc5b7d51303f94544dad486bd9d3c
-  Entity: 986b71199c2602a399691398fdb5c41ed9d48d7d
-  EntityTests: 38802a0831335b80dc0e5286f062713d2e363fbb
-  GroupSelection: d992cfca1b55e4aab6422a61e84a30c87f505de0
+  Entity: 98d3df28836bb91826b26b683a061228d8d203f3
+  GroupSelection: bfe4d2d39ced8215b9e2ecf1693f1d291d32abd4
   OCSlimProject: a24337484ec168d7983ef507f75624bb8de21c15
-  Services: 3ccd28e45a8df3d95f9e974943fe35bfa2b37ae7
+  Services: c76f04776dd841baecb35e60954a56a4ca1ff80e
   Wireframe: 368d9db912ecfb4777ba972350655afe4f730c04
 
-PODFILE CHECKSUM: 153229f21a7f10086808343712b09b259245a4fd
+PODFILE CHECKSUM: 17d5a48045e84f6fca57aee3d55d27c24dc67e12
 
 COCOAPODS: 1.2.1

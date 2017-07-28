@@ -22,7 +22,7 @@
         "Wireframe/Core": [
 
         ],
-        "Entity": [
+        "Entity/Core": [
 
         ],
         "Services/GroupService": [
@@ -56,7 +56,7 @@
         "GroupSelection/Core": [
 
         ],
-        "EntityTests": [
+        "Entity/Tests": [
 
         ]
       },
