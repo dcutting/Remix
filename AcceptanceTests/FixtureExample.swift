@@ -1,25 +1,18 @@
 import Foundation
 
 @objc(FixtureExample)
-
-class FixtureExample : NSObject, SlimDecisionTable {
+class FixtureExample: NSObject {
     
-    //MARK: Inputs
+    @objc var input = ""
     
-    var input = ""
-    
-    //MARK: <SlimDecisionTable>
-    
-    func execute() {
+    @objc func execute() {
         // 1. Prepare a System Under Test (SUT) using the given inputs.
         // e.g. let system = MySystemUnderTestContext(input: input)
         // 2. Run your SUT
         // 3. Take values from the SUT and return via outputs
     }
     
-    //MARK: Outputs
-    
-    var output: NSString? {
+    @objc var output: NSString? {
         get {
             switch input {
             case "foo":
@@ -31,5 +24,4 @@ class FixtureExample : NSObject, SlimDecisionTable {
             }
         }
     }
-    
 }
