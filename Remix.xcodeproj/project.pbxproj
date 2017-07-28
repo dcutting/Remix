@@ -58,7 +58,6 @@
 		C87C0A5F1F17C3FA00715A9E /* DiscoveryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C0A5E1F17C3FA00715A9E /* DiscoveryInteractor.swift */; };
 		C87C0A611F17C52D00715A9E /* AdvertListFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C0A601F17C52D00715A9E /* AdvertListFormatter.swift */; };
 		C87C49E61F2A9EE500799AD3 /* AcceptanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C87C49E51F2A9EE500799AD3 /* AcceptanceTests.m */; };
-		C87C49E91F2A9EE500799AD3 /* FixtureExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C49E81F2A9EE500799AD3 /* FixtureExample.swift */; };
 		C8A713511F2B2C5D007FF56A /* GivenTheseGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A713501F2B2C5D007FF56A /* GivenTheseGroups.swift */; };
 		C8A713531F2B2CFC007FF56A /* GivenTheseAdverts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A713521F2B2CFC007FF56A /* GivenTheseAdverts.swift */; };
 		C8A713551F2B2D5A007FF56A /* ListDisplaysAdverts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A713541F2B2D5A007FF56A /* ListDisplaysAdverts.swift */; };
@@ -114,7 +113,6 @@
 		C87C0A601F17C52D00715A9E /* AdvertListFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListFormatter.swift; sourceTree = "<group>"; };
 		C87C49E21F2A9EE400799AD3 /* AcceptanceTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AcceptanceTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C87C49E51F2A9EE500799AD3 /* AcceptanceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AcceptanceTests.m; sourceTree = "<group>"; };
-		C87C49E81F2A9EE500799AD3 /* FixtureExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureExample.swift; sourceTree = "<group>"; };
 		C87C49EA1F2A9EE500799AD3 /* SlimTables.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SlimTables.h; sourceTree = "<group>"; };
 		C87C49EB1F2A9EE500799AD3 /* AcceptanceTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AcceptanceTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		C87C49EE1F2A9EE500799AD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -329,7 +327,6 @@
 		C87C49E71F2A9EE500799AD3 /* Fixtures */ = {
 			isa = PBXGroup;
 			children = (
-				C87C49E81F2A9EE500799AD3 /* FixtureExample.swift */,
 				C8A713501F2B2C5D007FF56A /* GivenTheseGroups.swift */,
 				C8A713521F2B2CFC007FF56A /* GivenTheseAdverts.swift */,
 				C8A713541F2B2D5A007FF56A /* ListDisplaysAdverts.swift */,
@@ -748,7 +745,6 @@
 				C8519AED1F2B5C0500645A20 /* SplitDiscoveryCoordinator.swift in Sources */,
 				C8519AE11F2B5B7300645A20 /* AdvertListFeature.swift in Sources */,
 				C8519AEB1F2B5B8600645A20 /* DiscoveryDetailFormatter.swift in Sources */,
-				C87C49E91F2A9EE500799AD3 /* FixtureExample.swift in Sources */,
 				C8519AE61F2B5B8600645A20 /* NavigationDiscoveryFeature.swift in Sources */,
 				C8519AE51F2B5B7300645A20 /* AdvertListView.swift in Sources */,
 				C8519AE71F2B5B8600645A20 /* SplitDiscoveryFeature.swift in Sources */,
