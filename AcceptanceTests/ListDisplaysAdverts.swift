@@ -5,35 +5,26 @@ import Wireframe
 
 @objc(ListDisplaysAdverts)
 class ListDisplaysAdverts: NSObject {
+    
     @objc var title: String?
     @objc var group: String?
 
     @objc func query() -> [[[String]]] {
 
-        let spyAdvertListView = AdvertListViewSpy()
-        let fakeAdvertListViewFactory = FakeAdvertListViewFactory(fake: spyAdvertListView)
+        let advertListViewSpy = AdvertListViewSpy()
+        let fakeAdvertListViewFactory = FakeAdvertListViewFactory(fake: advertListViewSpy)
+        let navigationWireframeSpy = NavigationWireframeSpy()
 
-        let mockNavigationWireframe = NavigationWireframeSpy()
+        let deps = AdvertListFeature.Dependencies(
+            advertService: mockAdvertService,
+            groupService: mockGroupService,
+            advertListViewFactory: fakeAdvertListViewFactory)
+        let feature = AdvertListFeature(dependencies: deps)
+        let coordinator = feature.makeCoordinatorUsing(navigationWireframe: navigationWireframeSpy)
 
-        let deps = AdvertListCoordinator.Dependencies(
-            navigationWireframe: mockNavigationWireframe,
-            interactor: AdvertListInteractor(advertService: mockAdvertService, groupService: mockGroupService),
-            formatter: AdvertListFormatter(),
-            viewFactory: fakeAdvertListViewFactory)
-        let advertListCoordinator = AdvertListCoordinator(dependencies: deps)
+        coordinator.start()
 
-        advertListCoordinator.start()
-
-        wait(seconds: 0.5)
-
-        guard let viewData = spyAdvertListView.viewData else {
-            return []
-        }
-
+        guard let viewData = advertListViewSpy.viewData else { return [] }
         return viewData.items.map { item in [["title", item.title], ["group", item.group]] }
-    }
-
-    private func wait(seconds: TimeInterval) {
-        RunLoop.current.run(until: Date() + seconds)
     }
 }

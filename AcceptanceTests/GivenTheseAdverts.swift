@@ -8,6 +8,7 @@ public let mockAdvertService = MockAdvertService()
 
 @objc(GivenTheseAdverts)
 class GivenTheseAdverts: NSObject {
+
     @objc var advertID: String?
     @objc var title: String?
     @objc var groupID: String?

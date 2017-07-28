@@ -8,6 +8,7 @@ let mockGroupService = MockGroupService()
 
 @objc(GivenTheseGroups)
 class GivenTheseGroups: NSObject {
+
     @objc var groupID: String?
     @objc var title: String?
 

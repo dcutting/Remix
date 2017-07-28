@@ -11,6 +11,7 @@ class UINavigationDiscoveryFeature: NavigationDiscoveryFeature {
     struct Dependencies {
         let advertService: AdvertService
         let groupService: GroupService
+        let advertListViewFactory: AdvertListViewFactory
     }
 
     private let deps: Dependencies
@@ -44,8 +45,8 @@ class UINavigationDiscoveryFeature: NavigationDiscoveryFeature {
     }
 
     private func makeAdvertListFeature() -> AdvertListFeature {
-        let featureDeps = UIAdvertListFeature.Dependencies(advertService: deps.advertService, groupService: deps.groupService)
-        return UIAdvertListFeature(dependencies: featureDeps)
+        let featureDeps = AdvertListFeature.Dependencies(advertService: deps.advertService, groupService: deps.groupService, advertListViewFactory: deps.advertListViewFactory)
+        return AdvertListFeature(dependencies: featureDeps)
     }
 
     private func makeGroupSelectionFeature() -> GroupSelectionFeature {

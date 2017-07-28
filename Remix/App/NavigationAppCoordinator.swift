@@ -29,7 +29,7 @@ class NavigationAppCoordinator {
     }
 
     private func makeFeature() -> NavigationDiscoveryFeature {
-        let discoveryDeps = UINavigationDiscoveryFeature.Dependencies(advertService: deps.advertService, groupService: deps.groupService)
+        let discoveryDeps = UINavigationDiscoveryFeature.Dependencies(advertService: deps.advertService, groupService: deps.groupService, advertListViewFactory: AdvertListViewControllerFactory())
         return UINavigationDiscoveryFeature(dependencies: discoveryDeps)
     }
 }
