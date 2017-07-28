@@ -4,10 +4,10 @@
 
 To add your first "page", click the [[Edit][.FrontPage?edit]] button and add a [[!-WikiWord-!][.FitNesse.UserGuide.FitNesseWiki.WikiWord]] to the page.
 
-|'''Hello Xcode Developer!'''                                                                               |
-|[[OCSlimProject Example][.OCSlimProjectExamplePage]]|''Try out your OCSlimProject Acceptance Tests Target''|
+|'''Hello Xcode Developer!'''                                                   |
+|[[Remix acceptance tests][.Remix]]|The complete acceptance test suite for Remix|
 
-|'''To Learn More...'''                                                                                  |
-|[[User Guide][http://www.fitnesse.org/FitNesse.UserGuide]]  |''Answer the rest of your questions here.''|
+|'''To Learn More...'''                                                                           |
+|[[User Guide][http://www.fitnesse.org/FitNesse.UserGuide]]|Answer the rest of your questions here|
 
 !note Release ${FITNESSE_VERSION}
