@@ -22,6 +22,13 @@ Pod::Spec.new do |s|
     sp.dependency "GroupSelection/Core"
   end
 
+  s.subspec "Fakes" do |sp|
+    sp.platform = :osx, "10.12"
+    sp.source_files = "Fakes"
+    sp.dependency "GroupSelection/Core"
+    sp.pod_target_xcconfig = { 'ENABLE_BITCODE' => 'NO' }
+  end
+
   s.subspec "Tests" do |sp|
     sp.platform = :osx, "10.12"
     sp.framework = 'XCTest'

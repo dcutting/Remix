@@ -1,16 +1,23 @@
-The Discovery feature lets the user browse a list of adverts, optionally filtered by group.
+The Discovery feature displays a list of adverts.
 
-|Given these groups|
-|groupID |title    |
-|1       |Vehicles |
-|2       |Pets     |
+|given these groups|
+|group ID |title   |
+|1        |Vehicles|
+|2        |Pets    |
 
-|Given these adverts          |
-|advertID|title       |groupID|
-|100     |Scrappy bike|1      |
-|101     |Puppy       |2      |
+|given these adverts            |
+|advert ID|title       |group ID|
+|100      |Scrappy bike|1       |
+|101      |Puppy       |2       |
 
-|Query:List displays adverts|
+|Query:list displays adverts|
 |title          |group      |
 |Scrappy bike   |Vehicles   |
 |Puppy          |Pets       |
+
+On iPhone and Android phone, selecting an advert pushes to a screen with more detail.
+
+|script       |select advert          |
+|select advert|101                    |
+|ensure       |pushes detail view     |
+|check        |detail view title|Puppy|

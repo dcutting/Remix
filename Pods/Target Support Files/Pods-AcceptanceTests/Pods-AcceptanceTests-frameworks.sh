@@ -90,14 +90,14 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Entity-Core-OSX/Entity.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/GroupSelection-Core/GroupSelection.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/GroupSelection-Core-Fakes/GroupSelection.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Services-OSX/Services.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Wireframe-Core-Fakes/Wireframe.framework"
   install_framework "$BUILT_PRODUCTS_DIR/cslim/cslim.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Entity-Core-OSX/Entity.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/GroupSelection-Core/GroupSelection.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/GroupSelection-Core-Fakes/GroupSelection.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Services-OSX/Services.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Wireframe-Core-Fakes/Wireframe.framework"
   install_framework "$BUILT_PRODUCTS_DIR/cslim/cslim.framework"

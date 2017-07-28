@@ -3,6 +3,9 @@
 import UIKit
 
 public class GroupSelectionViewControllerFactory: GroupSelectionViewFactory {
+
+    public init() {}
+
     public func make() -> GroupSelectionView {
         return GroupSelectionViewController()
     }

@@ -55,7 +55,7 @@ class UISplitDiscoveryFeature: SplitDiscoveryFeature {
     }
 
     private func makeGroupSelectionFeature() -> GroupSelectionFeature {
-        let featureDeps = UIGroupSelectionFeature.Dependencies(groupService: deps.groupService)
-        return UIGroupSelectionFeature(dependencies: featureDeps)
+        let featureDeps = GroupSelectionFeature.Dependencies(groupService: deps.groupService, groupSelectionViewFactory: GroupSelectionViewControllerFactory())
+        return GroupSelectionFeature(dependencies: featureDeps)
     }
 }

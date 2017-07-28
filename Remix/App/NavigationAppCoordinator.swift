@@ -4,6 +4,7 @@ import UIKit
 import Wireframe
 import Entity
 import Services
+import GroupSelection
 
 class NavigationAppCoordinator {
 
@@ -29,7 +30,18 @@ class NavigationAppCoordinator {
     }
 
     private func makeFeature() -> NavigationDiscoveryFeature {
-        let discoveryDeps = UINavigationDiscoveryFeature.Dependencies(advertService: deps.advertService, groupService: deps.groupService, advertListViewFactory: AdvertListViewControllerFactory())
-        return UINavigationDiscoveryFeature(dependencies: discoveryDeps)
+        let discoveryDeps = NavigationDiscoveryFeature.Dependencies(
+            advertService: deps.advertService,
+            groupService: deps.groupService,
+            advertListViewFactory: AdvertListViewControllerFactory(),
+            advertDetailViewFactory: AdvertDetailViewControllerFactory(),
+            groupSelectionFeature: makeGroupSelectionFeature()
+        )
+        return NavigationDiscoveryFeature(dependencies: discoveryDeps)
+    }
+
+    private func makeGroupSelectionFeature() -> GroupSelectionFeature {
+        let featureDeps = GroupSelectionFeature.Dependencies(groupService: deps.groupService, groupSelectionViewFactory: GroupSelectionViewControllerFactory())
+        return GroupSelectionFeature(dependencies: featureDeps)
     }
 }

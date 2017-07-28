@@ -2,9 +2,16 @@
 
 public class NavigationWireframeSpy: NavigationWireframe {
 
+    var pushedViews = [Navigatable]()
+
+    public var topView: Navigatable? {
+        return pushedViews.last
+    }
+
     public init() {}
 
     public func push(view: Navigatable) {
+        pushedViews.append(view)
     }
 
     public func popToLastCheckpoint() {

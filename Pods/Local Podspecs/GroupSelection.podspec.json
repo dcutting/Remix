@@ -46,6 +46,21 @@
       }
     },
     {
+      "name": "Fakes",
+      "platforms": {
+        "osx": "10.12"
+      },
+      "source_files": "Fakes",
+      "dependencies": {
+        "GroupSelection/Core": [
+
+        ]
+      },
+      "pod_target_xcconfig": {
+        "ENABLE_BITCODE": "NO"
+      }
+    },
+    {
       "name": "Tests",
       "platforms": {
         "osx": "10.12"

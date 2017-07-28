@@ -24,7 +24,7 @@ target :AcceptanceTests do
   pod 'OCSlimProject'
   pod 'Wireframe/Fakes', :path => 'Wireframe'
   pod 'Services', :path => 'Services'
-  pod 'GroupSelection/Core', :path => 'Features/GroupSelection'
+  pod 'GroupSelection/Fakes', :path => 'Features/GroupSelection'
 end
 
 post_install do |installer|
