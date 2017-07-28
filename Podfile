@@ -6,7 +6,12 @@ plugin 'cocoapods-amimono'
 
 target :Remix do
   pod 'Wireframe/UIKit', :path => 'Wireframe'
-  pod 'Entity/Core', :path => 'Entity'
+  pod 'Services', :path => 'Services'
+  pod 'GroupSelection/UIKit', :path => 'Features/GroupSelection'
+end
+
+target :RemixLite do
+  pod 'Wireframe/UIKit', :path => 'Wireframe'
   pod 'Services', :path => 'Services'
   pod 'GroupSelection/UIKit', :path => 'Features/GroupSelection'
 end

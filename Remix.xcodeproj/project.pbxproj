@@ -28,6 +28,10 @@
 		C81D0F5A1F28E619007481A2 /* AdvertDetailViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23671F17BCB00038E879 /* AdvertDetailViewSpy.swift */; };
 		C81D0F5B1F28E623007481A2 /* ManualGroupInsertionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23491F17ADFD0038E879 /* ManualGroupInsertionCoordinator.swift */; };
 		C81D0F5C1F28E623007481A2 /* AutoGroupInsertionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C234B1F17AE0D0038E879 /* AutoGroupInsertionCoordinator.swift */; };
+		C820EF061F2B9BC90036822A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C820EF051F2B9BC90036822A /* AppDelegate.swift */; };
+		C820EF0D1F2B9BC90036822A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C820EF0C1F2B9BC90036822A /* Assets.xcassets */; };
+		C820EF101F2B9BC90036822A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C820EF0E1F2B9BC90036822A /* LaunchScreen.storyboard */; };
+		C820EF241F2B9D410036822A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C820EF231F2B9D410036822A /* AppCoordinator.swift */; };
 		C8289F711F28C09000D96136 /* AdvertListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8289F701F28C09000D96136 /* AdvertListInteractor.swift */; };
 		C8289F731F28C17900D96136 /* AdvertListFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8289F721F28C17900D96136 /* AdvertListFeature.swift */; };
 		C84C231B1F17AB770038E879 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C231A1F17AB770038E879 /* AppDelegate.swift */; };
@@ -78,6 +82,7 @@
 		C8DB6C781F2A1AF2000EFA3E /* DiscoveryInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DB6C771F2A1AF2000EFA3E /* DiscoveryInteractorTests.swift */; };
 		C8E4B7EA1F25397100E9EB44 /* SplitDiscoveryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84D330B1F24D4C1005BD99A /* SplitDiscoveryCoordinator.swift */; };
 		DB6C496DFCF9FC07E5AE750A /* Pods_LogicTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9114D7BE59BDE078516E9BE9 /* Pods_LogicTests.framework */; };
+		E3B5F13F640B7D44A96063DD /* Pods_RemixLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD7CB01E4CC0CBF85A21A50E /* Pods_RemixLite.framework */; };
 		E98C63F88426C5984E425F7C /* Pods_AcceptanceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DEB216AD534D3A58535DB2B /* Pods_AcceptanceTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -85,16 +90,24 @@
 		06DC4658A54F932C0655AC7F /* Pods-LogicTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LogicTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LogicTests/Pods-LogicTests.release.xcconfig"; sourceTree = "<group>"; };
 		27C148F0CCBF988C7E375A81 /* Pods-Remix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Remix.release.xcconfig"; path = "Pods/Target Support Files/Pods-Remix/Pods-Remix.release.xcconfig"; sourceTree = "<group>"; };
 		4289CCA45768224AE5ED488F /* Pods-AcceptanceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcceptanceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AcceptanceTests/Pods-AcceptanceTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6C01F80CCBB2ACB2FCE7A5D9 /* Pods-RemixLite.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemixLite.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RemixLite/Pods-RemixLite.debug.xcconfig"; sourceTree = "<group>"; };
 		6EAFD3BE5E21D8B8DEC0AB35 /* Pods-AcceptanceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcceptanceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AcceptanceTests/Pods-AcceptanceTests.release.xcconfig"; sourceTree = "<group>"; };
 		7AEF6ED3EA7AB8909F5D4114 /* Pods_Remix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Remix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85B4912FF4B9CF29512701CE /* Pods-LogicTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LogicTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LogicTests/Pods-LogicTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8DEB216AD534D3A58535DB2B /* Pods_AcceptanceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AcceptanceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9114D7BE59BDE078516E9BE9 /* Pods_LogicTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LogicTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE375153B2F6C2B9A2E95C37 /* Pods-Remix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Remix.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Remix/Pods-Remix.debug.xcconfig"; sourceTree = "<group>"; };
+		C20CFE14905ABAC5BA765D98 /* Pods-RemixLite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemixLite.release.xcconfig"; path = "Pods/Target Support Files/Pods-RemixLite/Pods-RemixLite.release.xcconfig"; sourceTree = "<group>"; };
 		C80A982F1F2B8A93000382EA /* SelectAdvertOnPhone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAdvertOnPhone.swift; sourceTree = "<group>"; };
 		C80A98311F2B8F66000382EA /* FakeAdvertDetailViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeAdvertDetailViewFactory.swift; sourceTree = "<group>"; };
 		C80A98361F2B98C1000382EA /* SelectAdvertOnTablet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAdvertOnTablet.swift; sourceTree = "<group>"; };
 		C81D0F3F1F28E499007481A2 /* LogicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C820EF031F2B9BC90036822A /* RemixLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemixLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C820EF051F2B9BC90036822A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C820EF0C1F2B9BC90036822A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C820EF0F1F2B9BC90036822A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C820EF111F2B9BC90036822A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C820EF231F2B9D410036822A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		C8289F701F28C09000D96136 /* AdvertListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListInteractor.swift; sourceTree = "<group>"; };
 		C8289F721F28C17900D96136 /* AdvertListFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListFeature.swift; sourceTree = "<group>"; };
 		C84C23171F17AB770038E879 /* Remix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Remix.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +148,7 @@
 		C8D350D11F24D59B00745FFA /* NavigationAppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationAppCoordinator.swift; sourceTree = "<group>"; };
 		C8DB6C751F2A1A07000EFA3E /* DiscoveryDetailFormatterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoveryDetailFormatterTests.swift; sourceTree = "<group>"; };
 		C8DB6C771F2A1AF2000EFA3E /* DiscoveryInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryInteractorTests.swift; sourceTree = "<group>"; };
+		CD7CB01E4CC0CBF85A21A50E /* Pods_RemixLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RemixLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +157,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB6C496DFCF9FC07E5AE750A /* Pods_LogicTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C820EF001F2B9BC90036822A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3B5F13F640B7D44A96063DD /* Pods_RemixLite.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,6 +193,7 @@
 				7AEF6ED3EA7AB8909F5D4114 /* Pods_Remix.framework */,
 				9114D7BE59BDE078516E9BE9 /* Pods_LogicTests.framework */,
 				8DEB216AD534D3A58535DB2B /* Pods_AcceptanceTests.framework */,
+				CD7CB01E4CC0CBF85A21A50E /* Pods_RemixLite.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -184,14 +207,29 @@
 				06DC4658A54F932C0655AC7F /* Pods-LogicTests.release.xcconfig */,
 				4289CCA45768224AE5ED488F /* Pods-AcceptanceTests.debug.xcconfig */,
 				6EAFD3BE5E21D8B8DEC0AB35 /* Pods-AcceptanceTests.release.xcconfig */,
+				6C01F80CCBB2ACB2FCE7A5D9 /* Pods-RemixLite.debug.xcconfig */,
+				C20CFE14905ABAC5BA765D98 /* Pods-RemixLite.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		C820EF041F2B9BC90036822A /* RemixLite */ = {
+			isa = PBXGroup;
+			children = (
+				C820EF051F2B9BC90036822A /* AppDelegate.swift */,
+				C820EF231F2B9D410036822A /* AppCoordinator.swift */,
+				C820EF0C1F2B9BC90036822A /* Assets.xcassets */,
+				C820EF0E1F2B9BC90036822A /* LaunchScreen.storyboard */,
+				C820EF111F2B9BC90036822A /* Info.plist */,
+			);
+			path = RemixLite;
 			sourceTree = "<group>";
 		};
 		C84C230E1F17AB770038E879 = {
 			isa = PBXGroup;
 			children = (
 				C84C23191F17AB770038E879 /* Remix */,
+				C820EF041F2B9BC90036822A /* RemixLite */,
 				C87C49E31F2A9EE400799AD3 /* AcceptanceTests */,
 				C84C23181F17AB770038E879 /* Products */,
 				AEFE66DE01249A53C2BF0E81 /* Pods */,
@@ -205,6 +243,7 @@
 				C84C23171F17AB770038E879 /* Remix.app */,
 				C81D0F3F1F28E499007481A2 /* LogicTests.xctest */,
 				C87C49E21F2A9EE400799AD3 /* AcceptanceTests.app */,
+				C820EF031F2B9BC90036822A /* RemixLite.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -415,6 +454,26 @@
 			productReference = C81D0F3F1F28E499007481A2 /* LogicTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		C820EF021F2B9BC90036822A /* RemixLite */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C820EF211F2B9BC90036822A /* Build configuration list for PBXNativeTarget "RemixLite" */;
+			buildPhases = (
+				8C76691AE6010AF743805F15 /* [CP] Check Pods Manifest.lock */,
+				3C6DDE95E2E234C4945E0550 /* [Amimono] Create filelist per architecture */,
+				C820EEFF1F2B9BC90036822A /* Sources */,
+				C820EF001F2B9BC90036822A /* Frameworks */,
+				C820EF011F2B9BC90036822A /* Resources */,
+				E58EFFE7732B75A02D83D712 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RemixLite;
+			productName = RemixLite;
+			productReference = C820EF031F2B9BC90036822A /* RemixLite.app */;
+			productType = "com.apple.product-type.application";
+		};
 		C84C23161F17AB770038E879 /* Remix */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C84C23341F17AB770038E879 /* Build configuration list for PBXNativeTarget "Remix" */;
@@ -469,6 +528,9 @@
 					C81D0F3E1F28E499007481A2 = {
 						CreatedOnToolsVersion = 9.0;
 					};
+					C820EF021F2B9BC90036822A = {
+						CreatedOnToolsVersion = 9.0;
+					};
 					C84C23161F17AB770038E879 = {
 						CreatedOnToolsVersion = 9.0;
 					};
@@ -491,6 +553,7 @@
 			projectRoot = "";
 			targets = (
 				C84C23161F17AB770038E879 /* Remix */,
+				C820EF021F2B9BC90036822A /* RemixLite */,
 				C81D0F3E1F28E499007481A2 /* LogicTests */,
 				C87C49E11F2A9EE400799AD3 /* AcceptanceTests */,
 			);
@@ -502,6 +565,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C820EF011F2B9BC90036822A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C820EF101F2B9BC90036822A /* LaunchScreen.storyboard in Resources */,
+				C820EF0D1F2B9BC90036822A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,6 +613,20 @@
 			showEnvVarsInLog = 0;
 		};
 		3739D96B87C0F79B5A62C3CC /* [Amimono] Create filelist per architecture */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[Amimono] Create filelist per architecture";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "declare -a DEPENDENCIES=('Entity-Core-iOS' 'GroupSelection-Core-UIKit' 'Services-iOS' 'Wireframe-Core-UIKit');\nIFS=\" \" read -r -a SPLIT <<< \"$ARCHS\"\nfor ARCH in \"${SPLIT[@]}\"; do\n  cd \"$OBJROOT/Pods.build\"\n  filelist=\"\"\n  for dependency in \"${DEPENDENCIES[@]}\"; do\n    path=\"${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${dependency}.build/Objects-normal/${ARCH}\"\n    if [ -d \"$path\" ]; then\n      search_path=\"$path/*.o\"\n      for obj_file in $search_path; do\n        filelist+=\"${OBJROOT}/Pods.build/${obj_file}\"\n        filelist+=$'\\n'\n      done\n    fi\n  done\n  filelist=${filelist%$'\\n'}\n  echo \"$filelist\" > \"${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}-${TARGET_NAME}-${ARCH}.objects.filelist\"\ndone\n";
+		};
+		3C6DDE95E2E234C4945E0550 /* [Amimono] Create filelist per architecture */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -614,6 +700,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LogicTests/Pods-LogicTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8C76691AE6010AF743805F15 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		9062CA3AD5CCAA0581F9DDD6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -657,6 +758,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "${OCSP_SUPPORT_FILE_DIR}/ocsp-generate-fitnesse-test-system-scripts.sh \"${OCSP_BUNDLE_RESOURCES_DIR}\"";
+		};
+		E58EFFE7732B75A02D83D712 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RemixLite/Pods-RemixLite-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		FFE681233226F68F29AA9B96 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -702,6 +818,15 @@
 				C81D0F4E1F28E603007481A2 /* SplitDiscoveryFeature.swift in Sources */,
 				C81D0F5B1F28E623007481A2 /* ManualGroupInsertionCoordinator.swift in Sources */,
 				C81D0F4F1F28E603007481A2 /* NavigationDiscoveryCoordinator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C820EEFF1F2B9BC90036822A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C820EF241F2B9D410036822A /* AppCoordinator.swift in Sources */,
+				C820EF061F2B9BC90036822A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -766,6 +891,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		C820EF0E1F2B9BC90036822A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C820EF0F1F2B9BC90036822A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		C84C23231F17AB770038E879 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -806,6 +939,38 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		C820EF1D1F2B9BC90036822A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C01F80CCBB2ACB2FCE7A5D9 /* Pods-RemixLite.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3H86HRS574;
+				INFOPLIST_FILE = RemixLite/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.cutting.RemixLite;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C820EF1E1F2B9BC90036822A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C20CFE14905ABAC5BA765D98 /* Pods-RemixLite.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3H86HRS574;
+				INFOPLIST_FILE = RemixLite/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.cutting.RemixLite;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -988,6 +1153,15 @@
 			buildConfigurations = (
 				C81D0F451F28E499007481A2 /* Debug */,
 				C81D0F461F28E499007481A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C820EF211F2B9BC90036822A /* Build configuration list for PBXNativeTarget "RemixLite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C820EF1D1F2B9BC90036822A /* Debug */,
+				C820EF1E1F2B9BC90036822A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

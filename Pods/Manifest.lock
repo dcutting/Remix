@@ -30,7 +30,6 @@ PODS:
   - Wireframe/UIKit (0.0.1)
 
 DEPENDENCIES:
-  - Entity/Core (from `Entity`)
   - Entity/Tests (from `Entity`)
   - GroupSelection/Fakes (from `Features/GroupSelection`)
   - GroupSelection/Tests (from `Features/GroupSelection`)
@@ -58,6 +57,6 @@ SPEC CHECKSUMS:
   Services: c76f04776dd841baecb35e60954a56a4ca1ff80e
   Wireframe: 368d9db912ecfb4777ba972350655afe4f730c04
 
-PODFILE CHECKSUM: 4c896c7df9347f90f07d712a3193e36bba83a07e
+PODFILE CHECKSUM: 37ef900da3f8285fe8c6c960d9160f9f38485693
 
 COCOAPODS: 1.2.1
