@@ -25,7 +25,7 @@
         "osx": "10.12"
       },
       "frameworks": "XCTest",
-      "source_files": "Tests",
+      "source_files": "Tests/**/*",
       "dependencies": {
         "Entity/Core": [
 

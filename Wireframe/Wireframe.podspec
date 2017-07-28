@@ -16,10 +16,10 @@ Pod::Spec.new do |s|
     sp.source_files = "UIKit/**/*"
   end
 
-  s.subspec "Tests" do |sp|
+  s.subspec "Fakes" do |sp|
     sp.platform = :osx, "10.12"
     sp.framework = 'XCTest'
-    sp.source_files = "Tests"
+    sp.source_files = "Fakes"
     sp.dependency "Wireframe/Core"
     sp.pod_target_xcconfig = { 'ENABLE_BITCODE' => 'NO' }
   end

@@ -24,12 +24,12 @@
       "source_files": "UIKit/**/*"
     },
     {
-      "name": "Tests",
+      "name": "Fakes",
       "platforms": {
         "osx": "10.12"
       },
       "frameworks": "XCTest",
-      "source_files": "Tests",
+      "source_files": "Fakes",
       "dependencies": {
         "Wireframe/Core": [
 

@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.subspec "Tests" do |sp|
     sp.platform = :osx, "10.12"
     sp.framework = 'XCTest'
-    sp.source_files = "Tests"
+    sp.source_files = "Tests/**/*"
     sp.dependency "Entity/Core"
     sp.pod_target_xcconfig = { 'ENABLE_BITCODE' => 'NO' }
   end

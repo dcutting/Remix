@@ -13,7 +13,7 @@ end
 
 target :LogicTests do
   platform :osx, '10.12'
-  pod 'Wireframe/Tests', :path => 'Wireframe'
+  pod 'Wireframe/Fakes', :path => 'Wireframe'
   pod 'Entity/Tests', :path => 'Entity'
   pod 'Services', :path => 'Services'
   pod 'GroupSelection/Tests', :path => 'Features/GroupSelection'
@@ -22,6 +22,9 @@ end
 target :AcceptanceTests do
   platform :osx, '10.12'
   pod 'OCSlimProject'
+  pod 'Wireframe/Fakes', :path => 'Wireframe'
+  pod 'Services', :path => 'Services'
+  pod 'GroupSelection/Core', :path => 'Features/GroupSelection'
 end
 
 # Need to list all dependencies here so CocoaPods can find them.

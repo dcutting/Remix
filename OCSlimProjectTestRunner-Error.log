@@ -1,0 +1,4 @@
+dyld: Library not loaded: @rpath/XCTest.framework/Versions/A/XCTest
+  Referenced from: /Users/dcutting/Library/Developer/Xcode/DerivedData/Remix-cqcwycsnetbsgtckoevtpqohbptz/Build/Products/Debug/AcceptanceTests.app/Contents/Frameworks/Wireframe.framework/Versions/A/Wireframe
+  Reason: image not found
+/Users/dcutting/Dropbox/Dan/Code/Remix/Pods/OCSlimProject/Pod/Support/SharedSupport/../OSX/RunTestsTargetWithSlimPort: line 7: 93466 Abort trap: 6           $APPLICATION_PATH $SLIM_PORT

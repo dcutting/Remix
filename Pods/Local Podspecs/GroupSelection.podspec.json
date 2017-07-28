@@ -52,6 +52,9 @@
       "dependencies": {
         "GroupSelection/Core": [
 
+        ],
+        "Entity/Tests": [
+
         ]
       },
       "pod_target_xcconfig": {
