@@ -42,6 +42,9 @@
 		C87C0A611F17C52D00715A9E /* AdvertListFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C0A601F17C52D00715A9E /* AdvertListFormatter.swift */; };
 		C87C49E61F2A9EE500799AD3 /* AcceptanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C87C49E51F2A9EE500799AD3 /* AcceptanceTests.m */; };
 		C87C49E91F2A9EE500799AD3 /* FixtureExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C49E81F2A9EE500799AD3 /* FixtureExample.swift */; };
+		C8A713511F2B2C5D007FF56A /* GivenTheseGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A713501F2B2C5D007FF56A /* GivenTheseGroups.swift */; };
+		C8A713531F2B2CFC007FF56A /* GivenTheseAdverts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A713521F2B2CFC007FF56A /* GivenTheseAdverts.swift */; };
+		C8A713551F2B2D5A007FF56A /* ListShowsAdverts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A713541F2B2D5A007FF56A /* ListShowsAdverts.swift */; };
 		C8B48D531F2A17500014671F /* AdvertListFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B48D521F2A17500014671F /* AdvertListFormatterTests.swift */; };
 		C8B86F551F1F7C4000BDCE50 /* AdvertListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B86F541F1F7C4000BDCE50 /* AdvertListViewController.swift */; };
 		C8B86F591F1F820B00BDCE50 /* AdvertDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B86F581F1F820B00BDCE50 /* AdvertDetailViewController.swift */; };
@@ -98,6 +101,9 @@
 		C87C49EA1F2A9EE500799AD3 /* SlimTables.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SlimTables.h; sourceTree = "<group>"; };
 		C87C49EB1F2A9EE500799AD3 /* AcceptanceTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AcceptanceTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		C87C49EE1F2A9EE500799AD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8A713501F2B2C5D007FF56A /* GivenTheseGroups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GivenTheseGroups.swift; sourceTree = "<group>"; };
+		C8A713521F2B2CFC007FF56A /* GivenTheseAdverts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GivenTheseAdverts.swift; sourceTree = "<group>"; };
+		C8A713541F2B2D5A007FF56A /* ListShowsAdverts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListShowsAdverts.swift; sourceTree = "<group>"; };
 		C8B48D521F2A17500014671F /* AdvertListFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListFormatterTests.swift; sourceTree = "<group>"; };
 		C8B86F541F1F7C4000BDCE50 /* AdvertListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListViewController.swift; sourceTree = "<group>"; };
 		C8B86F581F1F820B00BDCE50 /* AdvertDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertDetailViewController.swift; sourceTree = "<group>"; };
@@ -300,6 +306,9 @@
 			isa = PBXGroup;
 			children = (
 				C87C49E81F2A9EE500799AD3 /* FixtureExample.swift */,
+				C8A713501F2B2C5D007FF56A /* GivenTheseGroups.swift */,
+				C8A713521F2B2CFC007FF56A /* GivenTheseAdverts.swift */,
+				C8A713541F2B2D5A007FF56A /* ListShowsAdverts.swift */,
 			);
 			name = Fixtures;
 			sourceTree = "<group>";
@@ -711,7 +720,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C87C49E91F2A9EE500799AD3 /* FixtureExample.swift in Sources */,
+				C8A713531F2B2CFC007FF56A /* GivenTheseAdverts.swift in Sources */,
 				C87C49E61F2A9EE500799AD3 /* AcceptanceTests.m in Sources */,
+				C8A713551F2B2D5A007FF56A /* ListShowsAdverts.swift in Sources */,
+				C8A713511F2B2C5D007FF56A /* GivenTheseGroups.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
