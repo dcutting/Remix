@@ -32,6 +32,9 @@
     },
     {
       "name": "UIKit",
+      "platforms": {
+        "ios": "10.3"
+      },
       "source_files": "UIKit/**/*",
       "dependencies": {
         "Wireframe/UIKit": [

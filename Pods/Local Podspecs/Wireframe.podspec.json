@@ -21,6 +21,9 @@
     },
     {
       "name": "UIKit",
+      "platforms": {
+        "ios": "10.3"
+      },
       "source_files": "UIKit/**/*"
     },
     {
@@ -28,7 +31,6 @@
       "platforms": {
         "osx": "10.12"
       },
-      "frameworks": "XCTest",
       "source_files": "Fakes",
       "dependencies": {
         "Wireframe/Core": [

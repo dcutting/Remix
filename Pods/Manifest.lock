@@ -3,10 +3,6 @@ PODS:
   - Entity (0.0.1)
   - EntityTests (0.0.1):
     - Entity
-  - GroupSelection (0.0.1):
-    - GroupSelection/Core (= 0.0.1)
-    - GroupSelection/Tests (= 0.0.1)
-    - GroupSelection/UIKit (= 0.0.1)
   - GroupSelection/Core (0.0.1):
     - Entity
     - Services/GroupService
@@ -26,10 +22,6 @@ PODS:
     - Entity
   - Services/GroupService (0.0.1):
     - Entity
-  - Wireframe (0.0.1):
-    - Wireframe/Core (= 0.0.1)
-    - Wireframe/Fakes (= 0.0.1)
-    - Wireframe/UIKit (= 0.0.1)
   - Wireframe/Core (0.0.1)
   - Wireframe/Fakes (0.0.1):
     - Wireframe/Core
@@ -38,13 +30,11 @@ PODS:
 DEPENDENCIES:
   - Entity (from `Entity`)
   - EntityTests (from `Entity`)
-  - GroupSelection (from `Features/GroupSelection`)
   - GroupSelection/Core (from `Features/GroupSelection`)
   - GroupSelection/Tests (from `Features/GroupSelection`)
   - GroupSelection/UIKit (from `Features/GroupSelection`)
   - OCSlimProject
   - Services (from `Services`)
-  - Wireframe (from `Wireframe`)
   - Wireframe/Fakes (from `Wireframe`)
   - Wireframe/UIKit (from `Wireframe`)
 
@@ -64,11 +54,11 @@ SPEC CHECKSUMS:
   cslim: 75bc8dc738cdc5b7d51303f94544dad486bd9d3c
   Entity: 986b71199c2602a399691398fdb5c41ed9d48d7d
   EntityTests: 38802a0831335b80dc0e5286f062713d2e363fbb
-  GroupSelection: 4118f1e21fb048d30f2e62e066ad16e10b91b593
+  GroupSelection: d992cfca1b55e4aab6422a61e84a30c87f505de0
   OCSlimProject: a24337484ec168d7983ef507f75624bb8de21c15
   Services: 3ccd28e45a8df3d95f9e974943fe35bfa2b37ae7
-  Wireframe: 4c684e5973e9b889e32215252f02dcf18fa62a65
+  Wireframe: 368d9db912ecfb4777ba972350655afe4f730c04
 
-PODFILE CHECKSUM: 39c74627f2f01680a1037016642a32c43e0a2acd
+PODFILE CHECKSUM: 153229f21a7f10086808343712b09b259245a4fd
 
 COCOAPODS: 1.2.1

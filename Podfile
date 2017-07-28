@@ -27,13 +27,6 @@ target :AcceptanceTests do
   pod 'GroupSelection/Core', :path => 'Features/GroupSelection'
 end
 
-# Need to list all dependencies here so CocoaPods can find them.
-
-pod 'Wireframe', :path => 'Wireframe'
-pod 'Entity', :path => 'Entity'
-pod 'Services', :path => 'Services'
-pod 'GroupSelection', :path => 'Features/GroupSelection'
-
 post_install do |installer|
   require 'cocoapods-amimono/patcher'
   Amimono::Patcher.patch!(installer)

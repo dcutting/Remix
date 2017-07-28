@@ -1,5 +1,5 @@
 framework module GroupSelection {
-  umbrella header "GroupSelection.root-Core-UIKit-umbrella.h"
+  umbrella header "GroupSelection-Core-UIKit-umbrella.h"
 
   export *
   module * { export * }

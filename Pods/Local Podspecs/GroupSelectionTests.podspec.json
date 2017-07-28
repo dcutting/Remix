@@ -1,0 +1,29 @@
+{
+  "name": "GroupSelectionTests",
+  "version": "0.0.1",
+  "summary": "Feature for selecting a group",
+  "homepage": "http://cutting.io",
+  "license": {
+    "type": "MIT"
+  },
+  "authors": "Dan Cutting",
+  "source": {
+    "path": "."
+  },
+  "platforms": {
+    "osx": "10.12"
+  },
+  "frameworks": "XCTest",
+  "source_files": "Tests/**/*",
+  "dependencies": {
+    "GroupSelection": [
+
+    ],
+    "EntityTests": [
+
+    ]
+  },
+  "pod_target_xcconfig": {
+    "ENABLE_BITCODE": "NO"
+  }
+}

@@ -16,6 +16,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec "UIKit" do |sp|
+    sp.platform = :ios, "10.3"
     sp.source_files = "UIKit/**/*"
     sp.dependency "Wireframe/UIKit"
     sp.dependency "GroupSelection/Core"
