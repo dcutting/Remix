@@ -1,5 +1,5 @@
 framework module Entity {
-  umbrella header "Entity-Core-umbrella.h"
+  umbrella header "Entity-OSX-umbrella.h"
 
   export *
   module * { export * }

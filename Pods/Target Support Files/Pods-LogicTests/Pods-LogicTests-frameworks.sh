@@ -89,16 +89,18 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "$BUILT_PRODUCTS_DIR/Entity-Core-Tests/Entity.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Entity-OSX/Entity.framework"
   install_framework "$BUILT_PRODUCTS_DIR/GroupSelection-Core-Tests/GroupSelection.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Services-OSX/Services.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Wireframe-Core-Fakes/Wireframe.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/EntityTests/EntityTests.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "$BUILT_PRODUCTS_DIR/Entity-Core-Tests/Entity.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Entity-OSX/Entity.framework"
   install_framework "$BUILT_PRODUCTS_DIR/GroupSelection-Core-Tests/GroupSelection.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Services-OSX/Services.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Wireframe-Core-Fakes/Wireframe.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/EntityTests/EntityTests.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

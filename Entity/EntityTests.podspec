@@ -1,11 +1,14 @@
 Pod::Spec.new do |s|
-  s.name         = "Entity"
+  s.name         = "EntityTests"
   s.version      = "0.0.1"
   s.summary      = "Shared entity models and logic"
   s.homepage     = "http://cutting.io"
   s.license      = { "type" => "MIT" }
   s.author       = "Dan Cutting"
-  s.platforms    = { :ios => "10.3", :osx => "10.12" }
   s.source       = { :path => '.' }
-  s.source_files = "Core/**/*"
+  s.platform = :osx, "10.12"
+  s.framework = 'XCTest'
+  s.source_files = "Tests/**/*"
+  s.dependency "Entity"
+  s.pod_target_xcconfig = { 'ENABLE_BITCODE' => 'NO' }
 end

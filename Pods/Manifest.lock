@@ -1,21 +1,18 @@
 PODS:
   - cslim (1.1.5)
-  - Entity (0.0.1):
-    - Entity/Core (= 0.0.1)
-    - Entity/Tests (= 0.0.1)
-  - Entity/Core (0.0.1)
-  - Entity/Tests (0.0.1):
-    - Entity/Core
+  - Entity (0.0.1)
+  - EntityTests (0.0.1):
+    - Entity
   - GroupSelection (0.0.1):
     - GroupSelection/Core (= 0.0.1)
     - GroupSelection/Tests (= 0.0.1)
     - GroupSelection/UIKit (= 0.0.1)
   - GroupSelection/Core (0.0.1):
-    - Entity/Core
+    - Entity
     - Services/GroupService
     - Wireframe/Core
   - GroupSelection/Tests (0.0.1):
-    - Entity/Tests
+    - EntityTests
     - GroupSelection/Core
   - GroupSelection/UIKit (0.0.1):
     - GroupSelection/Core
@@ -26,9 +23,9 @@ PODS:
     - Services/AdvertService (= 0.0.1)
     - Services/GroupService (= 0.0.1)
   - Services/AdvertService (0.0.1):
-    - Entity/Core
+    - Entity
   - Services/GroupService (0.0.1):
-    - Entity/Core
+    - Entity
   - Wireframe (0.0.1):
     - Wireframe/Core (= 0.0.1)
     - Wireframe/Fakes (= 0.0.1)
@@ -40,8 +37,7 @@ PODS:
 
 DEPENDENCIES:
   - Entity (from `Entity`)
-  - Entity/Core (from `Entity`)
-  - Entity/Tests (from `Entity`)
+  - EntityTests (from `Entity`)
   - GroupSelection (from `Features/GroupSelection`)
   - GroupSelection/Core (from `Features/GroupSelection`)
   - GroupSelection/Tests (from `Features/GroupSelection`)
@@ -55,6 +51,8 @@ DEPENDENCIES:
 EXTERNAL SOURCES:
   Entity:
     :path: Entity
+  EntityTests:
+    :path: Entity
   GroupSelection:
     :path: Features/GroupSelection
   Services:
@@ -64,12 +62,13 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   cslim: 75bc8dc738cdc5b7d51303f94544dad486bd9d3c
-  Entity: 98d3df28836bb91826b26b683a061228d8d203f3
-  GroupSelection: 4557153e1eae7dc560435c523dc7319cd5e50b8a
+  Entity: 986b71199c2602a399691398fdb5c41ed9d48d7d
+  EntityTests: 38802a0831335b80dc0e5286f062713d2e363fbb
+  GroupSelection: 4118f1e21fb048d30f2e62e066ad16e10b91b593
   OCSlimProject: a24337484ec168d7983ef507f75624bb8de21c15
-  Services: c76f04776dd841baecb35e60954a56a4ca1ff80e
+  Services: 3ccd28e45a8df3d95f9e974943fe35bfa2b37ae7
   Wireframe: 4c684e5973e9b889e32215252f02dcf18fa62a65
 
-PODFILE CHECKSUM: 39ded3eda48f90ce75f19daf5b2c33dabe6d95a8
+PODFILE CHECKSUM: 39c74627f2f01680a1037016642a32c43e0a2acd
 
 COCOAPODS: 1.2.1

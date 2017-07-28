@@ -1,12 +1,12 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
 CODE_SIGN_IDENTITY =
-FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/Entity-Core" "$PODS_CONFIGURATION_BUILD_DIR/GroupSelection-Core" "$PODS_CONFIGURATION_BUILD_DIR/Services-OSX" "$PODS_CONFIGURATION_BUILD_DIR/Wireframe-Core-Fakes" "$PODS_CONFIGURATION_BUILD_DIR/cslim"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/Entity-OSX" "$PODS_CONFIGURATION_BUILD_DIR/GroupSelection-Core" "$PODS_CONFIGURATION_BUILD_DIR/Services-OSX" "$PODS_CONFIGURATION_BUILD_DIR/Wireframe-Core-Fakes" "$PODS_CONFIGURATION_BUILD_DIR/cslim"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/OCSlimProject"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/../Frameworks' '@loader_path/Frameworks'
 OCSP_BUNDLE_RESOURCES_DIR = ${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/OCSlimProject-Mac.bundle/Contents/Resources
 OCSP_SUPPORT_FILE_DIR = ${PODS_ROOT}/OCSlimProject/Pod/Support/SharedSupport
-OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/Entity-Core/Entity.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/GroupSelection-Core/GroupSelection.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Services-OSX/Services.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Wireframe-Core-Fakes/Wireframe.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/cslim/cslim.framework/Headers" -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/OCSlimProject"
+OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/Entity-OSX/Entity.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/GroupSelection-Core/GroupSelection.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Services-OSX/Services.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Wireframe-Core-Fakes/Wireframe.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/cslim/cslim.framework/Headers" -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/OCSlimProject"
 OTHER_LDFLAGS = $(inherited) -framework "Entity" -framework "GroupSelection" -framework "Services" -framework "Wireframe" -framework "cslim"
 OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
 PODS_BUILD_DIR = $BUILD_DIR

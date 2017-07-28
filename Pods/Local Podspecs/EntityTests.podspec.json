@@ -1,5 +1,5 @@
 {
-  "name": "Entity",
+  "name": "EntityTests",
   "version": "0.0.1",
   "summary": "Shared entity models and logic",
   "homepage": "http://cutting.io",
@@ -7,12 +7,20 @@
     "type": "MIT"
   },
   "authors": "Dan Cutting",
-  "platforms": {
-    "ios": "10.3",
-    "osx": "10.12"
-  },
   "source": {
     "path": "."
   },
-  "source_files": "Core/**/*"
+  "platforms": {
+    "osx": "10.12"
+  },
+  "frameworks": "XCTest",
+  "source_files": "Tests/**/*",
+  "dependencies": {
+    "Entity": [
+
+    ]
+  },
+  "pod_target_xcconfig": {
+    "ENABLE_BITCODE": "NO"
+  }
 }

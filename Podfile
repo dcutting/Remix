@@ -6,7 +6,7 @@ plugin 'cocoapods-amimono'
 
 target :Remix do
   pod 'Wireframe/UIKit', :path => 'Wireframe'
-  pod 'Entity/Core', :path => 'Entity'
+  pod 'Entity', :path => 'Entity'
   pod 'Services', :path => 'Services'
   pod 'GroupSelection/UIKit', :path => 'Features/GroupSelection'
 end
@@ -14,7 +14,7 @@ end
 target :LogicTests do
   platform :osx, '10.12'
   pod 'Wireframe/Fakes', :path => 'Wireframe'
-  pod 'Entity/Tests', :path => 'Entity'
+  pod 'EntityTests', :path => 'Entity'
   pod 'Services', :path => 'Services'
   pod 'GroupSelection/Tests', :path => 'Features/GroupSelection'
 end

@@ -10,11 +10,11 @@ Pod::Spec.new do |s|
 
   s.subspec "AdvertService" do |sp|
     sp.source_files = "AdvertService/**/*"
-    sp.dependency "Entity/Core"
+    sp.dependency "Entity"
   end
 
   s.subspec "GroupService" do |sp|
     sp.source_files = "GroupService/**/*"
-    sp.dependency "Entity/Core"
+    sp.dependency "Entity"
   end
 end

@@ -2,6 +2,7 @@
 
 import XCTest
 import Entity
+import EntityTests
 
 class DiscoveryDetailFormatterTests: XCTestCase {
 

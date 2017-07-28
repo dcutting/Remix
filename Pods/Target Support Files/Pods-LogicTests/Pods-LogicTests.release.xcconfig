@@ -1,10 +1,10 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
 CODE_SIGN_IDENTITY =
-FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/Entity-Core-Tests" "$PODS_CONFIGURATION_BUILD_DIR/GroupSelection-Core-Tests" "$PODS_CONFIGURATION_BUILD_DIR/Services-OSX" "$PODS_CONFIGURATION_BUILD_DIR/Wireframe-Core-Fakes"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/Entity-OSX" "$PODS_CONFIGURATION_BUILD_DIR/EntityTests" "$PODS_CONFIGURATION_BUILD_DIR/GroupSelection-Core-Tests" "$PODS_CONFIGURATION_BUILD_DIR/Services-OSX" "$PODS_CONFIGURATION_BUILD_DIR/Wireframe-Core-Fakes"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/../Frameworks' '@loader_path/../Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/Entity-Core-Tests/Entity.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/GroupSelection-Core-Tests/GroupSelection.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Services-OSX/Services.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Wireframe-Core-Fakes/Wireframe.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "Entity" -framework "GroupSelection" -framework "Services" -framework "Wireframe"
+OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/Entity-OSX/Entity.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/EntityTests/EntityTests.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/GroupSelection-Core-Tests/GroupSelection.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Services-OSX/Services.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Wireframe-Core-Fakes/Wireframe.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -framework "Entity" -framework "EntityTests" -framework "GroupSelection" -framework "Services" -framework "Wireframe"
 OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
 PODS_BUILD_DIR = $BUILD_DIR
 PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)

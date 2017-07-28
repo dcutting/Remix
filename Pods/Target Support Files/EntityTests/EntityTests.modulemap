@@ -1,0 +1,6 @@
+framework module EntityTests {
+  umbrella header "EntityTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

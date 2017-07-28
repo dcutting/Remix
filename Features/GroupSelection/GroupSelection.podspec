@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.subspec "Core" do |sp|
     sp.source_files = "Core/**/*"
     sp.dependency "Wireframe/Core"
-    sp.dependency "Entity/Core"
+    sp.dependency "Entity"
     sp.dependency "Services/GroupService"
   end
 
@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
     sp.framework = 'XCTest'
     sp.source_files = "Tests"
     sp.dependency "GroupSelection/Core"
-    sp.dependency "Entity/Tests"
+    sp.dependency "EntityTests"
     sp.pod_target_xcconfig = { 'ENABLE_BITCODE' => 'NO' }
   end
 end
