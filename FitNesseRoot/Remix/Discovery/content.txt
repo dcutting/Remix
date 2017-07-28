@@ -14,3 +14,7 @@ The Discovery feature lets the user browse a list of adverts, optionally filtere
 |title?      |group?  |
 |Scrappy bike|Vehicles|
 |Puppy       |Pets    |
+
+iOS/Android flow
+
+Web flow
