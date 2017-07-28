@@ -5,7 +5,7 @@
 To add your first "page", click the [[Edit][.FrontPage?edit]] button and add a [[!-WikiWord-!][.FitNesse.UserGuide.FitNesseWiki.WikiWord]] to the page.
 
 |'''Hello Xcode Developer!'''                                                   |
-|[[Remix acceptance tests][.Remix]]|The complete acceptance test suite for Remix|
+|[[Remix acceptance tests][.Remix]]|The acceptance test suite for Remix|
 
 |'''To Learn More...'''                                                                           |
 |[[User Guide][http://www.fitnesse.org/FitNesse.UserGuide]]|Answer the rest of your questions here|
