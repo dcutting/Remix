@@ -29,7 +29,7 @@ class AdvertListCoordinator {
 
     func start() {
         pushListView()
-        updateListView()
+        updateAdverts()
     }
 
     private func pushListView() {
@@ -39,11 +39,7 @@ class AdvertListCoordinator {
         deps.navigationWireframe.push(view: view)
     }
 
-    private func updateListView() {
-        updateAdverts(for: nil)
-    }
-
-    func updateAdverts(for groupID: GroupID?) {
+    func updateAdverts(for groupID: GroupID? = nil) {
         deps.interactor.update(for: groupID) { (adverts, groups) in
             self.updateListView(with: adverts, groups: groups)
         }
