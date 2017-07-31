@@ -5,6 +5,6 @@ import Entity
 
 class DiscoveryDetailFormatter {
     func prepare(advert: Advert) -> AdvertDetailViewData {
-        return AdvertDetailViewData(title: advert.title, detail: advert.groupID)
+        return AdvertDetailViewData(title: advert.title, detail: advert.description)
     }
 }
