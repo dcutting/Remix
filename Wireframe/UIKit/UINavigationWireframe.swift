@@ -31,10 +31,14 @@ public class UINavigationWireframe: UINavigationController, NavigationWireframe 
     }
 
     public func popToLastCheckpoint() {
+        popToLastCheckpoint(animated: true)
+    }
+
+    public func popToLastCheckpoint(animated: Bool) {
         if let popCheckpoint = popCheckpoints.popLast() {
-            popToViewController(popCheckpoint, animated: true)
+            popToViewController(popCheckpoint, animated: animated)
         } else {
-            popToRootViewController(animated: true)
+            popToRootViewController(animated: animated)
         }
     }
 

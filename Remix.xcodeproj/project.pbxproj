@@ -12,6 +12,9 @@
 		C80A98331F2B8F66000382EA /* FakeAdvertDetailViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80A98311F2B8F66000382EA /* FakeAdvertDetailViewFactory.swift */; };
 		C80A98341F2B8F74000382EA /* FakeAdvertDetailViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80A98311F2B8F66000382EA /* FakeAdvertDetailViewFactory.swift */; };
 		C80A98371F2B98C1000382EA /* SelectAdvertOnTablet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80A98361F2B98C1000382EA /* SelectAdvertOnTablet.swift */; };
+		C80F0F871F2FEF7900F61892 /* AdvertDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23501F17B0070038E879 /* AdvertDetailView.swift */; };
+		C80F0F881F2FEF7D00F61892 /* AdvertDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B86F581F1F820B00BDCE50 /* AdvertDetailViewController.swift */; };
+		C80F0F891F2FEF7D00F61892 /* AdvertDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8B86F5A1F1F83CF00BDCE50 /* AdvertDetailViewController.storyboard */; };
 		C81D0F4D1F28E603007481A2 /* NavigationDiscoveryFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B8FE501F28D080005B4BB9 /* NavigationDiscoveryFeature.swift */; };
 		C81D0F4E1F28E603007481A2 /* SplitDiscoveryFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D02AE31F28D3E600E3EA7B /* SplitDiscoveryFeature.swift */; };
 		C81D0F4F1F28E603007481A2 /* NavigationDiscoveryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23471F17AD6A0038E879 /* NavigationDiscoveryCoordinator.swift */; };
@@ -572,6 +575,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C80F0F891F2FEF7D00F61892 /* AdvertDetailViewController.storyboard in Resources */,
 				C820EF101F2B9BC90036822A /* LaunchScreen.storyboard in Resources */,
 				C820EF0D1F2B9BC90036822A /* Assets.xcassets in Resources */,
 			);
@@ -825,7 +829,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C80F0F871F2FEF7900F61892 /* AdvertDetailView.swift in Sources */,
 				C820EF241F2B9D410036822A /* AppCoordinator.swift in Sources */,
+				C80F0F881F2FEF7D00F61892 /* AdvertDetailViewController.swift in Sources */,
 				C820EF061F2B9BC90036822A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
