@@ -22,6 +22,5 @@ public protocol NavigationWireframeFactory {
 public protocol NavigationWireframe: Viewable {
     func push(view: Navigatable)
     func popToLastCheckpoint()
-    func popToLastCheckpoint(animated: Bool)
     func setPopCheckpoint()
 }
