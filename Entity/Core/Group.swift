@@ -9,12 +9,14 @@ public struct Group {
     public let parent: GroupID?
     public let children: [GroupID]
     public let title: String
+    public let description: String
 
-    public init(groupID: GroupID, parent: GroupID?, children: [GroupID], title: String) {
+    public init(groupID: GroupID, parent: GroupID?, children: [GroupID], title: String, description: String) {
         self.groupID = groupID
         self.parent = parent
         self.children = children
         self.title = title
+        self.description = description
     }
 }
 
@@ -23,6 +25,7 @@ extension Group: Equatable {
         return lhs.groupID == rhs.groupID &&
             lhs.parent == rhs.parent &&
             lhs.children == rhs.children &&
-            lhs.title == rhs.title
+            lhs.title == rhs.title &&
+            lhs.description == rhs.description
     }
 }

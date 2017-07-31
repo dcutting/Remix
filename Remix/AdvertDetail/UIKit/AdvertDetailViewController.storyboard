@@ -27,16 +27,28 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="w8s-FY-GOM">
+                                <rect key="frame" x="16" y="110" width="343" height="537"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="kIl-iV-gMe" firstAttribute="bottom" secondItem="w8s-FY-GOM" secondAttribute="bottom" constant="20" id="05D-of-w6r"/>
                             <constraint firstItem="HQM-V3-tHE" firstAttribute="trailing" secondItem="tYp-Vq-H64" secondAttribute="trailingMargin" id="1Ef-pa-kbp"/>
                             <constraint firstItem="HQM-V3-tHE" firstAttribute="leading" secondItem="tYp-Vq-H64" secondAttribute="leadingMargin" id="PLG-mR-ex3"/>
+                            <constraint firstItem="w8s-FY-GOM" firstAttribute="leading" secondItem="kIl-iV-gMe" secondAttribute="leading" constant="16" id="XXI-Zx-IUG"/>
+                            <constraint firstItem="w8s-FY-GOM" firstAttribute="top" secondItem="HQM-V3-tHE" secondAttribute="bottom" id="Z7U-OI-fz3"/>
                             <constraint firstItem="HQM-V3-tHE" firstAttribute="top" secondItem="kIl-iV-gMe" secondAttribute="top" id="uqf-ug-QbQ"/>
+                            <constraint firstItem="kIl-iV-gMe" firstAttribute="trailing" secondItem="w8s-FY-GOM" secondAttribute="trailing" constant="16" id="wXD-OH-xFz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kIl-iV-gMe"/>
                     </view>
                     <connections>
+                        <outlet property="textView" destination="w8s-FY-GOM" id="9dE-6I-q32"/>
                         <outlet property="titleLabel" destination="HQM-V3-tHE" id="vKg-XM-z1u"/>
                     </connections>
                 </viewController>

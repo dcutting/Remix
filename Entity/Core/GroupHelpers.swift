@@ -2,6 +2,6 @@
 
 import Foundation
 
-public func makeGroup(groupID: GroupID, parent: GroupID? = nil, children: [GroupID] = [], title: String? = nil) -> Group {
-    return Group(groupID: groupID, parent: parent, children: children, title: title ?? "dummy title")
+public func makeGroup(groupID: GroupID, parent: GroupID? = nil, children: [GroupID] = [], title: String? = nil, description: String? = nil) -> Group {
+    return Group(groupID: groupID, parent: parent, children: children, title: title ?? "dummy title", description: description ?? "dummy description")
 }

@@ -14,4 +14,5 @@ protocol AdvertDetailView: Navigatable {
 
 struct AdvertDetailViewData {
     let title: String
+    let detail: String
 }

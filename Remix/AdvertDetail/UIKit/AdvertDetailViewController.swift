@@ -14,6 +14,7 @@ class AdvertDetailViewControllerFactory: AdvertDetailViewFactory {
 class AdvertDetailViewController: UIViewController, AdvertDetailView {
 
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var textView: UITextView!
 
     var viewData: AdvertDetailViewData? {
         didSet {
@@ -29,5 +30,6 @@ class AdvertDetailViewController: UIViewController, AdvertDetailView {
     private func updateView() {
         guard isViewLoaded else { return }
         titleLabel.text = viewData?.title
+        textView.text = viewData?.detail
     }
 }
