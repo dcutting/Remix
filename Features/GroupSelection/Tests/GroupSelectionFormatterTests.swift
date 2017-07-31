@@ -9,9 +9,9 @@ class GroupSelectionFormatterTests: XCTestCase {
 
         let formatter = GroupSelectionFormatter()
         let groups = [
-            Group(groupID: "1", parent: nil, children: ["1"], title: "Cars"),
-            Group(groupID: "2", parent: "1", children: [], title: "Racing cars"),
-            Group(groupID: "3", parent: nil, children: [], title: "Bicycles"),
+            Group(groupID: "1", parent: nil, children: ["1"], title: "Cars", description: ""),
+            Group(groupID: "2", parent: "1", children: [], title: "Racing cars", description: ""),
+            Group(groupID: "3", parent: nil, children: [], title: "Bicycles", description: ""),
         ]
 
         let actual = formatter.prepare(groups: groups)
