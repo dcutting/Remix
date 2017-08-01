@@ -68,12 +68,24 @@ extension NavigationDiscoveryCoordinator: AdvertListCoordinatorDelegate {
     }
 }
 
-extension NavigationDiscoveryCoordinator {
+extension NavigationDiscoveryCoordinator: ManualGroupInsertionCoordinatorDelegate {
 
     private func startInsertion() {
         let coordinator = deps.insertionFeature.makeCoordinatorUsing(navigationWireframe: deps.navigationWireframe)
+        coordinator.delegate = self
         insertionCoordinator = coordinator
+        deps.navigationWireframe.setPopCheckpoint()
         coordinator.start()
+    }
+
+    func didPublishAdvert(advertID: AdvertID) {
+        advertListCoordinator?.updateAdverts()  // TODO group?
+        finishInsertion()
+    }
+
+    private func finishInsertion() {
+        insertionCoordinator = nil
+        deps.navigationWireframe.popToLastCheckpoint()
     }
 }
 

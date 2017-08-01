@@ -57,9 +57,6 @@
 		C84D017A1F309BCB003988D6 /* TitleStepFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84D01791F309BCB003988D6 /* TitleStepFormatter.swift */; };
 		C84D017B1F309BCB003988D6 /* TitleStepFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84D01791F309BCB003988D6 /* TitleStepFormatter.swift */; };
 		C84D017C1F309BCB003988D6 /* TitleStepFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84D01791F309BCB003988D6 /* TitleStepFormatter.swift */; };
-		C84D017E1F309C1C003988D6 /* Draft.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84D017D1F309C1C003988D6 /* Draft.swift */; };
-		C84D017F1F309C1C003988D6 /* Draft.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84D017D1F309C1C003988D6 /* Draft.swift */; };
-		C84D01801F309C1C003988D6 /* Draft.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84D017D1F309C1C003988D6 /* Draft.swift */; };
 		C84D01821F309D34003988D6 /* ManualGroupInsertionFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84D01811F309D34003988D6 /* ManualGroupInsertionFeature.swift */; };
 		C84D01831F309D34003988D6 /* ManualGroupInsertionFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84D01811F309D34003988D6 /* ManualGroupInsertionFeature.swift */; };
 		C84D01841F309D34003988D6 /* ManualGroupInsertionFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84D01811F309D34003988D6 /* ManualGroupInsertionFeature.swift */; };
@@ -149,7 +146,6 @@
 		C84C23671F17BCB00038E879 /* ItemDetailViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewSpy.swift; sourceTree = "<group>"; };
 		C84D01751F309B62003988D6 /* InsertionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertionInteractor.swift; sourceTree = "<group>"; };
 		C84D01791F309BCB003988D6 /* TitleStepFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleStepFormatter.swift; sourceTree = "<group>"; };
-		C84D017D1F309C1C003988D6 /* Draft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Draft.swift; sourceTree = "<group>"; };
 		C84D01811F309D34003988D6 /* ManualGroupInsertionFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualGroupInsertionFeature.swift; sourceTree = "<group>"; };
 		C84D33091F24CFB9005BD99A /* SplitAppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitAppCoordinator.swift; sourceTree = "<group>"; };
 		C84D330B1F24D4C1005BD99A /* SplitDiscoveryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitDiscoveryCoordinator.swift; sourceTree = "<group>"; };
@@ -331,7 +327,6 @@
 				C84D01751F309B62003988D6 /* InsertionInteractor.swift */,
 				C84D01791F309BCB003988D6 /* TitleStepFormatter.swift */,
 				C80F0F8E1F3078EC00F61892 /* TextEntryStepView.swift */,
-				C84D017D1F309C1C003988D6 /* Draft.swift */,
 				C80F0F941F3079D300F61892 /* UIKit */,
 			);
 			path = Insertion;
@@ -854,7 +849,6 @@
 				C8519AF01F2B60EC00645A20 /* FakeAdvertListViewFactory.swift in Sources */,
 				C81D0F571F28E609007481A2 /* AdvertListView.swift in Sources */,
 				C80A98341F2B8F74000382EA /* FakeItemDetailViewFactory.swift in Sources */,
-				C84D017F1F309C1C003988D6 /* Draft.swift in Sources */,
 				C81D0F541F28E609007481A2 /* AdvertListCoordinator.swift in Sources */,
 				C84D01771F309B62003988D6 /* InsertionInteractor.swift in Sources */,
 				C81D0F581F28E611007481A2 /* AdvertListViewSpy.swift in Sources */,
@@ -889,7 +883,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C84D017E1F309C1C003988D6 /* Draft.swift in Sources */,
 				C84DBC961F2A02FC00C26AF6 /* AppCoordinator.swift in Sources */,
 				C87C0A611F17C52D00715A9E /* AdvertListFormatter.swift in Sources */,
 				C84D330A1F24CFB9005BD99A /* SplitAppCoordinator.swift in Sources */,
@@ -942,7 +935,6 @@
 				C8519AD91F2B5B5B00645A20 /* ItemDetailView.swift in Sources */,
 				C8519AE41F2B5B7300645A20 /* AdvertListFormatter.swift in Sources */,
 				C80A98301F2B8A93000382EA /* SelectAdvertOnPhone.swift in Sources */,
-				C84D01801F309C1C003988D6 /* Draft.swift in Sources */,
 				C8A713551F2B2D5A007FF56A /* ListDisplaysAdverts.swift in Sources */,
 				C8A713511F2B2C5D007FF56A /* GivenTheseGroups.swift in Sources */,
 				C8519AE21F2B5B7300645A20 /* AdvertListCoordinator.swift in Sources */,

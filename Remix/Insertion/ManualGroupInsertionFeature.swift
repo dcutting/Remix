@@ -2,11 +2,13 @@
 
 import Foundation
 import Wireframe
+import Services
 import GroupSelection
 
 class ManualGroupInsertionFeature {
 
     struct Dependencies {
+        let advertService: AdvertService
         let textEntryStepViewFactory: TextEntryStepViewFactory
         let groupSelectionFeature: GroupSelectionFeature
     }
@@ -29,7 +31,7 @@ class ManualGroupInsertionFeature {
     }
 
     private func makeInteractor() -> InsertionInteractor {
-        return InsertionInteractor()
+        return InsertionInteractor(advertService: deps.advertService)
     }
 
     private func makeTitleStepFormatter() -> TitleStepFormatter {

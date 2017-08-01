@@ -42,6 +42,10 @@ public class UINavigationWireframe: UINavigationController, NavigationWireframe 
         guard let popPoint = topViewController else { return }
         popCheckpoints.append(popPoint)
     }
+
+    public func unsetPopCheckpoint() {
+        _ = popCheckpoints.popLast()
+    }
 }
 
 extension UINavigationWireframe: UINavigationControllerDelegate {

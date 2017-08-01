@@ -6,4 +6,5 @@ import Entity
 public protocol AdvertService {
     func fetchAdverts(completion: @escaping ([Advert]) -> Void)
     func fetchAdvert(for advertID: AdvertID, completion: @escaping (Advert?) -> Void)
+    func publish(draft: Draft, completion: @escaping (AdvertID) -> Void)
 }

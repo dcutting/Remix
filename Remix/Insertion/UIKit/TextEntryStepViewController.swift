@@ -37,8 +37,4 @@ class TextEntryStepViewController: UIViewController, TextEntryStepView {
         guard let text = textView?.text else { return }
         delegate?.didTapNext(withText: text)
     }
-
-    func navigationWireframeDidGoBack() {
-        delegate?.didGoBack()
-    }
 }

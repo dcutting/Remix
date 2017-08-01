@@ -5,6 +5,10 @@ import Wireframe
 import Entity
 import GroupSelection
 
+protocol ManualGroupInsertionCoordinatorDelegate: class {
+    func didPublishAdvert(advertID: AdvertID)
+}
+
 class ManualGroupInsertionCoordinator {
 
     struct Dependencies {
@@ -14,6 +18,8 @@ class ManualGroupInsertionCoordinator {
         let textEntryStepViewFactory: TextEntryStepViewFactory
         let groupSelectionFeature: GroupSelectionFeature
     }
+
+    public weak var delegate: ManualGroupInsertionCoordinatorDelegate?
 
     private let deps: Dependencies
     private var groupSelectionCoordinator: GroupSelectionCoordinator?
@@ -25,6 +31,9 @@ class ManualGroupInsertionCoordinator {
     func start() {
         startGroupSelection()
     }
+}
+
+extension ManualGroupInsertionCoordinator: GroupSelectionCoordinatorDelegate {
 
     private func startGroupSelection() {
         let coordinator = deps.groupSelectionFeature.makeCoordinatorUsing(navigationWireframe: deps.navigationWireframe)
@@ -33,18 +42,23 @@ class ManualGroupInsertionCoordinator {
         coordinator.start()
         deps.navigationWireframe.setPopCheckpoint()
     }
-}
-
-extension ManualGroupInsertionCoordinator: GroupSelectionCoordinatorDelegate {
 
     func didSelect(groupID: GroupID?) {
         if let groupID = groupID {
-            deps.insertionInteractor.update(groupID: groupID)
-            startTitleStep()
+            updateDraft(groupID: groupID)
+            pushTitleStep()
         } else {
-            deps.navigationWireframe.popToLastCheckpoint()
-            deps.navigationWireframe.setPopCheckpoint()
+            popToGroupSelectionRoot()
         }
+    }
+
+    private func updateDraft(groupID: GroupID) {
+        deps.insertionInteractor.update(groupID: groupID)
+    }
+
+    private func popToGroupSelectionRoot() {
+        deps.navigationWireframe.popToLastCheckpoint()
+        deps.navigationWireframe.setPopCheckpoint()
     }
 
     func didCancelSelection() {
@@ -53,7 +67,7 @@ extension ManualGroupInsertionCoordinator: GroupSelectionCoordinatorDelegate {
 
 extension ManualGroupInsertionCoordinator: TextEntryStepViewDelegate {
 
-    private func startTitleStep() {
+    private func pushTitleStep() {
         let view = deps.textEntryStepViewFactory.make()
         view.delegate = self
         let draft = deps.insertionInteractor.draft
@@ -62,15 +76,25 @@ extension ManualGroupInsertionCoordinator: TextEntryStepViewDelegate {
     }
 
     func didTapNext(withText text: String) {
-        deps.insertionInteractor.update(title: text)
-        pushDescriptionStep()
+        updateDraft(title: text)
+        publishDraft()
     }
 
-    private func pushDescriptionStep() {
-        startTitleStep()
+    private func updateDraft(title: String) {
+        deps.insertionInteractor.update(title: title)
+    }
+}
+
+extension ManualGroupInsertionCoordinator {
+
+    private func publishDraft() {
+        deps.insertionInteractor.publish { advertID in
+            self.finishInsertion(advertID: advertID)
+        }
     }
 
-    func didGoBack() {
-        print("went back")
+    private func finishInsertion(advertID: AdvertID) {
+        deps.navigationWireframe.unsetPopCheckpoint()
+        delegate?.didPublishAdvert(advertID: advertID)
     }
 }

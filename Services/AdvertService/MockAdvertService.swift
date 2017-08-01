@@ -19,4 +19,14 @@ public class MockAdvertService: AdvertService {
         }
         completion(advert)
     }
+
+    public func publish(draft: Draft, completion: @escaping (AdvertID) -> Void) {
+        let advertID = "\(UUID())"
+        let title = draft.title ?? "<untitled>"
+        let description = ""
+        guard let groupID = draft.groupID else { preconditionFailure("No group set on draft") }
+        let advert = Advert(advertID: advertID, title: title, description: description, groupID: groupID)
+        adverts.append(advert)
+        completion(advertID)
+    }
 }

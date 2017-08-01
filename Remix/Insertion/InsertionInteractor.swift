@@ -2,8 +2,15 @@
 
 import Foundation
 import Entity
+import Services
 
 class InsertionInteractor {
+
+    private let advertService: AdvertService
+
+    init(advertService: AdvertService) {
+        self.advertService = advertService
+    }
 
     var draft = Draft()
 
@@ -13,5 +20,11 @@ class InsertionInteractor {
 
     func update(groupID: GroupID) {
         draft.groupID = groupID
+    }
+
+    func publish(completion: @escaping (AdvertID) -> Void) {
+        advertService.publish(draft: draft) { advertID in
+            completion(advertID)
+        }
     }
 }

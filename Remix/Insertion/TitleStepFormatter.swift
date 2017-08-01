@@ -1,6 +1,7 @@
 //  Copyright © 2017 cutting.io. All rights reserved.
 
 import Foundation
+import Entity
 
 class TitleStepFormatter {
     func prepare(draft: Draft) -> TextEntryStepViewData {
