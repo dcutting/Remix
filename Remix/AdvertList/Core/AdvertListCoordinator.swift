@@ -6,7 +6,8 @@ import Entity
 
 protocol AdvertListCoordinatorDelegate: class {
     func didSelect(advertID: AdvertID)
-    func doesWantFilters()
+    func didSelectNewAdvertAction()
+    func didSelectFiltersAction()
 }
 
 class AdvertListCoordinator {
@@ -57,7 +58,11 @@ extension AdvertListCoordinator: AdvertListViewDelegate {
         delegate?.didSelect(advertID: advertID)
     }
 
-    func doesWantFilters() {
-        delegate?.doesWantFilters()
+    func didSelectNewAdvertAction() {
+        delegate?.didSelectNewAdvertAction()
+    }
+
+    func didSelectFiltersAction() {
+        delegate?.didSelectFiltersAction()
     }
 }

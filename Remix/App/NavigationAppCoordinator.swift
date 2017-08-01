@@ -35,9 +35,15 @@ class NavigationAppCoordinator {
             groupService: deps.groupService,
             advertListViewFactory: AdvertListViewControllerFactory(),
             itemDetailViewFactory: ItemDetailViewControllerFactory(),
+            insertionFeature: makeInsertionFeature(),
             groupSelectionFeature: makeGroupSelectionFeature()
         )
         return NavigationDiscoveryFeature(dependencies: discoveryDeps)
+    }
+
+    private func makeInsertionFeature() -> ManualGroupInsertionFeature {
+        let featureDeps = ManualGroupInsertionFeature.Dependencies(titleStepViewFactory: TitleStepViewControllerFactory())
+        return ManualGroupInsertionFeature(dependencies: featureDeps)
     }
 
     private func makeGroupSelectionFeature() -> GroupSelectionFeature {

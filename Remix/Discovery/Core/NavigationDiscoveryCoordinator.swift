@@ -16,11 +16,13 @@ class NavigationDiscoveryCoordinator {
         let detailViewFactory: ItemDetailViewFactory
 
         let advertListFeature: AdvertListFeature
+        let insertionFeature: ManualGroupInsertionFeature
         let groupSelectionFeature: GroupSelectionFeature
     }
 
     private let deps: Dependencies
     private var advertListCoordinator: AdvertListCoordinator?
+    private var insertionCoordinator: ManualGroupInsertionCoordinator?
     private var groupSelectionCoordinator: GroupSelectionCoordinator?
 
     init(dependencies: Dependencies) {
@@ -57,8 +59,21 @@ extension NavigationDiscoveryCoordinator: AdvertListCoordinatorDelegate {
         deps.navigationWireframe.push(view: detailView)
     }
 
-    func doesWantFilters() {
+    func didSelectNewAdvertAction() {
+        startInsertion()
+    }
+
+    func didSelectFiltersAction() {
         startGroupSelection()
+    }
+}
+
+extension NavigationDiscoveryCoordinator {
+
+    private func startInsertion() {
+        let coordinator = deps.insertionFeature.makeCoordinatorUsing(navigationWireframe: deps.navigationWireframe)
+        insertionCoordinator = coordinator
+        coordinator.start()
     }
 }
 

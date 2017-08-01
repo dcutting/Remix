@@ -15,7 +15,8 @@ protocol AdvertListView: Navigatable {
 
 protocol AdvertListViewDelegate: class {
     func didSelect(advertID: AdvertID)
-    func doesWantFilters()
+    func didSelectNewAdvertAction()
+    func didSelectFiltersAction()
 }
 
 struct AdvertListViewData {

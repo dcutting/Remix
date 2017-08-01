@@ -19,12 +19,17 @@ class AdvertListViewController: UITableViewController, AdvertListView {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "New", style: .plain, target: self, action: #selector(didTapNew))
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(didTapFilter))
         updateView()
     }
 
+    @objc private func didTapNew() {
+        delegate?.didSelectNewAdvertAction()
+    }
+
     @objc private func didTapFilter() {
-        delegate?.doesWantFilters()
+        delegate?.didSelectFiltersAction()
     }
 
     private func updateView() {

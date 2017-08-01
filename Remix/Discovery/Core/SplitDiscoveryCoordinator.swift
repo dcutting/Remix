@@ -61,7 +61,11 @@ extension SplitDiscoveryCoordinator: AdvertListCoordinatorDelegate {
         deps.splitWireframe.detail = detailView
     }
 
-    func doesWantFilters() {
+    func didSelectNewAdvertAction() {
+        // TODO
+    }
+
+    func didSelectFiltersAction() {
         startGroupSelection()
     }
 }

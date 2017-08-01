@@ -12,6 +12,7 @@ class NavigationDiscoveryFeature {
         let groupService: GroupService
         let advertListViewFactory: AdvertListViewFactory
         let itemDetailViewFactory: ItemDetailViewFactory
+        let insertionFeature: ManualGroupInsertionFeature
         let groupSelectionFeature: GroupSelectionFeature
     }
 
@@ -28,6 +29,7 @@ class NavigationDiscoveryFeature {
             detailFormatter: makeDetailFormatter(),
             detailViewFactory: deps.itemDetailViewFactory,
             advertListFeature: makeAdvertListFeature(),
+            insertionFeature: deps.insertionFeature,
             groupSelectionFeature: deps.groupSelectionFeature
         )
         return NavigationDiscoveryCoordinator(dependencies: coordinatorDeps)
