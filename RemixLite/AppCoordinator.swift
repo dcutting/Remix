@@ -52,8 +52,7 @@ extension AppCoordinator: GroupSelectionCoordinatorDelegate {
         if let groupID = groupID {
             pushDetailView(for: groupID)
         } else {
-            navigationWireframe.popToLastCheckpoint()
-            navigationWireframe.setPopCheckpoint()
+            popToRoot()
         }
     }
 
@@ -64,6 +63,11 @@ extension AppCoordinator: GroupSelectionCoordinatorDelegate {
             detailView.viewData = GroupDetailFormatter().prepare(group: group)
             self.navigationWireframe.push(view: detailView)
         }
+    }
+
+    private func popToRoot() {
+        navigationWireframe.popToLastCheckpoint()
+        navigationWireframe.setPopCheckpoint()
     }
 
     func didCancelSelection() {
