@@ -66,8 +66,7 @@ extension ManualGroupInsertionCoordinator: TextEntryStepViewDelegate {
     private func pushTitleStep() {
         let view = deps.textEntryStepViewFactory.make()
         view.delegate = self
-        let draft = deps.insertionInteractor.draft
-        view.viewData = deps.titleStepFormatter.prepare(draft: draft)
+        view.viewData = deps.titleStepFormatter.prepare(draft: deps.insertionInteractor.draft)
         deps.navigationWireframe.push(view: view)
     }
 
