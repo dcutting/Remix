@@ -8,7 +8,7 @@ class AutoGroupInsertionCoordinator: InsertionCoordinator {
 
     struct Dependencies {
         let navigationWireframe: NavigationWireframe
-        let insertionInteractor: InsertionInteractor
+        let insertionInteractor: AutoGroupInsertionInteractor
         let titleStepFormatter: TitleStepFormatter
         let textEntryStepViewFactory: TextEntryStepViewFactory
     }

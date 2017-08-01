@@ -52,6 +52,15 @@
 		C83A45751F3120B300437220 /* AlternatingInsertionFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83A45741F3120B300437220 /* AlternatingInsertionFeature.swift */; };
 		C83A45761F3120B300437220 /* AlternatingInsertionFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83A45741F3120B300437220 /* AlternatingInsertionFeature.swift */; };
 		C83A45771F3120B300437220 /* AlternatingInsertionFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83A45741F3120B300437220 /* AlternatingInsertionFeature.swift */; };
+		C83A457C1F3123F500437220 /* GroupRecommendationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83A457B1F3123F500437220 /* GroupRecommendationService.swift */; };
+		C83A457D1F3123F500437220 /* GroupRecommendationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83A457B1F3123F500437220 /* GroupRecommendationService.swift */; };
+		C83A457E1F3123F500437220 /* GroupRecommendationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83A457B1F3123F500437220 /* GroupRecommendationService.swift */; };
+		C83A45801F31245600437220 /* MockGroupRecommendationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83A457F1F31245600437220 /* MockGroupRecommendationService.swift */; };
+		C83A45811F31245600437220 /* MockGroupRecommendationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83A457F1F31245600437220 /* MockGroupRecommendationService.swift */; };
+		C83A45821F31245600437220 /* MockGroupRecommendationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83A457F1F31245600437220 /* MockGroupRecommendationService.swift */; };
+		C83A45841F3125B600437220 /* AutoGroupInsertionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83A45831F3125B600437220 /* AutoGroupInsertionInteractor.swift */; };
+		C83A45851F3125B600437220 /* AutoGroupInsertionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83A45831F3125B600437220 /* AutoGroupInsertionInteractor.swift */; };
+		C83A45861F3125B600437220 /* AutoGroupInsertionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83A45831F3125B600437220 /* AutoGroupInsertionInteractor.swift */; };
 		C84C231B1F17AB770038E879 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C231A1F17AB770038E879 /* AppDelegate.swift */; };
 		C84C23221F17AB770038E879 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C84C23211F17AB770038E879 /* Assets.xcassets */; };
 		C84C23251F17AB770038E879 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C84C23231F17AB770038E879 /* LaunchScreen.storyboard */; };
@@ -156,6 +165,9 @@
 		C837B18A1F30E4BF00D9E81E /* TextEntryStepViewSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextEntryStepViewSpy.swift; sourceTree = "<group>"; };
 		C837B18E1F30E51000D9E81E /* FakeTextEntryStepViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTextEntryStepViewFactory.swift; sourceTree = "<group>"; };
 		C83A45741F3120B300437220 /* AlternatingInsertionFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlternatingInsertionFeature.swift; sourceTree = "<group>"; };
+		C83A457B1F3123F500437220 /* GroupRecommendationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupRecommendationService.swift; sourceTree = "<group>"; };
+		C83A457F1F31245600437220 /* MockGroupRecommendationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGroupRecommendationService.swift; sourceTree = "<group>"; };
+		C83A45831F3125B600437220 /* AutoGroupInsertionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoGroupInsertionInteractor.swift; sourceTree = "<group>"; };
 		C84C23171F17AB770038E879 /* Remix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Remix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C84C231A1F17AB770038E879 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C84C23211F17AB770038E879 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -311,6 +323,9 @@
 			children = (
 				C883C3161F30EEC4004FFE89 /* AutoGroupInsertionFeature.swift */,
 				C84C234B1F17AE0D0038E879 /* AutoGroupInsertionCoordinator.swift */,
+				C83A45831F3125B600437220 /* AutoGroupInsertionInteractor.swift */,
+				C83A457B1F3123F500437220 /* GroupRecommendationService.swift */,
+				C83A457F1F31245600437220 /* MockGroupRecommendationService.swift */,
 			);
 			path = AutoInsertion;
 			sourceTree = "<group>";
@@ -910,6 +925,8 @@
 				C83A45761F3120B300437220 /* AlternatingInsertionFeature.swift in Sources */,
 				C80F0F901F3078EC00F61892 /* TextEntryStepView.swift in Sources */,
 				C81D0F531F28E609007481A2 /* AdvertListFeature.swift in Sources */,
+				C83A45851F3125B600437220 /* AutoGroupInsertionInteractor.swift in Sources */,
+				C83A45811F31245600437220 /* MockGroupRecommendationService.swift in Sources */,
 				C81D0F561F28E609007481A2 /* AdvertListFormatter.swift in Sources */,
 				C81D0F591F28E619007481A2 /* ItemDetailView.swift in Sources */,
 				C837B1901F30E51000D9E81E /* FakeTextEntryStepViewFactory.swift in Sources */,
@@ -918,6 +935,7 @@
 				C837B18C1F30E4BF00D9E81E /* TextEntryStepViewSpy.swift in Sources */,
 				C8519AF01F2B60EC00645A20 /* FakeAdvertListViewFactory.swift in Sources */,
 				C81D0F571F28E609007481A2 /* AdvertListView.swift in Sources */,
+				C83A457D1F3123F500437220 /* GroupRecommendationService.swift in Sources */,
 				C80A98341F2B8F74000382EA /* FakeItemDetailViewFactory.swift in Sources */,
 				C81D0F541F28E609007481A2 /* AdvertListCoordinator.swift in Sources */,
 				C84D01771F309B62003988D6 /* InsertionInteractor.swift in Sources */,
@@ -957,6 +975,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C83A45801F31245600437220 /* MockGroupRecommendationService.swift in Sources */,
 				C84DBC961F2A02FC00C26AF6 /* AppCoordinator.swift in Sources */,
 				C87C0A611F17C52D00715A9E /* AdvertListFormatter.swift in Sources */,
 				C84D330A1F24CFB9005BD99A /* SplitAppCoordinator.swift in Sources */,
@@ -966,6 +985,7 @@
 				C8D02AE41F28D3E600E3EA7B /* SplitDiscoveryFeature.swift in Sources */,
 				C84C234C1F17AE0D0038E879 /* AutoGroupInsertionCoordinator.swift in Sources */,
 				C837B18F1F30E51000D9E81E /* FakeTextEntryStepViewFactory.swift in Sources */,
+				C83A457C1F3123F500437220 /* GroupRecommendationService.swift in Sources */,
 				C8289F731F28C17900D96136 /* AdvertListFeature.swift in Sources */,
 				C8B8FE511F28D080005B4BB9 /* NavigationDiscoveryFeature.swift in Sources */,
 				C84C234D1F17AE960038E879 /* NavigationDiscoveryCoordinator.swift in Sources */,
@@ -976,6 +996,7 @@
 				C87C0A5F1F17C3FA00715A9E /* DiscoveryInteractor.swift in Sources */,
 				C8D350D21F24D5D600745FFA /* NavigationAppCoordinator.swift in Sources */,
 				C837B18B1F30E4BF00D9E81E /* TextEntryStepViewSpy.swift in Sources */,
+				C83A45841F3125B600437220 /* AutoGroupInsertionInteractor.swift in Sources */,
 				C883C3171F30EEC4004FFE89 /* AutoGroupInsertionFeature.swift in Sources */,
 				C83A45751F3120B300437220 /* AlternatingInsertionFeature.swift in Sources */,
 				C84C23531F17B0C30038E879 /* AdvertListView.swift in Sources */,
@@ -1008,6 +1029,7 @@
 				C8519AE61F2B5B8600645A20 /* NavigationDiscoveryFeature.swift in Sources */,
 				C8519AE51F2B5B7300645A20 /* AdvertListView.swift in Sources */,
 				C837B18D1F30E4BF00D9E81E /* TextEntryStepViewSpy.swift in Sources */,
+				C83A45821F31245600437220 /* MockGroupRecommendationService.swift in Sources */,
 				C8519AE71F2B5B8600645A20 /* SplitDiscoveryFeature.swift in Sources */,
 				C8A713531F2B2CFC007FF56A /* GivenTheseAdverts.swift in Sources */,
 				C83A45771F3120B300437220 /* AlternatingInsertionFeature.swift in Sources */,
@@ -1022,7 +1044,9 @@
 				C8519AD91F2B5B5B00645A20 /* ItemDetailView.swift in Sources */,
 				C8519AE41F2B5B7300645A20 /* AdvertListFormatter.swift in Sources */,
 				C837B1911F30E51000D9E81E /* FakeTextEntryStepViewFactory.swift in Sources */,
+				C83A45861F3125B600437220 /* AutoGroupInsertionInteractor.swift in Sources */,
 				C80A98301F2B8A93000382EA /* SelectAdvertOnPhone.swift in Sources */,
+				C83A457E1F3123F500437220 /* GroupRecommendationService.swift in Sources */,
 				C8A713551F2B2D5A007FF56A /* ListDisplaysAdverts.swift in Sources */,
 				C8A713511F2B2C5D007FF56A /* GivenTheseGroups.swift in Sources */,
 				C8519AE21F2B5B7300645A20 /* AdvertListCoordinator.swift in Sources */,

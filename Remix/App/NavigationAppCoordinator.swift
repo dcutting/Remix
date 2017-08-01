@@ -11,6 +11,7 @@ class NavigationAppCoordinator {
     struct Dependencies {
         let advertService: AdvertService
         let groupService: GroupService
+        let groupRecommendationService: GroupRecommendationService
     }
 
     private let deps: Dependencies
@@ -44,6 +45,7 @@ class NavigationAppCoordinator {
     private func makeInsertionFeature() -> InsertionFeature {
         let featureDeps = AlternatingInsertionFeature.Dependencies(
             advertService: deps.advertService,
+            groupRecommendationService: deps.groupRecommendationService,
             textEntryStepViewFactory: makeTextEntryStepViewFactory(),
             groupSelectionFeature: makeGroupSelectionFeature()
         )

@@ -8,6 +8,7 @@ class AutoGroupInsertionFeature: InsertionFeature {
 
     struct Dependencies {
         let advertService: AdvertService
+        let groupRecommendationService: GroupRecommendationService
         let textEntryStepViewFactory: TextEntryStepViewFactory
     }
 
@@ -27,8 +28,12 @@ class AutoGroupInsertionFeature: InsertionFeature {
         return AutoGroupInsertionCoordinator(dependencies: coordinatorDeps)
     }
 
-    private func makeInteractor() -> InsertionInteractor {
-        return InsertionInteractor(advertService: deps.advertService)
+    private func makeInteractor() -> AutoGroupInsertionInteractor {
+        let insertionInteractor = InsertionInteractor(advertService: deps.advertService)
+        return AutoGroupInsertionInteractor(
+            insertionInteractor: insertionInteractor,
+            groupRecommendationService: deps.groupRecommendationService
+        )
     }
 
     private func makeTitleStepFormatter() -> TitleStepFormatter {
