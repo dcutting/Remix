@@ -10,6 +10,7 @@ class AlternatingInsertionFeature: InsertionFeature {
     struct Dependencies {
         let advertService: AdvertService
         let groupRecommendationService: GroupRecommendationService
+        let toastWireframeFactory: ToastWireframeFactory
         let textEntryStepViewFactory: TextEntryStepViewFactory
         let groupSelectionFeature: GroupSelectionFeature
     }
@@ -41,6 +42,7 @@ class AlternatingInsertionFeature: InsertionFeature {
         let featureDeps = AutoGroupInsertionFeature.Dependencies(
             advertService: deps.advertService,
             groupRecommendationService: deps.groupRecommendationService,
+            toastWireframeFactory: deps.toastWireframeFactory,
             textEntryStepViewFactory: deps.textEntryStepViewFactory
         )
         return AutoGroupInsertionFeature(dependencies: featureDeps)

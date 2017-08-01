@@ -17,10 +17,11 @@ class AutoGroupInsertionInteractor {
         self.groupRecommendationService = groupRecommendationService
     }
 
-    func update(title: String) {
+    func update(title: String, completion: @escaping () -> Void) {
         insertionInteractor.update(title: title)
         groupRecommendationService.recommendGroup(for: title) { groupID in
             self.insertionInteractor.update(groupID: groupID)
+            completion()
         }
     }
 

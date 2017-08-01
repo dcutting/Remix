@@ -9,6 +9,7 @@ class AutoGroupInsertionFeature: InsertionFeature {
     struct Dependencies {
         let advertService: AdvertService
         let groupRecommendationService: GroupRecommendationService
+        let toastWireframeFactory: ToastWireframeFactory
         let textEntryStepViewFactory: TextEntryStepViewFactory
     }
 
@@ -21,6 +22,7 @@ class AutoGroupInsertionFeature: InsertionFeature {
     func makeCoordinatorUsing(navigationWireframe: NavigationWireframe) -> InsertionCoordinator {
         let coordinatorDeps = AutoGroupInsertionCoordinator.Dependencies(
             navigationWireframe: navigationWireframe,
+            toastWireframeFactory: deps.toastWireframeFactory,
             insertionInteractor: makeInteractor(),
             titleStepFormatter: makeTitleStepFormatter(),
             textEntryStepViewFactory: deps.textEntryStepViewFactory

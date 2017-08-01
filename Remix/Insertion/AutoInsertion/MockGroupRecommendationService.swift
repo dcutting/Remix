@@ -14,14 +14,19 @@ class MockGroupRecommendationService: GroupRecommendationService {
 
     func recommendGroup(for text: String, completion: @escaping (GroupID) -> Void) {
 
+        let groupID = findBestMatch(for: text)
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            completion(groupID)
+        }
+    }
+
+    private func findBestMatch(for text: String) -> GroupID {
         let firstMapping = mappings.first { (key, groupID) in
             text.lowercased().contains(key.lowercased())
         }
 
-        if let (_, groupID) = firstMapping {
-            completion(groupID)
-        } else {
-            completion(defaultGroupID)
-        }
+        guard let (_, groupID) = firstMapping else { return defaultGroupID }
+        return groupID
     }
 }

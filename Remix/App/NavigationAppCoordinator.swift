@@ -46,10 +46,15 @@ class NavigationAppCoordinator {
         let featureDeps = AlternatingInsertionFeature.Dependencies(
             advertService: deps.advertService,
             groupRecommendationService: deps.groupRecommendationService,
+            toastWireframeFactory: makeToastWireframeFactory(),
             textEntryStepViewFactory: makeTextEntryStepViewFactory(),
             groupSelectionFeature: makeGroupSelectionFeature()
         )
         return AlternatingInsertionFeature(dependencies: featureDeps)
+    }
+
+    private func makeToastWireframeFactory() -> ToastWireframeFactory {
+        return UIToastWireframeFactory()
     }
 
     private func makeTextEntryStepViewFactory() -> TextEntryStepViewFactory {

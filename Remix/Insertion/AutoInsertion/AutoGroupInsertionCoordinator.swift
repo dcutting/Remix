@@ -8,6 +8,7 @@ class AutoGroupInsertionCoordinator: InsertionCoordinator {
 
     struct Dependencies {
         let navigationWireframe: NavigationWireframe
+        let toastWireframeFactory: ToastWireframeFactory
         let insertionInteractor: AutoGroupInsertionInteractor
         let titleStepFormatter: TitleStepFormatter
         let textEntryStepViewFactory: TextEntryStepViewFactory
@@ -39,12 +40,23 @@ extension AutoGroupInsertionCoordinator {
 extension AutoGroupInsertionCoordinator: TextEntryStepViewDelegate {
 
     func didTapNext(withText text: String) {
-        deps.insertionInteractor.update(title: text)
-        finishInsertion()
+        showLoading()
+        deps.insertionInteractor.update(title: text) {
+            self.hideLoading()
+            self.finishInsertion()
+        }
+    }
+
+    private func showLoading() {
+        let toast = deps.toastWireframeFactory.make(message: "Autoselecting group...")
+        deps.navigationWireframe.present(view: toast)
+    }
+
+    private func hideLoading() {
+        deps.navigationWireframe.dismiss()
     }
 
     func didGoBack(withText text: String) {
-        deps.insertionInteractor.update(title: text)
     }
 }
 
