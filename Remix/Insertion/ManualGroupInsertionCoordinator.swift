@@ -80,6 +80,10 @@ extension ManualGroupInsertionCoordinator: TextEntryStepViewDelegate {
         publishDraft()
     }
 
+    func didGoBack(withText text: String) {
+        updateDraft(title: text)
+    }
+
     private func updateDraft(title: String) {
         deps.insertionInteractor.update(title: title)
     }
