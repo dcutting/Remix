@@ -5,11 +5,7 @@ import Wireframe
 import Entity
 import GroupSelection
 
-protocol ManualGroupInsertionCoordinatorDelegate: class {
-    func didPublishAdvert(advertID: AdvertID)
-}
-
-class ManualGroupInsertionCoordinator {
+class ManualGroupInsertionCoordinator: InsertionCoordinator {
 
     struct Dependencies {
         let navigationWireframe: NavigationWireframe
@@ -19,7 +15,7 @@ class ManualGroupInsertionCoordinator {
         let groupSelectionFeature: GroupSelectionFeature
     }
 
-    public weak var delegate: ManualGroupInsertionCoordinatorDelegate?
+    public weak var delegate: InsertionCoordinatorDelegate?
 
     private let deps: Dependencies
     private var groupSelectionCoordinator: GroupSelectionCoordinator?

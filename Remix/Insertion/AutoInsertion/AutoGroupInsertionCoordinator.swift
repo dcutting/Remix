@@ -4,11 +4,7 @@ import Foundation
 import Wireframe
 import Entity
 
-protocol AutoGroupInsertionCoordinatorDelegate: class {
-    func didPublishAdvert(advertID: AdvertID)
-}
-
-class AutoGroupInsertionCoordinator {
+class AutoGroupInsertionCoordinator: InsertionCoordinator {
 
     struct Dependencies {
         let navigationWireframe: NavigationWireframe
@@ -17,7 +13,7 @@ class AutoGroupInsertionCoordinator {
         let textEntryStepViewFactory: TextEntryStepViewFactory
     }
 
-    weak var delegate: AutoGroupInsertionCoordinatorDelegate?
+    weak var delegate: InsertionCoordinatorDelegate?
 
     private let deps: Dependencies
 

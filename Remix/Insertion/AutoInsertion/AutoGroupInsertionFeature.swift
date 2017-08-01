@@ -3,14 +3,12 @@
 import Foundation
 import Wireframe
 import Services
-import GroupSelection
 
-class ManualGroupInsertionFeature {
+class AutoGroupInsertionFeature: InsertionFeature {
 
     struct Dependencies {
         let advertService: AdvertService
         let textEntryStepViewFactory: TextEntryStepViewFactory
-        let groupSelectionFeature: GroupSelectionFeature
     }
 
     private let deps: Dependencies
@@ -19,15 +17,14 @@ class ManualGroupInsertionFeature {
         deps = dependencies
     }
 
-    func makeCoordinatorUsing(navigationWireframe: NavigationWireframe) -> ManualGroupInsertionCoordinator {
-        let coordinatorDeps = ManualGroupInsertionCoordinator.Dependencies(
+    func makeCoordinatorUsing(navigationWireframe: NavigationWireframe) -> InsertionCoordinator {
+        let coordinatorDeps = AutoGroupInsertionCoordinator.Dependencies(
             navigationWireframe: navigationWireframe,
             insertionInteractor: makeInteractor(),
             titleStepFormatter: makeTitleStepFormatter(),
-            textEntryStepViewFactory: deps.textEntryStepViewFactory,
-            groupSelectionFeature: deps.groupSelectionFeature
+            textEntryStepViewFactory: deps.textEntryStepViewFactory
         )
-        return ManualGroupInsertionCoordinator(dependencies: coordinatorDeps)
+        return AutoGroupInsertionCoordinator(dependencies: coordinatorDeps)
     }
 
     private func makeInteractor() -> InsertionInteractor {

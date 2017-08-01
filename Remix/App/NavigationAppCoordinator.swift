@@ -42,12 +42,12 @@ class NavigationAppCoordinator {
     }
 
     private func makeInsertionFeature() -> InsertionFeature {
-        let featureDeps = InsertionFeature.Dependencies(
+        let featureDeps = AlternatingInsertionFeature.Dependencies(
             advertService: deps.advertService,
             textEntryStepViewFactory: makeTextEntryStepViewFactory(),
             groupSelectionFeature: makeGroupSelectionFeature()
         )
-        return InsertionFeature(dependencies: featureDeps)
+        return AlternatingInsertionFeature(dependencies: featureDeps)
     }
 
     private func makeTextEntryStepViewFactory() -> TextEntryStepViewFactory {
