@@ -3,8 +3,9 @@
 import Foundation
 
 class TitleStepFormatter {
-    func prepare(draft: Draft) -> TitleStepViewData {
-        let title = draft.title ?? ""
-        return TitleStepViewData(title: title)
+    func prepare(draft: Draft) -> TextEntryStepViewData {
+        let title = "Advert title"
+        let value = draft.title ?? ""
+        return TextEntryStepViewData(title: title, value: value)
     }
 }

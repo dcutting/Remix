@@ -7,7 +7,7 @@ import GroupSelection
 class ManualGroupInsertionFeature {
 
     struct Dependencies {
-        let titleStepViewFactory: TitleStepViewFactory
+        let textEntryStepViewFactory: TextEntryStepViewFactory
         let groupSelectionFeature: GroupSelectionFeature
     }
 
@@ -22,7 +22,7 @@ class ManualGroupInsertionFeature {
             navigationWireframe: navigationWireframe,
             insertionInteractor: makeInteractor(),
             titleStepFormatter: makeTitleStepFormatter(),
-            titleStepViewFactory: deps.titleStepViewFactory,
+            textEntryStepViewFactory: deps.textEntryStepViewFactory,
             groupSelectionFeature: deps.groupSelectionFeature
         )
         return ManualGroupInsertionCoordinator(dependencies: coordinatorDeps)

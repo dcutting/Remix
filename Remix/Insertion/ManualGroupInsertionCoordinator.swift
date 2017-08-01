@@ -11,7 +11,7 @@ class ManualGroupInsertionCoordinator {
         let navigationWireframe: NavigationWireframe
         let insertionInteractor: InsertionInteractor
         let titleStepFormatter: TitleStepFormatter
-        let titleStepViewFactory: TitleStepViewFactory
+        let textEntryStepViewFactory: TextEntryStepViewFactory
         let groupSelectionFeature: GroupSelectionFeature
     }
 
@@ -51,18 +51,18 @@ extension ManualGroupInsertionCoordinator: GroupSelectionCoordinatorDelegate {
     }
 }
 
-extension ManualGroupInsertionCoordinator: TitleStepViewDelegate {
+extension ManualGroupInsertionCoordinator: TextEntryStepViewDelegate {
 
     private func startTitleStep() {
-        let view = deps.titleStepViewFactory.make()
+        let view = deps.textEntryStepViewFactory.make()
         view.delegate = self
         let draft = deps.insertionInteractor.draft
         view.viewData = deps.titleStepFormatter.prepare(draft: draft)
         deps.navigationWireframe.push(view: view)
     }
 
-    func didTapNext(withTitle title: String) {
-        deps.insertionInteractor.update(title: title)
+    func didTapNext(withText text: String) {
+        deps.insertionInteractor.update(title: text)
         pushDescriptionStep()
     }
 
