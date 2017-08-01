@@ -8,11 +8,11 @@ class InsertionInteractor {
 
     private let advertService: AdvertService
 
+    var draft = Draft()
+
     init(advertService: AdvertService) {
         self.advertService = advertService
     }
-
-    var draft = Draft()
 
     func update(title: String) {
         draft.title = title
