@@ -15,7 +15,7 @@ class GivenTheseAdverts: NSObject {
 
     @objc func execute() {
         guard let advertID = advertID, let title = title, let groupID = groupID else { return }
-        let advert = Advert(advertID: advertID, title: title, groupID: groupID)
+        let advert = Advert(advertID: advertID, title: title, description: "", groupID: groupID)
         mockAdvertService.adverts.append(advert)
     }
 }

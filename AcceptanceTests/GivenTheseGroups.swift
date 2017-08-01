@@ -14,7 +14,7 @@ class GivenTheseGroups: NSObject {
 
     @objc func execute() {
         guard let groupID = groupID, let title = title else { return }
-        let group = Group(groupID: groupID, parent: nil, children: [], title: title)
+        let group = Group(groupID: groupID, parent: nil, children: [], title: title, description: "")
         mockGroupService.groups.append(group)
     }
 }
