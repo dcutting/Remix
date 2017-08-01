@@ -16,13 +16,13 @@ class NavigationDiscoveryCoordinator {
         let detailViewFactory: ItemDetailViewFactory
 
         let advertListFeature: AdvertListFeature
-        let insertionFeature: ManualGroupInsertionFeature
+        let insertionFeature: InsertionFeature
         let groupSelectionFeature: GroupSelectionFeature
     }
 
     private let deps: Dependencies
     private var advertListCoordinator: AdvertListCoordinator?
-    private var insertionCoordinator: ManualGroupInsertionCoordinator?
+    private var insertionCoordinator: InsertionCoordinator?
     private var groupSelectionCoordinator: GroupSelectionCoordinator?
 
     init(dependencies: Dependencies) {
@@ -68,7 +68,7 @@ extension NavigationDiscoveryCoordinator: AdvertListCoordinatorDelegate {
     }
 }
 
-extension NavigationDiscoveryCoordinator: ManualGroupInsertionCoordinatorDelegate {
+extension NavigationDiscoveryCoordinator: InsertionCoordinatorDelegate {
 
     private func startInsertion() {
         let coordinator = deps.insertionFeature.makeCoordinatorUsing(navigationWireframe: deps.navigationWireframe)

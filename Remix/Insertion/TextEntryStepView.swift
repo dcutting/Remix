@@ -13,8 +13,8 @@ protocol TextEntryStepView: Navigatable {
 }
 
 protocol TextEntryStepViewDelegate: class {
-    func didTapNext(withText: String)
-    func didGoBack(withText: String)
+    func didTapNext(withText text: String)
+    func didGoBack(withText text: String)
 }
 
 struct TextEntryStepViewData {

@@ -90,6 +90,15 @@
 		C87C0A5F1F17C3FA00715A9E /* DiscoveryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C0A5E1F17C3FA00715A9E /* DiscoveryInteractor.swift */; };
 		C87C0A611F17C52D00715A9E /* AdvertListFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C0A601F17C52D00715A9E /* AdvertListFormatter.swift */; };
 		C87C49E61F2A9EE500799AD3 /* AcceptanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C87C49E51F2A9EE500799AD3 /* AcceptanceTests.m */; };
+		C883C3131F30EE49004FFE89 /* InsertionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C883C3121F30EE49004FFE89 /* InsertionCoordinator.swift */; };
+		C883C3141F30EE49004FFE89 /* InsertionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C883C3121F30EE49004FFE89 /* InsertionCoordinator.swift */; };
+		C883C3151F30EE49004FFE89 /* InsertionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C883C3121F30EE49004FFE89 /* InsertionCoordinator.swift */; };
+		C883C3171F30EEC4004FFE89 /* AutoGroupInsertionFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C883C3161F30EEC4004FFE89 /* AutoGroupInsertionFeature.swift */; };
+		C883C3181F30EEC4004FFE89 /* AutoGroupInsertionFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C883C3161F30EEC4004FFE89 /* AutoGroupInsertionFeature.swift */; };
+		C883C3191F30EEC4004FFE89 /* AutoGroupInsertionFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C883C3161F30EEC4004FFE89 /* AutoGroupInsertionFeature.swift */; };
+		C883C31B1F311BF3004FFE89 /* InsertionFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C883C31A1F311BF3004FFE89 /* InsertionFeature.swift */; };
+		C883C31C1F311BF3004FFE89 /* InsertionFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C883C31A1F311BF3004FFE89 /* InsertionFeature.swift */; };
+		C883C31D1F311BF3004FFE89 /* InsertionFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C883C31A1F311BF3004FFE89 /* InsertionFeature.swift */; };
 		C8A713511F2B2C5D007FF56A /* GivenTheseGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A713501F2B2C5D007FF56A /* GivenTheseGroups.swift */; };
 		C8A713531F2B2CFC007FF56A /* GivenTheseAdverts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A713521F2B2CFC007FF56A /* GivenTheseAdverts.swift */; };
 		C8A713551F2B2D5A007FF56A /* ListDisplaysAdverts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A713541F2B2D5A007FF56A /* ListDisplaysAdverts.swift */; };
@@ -167,6 +176,9 @@
 		C87C49EA1F2A9EE500799AD3 /* SlimTables.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SlimTables.h; sourceTree = "<group>"; };
 		C87C49EB1F2A9EE500799AD3 /* AcceptanceTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AcceptanceTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		C87C49EE1F2A9EE500799AD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C883C3121F30EE49004FFE89 /* InsertionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertionCoordinator.swift; sourceTree = "<group>"; };
+		C883C3161F30EEC4004FFE89 /* AutoGroupInsertionFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoGroupInsertionFeature.swift; sourceTree = "<group>"; };
+		C883C31A1F311BF3004FFE89 /* InsertionFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertionFeature.swift; sourceTree = "<group>"; };
 		C8A713501F2B2C5D007FF56A /* GivenTheseGroups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GivenTheseGroups.swift; sourceTree = "<group>"; };
 		C8A713521F2B2CFC007FF56A /* GivenTheseAdverts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GivenTheseAdverts.swift; sourceTree = "<group>"; };
 		C8A713541F2B2D5A007FF56A /* ListDisplaysAdverts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDisplaysAdverts.swift; sourceTree = "<group>"; };
@@ -338,6 +350,9 @@
 		C84C23481F17ADDA0038E879 /* Insertion */ = {
 			isa = PBXGroup;
 			children = (
+				C883C31A1F311BF3004FFE89 /* InsertionFeature.swift */,
+				C883C3121F30EE49004FFE89 /* InsertionCoordinator.swift */,
+				C883C3161F30EEC4004FFE89 /* AutoGroupInsertionFeature.swift */,
 				C84D01811F309D34003988D6 /* ManualGroupInsertionFeature.swift */,
 				C84C234B1F17AE0D0038E879 /* AutoGroupInsertionCoordinator.swift */,
 				C84C23491F17ADFD0038E879 /* ManualGroupInsertionCoordinator.swift */,
@@ -877,10 +892,13 @@
 				C81D0F5A1F28E619007481A2 /* ItemDetailViewSpy.swift in Sources */,
 				C84DBC981F2A12B500C26AF6 /* AdvertListInteractorTests.swift in Sources */,
 				C8DB6C781F2A1AF2000EFA3E /* DiscoveryInteractorTests.swift in Sources */,
+				C883C3181F30EEC4004FFE89 /* AutoGroupInsertionFeature.swift in Sources */,
 				C84D01831F309D34003988D6 /* ManualGroupInsertionFeature.swift in Sources */,
 				C81D0F521F28E603007481A2 /* AdvertDetailFormatter.swift in Sources */,
+				C883C3141F30EE49004FFE89 /* InsertionCoordinator.swift in Sources */,
 				C84D017B1F309BCB003988D6 /* TitleStepFormatter.swift in Sources */,
 				C8B48D531F2A17500014671F /* AdvertListFormatterTests.swift in Sources */,
+				C883C31C1F311BF3004FFE89 /* InsertionFeature.swift in Sources */,
 				C81D0F4E1F28E603007481A2 /* SplitDiscoveryFeature.swift in Sources */,
 				C81D0F5B1F28E623007481A2 /* ManualGroupInsertionCoordinator.swift in Sources */,
 				C81D0F4F1F28E603007481A2 /* NavigationDiscoveryCoordinator.swift in Sources */,
@@ -915,12 +933,15 @@
 				C8289F731F28C17900D96136 /* AdvertListFeature.swift in Sources */,
 				C8B8FE511F28D080005B4BB9 /* NavigationDiscoveryFeature.swift in Sources */,
 				C84C234D1F17AE960038E879 /* NavigationDiscoveryCoordinator.swift in Sources */,
+				C883C3131F30EE49004FFE89 /* InsertionCoordinator.swift in Sources */,
 				C84D01821F309D34003988D6 /* ManualGroupInsertionFeature.swift in Sources */,
 				C80F0F8F1F3078EC00F61892 /* TextEntryStepView.swift in Sources */,
 				C87C0A5F1F17C3FA00715A9E /* DiscoveryInteractor.swift in Sources */,
 				C8D350D21F24D5D600745FFA /* NavigationAppCoordinator.swift in Sources */,
 				C837B18B1F30E4BF00D9E81E /* TextEntryStepViewSpy.swift in Sources */,
+				C883C3171F30EEC4004FFE89 /* AutoGroupInsertionFeature.swift in Sources */,
 				C84C23531F17B0C30038E879 /* AdvertListView.swift in Sources */,
+				C883C31B1F311BF3004FFE89 /* InsertionFeature.swift in Sources */,
 				C8B86F591F1F820B00BDCE50 /* ItemDetailViewController.swift in Sources */,
 				C84C234A1F17ADFD0038E879 /* ManualGroupInsertionCoordinator.swift in Sources */,
 				C8C2CACB1F28BDF800F37288 /* AdvertListCoordinator.swift in Sources */,
@@ -942,8 +963,10 @@
 				C8519AE31F2B5B7300645A20 /* AdvertListInteractor.swift in Sources */,
 				C8519AED1F2B5C0500645A20 /* SplitDiscoveryCoordinator.swift in Sources */,
 				C8519AE11F2B5B7300645A20 /* AdvertListFeature.swift in Sources */,
+				C883C31D1F311BF3004FFE89 /* InsertionFeature.swift in Sources */,
 				C8519AEB1F2B5B8600645A20 /* AdvertDetailFormatter.swift in Sources */,
 				C80A98371F2B98C1000382EA /* SelectAdvertOnTablet.swift in Sources */,
+				C883C3191F30EEC4004FFE89 /* AutoGroupInsertionFeature.swift in Sources */,
 				C8519AE61F2B5B8600645A20 /* NavigationDiscoveryFeature.swift in Sources */,
 				C8519AE51F2B5B7300645A20 /* AdvertListView.swift in Sources */,
 				C837B18D1F30E4BF00D9E81E /* TextEntryStepViewSpy.swift in Sources */,
@@ -953,6 +976,7 @@
 				C80A98331F2B8F66000382EA /* FakeItemDetailViewFactory.swift in Sources */,
 				C8519AD71F2B5B5100645A20 /* ManualGroupInsertionCoordinator.swift in Sources */,
 				C8519AF11F2B60EC00645A20 /* FakeAdvertListViewFactory.swift in Sources */,
+				C883C3151F30EE49004FFE89 /* InsertionCoordinator.swift in Sources */,
 				C8519AD81F2B5B5100645A20 /* AutoGroupInsertionCoordinator.swift in Sources */,
 				C87C49E61F2A9EE500799AD3 /* AcceptanceTests.m in Sources */,
 				C8519AD91F2B5B5B00645A20 /* ItemDetailView.swift in Sources */,

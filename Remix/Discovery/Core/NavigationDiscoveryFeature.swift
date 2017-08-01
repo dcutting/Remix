@@ -12,7 +12,7 @@ class NavigationDiscoveryFeature {
         let groupService: GroupService
         let advertListViewFactory: AdvertListViewFactory
         let itemDetailViewFactory: ItemDetailViewFactory
-        let insertionFeature: ManualGroupInsertionFeature
+        let insertionFeature: InsertionFeature
         let groupSelectionFeature: GroupSelectionFeature
     }
 

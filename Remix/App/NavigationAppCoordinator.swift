@@ -41,13 +41,13 @@ class NavigationAppCoordinator {
         return NavigationDiscoveryFeature(dependencies: discoveryDeps)
     }
 
-    private func makeInsertionFeature() -> ManualGroupInsertionFeature {
-        let featureDeps = ManualGroupInsertionFeature.Dependencies(
+    private func makeInsertionFeature() -> InsertionFeature {
+        let featureDeps = InsertionFeature.Dependencies(
             advertService: deps.advertService,
             textEntryStepViewFactory: makeTextEntryStepViewFactory(),
             groupSelectionFeature: makeGroupSelectionFeature()
         )
-        return ManualGroupInsertionFeature(dependencies: featureDeps)
+        return InsertionFeature(dependencies: featureDeps)
     }
 
     private func makeTextEntryStepViewFactory() -> TextEntryStepViewFactory {
