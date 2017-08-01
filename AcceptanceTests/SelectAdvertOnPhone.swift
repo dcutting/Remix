@@ -21,22 +21,42 @@ class SelectAdvertOnPhone: NSObject {
 
         let fakeItemDetailViewFactory = FakeItemDetailViewFactory(fake: itemDetailViewSpy)
 
-        let groupSelectionViewSpy = GroupSelectionViewSpy()
-        let fakeGroupSelectionViewFactory = FakeGroupSelectionViewFactory(fake: groupSelectionViewSpy)
+        super.init()
 
-        let groupSelectionDependencies = GroupSelectionFeature.Dependencies(
-            groupService: mockGroupService,
-            groupSelectionViewFactory: fakeGroupSelectionViewFactory)
-        let groupSelectionFeature = GroupSelectionFeature(dependencies: groupSelectionDependencies)
+        let groupSelectionFeature = makeGroupSelectionFeature()
+        let insertionFeature = makeInsertionFeature(groupSelectionFeature: groupSelectionFeature)
 
         let deps = NavigationDiscoveryFeature.Dependencies(
             advertService: mockAdvertService,
             groupService: mockGroupService,
             advertListViewFactory: fakeAdvertListViewFactory,
             itemDetailViewFactory: fakeItemDetailViewFactory,
+            insertionFeature: insertionFeature,
             groupSelectionFeature: groupSelectionFeature)
         let feature = NavigationDiscoveryFeature(dependencies: deps)
         navigationDiscoveryCoordinator = feature.makeCoordinatorUsing(navigationWireframe: navigationWireframeSpy)
+    }
+
+    private func makeGroupSelectionFeature() -> GroupSelectionFeature {
+        let groupSelectionViewSpy = GroupSelectionViewSpy()
+        let fakeGroupSelectionViewFactory = FakeGroupSelectionViewFactory(fake: groupSelectionViewSpy)
+        let groupSelectionDependencies = GroupSelectionFeature.Dependencies(
+            groupService: mockGroupService,
+            groupSelectionViewFactory: fakeGroupSelectionViewFactory)
+        return GroupSelectionFeature(dependencies: groupSelectionDependencies)
+    }
+
+    private func makeInsertionFeature(groupSelectionFeature: GroupSelectionFeature) -> ManualGroupInsertionFeature {
+        let featureDeps = ManualGroupInsertionFeature.Dependencies(
+            advertService: mockAdvertService,
+            textEntryStepViewFactory: makeTextEntryStepViewFactory(),
+            groupSelectionFeature: groupSelectionFeature
+        )
+        return ManualGroupInsertionFeature(dependencies: featureDeps)
+    }
+
+    private func makeTextEntryStepViewFactory() -> TextEntryStepViewFactory {
+        return FakeTextEntryStepViewFactory(fake: TextEntryStepViewSpy())
     }
 
     @objc func selectAdvert(_ advertID: String) -> Bool {

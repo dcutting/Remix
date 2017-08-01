@@ -43,6 +43,12 @@
 		C820EF241F2B9D410036822A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C820EF231F2B9D410036822A /* AppCoordinator.swift */; };
 		C8289F711F28C09000D96136 /* AdvertListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8289F701F28C09000D96136 /* AdvertListInteractor.swift */; };
 		C8289F731F28C17900D96136 /* AdvertListFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8289F721F28C17900D96136 /* AdvertListFeature.swift */; };
+		C837B18B1F30E4BF00D9E81E /* TextEntryStepViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C837B18A1F30E4BF00D9E81E /* TextEntryStepViewSpy.swift */; };
+		C837B18C1F30E4BF00D9E81E /* TextEntryStepViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C837B18A1F30E4BF00D9E81E /* TextEntryStepViewSpy.swift */; };
+		C837B18D1F30E4BF00D9E81E /* TextEntryStepViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C837B18A1F30E4BF00D9E81E /* TextEntryStepViewSpy.swift */; };
+		C837B18F1F30E51000D9E81E /* FakeTextEntryStepViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C837B18E1F30E51000D9E81E /* FakeTextEntryStepViewFactory.swift */; };
+		C837B1901F30E51000D9E81E /* FakeTextEntryStepViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C837B18E1F30E51000D9E81E /* FakeTextEntryStepViewFactory.swift */; };
+		C837B1911F30E51000D9E81E /* FakeTextEntryStepViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C837B18E1F30E51000D9E81E /* FakeTextEntryStepViewFactory.swift */; };
 		C84C231B1F17AB770038E879 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C231A1F17AB770038E879 /* AppDelegate.swift */; };
 		C84C23221F17AB770038E879 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C84C23211F17AB770038E879 /* Assets.xcassets */; };
 		C84C23251F17AB770038E879 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C84C23231F17AB770038E879 /* LaunchScreen.storyboard */; };
@@ -132,6 +138,8 @@
 		C820EF231F2B9D410036822A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		C8289F701F28C09000D96136 /* AdvertListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListInteractor.swift; sourceTree = "<group>"; };
 		C8289F721F28C17900D96136 /* AdvertListFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListFeature.swift; sourceTree = "<group>"; };
+		C837B18A1F30E4BF00D9E81E /* TextEntryStepViewSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextEntryStepViewSpy.swift; sourceTree = "<group>"; };
+		C837B18E1F30E51000D9E81E /* FakeTextEntryStepViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTextEntryStepViewFactory.swift; sourceTree = "<group>"; };
 		C84C23171F17AB770038E879 /* Remix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Remix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C84C231A1F17AB770038E879 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C84C23211F17AB770038E879 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -260,6 +268,15 @@
 			path = RemixLite;
 			sourceTree = "<group>";
 		};
+		C837B1891F30E4BF00D9E81E /* Fakes */ = {
+			isa = PBXGroup;
+			children = (
+				C837B18A1F30E4BF00D9E81E /* TextEntryStepViewSpy.swift */,
+				C837B18E1F30E51000D9E81E /* FakeTextEntryStepViewFactory.swift */,
+			);
+			path = Fakes;
+			sourceTree = "<group>";
+		};
 		C84C230E1F17AB770038E879 = {
 			isa = PBXGroup;
 			children = (
@@ -328,6 +345,7 @@
 				C84D01791F309BCB003988D6 /* TitleStepFormatter.swift */,
 				C80F0F8E1F3078EC00F61892 /* TextEntryStepView.swift */,
 				C80F0F941F3079D300F61892 /* UIKit */,
+				C837B1891F30E4BF00D9E81E /* Fakes */,
 			);
 			path = Insertion;
 			sourceTree = "<group>";
@@ -844,8 +862,10 @@
 				C81D0F531F28E609007481A2 /* AdvertListFeature.swift in Sources */,
 				C81D0F561F28E609007481A2 /* AdvertListFormatter.swift in Sources */,
 				C81D0F591F28E619007481A2 /* ItemDetailView.swift in Sources */,
+				C837B1901F30E51000D9E81E /* FakeTextEntryStepViewFactory.swift in Sources */,
 				C81D0F4D1F28E603007481A2 /* NavigationDiscoveryFeature.swift in Sources */,
 				C81D0F5C1F28E623007481A2 /* AutoGroupInsertionCoordinator.swift in Sources */,
+				C837B18C1F30E4BF00D9E81E /* TextEntryStepViewSpy.swift in Sources */,
 				C8519AF01F2B60EC00645A20 /* FakeAdvertListViewFactory.swift in Sources */,
 				C81D0F571F28E609007481A2 /* AdvertListView.swift in Sources */,
 				C80A98341F2B8F74000382EA /* FakeItemDetailViewFactory.swift in Sources */,
@@ -891,6 +911,7 @@
 				C84D017A1F309BCB003988D6 /* TitleStepFormatter.swift in Sources */,
 				C8D02AE41F28D3E600E3EA7B /* SplitDiscoveryFeature.swift in Sources */,
 				C84C234C1F17AE0D0038E879 /* AutoGroupInsertionCoordinator.swift in Sources */,
+				C837B18F1F30E51000D9E81E /* FakeTextEntryStepViewFactory.swift in Sources */,
 				C8289F731F28C17900D96136 /* AdvertListFeature.swift in Sources */,
 				C8B8FE511F28D080005B4BB9 /* NavigationDiscoveryFeature.swift in Sources */,
 				C84C234D1F17AE960038E879 /* NavigationDiscoveryCoordinator.swift in Sources */,
@@ -898,6 +919,7 @@
 				C80F0F8F1F3078EC00F61892 /* TextEntryStepView.swift in Sources */,
 				C87C0A5F1F17C3FA00715A9E /* DiscoveryInteractor.swift in Sources */,
 				C8D350D21F24D5D600745FFA /* NavigationAppCoordinator.swift in Sources */,
+				C837B18B1F30E4BF00D9E81E /* TextEntryStepViewSpy.swift in Sources */,
 				C84C23531F17B0C30038E879 /* AdvertListView.swift in Sources */,
 				C8B86F591F1F820B00BDCE50 /* ItemDetailViewController.swift in Sources */,
 				C84C234A1F17ADFD0038E879 /* ManualGroupInsertionCoordinator.swift in Sources */,
@@ -924,6 +946,7 @@
 				C80A98371F2B98C1000382EA /* SelectAdvertOnTablet.swift in Sources */,
 				C8519AE61F2B5B8600645A20 /* NavigationDiscoveryFeature.swift in Sources */,
 				C8519AE51F2B5B7300645A20 /* AdvertListView.swift in Sources */,
+				C837B18D1F30E4BF00D9E81E /* TextEntryStepViewSpy.swift in Sources */,
 				C8519AE71F2B5B8600645A20 /* SplitDiscoveryFeature.swift in Sources */,
 				C8A713531F2B2CFC007FF56A /* GivenTheseAdverts.swift in Sources */,
 				C8519ADA1F2B5B5B00645A20 /* ItemDetailViewSpy.swift in Sources */,
@@ -934,6 +957,7 @@
 				C87C49E61F2A9EE500799AD3 /* AcceptanceTests.m in Sources */,
 				C8519AD91F2B5B5B00645A20 /* ItemDetailView.swift in Sources */,
 				C8519AE41F2B5B7300645A20 /* AdvertListFormatter.swift in Sources */,
+				C837B1911F30E51000D9E81E /* FakeTextEntryStepViewFactory.swift in Sources */,
 				C80A98301F2B8A93000382EA /* SelectAdvertOnPhone.swift in Sources */,
 				C8A713551F2B2D5A007FF56A /* ListDisplaysAdverts.swift in Sources */,
 				C8A713511F2B2C5D007FF56A /* GivenTheseGroups.swift in Sources */,

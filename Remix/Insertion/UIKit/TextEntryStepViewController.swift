@@ -15,7 +15,7 @@ class TextEntryStepViewController: UIViewController, TextEntryStepView {
     @IBOutlet weak var titleLabel: UILabel?
     @IBOutlet weak var textView: UITextView?
     
-    var delegate: TextEntryStepViewDelegate?
+    weak var delegate: TextEntryStepViewDelegate?
     var viewData: TextEntryStepViewData? {
         didSet {
             updateView()

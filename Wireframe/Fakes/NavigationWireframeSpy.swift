@@ -19,4 +19,7 @@ public class NavigationWireframeSpy: NavigationWireframe {
 
     public func setPopCheckpoint() {
     }
+
+    public func unsetPopCheckpoint() {
+    }
 }
