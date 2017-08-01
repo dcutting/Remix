@@ -28,7 +28,7 @@ class AppCoordinator {
         groupRecommendationService.mappings = [
             ("mountain", "4"),
             ("racing", "5"),
-            ("bike", "1"),
+            ("bike", "3"),
             ("car", "10"),
             ("truck", "10")
         ]

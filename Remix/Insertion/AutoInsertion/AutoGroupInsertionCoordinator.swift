@@ -31,6 +31,7 @@ extension AutoGroupInsertionCoordinator {
     private func startTitleStep() {
         let view = deps.textEntryStepViewFactory.make()
         view.delegate = self
+        view.viewData = deps.titleStepFormatter.prepare(draft: deps.insertionInteractor.draft)
         deps.navigationWireframe.push(view: view)
     }
 }

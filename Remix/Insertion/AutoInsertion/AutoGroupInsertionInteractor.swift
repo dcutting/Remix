@@ -8,6 +8,10 @@ class AutoGroupInsertionInteractor {
     private let insertionInteractor: InsertionInteractor
     private let groupRecommendationService: GroupRecommendationService
 
+    var draft: Draft {
+        return insertionInteractor.draft
+    }
+
     init(insertionInteractor: InsertionInteractor, groupRecommendationService: GroupRecommendationService) {
         self.insertionInteractor = insertionInteractor
         self.groupRecommendationService = groupRecommendationService

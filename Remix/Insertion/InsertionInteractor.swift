@@ -8,7 +8,7 @@ class InsertionInteractor {
 
     private let advertService: AdvertService
 
-    var draft = Draft()
+    private(set) var draft = Draft()
 
     init(advertService: AdvertService) {
         self.advertService = advertService
