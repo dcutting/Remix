@@ -48,6 +48,7 @@ public class GroupSelectionViewController: UITableViewController, GroupSelection
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let item = viewData?.items[indexPath.row] else { preconditionFailure() }
         let cell = UITableViewCell(style: .default, reuseIdentifier: "")
+        cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 24.0)
         cell.textLabel?.text = item.title
         cell.accessoryType = item.hasChildren ? .disclosureIndicator : .none
         return cell

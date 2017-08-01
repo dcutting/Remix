@@ -43,8 +43,10 @@ class AdvertListViewController: UITableViewController, AdvertListView {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let item = viewData?.items[indexPath.row] else { preconditionFailure() }
-        let cell = UITableViewCell(style: .value1, reuseIdentifier: "")
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "")
+        cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 24.0)
         cell.textLabel?.text = item.title
+        cell.detailTextLabel?.font = UIFont.systemFont(ofSize: 18.0)
         cell.detailTextLabel?.text = item.group
         return cell
     }
