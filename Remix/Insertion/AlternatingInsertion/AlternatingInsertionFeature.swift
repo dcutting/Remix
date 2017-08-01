@@ -16,17 +16,27 @@ class AlternatingInsertionFeature: InsertionFeature {
     }
 
     private let deps: Dependencies
+    private var currentSubfeatureIndex = 0
 
     init(dependencies: Dependencies) {
         deps = dependencies
     }
 
     func makeCoordinatorUsing(navigationWireframe: NavigationWireframe) -> InsertionCoordinator {
-        let coordinatorDeps = AlternatingInsertionCoordinator.Dependencies(
-            navigationWireframe: navigationWireframe,
-            subFeatures: [makeManualFeature(), makeAutoFeature()]
-        )
-        return AlternatingInsertionCoordinator(dependencies: coordinatorDeps)
+        defer {
+            currentSubfeatureIndex += 1
+        }
+        let feature = makeFeature()
+        return feature.makeCoordinatorUsing(navigationWireframe: navigationWireframe)
+    }
+
+    private func makeFeature() -> InsertionFeature {
+        switch currentSubfeatureIndex % 2 {
+        case 0:
+            return makeManualFeature()
+        default:
+            return makeAutoFeature()
+        }
     }
 
     private func makeManualFeature() -> ManualGroupInsertionFeature {
@@ -48,4 +58,3 @@ class AlternatingInsertionFeature: InsertionFeature {
         return AutoGroupInsertionFeature(dependencies: featureDeps)
     }
 }
-
