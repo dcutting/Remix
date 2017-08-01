@@ -2,11 +2,13 @@
 
 import Foundation
 import Wireframe
+import GroupSelection
 
 class ManualGroupInsertionFeature {
 
     struct Dependencies {
         let titleStepViewFactory: TitleStepViewFactory
+        let groupSelectionFeature: GroupSelectionFeature
     }
 
     private let deps: Dependencies
@@ -20,7 +22,8 @@ class ManualGroupInsertionFeature {
             navigationWireframe: navigationWireframe,
             insertionInteractor: makeInteractor(),
             titleStepFormatter: makeTitleStepFormatter(),
-            titleStepViewFactory: deps.titleStepViewFactory
+            titleStepViewFactory: deps.titleStepViewFactory,
+            groupSelectionFeature: deps.groupSelectionFeature
         )
         return ManualGroupInsertionCoordinator(dependencies: coordinatorDeps)
     }

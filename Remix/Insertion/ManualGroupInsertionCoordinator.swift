@@ -2,6 +2,8 @@
 
 import Foundation
 import Wireframe
+import Entity
+import GroupSelection
 
 class ManualGroupInsertionCoordinator {
 
@@ -10,35 +12,65 @@ class ManualGroupInsertionCoordinator {
         let insertionInteractor: InsertionInteractor
         let titleStepFormatter: TitleStepFormatter
         let titleStepViewFactory: TitleStepViewFactory
+        let groupSelectionFeature: GroupSelectionFeature
     }
 
     private let deps: Dependencies
-    private var titleStepView: TitleStepView?
+    private var groupSelectionCoordinator: GroupSelectionCoordinator?
 
     init(dependencies: Dependencies) {
         deps = dependencies
     }
 
     func start() {
-        startTitleStep()
+        startGroupSelection()
     }
+
+    private func startGroupSelection() {
+        let coordinator = deps.groupSelectionFeature.makeCoordinatorUsing(navigationWireframe: deps.navigationWireframe)
+        coordinator.delegate = self
+        groupSelectionCoordinator = coordinator
+        coordinator.start()
+        deps.navigationWireframe.setPopCheckpoint()
+    }
+}
+
+extension ManualGroupInsertionCoordinator: GroupSelectionCoordinatorDelegate {
+
+    func didSelect(groupID: GroupID?) {
+        if let groupID = groupID {
+            deps.insertionInteractor.update(groupID: groupID)
+            startTitleStep()
+        } else {
+            deps.navigationWireframe.popToLastCheckpoint()
+            deps.navigationWireframe.setPopCheckpoint()
+        }
+    }
+
+    func didCancelSelection() {
+    }
+}
+
+extension ManualGroupInsertionCoordinator: TitleStepViewDelegate {
 
     private func startTitleStep() {
         let view = deps.titleStepViewFactory.make()
         view.delegate = self
         let draft = deps.insertionInteractor.draft
         view.viewData = deps.titleStepFormatter.prepare(draft: draft)
-        titleStepView = view
         deps.navigationWireframe.push(view: view)
     }
-}
-
-extension ManualGroupInsertionCoordinator: TitleStepViewDelegate {
 
     func didTapNext(withTitle title: String) {
         deps.insertionInteractor.update(title: title)
+        pushDescriptionStep()
+    }
+
+    private func pushDescriptionStep() {
+        startTitleStep()
     }
 
     func didGoBack() {
+        print("went back")
     }
 }

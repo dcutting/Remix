@@ -42,7 +42,10 @@ class NavigationAppCoordinator {
     }
 
     private func makeInsertionFeature() -> ManualGroupInsertionFeature {
-        let featureDeps = ManualGroupInsertionFeature.Dependencies(titleStepViewFactory: TitleStepViewControllerFactory())
+        let featureDeps = ManualGroupInsertionFeature.Dependencies(
+            titleStepViewFactory: TitleStepViewControllerFactory(),
+            groupSelectionFeature: makeGroupSelectionFeature()
+        )
         return ManualGroupInsertionFeature(dependencies: featureDeps)
     }
 
