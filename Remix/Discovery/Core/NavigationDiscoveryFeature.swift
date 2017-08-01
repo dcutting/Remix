@@ -11,7 +11,7 @@ class NavigationDiscoveryFeature {
         let advertService: AdvertService
         let groupService: GroupService
         let advertListViewFactory: AdvertListViewFactory
-        let advertDetailViewFactory: AdvertDetailViewFactory
+        let itemDetailViewFactory: ItemDetailViewFactory
         let groupSelectionFeature: GroupSelectionFeature
     }
 
@@ -26,7 +26,7 @@ class NavigationDiscoveryFeature {
             navigationWireframe: navigationWireframe,
             interactor: makeInteractor(),
             detailFormatter: makeDetailFormatter(),
-            detailViewFactory: deps.advertDetailViewFactory,
+            detailViewFactory: deps.itemDetailViewFactory,
             advertListFeature: makeAdvertListFeature(),
             groupSelectionFeature: deps.groupSelectionFeature
         )

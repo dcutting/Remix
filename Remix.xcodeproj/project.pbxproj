@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		31D79EC511E9E11079FA4464 /* Pods_Remix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AEF6ED3EA7AB8909F5D4114 /* Pods_Remix.framework */; };
 		C80A98301F2B8A93000382EA /* SelectAdvertOnPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80A982F1F2B8A93000382EA /* SelectAdvertOnPhone.swift */; };
-		C80A98331F2B8F66000382EA /* FakeAdvertDetailViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80A98311F2B8F66000382EA /* FakeAdvertDetailViewFactory.swift */; };
-		C80A98341F2B8F74000382EA /* FakeAdvertDetailViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80A98311F2B8F66000382EA /* FakeAdvertDetailViewFactory.swift */; };
+		C80A98331F2B8F66000382EA /* FakeItemDetailViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80A98311F2B8F66000382EA /* FakeItemDetailViewFactory.swift */; };
+		C80A98341F2B8F74000382EA /* FakeItemDetailViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80A98311F2B8F66000382EA /* FakeItemDetailViewFactory.swift */; };
 		C80A98371F2B98C1000382EA /* SelectAdvertOnTablet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80A98361F2B98C1000382EA /* SelectAdvertOnTablet.swift */; };
-		C80F0F871F2FEF7900F61892 /* AdvertDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23501F17B0070038E879 /* AdvertDetailView.swift */; };
-		C80F0F881F2FEF7D00F61892 /* AdvertDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B86F581F1F820B00BDCE50 /* AdvertDetailViewController.swift */; };
-		C80F0F891F2FEF7D00F61892 /* AdvertDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8B86F5A1F1F83CF00BDCE50 /* AdvertDetailViewController.storyboard */; };
+		C80F0F871F2FEF7900F61892 /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23501F17B0070038E879 /* ItemDetailView.swift */; };
+		C80F0F881F2FEF7D00F61892 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B86F581F1F820B00BDCE50 /* ItemDetailViewController.swift */; };
+		C80F0F891F2FEF7D00F61892 /* ItemDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8B86F5A1F1F83CF00BDCE50 /* ItemDetailViewController.storyboard */; };
 		C81D0F4D1F28E603007481A2 /* NavigationDiscoveryFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B8FE501F28D080005B4BB9 /* NavigationDiscoveryFeature.swift */; };
 		C81D0F4E1F28E603007481A2 /* SplitDiscoveryFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D02AE31F28D3E600E3EA7B /* SplitDiscoveryFeature.swift */; };
 		C81D0F4F1F28E603007481A2 /* NavigationDiscoveryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23471F17AD6A0038E879 /* NavigationDiscoveryCoordinator.swift */; };
@@ -27,8 +27,8 @@
 		C81D0F561F28E609007481A2 /* AdvertListFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87C0A601F17C52D00715A9E /* AdvertListFormatter.swift */; };
 		C81D0F571F28E609007481A2 /* AdvertListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23521F17B0C30038E879 /* AdvertListView.swift */; };
 		C81D0F581F28E611007481A2 /* AdvertListViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23651F17BBBA0038E879 /* AdvertListViewSpy.swift */; };
-		C81D0F591F28E619007481A2 /* AdvertDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23501F17B0070038E879 /* AdvertDetailView.swift */; };
-		C81D0F5A1F28E619007481A2 /* AdvertDetailViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23671F17BCB00038E879 /* AdvertDetailViewSpy.swift */; };
+		C81D0F591F28E619007481A2 /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23501F17B0070038E879 /* ItemDetailView.swift */; };
+		C81D0F5A1F28E619007481A2 /* ItemDetailViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23671F17BCB00038E879 /* ItemDetailViewSpy.swift */; };
 		C81D0F5B1F28E623007481A2 /* ManualGroupInsertionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23491F17ADFD0038E879 /* ManualGroupInsertionCoordinator.swift */; };
 		C81D0F5C1F28E623007481A2 /* AutoGroupInsertionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C234B1F17AE0D0038E879 /* AutoGroupInsertionCoordinator.swift */; };
 		C820EF061F2B9BC90036822A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C820EF051F2B9BC90036822A /* AppDelegate.swift */; };
@@ -43,15 +43,15 @@
 		C84C234A1F17ADFD0038E879 /* ManualGroupInsertionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23491F17ADFD0038E879 /* ManualGroupInsertionCoordinator.swift */; };
 		C84C234C1F17AE0D0038E879 /* AutoGroupInsertionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C234B1F17AE0D0038E879 /* AutoGroupInsertionCoordinator.swift */; };
 		C84C234D1F17AE960038E879 /* NavigationDiscoveryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23471F17AD6A0038E879 /* NavigationDiscoveryCoordinator.swift */; };
-		C84C23511F17B0070038E879 /* AdvertDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23501F17B0070038E879 /* AdvertDetailView.swift */; };
+		C84C23511F17B0070038E879 /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23501F17B0070038E879 /* ItemDetailView.swift */; };
 		C84C23531F17B0C30038E879 /* AdvertListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23521F17B0C30038E879 /* AdvertListView.swift */; };
 		C84D330A1F24CFB9005BD99A /* SplitAppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84D33091F24CFB9005BD99A /* SplitAppCoordinator.swift */; };
 		C84DBC961F2A02FC00C26AF6 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84DBC951F2A02FC00C26AF6 /* AppCoordinator.swift */; };
 		C84DBC981F2A12B500C26AF6 /* AdvertListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84DBC971F2A12B500C26AF6 /* AdvertListInteractorTests.swift */; };
 		C8519AD71F2B5B5100645A20 /* ManualGroupInsertionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23491F17ADFD0038E879 /* ManualGroupInsertionCoordinator.swift */; };
 		C8519AD81F2B5B5100645A20 /* AutoGroupInsertionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C234B1F17AE0D0038E879 /* AutoGroupInsertionCoordinator.swift */; };
-		C8519AD91F2B5B5B00645A20 /* AdvertDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23501F17B0070038E879 /* AdvertDetailView.swift */; };
-		C8519ADA1F2B5B5B00645A20 /* AdvertDetailViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23671F17BCB00038E879 /* AdvertDetailViewSpy.swift */; };
+		C8519AD91F2B5B5B00645A20 /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23501F17B0070038E879 /* ItemDetailView.swift */; };
+		C8519ADA1F2B5B5B00645A20 /* ItemDetailViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23671F17BCB00038E879 /* ItemDetailViewSpy.swift */; };
 		C8519AE01F2B5B6F00645A20 /* AdvertListViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84C23651F17BBBA0038E879 /* AdvertListViewSpy.swift */; };
 		C8519AE11F2B5B7300645A20 /* AdvertListFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8289F721F28C17900D96136 /* AdvertListFeature.swift */; };
 		C8519AE21F2B5B7300645A20 /* AdvertListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C2CACA1F28BDF800F37288 /* AdvertListCoordinator.swift */; };
@@ -74,8 +74,8 @@
 		C8A713551F2B2D5A007FF56A /* ListDisplaysAdverts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A713541F2B2D5A007FF56A /* ListDisplaysAdverts.swift */; };
 		C8B48D531F2A17500014671F /* AdvertListFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B48D521F2A17500014671F /* AdvertListFormatterTests.swift */; };
 		C8B86F551F1F7C4000BDCE50 /* AdvertListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B86F541F1F7C4000BDCE50 /* AdvertListViewController.swift */; };
-		C8B86F591F1F820B00BDCE50 /* AdvertDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B86F581F1F820B00BDCE50 /* AdvertDetailViewController.swift */; };
-		C8B86F5B1F1F83CF00BDCE50 /* AdvertDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8B86F5A1F1F83CF00BDCE50 /* AdvertDetailViewController.storyboard */; };
+		C8B86F591F1F820B00BDCE50 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B86F581F1F820B00BDCE50 /* ItemDetailViewController.swift */; };
+		C8B86F5B1F1F83CF00BDCE50 /* ItemDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8B86F5A1F1F83CF00BDCE50 /* ItemDetailViewController.storyboard */; };
 		C8B86F5D1F1F890D00BDCE50 /* DiscoveryDetailFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B86F5C1F1F890D00BDCE50 /* DiscoveryDetailFormatter.swift */; };
 		C8B8FE511F28D080005B4BB9 /* NavigationDiscoveryFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B8FE501F28D080005B4BB9 /* NavigationDiscoveryFeature.swift */; };
 		C8C2CACB1F28BDF800F37288 /* AdvertListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C2CACA1F28BDF800F37288 /* AdvertListCoordinator.swift */; };
@@ -102,7 +102,7 @@
 		AE375153B2F6C2B9A2E95C37 /* Pods-Remix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Remix.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Remix/Pods-Remix.debug.xcconfig"; sourceTree = "<group>"; };
 		C20CFE14905ABAC5BA765D98 /* Pods-RemixLite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemixLite.release.xcconfig"; path = "Pods/Target Support Files/Pods-RemixLite/Pods-RemixLite.release.xcconfig"; sourceTree = "<group>"; };
 		C80A982F1F2B8A93000382EA /* SelectAdvertOnPhone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAdvertOnPhone.swift; sourceTree = "<group>"; };
-		C80A98311F2B8F66000382EA /* FakeAdvertDetailViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeAdvertDetailViewFactory.swift; sourceTree = "<group>"; };
+		C80A98311F2B8F66000382EA /* FakeItemDetailViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeItemDetailViewFactory.swift; sourceTree = "<group>"; };
 		C80A98361F2B98C1000382EA /* SelectAdvertOnTablet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAdvertOnTablet.swift; sourceTree = "<group>"; };
 		C81D0F3F1F28E499007481A2 /* LogicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C820EF031F2B9BC90036822A /* RemixLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemixLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,10 +121,10 @@
 		C84C23471F17AD6A0038E879 /* NavigationDiscoveryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDiscoveryCoordinator.swift; sourceTree = "<group>"; };
 		C84C23491F17ADFD0038E879 /* ManualGroupInsertionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualGroupInsertionCoordinator.swift; sourceTree = "<group>"; };
 		C84C234B1F17AE0D0038E879 /* AutoGroupInsertionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoGroupInsertionCoordinator.swift; sourceTree = "<group>"; };
-		C84C23501F17B0070038E879 /* AdvertDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertDetailView.swift; sourceTree = "<group>"; };
+		C84C23501F17B0070038E879 /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
 		C84C23521F17B0C30038E879 /* AdvertListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListView.swift; sourceTree = "<group>"; };
 		C84C23651F17BBBA0038E879 /* AdvertListViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListViewSpy.swift; sourceTree = "<group>"; };
-		C84C23671F17BCB00038E879 /* AdvertDetailViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertDetailViewSpy.swift; sourceTree = "<group>"; };
+		C84C23671F17BCB00038E879 /* ItemDetailViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewSpy.swift; sourceTree = "<group>"; };
 		C84D33091F24CFB9005BD99A /* SplitAppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitAppCoordinator.swift; sourceTree = "<group>"; };
 		C84D330B1F24D4C1005BD99A /* SplitDiscoveryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitDiscoveryCoordinator.swift; sourceTree = "<group>"; };
 		C84DBC951F2A02FC00C26AF6 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -142,8 +142,8 @@
 		C8A713541F2B2D5A007FF56A /* ListDisplaysAdverts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDisplaysAdverts.swift; sourceTree = "<group>"; };
 		C8B48D521F2A17500014671F /* AdvertListFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListFormatterTests.swift; sourceTree = "<group>"; };
 		C8B86F541F1F7C4000BDCE50 /* AdvertListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListViewController.swift; sourceTree = "<group>"; };
-		C8B86F581F1F820B00BDCE50 /* AdvertDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertDetailViewController.swift; sourceTree = "<group>"; };
-		C8B86F5A1F1F83CF00BDCE50 /* AdvertDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdvertDetailViewController.storyboard; sourceTree = "<group>"; };
+		C8B86F581F1F820B00BDCE50 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
+		C8B86F5A1F1F83CF00BDCE50 /* ItemDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ItemDetailViewController.storyboard; sourceTree = "<group>"; };
 		C8B86F5C1F1F890D00BDCE50 /* DiscoveryDetailFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryDetailFormatter.swift; sourceTree = "<group>"; };
 		C8B8FE501F28D080005B4BB9 /* NavigationDiscoveryFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDiscoveryFeature.swift; sourceTree = "<group>"; };
 		C8C2CACA1F28BDF800F37288 /* AdvertListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListCoordinator.swift; sourceTree = "<group>"; };
@@ -257,7 +257,7 @@
 				C84C233D1F17AC760038E879 /* App */,
 				C84C23461F17AD6A0038E879 /* Discovery */,
 				C8C2CAC91F28B3E800F37288 /* AdvertList */,
-				C84C234F1F17AFF00038E879 /* AdvertDetail */,
+				C84C234F1F17AFF00038E879 /* ItemDetail */,
 				C84C23481F17ADDA0038E879 /* Insertion */,
 				C84C23211F17AB770038E879 /* Assets.xcassets */,
 				C84C23231F17AB770038E879 /* LaunchScreen.storyboard */,
@@ -295,14 +295,14 @@
 			path = Insertion;
 			sourceTree = "<group>";
 		};
-		C84C234F1F17AFF00038E879 /* AdvertDetail */ = {
+		C84C234F1F17AFF00038E879 /* ItemDetail */ = {
 			isa = PBXGroup;
 			children = (
 				C8A6967C1F2A90B600C0DEDD /* Core */,
 				C87ACD771F28AE1400B1A73C /* UIKit */,
 				C87ACD781F28AEFF00B1A73C /* Fakes */,
 			);
-			path = AdvertDetail;
+			path = ItemDetail;
 			sourceTree = "<group>";
 		};
 		C8519AEC1F2B5BAF00645A20 /* Fakes */ = {
@@ -317,8 +317,8 @@
 		C87ACD771F28AE1400B1A73C /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				C8B86F581F1F820B00BDCE50 /* AdvertDetailViewController.swift */,
-				C8B86F5A1F1F83CF00BDCE50 /* AdvertDetailViewController.storyboard */,
+				C8B86F581F1F820B00BDCE50 /* ItemDetailViewController.swift */,
+				C8B86F5A1F1F83CF00BDCE50 /* ItemDetailViewController.storyboard */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -326,8 +326,8 @@
 		C87ACD781F28AEFF00B1A73C /* Fakes */ = {
 			isa = PBXGroup;
 			children = (
-				C84C23671F17BCB00038E879 /* AdvertDetailViewSpy.swift */,
-				C80A98311F2B8F66000382EA /* FakeAdvertDetailViewFactory.swift */,
+				C84C23671F17BCB00038E879 /* ItemDetailViewSpy.swift */,
+				C80A98311F2B8F66000382EA /* FakeItemDetailViewFactory.swift */,
 			);
 			path = Fakes;
 			sourceTree = "<group>";
@@ -418,7 +418,7 @@
 		C8A6967C1F2A90B600C0DEDD /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				C84C23501F17B0070038E879 /* AdvertDetailView.swift */,
+				C84C23501F17B0070038E879 /* ItemDetailView.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -575,7 +575,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C80F0F891F2FEF7D00F61892 /* AdvertDetailViewController.storyboard in Resources */,
+				C80F0F891F2FEF7D00F61892 /* ItemDetailViewController.storyboard in Resources */,
 				C820EF101F2B9BC90036822A /* LaunchScreen.storyboard in Resources */,
 				C820EF0D1F2B9BC90036822A /* Assets.xcassets in Resources */,
 			);
@@ -586,7 +586,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C84C23251F17AB770038E879 /* LaunchScreen.storyboard in Resources */,
-				C8B86F5B1F1F83CF00BDCE50 /* AdvertDetailViewController.storyboard in Resources */,
+				C8B86F5B1F1F83CF00BDCE50 /* ItemDetailViewController.storyboard in Resources */,
 				C84C23221F17AB770038E879 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -804,17 +804,17 @@
 				C81D0F551F28E609007481A2 /* AdvertListInteractor.swift in Sources */,
 				C81D0F531F28E609007481A2 /* AdvertListFeature.swift in Sources */,
 				C81D0F561F28E609007481A2 /* AdvertListFormatter.swift in Sources */,
-				C81D0F591F28E619007481A2 /* AdvertDetailView.swift in Sources */,
+				C81D0F591F28E619007481A2 /* ItemDetailView.swift in Sources */,
 				C81D0F4D1F28E603007481A2 /* NavigationDiscoveryFeature.swift in Sources */,
 				C81D0F5C1F28E623007481A2 /* AutoGroupInsertionCoordinator.swift in Sources */,
 				C8519AF01F2B60EC00645A20 /* FakeAdvertListViewFactory.swift in Sources */,
 				C81D0F571F28E609007481A2 /* AdvertListView.swift in Sources */,
-				C80A98341F2B8F74000382EA /* FakeAdvertDetailViewFactory.swift in Sources */,
+				C80A98341F2B8F74000382EA /* FakeItemDetailViewFactory.swift in Sources */,
 				C81D0F541F28E609007481A2 /* AdvertListCoordinator.swift in Sources */,
 				C81D0F581F28E611007481A2 /* AdvertListViewSpy.swift in Sources */,
 				C81D0F511F28E603007481A2 /* DiscoveryInteractor.swift in Sources */,
 				C81D0F501F28E603007481A2 /* SplitDiscoveryCoordinator.swift in Sources */,
-				C81D0F5A1F28E619007481A2 /* AdvertDetailViewSpy.swift in Sources */,
+				C81D0F5A1F28E619007481A2 /* ItemDetailViewSpy.swift in Sources */,
 				C84DBC981F2A12B500C26AF6 /* AdvertListInteractorTests.swift in Sources */,
 				C8DB6C781F2A1AF2000EFA3E /* DiscoveryInteractorTests.swift in Sources */,
 				C81D0F521F28E603007481A2 /* DiscoveryDetailFormatter.swift in Sources */,
@@ -829,9 +829,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C80F0F871F2FEF7900F61892 /* AdvertDetailView.swift in Sources */,
+				C80F0F871F2FEF7900F61892 /* ItemDetailView.swift in Sources */,
 				C820EF241F2B9D410036822A /* AppCoordinator.swift in Sources */,
-				C80F0F881F2FEF7D00F61892 /* AdvertDetailViewController.swift in Sources */,
+				C80F0F881F2FEF7D00F61892 /* ItemDetailViewController.swift in Sources */,
 				C820EF061F2B9BC90036822A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -844,7 +844,7 @@
 				C87C0A611F17C52D00715A9E /* AdvertListFormatter.swift in Sources */,
 				C84D330A1F24CFB9005BD99A /* SplitAppCoordinator.swift in Sources */,
 				C8E4B7EA1F25397100E9EB44 /* SplitDiscoveryCoordinator.swift in Sources */,
-				C84C23511F17B0070038E879 /* AdvertDetailView.swift in Sources */,
+				C84C23511F17B0070038E879 /* ItemDetailView.swift in Sources */,
 				C8D02AE41F28D3E600E3EA7B /* SplitDiscoveryFeature.swift in Sources */,
 				C84C234C1F17AE0D0038E879 /* AutoGroupInsertionCoordinator.swift in Sources */,
 				C8289F731F28C17900D96136 /* AdvertListFeature.swift in Sources */,
@@ -853,7 +853,7 @@
 				C87C0A5F1F17C3FA00715A9E /* DiscoveryInteractor.swift in Sources */,
 				C8D350D21F24D5D600745FFA /* NavigationAppCoordinator.swift in Sources */,
 				C84C23531F17B0C30038E879 /* AdvertListView.swift in Sources */,
-				C8B86F591F1F820B00BDCE50 /* AdvertDetailViewController.swift in Sources */,
+				C8B86F591F1F820B00BDCE50 /* ItemDetailViewController.swift in Sources */,
 				C84C234A1F17ADFD0038E879 /* ManualGroupInsertionCoordinator.swift in Sources */,
 				C8C2CACB1F28BDF800F37288 /* AdvertListCoordinator.swift in Sources */,
 				C84C231B1F17AB770038E879 /* AppDelegate.swift in Sources */,
@@ -876,13 +876,13 @@
 				C8519AE51F2B5B7300645A20 /* AdvertListView.swift in Sources */,
 				C8519AE71F2B5B8600645A20 /* SplitDiscoveryFeature.swift in Sources */,
 				C8A713531F2B2CFC007FF56A /* GivenTheseAdverts.swift in Sources */,
-				C8519ADA1F2B5B5B00645A20 /* AdvertDetailViewSpy.swift in Sources */,
-				C80A98331F2B8F66000382EA /* FakeAdvertDetailViewFactory.swift in Sources */,
+				C8519ADA1F2B5B5B00645A20 /* ItemDetailViewSpy.swift in Sources */,
+				C80A98331F2B8F66000382EA /* FakeItemDetailViewFactory.swift in Sources */,
 				C8519AD71F2B5B5100645A20 /* ManualGroupInsertionCoordinator.swift in Sources */,
 				C8519AF11F2B60EC00645A20 /* FakeAdvertListViewFactory.swift in Sources */,
 				C8519AD81F2B5B5100645A20 /* AutoGroupInsertionCoordinator.swift in Sources */,
 				C87C49E61F2A9EE500799AD3 /* AcceptanceTests.m in Sources */,
-				C8519AD91F2B5B5B00645A20 /* AdvertDetailView.swift in Sources */,
+				C8519AD91F2B5B5B00645A20 /* ItemDetailView.swift in Sources */,
 				C8519AE41F2B5B7300645A20 /* AdvertListFormatter.swift in Sources */,
 				C80A98301F2B8A93000382EA /* SelectAdvertOnPhone.swift in Sources */,
 				C8A713551F2B2D5A007FF56A /* ListDisplaysAdverts.swift in Sources */,

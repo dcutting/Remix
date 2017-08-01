@@ -4,7 +4,7 @@ import Foundation
 import Entity
 
 class DiscoveryDetailFormatter {
-    func prepare(advert: Advert) -> AdvertDetailViewData {
-        return AdvertDetailViewData(title: advert.title, detail: advert.description)
+    func prepare(advert: Advert) -> ItemDetailViewData {
+        return ItemDetailViewData(title: advert.title, detail: advert.description)
     }
 }

@@ -11,7 +11,7 @@ class SelectAdvertOnTablet: NSObject {
     @objc var group: String?
 
     let advertListViewSpy = AdvertListViewSpy()
-    let advertDetailViewSpy = AdvertDetailViewSpy()
+    let itemDetailViewSpy = ItemDetailViewSpy()
     let navigationWireframeSpy = NavigationWireframeSpy()
     let splitWireframeSpy = SplitWireframeSpy()
 
@@ -20,7 +20,7 @@ class SelectAdvertOnTablet: NSObject {
     @objc override init() {
         let fakeAdvertListViewFactory = FakeAdvertListViewFactory(fake: advertListViewSpy)
 
-        let fakeAdvertDetailViewFactory = FakeAdvertDetailViewFactory(fake: advertDetailViewSpy)
+        let fakeItemDetailViewFactory = FakeItemDetailViewFactory(fake: itemDetailViewSpy)
 
         let fakeNavigationWireframeFactory = FakeNavigationWireframeFactory(fake: navigationWireframeSpy)
 
@@ -36,7 +36,7 @@ class SelectAdvertOnTablet: NSObject {
             advertService: mockAdvertService,
             groupService: mockGroupService,
             advertListViewFactory: fakeAdvertListViewFactory,
-            advertDetailViewFactory: fakeAdvertDetailViewFactory,
+            itemDetailViewFactory: fakeItemDetailViewFactory,
             navigationWireframeFactory: fakeNavigationWireframeFactory,
             groupSelectionFeature: groupSelectionFeature)
         let feature = SplitDiscoveryFeature(dependencies: deps)
@@ -55,11 +55,11 @@ class SelectAdvertOnTablet: NSObject {
     }
 
     @objc func displaysAdvertInSplitDetailView() -> Bool {
-        return splitWireframeSpy.detail === advertDetailViewSpy
+        return splitWireframeSpy.detail === itemDetailViewSpy
     }
 
     @objc func detailViewTitle() -> String {
-        return advertDetailViewSpy.viewData?.title ?? ""
+        return itemDetailViewSpy.viewData?.title ?? ""
     }
 }
 

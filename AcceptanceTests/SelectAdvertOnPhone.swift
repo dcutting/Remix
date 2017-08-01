@@ -11,7 +11,7 @@ class SelectAdvertOnPhone: NSObject {
     @objc var group: String?
 
     let advertListViewSpy = AdvertListViewSpy()
-    let advertDetailViewSpy = AdvertDetailViewSpy()
+    let itemDetailViewSpy = ItemDetailViewSpy()
     let navigationWireframeSpy = NavigationWireframeSpy()
 
     var navigationDiscoveryCoordinator: NavigationDiscoveryCoordinator?
@@ -19,7 +19,7 @@ class SelectAdvertOnPhone: NSObject {
     @objc override init() {
         let fakeAdvertListViewFactory = FakeAdvertListViewFactory(fake: advertListViewSpy)
 
-        let fakeAdvertDetailViewFactory = FakeAdvertDetailViewFactory(fake: advertDetailViewSpy)
+        let fakeItemDetailViewFactory = FakeItemDetailViewFactory(fake: itemDetailViewSpy)
 
         let groupSelectionViewSpy = GroupSelectionViewSpy()
         let fakeGroupSelectionViewFactory = FakeGroupSelectionViewFactory(fake: groupSelectionViewSpy)
@@ -33,7 +33,7 @@ class SelectAdvertOnPhone: NSObject {
             advertService: mockAdvertService,
             groupService: mockGroupService,
             advertListViewFactory: fakeAdvertListViewFactory,
-            advertDetailViewFactory: fakeAdvertDetailViewFactory,
+            itemDetailViewFactory: fakeItemDetailViewFactory,
             groupSelectionFeature: groupSelectionFeature)
         let feature = NavigationDiscoveryFeature(dependencies: deps)
         navigationDiscoveryCoordinator = feature.makeCoordinatorUsing(navigationWireframe: navigationWireframeSpy)
@@ -51,10 +51,10 @@ class SelectAdvertOnPhone: NSObject {
     }
 
     @objc func pushesAdvertOntoNavigationStack() -> Bool {
-        return navigationWireframeSpy.topView === advertDetailViewSpy
+        return navigationWireframeSpy.topView === itemDetailViewSpy
     }
 
     @objc func detailViewTitle() -> String {
-        return advertDetailViewSpy.viewData?.title ?? ""
+        return itemDetailViewSpy.viewData?.title ?? ""
     }
 }

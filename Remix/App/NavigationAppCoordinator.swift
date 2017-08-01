@@ -34,7 +34,7 @@ class NavigationAppCoordinator {
             advertService: deps.advertService,
             groupService: deps.groupService,
             advertListViewFactory: AdvertListViewControllerFactory(),
-            advertDetailViewFactory: AdvertDetailViewControllerFactory(),
+            itemDetailViewFactory: ItemDetailViewControllerFactory(),
             groupSelectionFeature: makeGroupSelectionFeature()
         )
         return NavigationDiscoveryFeature(dependencies: discoveryDeps)

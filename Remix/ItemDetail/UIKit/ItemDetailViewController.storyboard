@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Advert Detail View Controller-->
+        <!--Item Detail View Controller-->
         <scene sceneID="a8A-Xz-CN0">
             <objects>
-                <viewController id="Dhs-Jq-0ue" customClass="AdvertDetailViewController" customModule="Remix" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Dhs-Jq-0ue" customClass="ItemDetailViewController" customModule="Remix" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tYp-Vq-H64">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -3,20 +3,20 @@
 import UIKit
 import Entity
 
-class AdvertDetailViewControllerFactory: AdvertDetailViewFactory {
-    func make() -> AdvertDetailView {
-        let storyboard = UIStoryboard(name: "AdvertDetailViewController", bundle: nil)
-        guard let viewController = storyboard.instantiateInitialViewController() as? AdvertDetailViewController else { preconditionFailure() }
+class ItemDetailViewControllerFactory: ItemDetailViewFactory {
+    func make() -> ItemDetailView {
+        let storyboard = UIStoryboard(name: "ItemDetailViewController", bundle: nil)
+        guard let viewController = storyboard.instantiateInitialViewController() as? ItemDetailViewController else { preconditionFailure() }
         return viewController
     }
 }
 
-class AdvertDetailViewController: UIViewController, AdvertDetailView {
+class ItemDetailViewController: UIViewController, ItemDetailView {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
 
-    var viewData: AdvertDetailViewData? {
+    var viewData: ItemDetailViewData? {
         didSet {
             updateView()
         }

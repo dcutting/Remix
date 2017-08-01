@@ -47,7 +47,7 @@ extension AppCoordinator: GroupSelectionCoordinatorDelegate {
 
     func didSelect(groupID: GroupID?) {
         if let groupID = groupID {
-            let detailView = AdvertDetailViewControllerFactory().make()
+            let detailView = ItemDetailViewControllerFactory().make()
             groupService.fetchGroup(for: groupID) { group in
                 guard let group = group else { return }
                 detailView.viewData = CategoryDetailFormatter().prepare(group: group)
@@ -64,7 +64,7 @@ extension AppCoordinator: GroupSelectionCoordinatorDelegate {
 }
 
 class CategoryDetailFormatter {
-    func prepare(group: Group) -> AdvertDetailViewData {
-        return AdvertDetailViewData(title: group.title, detail: group.description)
+    func prepare(group: Group) -> ItemDetailViewData {
+        return ItemDetailViewData(title: group.title, detail: group.description)
     }
 }

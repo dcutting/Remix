@@ -13,7 +13,7 @@ class NavigationDiscoveryCoordinator {
 
         let interactor: DiscoveryInteractor
         let detailFormatter: DiscoveryDetailFormatter
-        let detailViewFactory: AdvertDetailViewFactory
+        let detailViewFactory: ItemDetailViewFactory
 
         let advertListFeature: AdvertListFeature
         let groupSelectionFeature: GroupSelectionFeature

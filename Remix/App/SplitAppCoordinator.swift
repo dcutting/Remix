@@ -34,7 +34,7 @@ class SplitAppCoordinator {
             advertService: deps.advertService,
             groupService: deps.groupService,
             advertListViewFactory: AdvertListViewControllerFactory(),
-            advertDetailViewFactory: AdvertDetailViewControllerFactory(),
+            itemDetailViewFactory: ItemDetailViewControllerFactory(),
             navigationWireframeFactory: UINavigationWireframeFactory(),
             groupSelectionFeature: makeGroupSelectionFeature()
         )

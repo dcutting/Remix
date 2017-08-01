@@ -11,7 +11,7 @@ class SplitDiscoveryFeature {
         let advertService: AdvertService
         let groupService: GroupService
         let advertListViewFactory: AdvertListViewFactory
-        let advertDetailViewFactory: AdvertDetailViewFactory
+        let itemDetailViewFactory: ItemDetailViewFactory
         let navigationWireframeFactory: NavigationWireframeFactory
         let groupSelectionFeature: GroupSelectionFeature
     }
@@ -28,7 +28,7 @@ class SplitDiscoveryFeature {
             navigationWireframeFactory: deps.navigationWireframeFactory,
             interactor: makeInteractor(),
             detailFormatter: makeDetailFormatter(),
-            detailViewFactory: deps.advertDetailViewFactory,
+            detailViewFactory: deps.itemDetailViewFactory,
             advertListFeature: makeAdvertListFeature(),
             groupSelectionFeature: deps.groupSelectionFeature
         )
