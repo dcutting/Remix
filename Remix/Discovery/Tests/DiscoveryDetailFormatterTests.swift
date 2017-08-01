@@ -3,12 +3,12 @@
 import XCTest
 import Entity
 
-class DiscoveryDetailFormatterTests: XCTestCase {
+class AdvertDetailFormatterTests: XCTestCase {
 
-    var subjectUnderTest: DiscoveryDetailFormatter!
+    var subjectUnderTest: AdvertDetailFormatter!
 
     override func setUp() {
-        subjectUnderTest = DiscoveryDetailFormatter()
+        subjectUnderTest = AdvertDetailFormatter()
     }
 
     func test_prepare_returnsTitle() {
