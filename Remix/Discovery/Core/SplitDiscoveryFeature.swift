@@ -39,8 +39,8 @@ class SplitDiscoveryFeature {
         return DiscoveryInteractor(advertService: deps.advertService)
     }
 
-    private func makeDetailFormatter() -> DiscoveryDetailFormatter {
-        return DiscoveryDetailFormatter()
+    private func makeDetailFormatter() -> AdvertDetailFormatter {
+        return AdvertDetailFormatter()
     }
 
     private func makeAdvertListFeature() -> AdvertListFeature {

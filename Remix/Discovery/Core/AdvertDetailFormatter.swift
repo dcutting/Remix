@@ -3,7 +3,7 @@
 import Foundation
 import Entity
 
-class DiscoveryDetailFormatter {
+class AdvertDetailFormatter {
     func prepare(advert: Advert) -> ItemDetailViewData {
         return ItemDetailViewData(title: advert.title, detail: advert.description)
     }

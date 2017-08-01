@@ -9,25 +9,19 @@ import GroupSelection
 class AppCoordinator {
 
     let groupService = MockGroupService()
-    var appCoordinator: GroupSelectionCoordinator?
-
     let navigationWireframe = UINavigationWireframe()
+    var appCoordinator: GroupSelectionCoordinator?
 
     func start(window: UIWindow) {
 
-        configureMockGroupService()
-
-        let deps = GroupSelectionFeature.Dependencies(groupService: groupService, groupSelectionViewFactory: GroupSelectionViewControllerFactory())
-        let feature = GroupSelectionFeature(dependencies: deps)
-        let coordinator = feature.makeCoordinatorUsing(navigationWireframe: navigationWireframe)
-        coordinator.delegate = self
-        appCoordinator = coordinator
-
         window.rootViewController = navigationWireframe.viewController
-
         navigationWireframe.setPopCheckpoint()
 
-        coordinator.start()
+        configureMockGroupService()
+
+        appCoordinator = makeGroupSelectionCoordinator()
+        appCoordinator?.delegate = self
+        appCoordinator?.start()
     }
 
     private func configureMockGroupService() {
@@ -41,30 +35,37 @@ class AppCoordinator {
         ]
         groupService.groups = groups
     }
+
+    private func makeGroupSelectionCoordinator() -> GroupSelectionCoordinator {
+        let deps = GroupSelectionFeature.Dependencies(
+            groupService: groupService,
+            groupSelectionViewFactory: GroupSelectionViewControllerFactory()
+        )
+        let feature = GroupSelectionFeature(dependencies: deps)
+        return feature.makeCoordinatorUsing(navigationWireframe: navigationWireframe)
+    }
 }
 
 extension AppCoordinator: GroupSelectionCoordinatorDelegate {
 
     func didSelect(groupID: GroupID?) {
         if let groupID = groupID {
-            let detailView = ItemDetailViewControllerFactory().make()
-            groupService.fetchGroup(for: groupID) { group in
-                guard let group = group else { return }
-                detailView.viewData = CategoryDetailFormatter().prepare(group: group)
-                self.navigationWireframe.push(view: detailView)
-            }
+            pushDetailView(for: groupID)
         } else {
             navigationWireframe.popToLastCheckpoint()
             navigationWireframe.setPopCheckpoint()
         }
     }
 
-    func didCancelSelection() {
+    private func pushDetailView(for groupID: GroupID) {
+        groupService.fetchGroup(for: groupID) { group in
+            guard let group = group else { return }
+            let detailView = ItemDetailViewControllerFactory().make()
+            detailView.viewData = GroupDetailFormatter().prepare(group: group)
+            self.navigationWireframe.push(view: detailView)
+        }
     }
-}
 
-class CategoryDetailFormatter {
-    func prepare(group: Group) -> ItemDetailViewData {
-        return ItemDetailViewData(title: group.title, detail: group.description)
+    func didCancelSelection() {
     }
 }

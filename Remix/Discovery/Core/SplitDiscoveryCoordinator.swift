@@ -13,7 +13,7 @@ class SplitDiscoveryCoordinator {
         let navigationWireframeFactory: NavigationWireframeFactory
 
         let interactor: DiscoveryInteractor
-        let detailFormatter: DiscoveryDetailFormatter
+        let detailFormatter: AdvertDetailFormatter
         let detailViewFactory: ItemDetailViewFactory
 
         let advertListFeature: AdvertListFeature
