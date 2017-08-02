@@ -286,10 +286,8 @@
 			isa = PBXGroup;
 			children = (
 				C8383D9F1F322FE800AD92CF /* App */,
-				C8383DA41F322FE800AD92CF /* Assets.xcassets */,
-				C8383DA51F322FE800AD92CF /* LaunchScreen.storyboard */,
-				C8383DA71F322FE800AD92CF /* Info.plist */,
 				C8383DA81F322FE800AD92CF /* Shared */,
+				C8383E7F1F32710B00AD92CF /* Resources */,
 			);
 			path = Remix;
 			sourceTree = "<group>";
@@ -487,9 +485,7 @@
 			isa = PBXGroup;
 			children = (
 				C8383DDF1F322FE800AD92CF /* App */,
-				C8383DE31F322FE800AD92CF /* Assets.xcassets */,
-				C8383DE41F322FE800AD92CF /* LaunchScreen.storyboard */,
-				C8383DE61F322FE800AD92CF /* Info.plist */,
+				C8383E801F32713100AD92CF /* Resources */,
 			);
 			path = RemixLite;
 			sourceTree = "<group>";
@@ -546,6 +542,26 @@
 				C8383DF01F322FE800AD92CF /* ItemDetailViewController.swift */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		C8383E7F1F32710B00AD92CF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C8383DA41F322FE800AD92CF /* Assets.xcassets */,
+				C8383DA51F322FE800AD92CF /* LaunchScreen.storyboard */,
+				C8383DA71F322FE800AD92CF /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C8383E801F32713100AD92CF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C8383DE31F322FE800AD92CF /* Assets.xcassets */,
+				C8383DE41F322FE800AD92CF /* LaunchScreen.storyboard */,
+				C8383DE61F322FE800AD92CF /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		C84C230E1F17AB770038E879 = {
@@ -1162,7 +1178,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3H86HRS574;
-				INFOPLIST_FILE = Apps/RemixLite/Info.plist;
+				INFOPLIST_FILE = Apps/RemixLite/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.cutting.RemixLite;
@@ -1178,7 +1194,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3H86HRS574;
-				INFOPLIST_FILE = Apps/RemixLite/Info.plist;
+				INFOPLIST_FILE = Apps/RemixLite/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.cutting.RemixLite;
@@ -1301,7 +1317,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3H86HRS574;
-				INFOPLIST_FILE = Apps/Remix/Info.plist;
+				INFOPLIST_FILE = Apps/Remix/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.cutting.Remix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1316,7 +1332,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3H86HRS574;
-				INFOPLIST_FILE = Apps/Remix/Info.plist;
+				INFOPLIST_FILE = Apps/Remix/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.cutting.Remix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
