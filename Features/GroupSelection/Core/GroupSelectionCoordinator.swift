@@ -52,7 +52,7 @@ public class GroupSelectionCoordinator {
     }
 
     private func showErrorToast() {
-        print("error")  // TODO
+        print("could not load child groups")  // See AutoGroupInsertionCoordinator example
     }
 }
 

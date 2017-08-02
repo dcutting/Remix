@@ -64,7 +64,7 @@ extension NavigationDiscoveryCoordinator: AdvertListCoordinatorDelegate {
     }
 
     private func showErrorToast() {
-        print("error")  // TODO
+        print("could not load advert details")  // See AutoGroupInsertionCoordinator example
     }
 
     func didSelectNewAdvertAction() {

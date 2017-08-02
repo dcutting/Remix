@@ -70,7 +70,7 @@ extension AppCoordinator: GroupSelectionCoordinatorDelegate {
     }
 
     private func showErrorToast() {
-        print("error")  // TODO
+        print("could not load group details")  // See AutoGroupInsertionCoordinator example
     }
 
     private func popToRoot() {

@@ -110,6 +110,6 @@ extension ManualGroupInsertionCoordinator {
     }
 
     private func showErrorToast() {
-        print("error")  // TODO
+        print("could not publish advert")  // See AutoGroupInsertionCoordinator example
     }
 }

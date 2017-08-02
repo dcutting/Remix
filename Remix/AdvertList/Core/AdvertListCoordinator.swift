@@ -63,7 +63,7 @@ class AdvertListCoordinator {
     }
 
     private func showErrorToast() {
-        print("error")  // TODO
+        print("could not load list of adverts")  // See AutoGroupInsertionCoordinator example
     }
 
     private func updateListView(with adverts: [Advert], groups: [Group]) {
