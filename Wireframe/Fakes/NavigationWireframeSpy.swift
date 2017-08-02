@@ -22,4 +22,7 @@ public class NavigationWireframeSpy: NavigationWireframe {
 
     public func unsetPopCheckpoint() {
     }
+
+    public func setLeftButton(title: String, target: Any, selector: Selector) {
+    }
 }

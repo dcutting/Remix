@@ -1,6 +1,7 @@
 //  Copyright © 2017 cutting.io. All rights reserved.
 
 import Foundation
+import Utility
 import Entity
 import Services
 
@@ -22,9 +23,9 @@ class InsertionInteractor {
         draft.groupID = groupID
     }
 
-    func publish(completion: @escaping (AdvertID) -> Void) {
-        advertService.publish(draft: draft) { advertID in
-            completion(advertID)
+    func publish(completion: @escaping (AsyncResult<AdvertID>) -> Void) {
+        advertService.publish(draft: draft) { result in
+            completion(result)
         }
     }
 }

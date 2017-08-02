@@ -1,6 +1,7 @@
 //  Copyright © 2017 cutting.io. All rights reserved.
 
 import Foundation
+import Utility
 import Entity
 
 class AutoGroupInsertionInteractor {
@@ -25,7 +26,7 @@ class AutoGroupInsertionInteractor {
         }
     }
 
-    func publish(completion: @escaping (AdvertID) -> Void) {
+    func publish(completion: @escaping (AsyncResult<AdvertID>) -> Void) {
         insertionInteractor.publish(completion: completion)
     }
 }

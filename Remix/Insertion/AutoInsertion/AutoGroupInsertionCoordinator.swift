@@ -64,8 +64,17 @@ extension AutoGroupInsertionCoordinator: TextEntryStepViewDelegate {
 extension AutoGroupInsertionCoordinator {
 
     private func finishInsertion() {
-        deps.insertionInteractor.publish { advertID in
-            self.delegate?.didPublishAdvert(advertID: advertID)
+        deps.insertionInteractor.publish { result in
+            switch result {
+            case let .success(advertID):
+                self.delegate?.didPublishAdvert(advertID: advertID)
+            case .error:
+                self.showErrorToast()
+            }
         }
+    }
+
+    private func showErrorToast() {
+        print("error")  // TODO
     }
 }

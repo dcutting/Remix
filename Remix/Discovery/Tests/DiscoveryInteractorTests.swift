@@ -18,9 +18,12 @@ class DicoveryInteractorTests: XCTestCase {
 
         mockAdvertService.adverts = [Advert]()
 
-        subjectUnderTest.fetchDetail(for: "1") { actual in
+        subjectUnderTest.fetchDetail(for: "1") { result in
 
-            XCTAssertNil(actual)
+            guard case .error = result else {
+                XCTFail()
+                return
+            }
         }
     }
 
@@ -31,10 +34,15 @@ class DicoveryInteractorTests: XCTestCase {
         ]
         mockAdvertService.adverts = mockAdverts
 
-        subjectUnderTest.fetchDetail(for: "1") { actual in
+        subjectUnderTest.fetchDetail(for: "1") { result in
 
-            let expected = mockAdverts[0]
-            XCTAssertEqual(expected, actual)
+            switch result {
+            case let .success(actual):
+                let expected = mockAdverts[0]
+                XCTAssertEqual(expected, actual)
+            default:
+                XCTFail()
+            }
         }
     }
 }

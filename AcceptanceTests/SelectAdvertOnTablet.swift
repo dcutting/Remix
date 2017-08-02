@@ -18,6 +18,8 @@ class SelectAdvertOnTablet: NSObject {
     var splitDiscoveryCoordinator: SplitDiscoveryCoordinator?
 
     @objc override init() {
+        super.init()
+
         let fakeAdvertListViewFactory = FakeAdvertListViewFactory(fake: advertListViewSpy)
 
         let fakeItemDetailViewFactory = FakeItemDetailViewFactory(fake: itemDetailViewSpy)
@@ -38,9 +40,24 @@ class SelectAdvertOnTablet: NSObject {
             advertListViewFactory: fakeAdvertListViewFactory,
             itemDetailViewFactory: fakeItemDetailViewFactory,
             navigationWireframeFactory: fakeNavigationWireframeFactory,
-            groupSelectionFeature: groupSelectionFeature)
+            groupSelectionFeature: groupSelectionFeature,
+            insertionFeature: makeInsertionFeature(groupSelectionFeature: groupSelectionFeature)
+        )
         let feature = SplitDiscoveryFeature(dependencies: deps)
         splitDiscoveryCoordinator = feature.makeCoordinatorUsing(splitWireframe: splitWireframeSpy)
+    }
+
+    private func makeInsertionFeature(groupSelectionFeature: GroupSelectionFeature) -> ManualGroupInsertionFeature {
+        let featureDeps = ManualGroupInsertionFeature.Dependencies(
+            advertService: mockAdvertService,
+            textEntryStepViewFactory: makeTextEntryStepViewFactory(),
+            groupSelectionFeature: groupSelectionFeature
+        )
+        return ManualGroupInsertionFeature(dependencies: featureDeps)
+    }
+
+    private func makeTextEntryStepViewFactory() -> TextEntryStepViewFactory {
+        return FakeTextEntryStepViewFactory(fake: TextEntryStepViewSpy())
     }
 
     @objc func selectAdvert(_ advertID: String) -> Bool {

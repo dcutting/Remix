@@ -51,9 +51,13 @@ extension SplitDiscoveryCoordinator: AdvertListCoordinatorDelegate {
     }
 
     private func showDetailView(for advertID: AdvertID) {
-        deps.interactor.fetchDetail(for: advertID) { advert in
-            guard let advert = advert else { preconditionFailure() }
-            self.showDetailView(for: advert)
+        deps.interactor.fetchDetail(for: advertID) { result in
+            switch result {
+            case let .success(advert):
+                self.showDetailView(for: advert)
+            case .error:
+                self.showErrorToast()
+            }
         }
     }
 
@@ -61,6 +65,10 @@ extension SplitDiscoveryCoordinator: AdvertListCoordinatorDelegate {
         let detailView = deps.detailViewFactory.make()
         detailView.viewData = deps.detailFormatter.prepare(advert: advert)
         deps.splitWireframe.detail = detailView
+    }
+
+    private func showErrorToast() {
+        print("error")  // TODO
     }
 
     func didSelectNewAdvertAction() {

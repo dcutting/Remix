@@ -32,6 +32,8 @@ target :AcceptanceTests do
   pod 'GroupSelection/Fakes', :path => 'Features/GroupSelection'
 end
 
+pod 'Utility', :path => 'Utility'
+
 post_install do |installer|
   require 'cocoapods-amimono/patcher'
   Amimono::Patcher.patch!(installer)

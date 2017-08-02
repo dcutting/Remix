@@ -1,6 +1,7 @@
 //  Copyright © 2017 cutting.io. All rights reserved.
 
 import Foundation
+import Utility
 import Wireframe
 import Entity
 
@@ -41,15 +42,28 @@ class AdvertListCoordinator {
     }
 
     func reloadAdverts() {
-        deps.interactor.refetchFilteredAdverts { (adverts, groups) in
-            self.updateListView(with: adverts, groups: groups)
+        deps.interactor.refetchFilteredAdverts { result in
+            self.updateAdverts(result: result)
         }
     }
 
     func updateAdverts(for groupID: GroupID?) {
-        deps.interactor.updateFilter(for: groupID) { (adverts, groups) in
-            self.updateListView(with: adverts, groups: groups)
+        deps.interactor.updateFilter(for: groupID) { result in
+            self.updateAdverts(result: result)
         }
+    }
+
+    private func updateAdverts(result: AsyncResult<([Advert], [Group])>) {
+        switch result {
+        case let .success((adverts, groups)):
+            self.updateListView(with: adverts, groups: groups)
+        case .error:
+            self.showErrorToast()
+        }
+    }
+
+    private func showErrorToast() {
+        print("error")  // TODO
     }
 
     private func updateListView(with adverts: [Advert], groups: [Group]) {

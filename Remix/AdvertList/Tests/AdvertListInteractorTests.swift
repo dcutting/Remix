@@ -33,13 +33,20 @@ class AdvertListInteractorTests: XCTestCase {
         mockAdvertService.adverts = mockAdverts
         mockGroupService.groups = mockGroups
 
-        subjectUnderTest.updateFilter(for: nil) { (actualAdverts, actualGroups) in
+        subjectUnderTest.updateFilter(for: nil) { result in
 
-            let expectedAdverts = mockAdverts
-            XCTAssertEqual(expectedAdverts, actualAdverts)
+            switch result {
+            case let .success((actualAdverts, actualGroups)):
 
-            let expectedGroups = mockGroups
-            XCTAssertEqual(expectedGroups, actualGroups)
+                let expectedAdverts = mockAdverts
+                XCTAssertEqual(expectedAdverts, actualAdverts)
+
+                let expectedGroups = mockGroups
+                XCTAssertEqual(expectedGroups, actualGroups)
+
+            default:
+                XCTFail()
+            }
         }
     }
 
@@ -60,15 +67,22 @@ class AdvertListInteractorTests: XCTestCase {
         mockAdvertService.adverts = mockAdverts
         mockGroupService.groups = mockGroups
 
-        subjectUnderTest.updateFilter(for: "1") { (actualAdverts, actualGroups) in
+        subjectUnderTest.updateFilter(for: "1") { result in
 
-            let expectedAdverts = [
-                mockAdverts[0], mockAdverts[1]
-            ]
-            XCTAssertEqual(expectedAdverts, actualAdverts)
+            switch result {
+            case let .success((actualAdverts, actualGroups)):
 
-            let expectedGroups = mockGroups
-            XCTAssertEqual(expectedGroups, actualGroups)
+                let expectedAdverts = [
+                    mockAdverts[0], mockAdverts[1]
+                ]
+                XCTAssertEqual(expectedAdverts, actualAdverts)
+
+                let expectedGroups = mockGroups
+                XCTAssertEqual(expectedGroups, actualGroups)
+
+            default:
+                XCTFail()
+            }
         }
     }
 }

@@ -89,8 +89,13 @@ extension ManualGroupInsertionCoordinator: TextEntryStepViewDelegate {
 extension ManualGroupInsertionCoordinator {
 
     private func publishDraft() {
-        deps.insertionInteractor.publish { advertID in
-            self.finishInsertion(advertID: advertID)
+        deps.insertionInteractor.publish { result in
+            switch result {
+            case let .success(advertID):
+                self.finishInsertion(advertID: advertID)
+            case .error:
+                self.showErrorToast()
+            }
         }
     }
 
@@ -102,5 +107,9 @@ extension ManualGroupInsertionCoordinator {
     private func cleanup() {
         deps.navigationWireframe.unsetPopCheckpoint()
         groupSelectionCoordinator = nil
+    }
+
+    private func showErrorToast() {
+        print("error")  // TODO
     }
 }
