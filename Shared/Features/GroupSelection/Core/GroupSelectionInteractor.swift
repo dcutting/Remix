@@ -1,6 +1,5 @@
 //  Copyright © 2017 cutting.io. All rights reserved.
 
-import Foundation
 import Utility
 import Entity
 import Services
@@ -12,7 +11,7 @@ class GroupSelectionInteractor {
         case parentGroup
     }
 
-    let groupService: GroupService
+    private let groupService: GroupService
 
     init(groupService: GroupService) {
         self.groupService = groupService
@@ -22,12 +21,16 @@ class GroupSelectionInteractor {
         groupService.fetchGroup(for: groupID) { result in
             switch result {
             case let .success(group):
-                let type: SelectionType = group.children.isEmpty ? .leafGroup : .parentGroup
+                let type = self.findSelectionType(for: group)
                 completion(.success(type))
             case .error:
                 completion(.error)
             }
         }
+    }
+
+    private func findSelectionType(for group: Group) -> SelectionType {
+        return group.children.isEmpty ? .leafGroup : .parentGroup
     }
 
     func fetchGroups(parentGroupID: GroupID?, completion: @escaping (AsyncResult<[Group]>) -> Void) {
@@ -43,9 +46,8 @@ class GroupSelectionInteractor {
     }
 
     private func filter(groups: [Group], withParentGroupID parentGroupID: GroupID?) -> [Group] {
-        let filteredGroups = groups.filter { group in
+        return groups.filter { group in
             group.parent == parentGroupID
         }
-        return filteredGroups
     }
 }
