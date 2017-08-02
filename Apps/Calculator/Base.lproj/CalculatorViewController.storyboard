@@ -47,6 +47,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EvS-cp-rxd">
+                                <rect key="frame" x="348" y="25" width="22" height="22"/>
+                                <connections>
+                                    <action selector="didTapAbout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dWh-4S-1Jn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -60,6 +66,8 @@
                             <constraint firstItem="R5u-JJ-T0d" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="dFP-dD-KqS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ULP-BG-si0" secondAttribute="trailing" constant="57" id="dWh-d5-v05"/>
                             <constraint firstItem="ULP-BG-si0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="R5u-JJ-T0d" secondAttribute="trailing" constant="68" id="f8S-hX-weh"/>
+                            <constraint firstItem="EvS-cp-rxd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="gZy-1N-Jlb"/>
+                            <constraint firstAttribute="trailing" secondItem="EvS-cp-rxd" secondAttribute="trailing" constant="5" id="qXz-vv-sG9"/>
                             <constraint firstItem="ULP-BG-si0" firstAttribute="width" secondItem="R5u-JJ-T0d" secondAttribute="width" id="xhl-LB-em7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

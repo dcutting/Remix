@@ -12,6 +12,7 @@ protocol CalculatorViewDelegate: class {
     func viewReady()
     func didChange(first: String)
     func didChange(second: String)
+    func didTapAbout()
 }
 
 class CalculatorViewController: UIViewController {
@@ -56,5 +57,9 @@ extension CalculatorViewController {
     @objc func secondDidChange() {
         guard let text = secondTextField?.text else { return }
         delegate?.didChange(second: text)
+    }
+
+    @IBAction func didTapAbout(_ sender: Any) {
+        delegate?.didTapAbout()
     }
 }

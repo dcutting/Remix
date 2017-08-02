@@ -45,4 +45,20 @@ extension CalculatorCoordinator: CalculatorViewDelegate {
         let viewData = formatter.prepare(result: result)
         view?.viewData = viewData
     }
+
+    func didTapAbout() {
+        showAbout()
+    }
+
+    private func showAbout() {
+        let about = makeAboutView()
+        view?.present(about, animated: true)
+    }
+
+    private func makeAboutView() -> UIViewController {
+        let alert = UIAlertController(title: "Calculator", message: "Built with Remix architecture", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(ok)
+        return alert
+    }
 }
