@@ -58,6 +58,7 @@ extension ManualGroupInsertionCoordinator: GroupSelectionCoordinatorDelegate {
     }
 
     func didCancelSelection() {
+        cleanup()
     }
 }
 
@@ -93,7 +94,12 @@ extension ManualGroupInsertionCoordinator {
     }
 
     private func finishInsertion(advertID: AdvertID) {
-        deps.navigationWireframe.unsetPopCheckpoint()
+        cleanup()
         delegate?.didPublishAdvert(advertID: advertID)
+    }
+
+    private func cleanup() {
+        deps.navigationWireframe.unsetPopCheckpoint()
+        groupSelectionCoordinator = nil
     }
 }
