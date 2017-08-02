@@ -56,7 +56,7 @@ extension SplitDiscoveryCoordinator: AdvertListCoordinatorDelegate {
             case let .success(advert):
                 self.showDetailView(for: advert)
             case .error:
-                self.showErrorToast()
+                self.presentError()
             }
         }
     }
@@ -67,7 +67,7 @@ extension SplitDiscoveryCoordinator: AdvertListCoordinatorDelegate {
         deps.splitWireframe.detail = detailView
     }
 
-    private func showErrorToast() {
+    private func presentError() {
         print("could not load advert details")  // See AutoGroupInsertionCoordinator example
     }
 

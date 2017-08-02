@@ -58,11 +58,11 @@ class AdvertListCoordinator {
         case let .success((adverts, groups)):
             self.updateListView(with: adverts, groups: groups)
         case .error:
-            self.showErrorToast()
+            self.presentError()
         }
     }
 
-    private func showErrorToast() {
+    private func presentError() {
         print("could not load list of adverts")  // See AutoGroupInsertionCoordinator example
     }
 

@@ -297,8 +297,8 @@
 		C8383D9F1F322FE800AD92CF /* App */ = {
 			isa = PBXGroup;
 			children = (
-				C8383DA01F322FE800AD92CF /* AppCoordinator.swift */,
 				C8383DA11F322FE800AD92CF /* AppDelegate.swift */,
+				C8383DA01F322FE800AD92CF /* AppCoordinator.swift */,
 				C8383DA21F322FE800AD92CF /* NavigationAppCoordinator.swift */,
 				C8383DA31F322FE800AD92CF /* SplitAppCoordinator.swift */,
 			);
@@ -497,8 +497,8 @@
 		C8383DDF1F322FE800AD92CF /* App */ = {
 			isa = PBXGroup;
 			children = (
-				C8383DE01F322FE800AD92CF /* AppCoordinator.swift */,
 				C8383DE11F322FE800AD92CF /* AppDelegate.swift */,
+				C8383DE01F322FE800AD92CF /* AppCoordinator.swift */,
 				C8383DE21F322FE800AD92CF /* GroupDetailFormatter.swift */,
 			);
 			path = App;

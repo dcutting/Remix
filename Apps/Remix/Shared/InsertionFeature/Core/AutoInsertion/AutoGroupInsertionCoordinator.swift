@@ -69,12 +69,12 @@ extension AutoGroupInsertionCoordinator {
             case let .success(advertID):
                 self.delegate?.didPublishAdvert(advertID: advertID)
             case .error:
-                self.showErrorToast()
+                self.presentError()
             }
         }
     }
 
-    private func showErrorToast() {
+    private func presentError() {
         let toast = deps.toastWireframeFactory.make(message: "Could not publish advert")
         deps.navigationWireframe.present(view: toast, forSeconds: 2)
     }

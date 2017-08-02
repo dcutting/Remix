@@ -52,7 +52,7 @@ extension NavigationDiscoveryCoordinator: AdvertListCoordinatorDelegate {
             case let .success(advert):
                 self.pushDetailView(for: advert)
             case .error:
-                self.showErrorToast()
+                self.presentError()
             }
         }
     }
@@ -63,7 +63,7 @@ extension NavigationDiscoveryCoordinator: AdvertListCoordinatorDelegate {
         deps.navigationWireframe.push(view: detailView)
     }
 
-    private func showErrorToast() {
+    private func presentError() {
         print("could not load advert details")  // See AutoGroupInsertionCoordinator example
     }
 

@@ -1,10 +1,6 @@
 //  Copyright © 2017 cutting.io. All rights reserved.
 
 import UIKit
-import Wireframe
-import Entity
-import Services
-import GroupSelection
 
 @UIApplicationMain class AppDelegate: UIResponder, UIApplicationDelegate {
 

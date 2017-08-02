@@ -94,7 +94,7 @@ extension ManualGroupInsertionCoordinator {
             case let .success(advertID):
                 self.finishInsertion(advertID: advertID)
             case .error:
-                self.showErrorToast()
+                self.presentError()
             }
         }
     }
@@ -109,7 +109,7 @@ extension ManualGroupInsertionCoordinator {
         groupSelectionCoordinator = nil
     }
 
-    private func showErrorToast() {
+    private func presentError() {
         print("could not publish advert")  // See AutoGroupInsertionCoordinator example
     }
 }

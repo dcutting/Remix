@@ -46,12 +46,12 @@ public class GroupSelectionCoordinator {
                 let viewData = self.deps.formatter.prepare(groups: groups)
                 view.viewData = viewData
             case .error:
-                self.showErrorToast()
+                self.presentError()
             }
         }
     }
 
-    private func showErrorToast() {
+    private func presentError() {
         print("could not load child groups")  // See AutoGroupInsertionCoordinator example
     }
 }
