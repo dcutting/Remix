@@ -19,6 +19,7 @@ class AdvertListViewController: UITableViewController, AdvertListView {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.rowHeight = 80.0
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .organize, target: self, action: #selector(didTapFilter))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapNew))
         navigationItem.backBarButtonItem = UIBarButtonItem(title: nil, style: .plain, target: nil, action: nil)

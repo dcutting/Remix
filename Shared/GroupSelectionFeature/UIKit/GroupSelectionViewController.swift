@@ -22,6 +22,7 @@ public class GroupSelectionViewController: UITableViewController, GroupSelection
 
     public override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.rowHeight = 80.0
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Reset", style: .plain, target: self, action: #selector(reset))
         navigationItem.backBarButtonItem = UIBarButtonItem(title: nil, style: .plain, target: nil, action: nil)
         updateView()
