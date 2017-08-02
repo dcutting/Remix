@@ -30,7 +30,7 @@ class AdvertListCoordinator {
 
     func start() {
         pushListView()
-        updateAdverts()
+        reloadAdverts()
     }
 
     private func pushListView() {
@@ -40,8 +40,14 @@ class AdvertListCoordinator {
         deps.navigationWireframe.push(view: view)
     }
 
-    func updateAdverts(for groupID: GroupID? = nil) {
-        deps.interactor.update(for: groupID) { (adverts, groups) in
+    func reloadAdverts() {
+        deps.interactor.refetchFilteredAdverts { (adverts, groups) in
+            self.updateListView(with: adverts, groups: groups)
+        }
+    }
+
+    func updateAdverts(for groupID: GroupID?) {
+        deps.interactor.updateFilter(for: groupID) { (adverts, groups) in
             self.updateListView(with: adverts, groups: groups)
         }
     }

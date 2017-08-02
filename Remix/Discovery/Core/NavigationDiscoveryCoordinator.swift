@@ -79,7 +79,7 @@ extension NavigationDiscoveryCoordinator: InsertionCoordinatorDelegate {
     }
 
     func didPublishAdvert(advertID: AdvertID) {
-        advertListCoordinator?.updateAdverts()  // TODO group?
+        advertListCoordinator?.reloadAdverts()
         finishInsertion()
     }
 
