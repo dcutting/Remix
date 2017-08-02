@@ -281,6 +281,24 @@
 			path = UIKit;
 			sourceTree = "<group>";
 		};
+		C81298DE1F31D9470047E0E2 /* SplitDiscovery */ = {
+			isa = PBXGroup;
+			children = (
+				C8D02AE31F28D3E600E3EA7B /* SplitDiscoveryFeature.swift */,
+				C84D330B1F24D4C1005BD99A /* SplitDiscoveryCoordinator.swift */,
+			);
+			path = SplitDiscovery;
+			sourceTree = "<group>";
+		};
+		C81298DF1F31D9580047E0E2 /* NavigationDiscovery */ = {
+			isa = PBXGroup;
+			children = (
+				C8B8FE501F28D080005B4BB9 /* NavigationDiscoveryFeature.swift */,
+				C84C23471F17AD6A0038E879 /* NavigationDiscoveryCoordinator.swift */,
+			);
+			path = NavigationDiscovery;
+			sourceTree = "<group>";
+		};
 		C820EF041F2B9BC90036822A /* RemixLite */ = {
 			isa = PBXGroup;
 			children = (
@@ -496,10 +514,8 @@
 		C8A696771F2A907400C0DEDD /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				C8B8FE501F28D080005B4BB9 /* NavigationDiscoveryFeature.swift */,
-				C8D02AE31F28D3E600E3EA7B /* SplitDiscoveryFeature.swift */,
-				C84C23471F17AD6A0038E879 /* NavigationDiscoveryCoordinator.swift */,
-				C84D330B1F24D4C1005BD99A /* SplitDiscoveryCoordinator.swift */,
+				C81298DF1F31D9580047E0E2 /* NavigationDiscovery */,
+				C81298DE1F31D9470047E0E2 /* SplitDiscovery */,
 				C87C0A5E1F17C3FA00715A9E /* DiscoveryInteractor.swift */,
 				C8B86F5C1F1F890D00BDCE50 /* AdvertDetailFormatter.swift */,
 			);
