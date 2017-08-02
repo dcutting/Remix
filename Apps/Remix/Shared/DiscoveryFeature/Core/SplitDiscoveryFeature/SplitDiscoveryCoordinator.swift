@@ -2,7 +2,7 @@
 
 import Wireframe
 import Entity
-import GroupSelection
+import GroupSelectionFeature
 
 class SplitDiscoveryCoordinator {
 

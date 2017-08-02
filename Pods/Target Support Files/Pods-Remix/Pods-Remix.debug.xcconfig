@@ -1,8 +1,8 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
-FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/Entity-Core-iOS" "$PODS_CONFIGURATION_BUILD_DIR/GroupSelection-Core-UIKit" "$PODS_CONFIGURATION_BUILD_DIR/Service-iOS" "$PODS_CONFIGURATION_BUILD_DIR/Utility" "$PODS_CONFIGURATION_BUILD_DIR/Wireframe-Core-UIKit"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/Entity-Core-iOS" "$PODS_CONFIGURATION_BUILD_DIR/GroupSelectionFeature-Core-UIKit" "$PODS_CONFIGURATION_BUILD_DIR/Service-iOS" "$PODS_CONFIGURATION_BUILD_DIR/Utility" "$PODS_CONFIGURATION_BUILD_DIR/Wireframe-Core-UIKit"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/Entity-Core-iOS/Entity.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/GroupSelection-Core-UIKit/GroupSelection.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Service-iOS/Service.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Utility/Utility.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Wireframe-Core-UIKit/Wireframe.framework/Headers"
+OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/Entity-Core-iOS/Entity.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/GroupSelectionFeature-Core-UIKit/GroupSelectionFeature.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Service-iOS/Service.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Utility/Utility.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Wireframe-Core-UIKit/Wireframe.framework/Headers"
 OTHER_LDFLAGS[arch=arm64] = $(inherited) -filelist "$(OBJROOT)/Pods.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)-$(TARGET_NAME)-arm64.objects.filelist"
 OTHER_LDFLAGS[arch=armv7] = $(inherited) -filelist "$(OBJROOT)/Pods.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)-$(TARGET_NAME)-armv7.objects.filelist"
 OTHER_LDFLAGS[arch=armv7s] = $(inherited) -filelist "$(OBJROOT)/Pods.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)-$(TARGET_NAME)-armv7s.objects.filelist"

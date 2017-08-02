@@ -1,0 +1,83 @@
+{
+  "name": "GroupSelectionFeature",
+  "version": "0.0.1",
+  "summary": "Feature for selecting a group",
+  "homepage": "http://cutting.io",
+  "license": {
+    "type": "MIT"
+  },
+  "authors": "Dan Cutting",
+  "platforms": {
+    "ios": "10.3",
+    "osx": "10.12"
+  },
+  "source": {
+    "path": "."
+  },
+  "subspecs": [
+    {
+      "name": "Core",
+      "source_files": "Core/**/*",
+      "dependencies": {
+        "Wireframe/Core": [
+
+        ],
+        "Entity/Core": [
+
+        ],
+        "Service/GroupService": [
+
+        ]
+      }
+    },
+    {
+      "name": "UIKit",
+      "platforms": {
+        "ios": "10.3"
+      },
+      "source_files": "UIKit/**/*",
+      "dependencies": {
+        "Wireframe/UIKit": [
+
+        ],
+        "GroupSelectionFeature/Core": [
+
+        ]
+      }
+    },
+    {
+      "name": "Fakes",
+      "platforms": {
+        "osx": "10.12"
+      },
+      "source_files": "Fakes",
+      "dependencies": {
+        "GroupSelectionFeature/Core": [
+
+        ]
+      },
+      "pod_target_xcconfig": {
+        "ENABLE_BITCODE": "NO"
+      }
+    },
+    {
+      "name": "Tests",
+      "platforms": {
+        "osx": "10.12"
+      },
+      "frameworks": "XCTest",
+      "source_files": "Tests",
+      "dependencies": {
+        "GroupSelectionFeature/Core": [
+
+        ],
+        "Entity/Tests": [
+
+        ]
+      },
+      "pod_target_xcconfig": {
+        "ENABLE_BITCODE": "NO"
+      }
+    }
+  ]
+}

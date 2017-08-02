@@ -2,7 +2,7 @@
 
 import Wireframe
 import Service
-import GroupSelection
+import GroupSelectionFeature
 
 class AlternatingInsertionFeature: InsertionFeature {
 

@@ -2,7 +2,7 @@
 
 import Foundation
 import Wireframe
-import GroupSelection
+import GroupSelectionFeature
 
 @objc(SelectAdvertOnTablet)
 class SelectAdvertOnTablet: NSObject {

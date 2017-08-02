@@ -1,0 +1,6 @@
+framework module GroupSelectionFeature {
+  umbrella header "GroupSelectionFeature-Core-Fakes-umbrella.h"
+
+  export *
+  module * { export * }
+}

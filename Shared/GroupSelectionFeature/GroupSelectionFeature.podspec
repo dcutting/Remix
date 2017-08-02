@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name         = "GroupSelection"
+  s.name         = "GroupSelectionFeature"
   s.version      = "0.0.1"
   s.summary      = "Feature for selecting a group"
   s.homepage     = "http://cutting.io"
@@ -19,13 +19,13 @@ Pod::Spec.new do |s|
     sp.platform = :ios, "10.3"
     sp.source_files = "UIKit/**/*"
     sp.dependency "Wireframe/UIKit"
-    sp.dependency "GroupSelection/Core"
+    sp.dependency "GroupSelectionFeature/Core"
   end
 
   s.subspec "Fakes" do |sp|
     sp.platform = :osx, "10.12"
     sp.source_files = "Fakes"
-    sp.dependency "GroupSelection/Core"
+    sp.dependency "GroupSelectionFeature/Core"
     sp.pod_target_xcconfig = { 'ENABLE_BITCODE' => 'NO' }
   end
 
@@ -33,7 +33,7 @@ Pod::Spec.new do |s|
     sp.platform = :osx, "10.12"
     sp.framework = 'XCTest'
     sp.source_files = "Tests"
-    sp.dependency "GroupSelection/Core"
+    sp.dependency "GroupSelectionFeature/Core"
     sp.dependency "Entity/Tests"
     sp.pod_target_xcconfig = { 'ENABLE_BITCODE' => 'NO' }
   end

@@ -3,17 +3,17 @@ PODS:
   - Entity/Core (0.0.1)
   - Entity/Tests (0.0.1):
     - Entity/Core
-  - GroupSelection/Core (0.0.1):
+  - GroupSelectionFeature/Core (0.0.1):
     - Entity/Core
     - Service/GroupService
     - Wireframe/Core
-  - GroupSelection/Fakes (0.0.1):
-    - GroupSelection/Core
-  - GroupSelection/Tests (0.0.1):
+  - GroupSelectionFeature/Fakes (0.0.1):
+    - GroupSelectionFeature/Core
+  - GroupSelectionFeature/Tests (0.0.1):
     - Entity/Tests
-    - GroupSelection/Core
-  - GroupSelection/UIKit (0.0.1):
-    - GroupSelection/Core
+    - GroupSelectionFeature/Core
+  - GroupSelectionFeature/UIKit (0.0.1):
+    - GroupSelectionFeature/Core
     - Wireframe/UIKit
   - OCSlimProject (1.3):
     - cslim
@@ -36,9 +36,9 @@ PODS:
 
 DEPENDENCIES:
   - Entity/Tests (from `Shared/Entity`)
-  - GroupSelection/Fakes (from `Shared/Features/GroupSelection`)
-  - GroupSelection/Tests (from `Shared/Features/GroupSelection`)
-  - GroupSelection/UIKit (from `Shared/Features/GroupSelection`)
+  - GroupSelectionFeature/Fakes (from `Shared/GroupSelectionFeature`)
+  - GroupSelectionFeature/Tests (from `Shared/GroupSelectionFeature`)
+  - GroupSelectionFeature/UIKit (from `Shared/GroupSelectionFeature`)
   - OCSlimProject
   - Service (from `Shared/Service`)
   - Utility (from `Shared/Utility`)
@@ -48,8 +48,8 @@ DEPENDENCIES:
 EXTERNAL SOURCES:
   Entity:
     :path: Shared/Entity
-  GroupSelection:
-    :path: Shared/Features/GroupSelection
+  GroupSelectionFeature:
+    :path: Shared/GroupSelectionFeature
   Service:
     :path: Shared/Service
   Utility:
@@ -60,12 +60,12 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   cslim: 75bc8dc738cdc5b7d51303f94544dad486bd9d3c
   Entity: 98d3df28836bb91826b26b683a061228d8d203f3
-  GroupSelection: 166d4813224e8adb0fa6c20189a2c9a404680e7f
+  GroupSelectionFeature: eb0d9532aaf09be173d7eddb10bf746b8be2c5bc
   OCSlimProject: a24337484ec168d7983ef507f75624bb8de21c15
   Service: 12b284cc040172c00c15b2648cdbd3e4bd74aad4
   Utility: 8d67861857a7b10a8ddb28a447004103876a7a92
   Wireframe: 368d9db912ecfb4777ba972350655afe4f730c04
 
-PODFILE CHECKSUM: 482be07c9e10d8605a17f41e378aa5de17213d6c
+PODFILE CHECKSUM: a0987c8a0f3d04cc155fd2175f1266a2d66be81c
 
 COCOAPODS: 1.2.1

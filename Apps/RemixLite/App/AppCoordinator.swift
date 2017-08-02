@@ -3,7 +3,7 @@
 import Wireframe
 import Entity
 import Service
-import GroupSelection
+import GroupSelectionFeature
 
 class AppCoordinator {
 

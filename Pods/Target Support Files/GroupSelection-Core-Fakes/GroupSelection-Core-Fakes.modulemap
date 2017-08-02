@@ -1,6 +1,0 @@
-framework module GroupSelection {
-  umbrella header "GroupSelection-Core-Fakes-umbrella.h"
-
-  export *
-  module * { export * }
-}
