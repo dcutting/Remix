@@ -14,7 +14,7 @@ class GroupSelectionInteractorTests: XCTestCase {
         subjectUnderTest = GroupSelectionInteractor(groupService: mockGroupService)
     }
 
-    func test_findSelectionType_groupDoesNotExist_returnsNotFound() {
+    func test_findSelectionType_groupDoesNotExist_returnsError() {
         subjectUnderTest.findSelectionType(for: "1") { result in
             switch result {
             case .error:
