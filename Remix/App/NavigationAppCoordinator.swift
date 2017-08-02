@@ -24,31 +24,32 @@ class NavigationAppCoordinator {
     }
 
     func start() {
-        let feature = makeFeature()
-        let coordinator = feature.makeCoordinatorUsing(navigationWireframe: navigationWireframe)
+        let groupSelectionFeature = makeGroupSelectionFeature()
+        let discoveryFeature = makeDiscoveryFeature(using: groupSelectionFeature)
+        let coordinator = discoveryFeature.makeCoordinatorUsing(navigationWireframe: navigationWireframe)
         discoveryCoordinator = coordinator
         coordinator.start()
     }
 
-    private func makeFeature() -> NavigationDiscoveryFeature {
+    private func makeDiscoveryFeature(using groupSelectionFeature: GroupSelectionFeature) -> NavigationDiscoveryFeature {
         let discoveryDeps = NavigationDiscoveryFeature.Dependencies(
             advertService: deps.advertService,
             groupService: deps.groupService,
             advertListViewFactory: AdvertListViewControllerFactory(),
             itemDetailViewFactory: ItemDetailViewControllerFactory(),
-            insertionFeature: makeInsertionFeature(),
-            groupSelectionFeature: makeGroupSelectionFeature()
+            insertionFeature: makeInsertionFeature(using: groupSelectionFeature),
+            groupSelectionFeature: groupSelectionFeature
         )
         return NavigationDiscoveryFeature(dependencies: discoveryDeps)
     }
 
-    private func makeInsertionFeature() -> InsertionFeature {
+    private func makeInsertionFeature(using groupSelectionFeature: GroupSelectionFeature) -> InsertionFeature {
         let featureDeps = AlternatingInsertionFeature.Dependencies(
             advertService: deps.advertService,
             groupRecommendationService: deps.groupRecommendationService,
             toastWireframeFactory: makeToastWireframeFactory(),
             textEntryStepViewFactory: makeTextEntryStepViewFactory(),
-            groupSelectionFeature: makeGroupSelectionFeature()
+            groupSelectionFeature: groupSelectionFeature
         )
         return AlternatingInsertionFeature(dependencies: featureDeps)
     }
