@@ -2,5 +2,6 @@
 
 public extension Viewable {
     func present(view: Viewable) {}
+    func present(view: Viewable, forSeconds: Double) {}
     func dismiss() {}
 }

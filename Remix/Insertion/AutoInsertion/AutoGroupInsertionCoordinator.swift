@@ -75,6 +75,7 @@ extension AutoGroupInsertionCoordinator {
     }
 
     private func showErrorToast() {
-        print("error")  // TODO
+        let toast = deps.toastWireframeFactory.make(message: "Could not publish advert")
+        deps.navigationWireframe.present(view: toast, forSeconds: 2)
     }
 }

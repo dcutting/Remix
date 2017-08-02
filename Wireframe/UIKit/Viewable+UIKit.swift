@@ -14,6 +14,13 @@ extension Viewable {
         viewController?.present(presented, animated: true)
     }
 
+    public func present(view: Viewable, forSeconds: Double) {
+        present(view: view)
+        DispatchQueue.main.asyncAfter(deadline: .now() + forSeconds) {
+            self.dismiss()
+        }
+    }
+
     public func dismiss() {
         viewController?.dismiss(animated: true)
     }

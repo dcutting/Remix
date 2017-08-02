@@ -2,5 +2,6 @@
 
 public protocol Viewable: class {
     func present(view: Viewable)
+    func present(view: Viewable, forSeconds: Double)
     func dismiss()
 }
