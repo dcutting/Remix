@@ -15,8 +15,13 @@ class GroupSelectionInteractorTests: XCTestCase {
     }
 
     func test_findSelectionType_groupDoesNotExist_returnsNotFound() {
-        subjectUnderTest.findSelectionType(for: "1") { actual in
-            XCTAssertEqual(GroupSelectionInteractor.SelectionType.notFound, actual)
+        subjectUnderTest.findSelectionType(for: "1") { result in
+            switch result {
+            case .error:
+                XCTAssertTrue(true)
+            default:
+                XCTFail()
+            }
         }
     }
 
@@ -24,8 +29,13 @@ class GroupSelectionInteractorTests: XCTestCase {
         mockGroupService.groups = [
             makeGroup(groupID: "1", children: [])
         ]
-        subjectUnderTest.findSelectionType(for: "1") { actual in
-            XCTAssertEqual(GroupSelectionInteractor.SelectionType.leafGroup, actual)
+        subjectUnderTest.findSelectionType(for: "1") { result in
+            switch result {
+            case let .success(actual):
+                XCTAssertEqual(GroupSelectionInteractor.SelectionType.leafGroup, actual)
+            default:
+                XCTFail()
+            }
         }
     }
 
@@ -33,8 +43,13 @@ class GroupSelectionInteractorTests: XCTestCase {
         mockGroupService.groups = [
             makeGroup(groupID: "1", children: ["2"])
         ]
-        subjectUnderTest.findSelectionType(for: "1") { actual in
-            XCTAssertEqual(GroupSelectionInteractor.SelectionType.parentGroup, actual)
+        subjectUnderTest.findSelectionType(for: "1") { result in
+            switch result {
+            case let .success(actual):
+                XCTAssertEqual(GroupSelectionInteractor.SelectionType.parentGroup, actual)
+            default:
+                XCTFail()
+            }
         }
     }
 

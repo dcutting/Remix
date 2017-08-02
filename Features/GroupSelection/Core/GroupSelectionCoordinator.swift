@@ -59,13 +59,16 @@ public class GroupSelectionCoordinator {
 extension GroupSelectionCoordinator: GroupSelectionViewDelegate {
 
     public func didSelect(groupID: GroupID) {
-        deps.interactor.findSelectionType(for: groupID) { selectionType in
-            switch selectionType {
-            case .leafGroup:
-                self.delegate?.didSelect(groupID: groupID)
-            case .parentGroup:
-                self.pushAndUpdateView(for: groupID)
-            case .notFound:
+        deps.interactor.findSelectionType(for: groupID) { result in
+            switch result {
+            case let .success(selectionType):
+                switch selectionType {
+                case .leafGroup:
+                    self.delegate?.didSelect(groupID: groupID)
+                case .parentGroup:
+                    self.pushAndUpdateView(for: groupID)
+                }
+            case .error:
                 self.delegate?.didCancelSelection()
             }
         }

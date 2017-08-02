@@ -10,7 +10,6 @@ class GroupSelectionInteractor {
     enum SelectionType {
         case leafGroup
         case parentGroup
-        case notFound
     }
 
     let groupService: GroupService
@@ -19,15 +18,14 @@ class GroupSelectionInteractor {
         self.groupService = groupService
     }
 
-    func findSelectionType(for groupID: GroupID, completion: @escaping (SelectionType) -> Void) {
+    func findSelectionType(for groupID: GroupID, completion: @escaping (AsyncResult<SelectionType>) -> Void) {
         groupService.fetchGroup(for: groupID) { result in
             switch result {
             case let .success(group):
                 let type: SelectionType = group.children.isEmpty ? .leafGroup : .parentGroup
-                completion(type)
+                completion(.success(type))
             case .error:
-                completion(.notFound)
-                return
+                completion(.error)
             }
         }
     }
