@@ -4,24 +4,13 @@ import UIKit
 
 class CalculatorCoordinator {
 
-    let service = CalculatorService()
-    let interactor: CalculatorInteractor
+    let interactor = CalculatorInteractor()
     let formatter = CalculatorFormatter()
     var view: CalculatorViewController?
-
-    init() {
-        interactor = CalculatorInteractor(service: service)
-    }
 
     func start() {
         view = makeCalculatorView()
         view?.delegate = self
-    }
-
-    private func makeCalculatorView() -> CalculatorViewController {
-        let storyboard = UIStoryboard(name: "CalculatorViewController", bundle: nil)
-        guard let viewController = storyboard.instantiateInitialViewController() as? CalculatorViewController else { preconditionFailure() }
-        return viewController
     }
 }
 
@@ -53,6 +42,15 @@ extension CalculatorCoordinator: CalculatorViewDelegate {
     private func showAbout() {
         let about = makeAboutView()
         view?.present(about, animated: true)
+    }
+}
+
+extension CalculatorCoordinator {
+
+    private func makeCalculatorView() -> CalculatorViewController {
+        let storyboard = UIStoryboard(name: "CalculatorViewController", bundle: nil)
+        guard let viewController = storyboard.instantiateInitialViewController() as? CalculatorViewController else { preconditionFailure() }
+        return viewController
     }
 
     private func makeAboutView() -> UIViewController {

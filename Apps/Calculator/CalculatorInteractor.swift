@@ -8,18 +8,12 @@ class CalculatorInteractor {
         let sum: Int
     }
 
-    private let service: CalculatorService
-
     private var augend: Int?
     private var addend: Int?
 
     var result: Result {
         let sum = [augend, addend].flatMap { $0 ?? 0 }.reduce(0, +)
         return Result(augend: augend, addend: addend, sum: sum)
-    }
-
-    init(service: CalculatorService) {
-        self.service = service
     }
 
     func update(augend: String) -> Result {

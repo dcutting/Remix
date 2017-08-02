@@ -2,17 +2,17 @@
 
 import UIKit
 
-struct CalculatorViewData {
-    let first: String
-    let second: String
-    let result: String
-}
-
 protocol CalculatorViewDelegate: class {
     func viewReady()
     func didChange(first: String)
     func didChange(second: String)
     func didTapAbout()
+}
+
+struct CalculatorViewData {
+    let first: String
+    let second: String
+    let result: String
 }
 
 class CalculatorViewController: UIViewController {
