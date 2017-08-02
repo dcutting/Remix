@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		31D79EC511E9E11079FA4464 /* Pods_Remix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AEF6ED3EA7AB8909F5D4114 /* Pods_Remix.framework */; };
+		602EA8C4A4BA1E62622EF524 /* Pods_GroupBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DCF0A76C8BF67D69D939733 /* Pods_GroupBrowser.framework */; };
 		C80A98301F2B8A93000382EA /* SelectAdvertOnPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80A982F1F2B8A93000382EA /* SelectAdvertOnPhone.swift */; };
 		C80A98371F2B98C1000382EA /* SelectAdvertOnTablet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80A98361F2B98C1000382EA /* SelectAdvertOnTablet.swift */; };
 		C8383DF11F322FE800AD92CF /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8383DA01F322FE800AD92CF /* AppCoordinator.swift */; };
@@ -125,26 +126,26 @@
 		C8A713531F2B2CFC007FF56A /* GivenTheseAdverts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A713521F2B2CFC007FF56A /* GivenTheseAdverts.swift */; };
 		C8A713551F2B2D5A007FF56A /* ListDisplaysAdverts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A713541F2B2D5A007FF56A /* ListDisplaysAdverts.swift */; };
 		DB6C496DFCF9FC07E5AE750A /* Pods_LogicTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9114D7BE59BDE078516E9BE9 /* Pods_LogicTests.framework */; };
-		E3B5F13F640B7D44A96063DD /* Pods_RemixLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD7CB01E4CC0CBF85A21A50E /* Pods_RemixLite.framework */; };
 		E98C63F88426C5984E425F7C /* Pods_AcceptanceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DEB216AD534D3A58535DB2B /* Pods_AcceptanceTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		06DC4658A54F932C0655AC7F /* Pods-LogicTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LogicTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LogicTests/Pods-LogicTests.release.xcconfig"; sourceTree = "<group>"; };
 		27C148F0CCBF988C7E375A81 /* Pods-Remix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Remix.release.xcconfig"; path = "Pods/Target Support Files/Pods-Remix/Pods-Remix.release.xcconfig"; sourceTree = "<group>"; };
+		30A43C5AB424D1E6D5C4362B /* Pods-GroupBrowser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroupBrowser.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GroupBrowser/Pods-GroupBrowser.debug.xcconfig"; sourceTree = "<group>"; };
+		3C01DDC12D93F4ED8052F734 /* Pods-GroupBrowser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroupBrowser.release.xcconfig"; path = "Pods/Target Support Files/Pods-GroupBrowser/Pods-GroupBrowser.release.xcconfig"; sourceTree = "<group>"; };
 		4289CCA45768224AE5ED488F /* Pods-AcceptanceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcceptanceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AcceptanceTests/Pods-AcceptanceTests.debug.xcconfig"; sourceTree = "<group>"; };
-		6C01F80CCBB2ACB2FCE7A5D9 /* Pods-RemixLite.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemixLite.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RemixLite/Pods-RemixLite.debug.xcconfig"; sourceTree = "<group>"; };
 		6EAFD3BE5E21D8B8DEC0AB35 /* Pods-AcceptanceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcceptanceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AcceptanceTests/Pods-AcceptanceTests.release.xcconfig"; sourceTree = "<group>"; };
 		7AEF6ED3EA7AB8909F5D4114 /* Pods_Remix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Remix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DCF0A76C8BF67D69D939733 /* Pods_GroupBrowser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GroupBrowser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85B4912FF4B9CF29512701CE /* Pods-LogicTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LogicTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LogicTests/Pods-LogicTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8DEB216AD534D3A58535DB2B /* Pods_AcceptanceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AcceptanceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9114D7BE59BDE078516E9BE9 /* Pods_LogicTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LogicTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE375153B2F6C2B9A2E95C37 /* Pods-Remix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Remix.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Remix/Pods-Remix.debug.xcconfig"; sourceTree = "<group>"; };
-		C20CFE14905ABAC5BA765D98 /* Pods-RemixLite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemixLite.release.xcconfig"; path = "Pods/Target Support Files/Pods-RemixLite/Pods-RemixLite.release.xcconfig"; sourceTree = "<group>"; };
 		C80A982F1F2B8A93000382EA /* SelectAdvertOnPhone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAdvertOnPhone.swift; sourceTree = "<group>"; };
 		C80A98361F2B98C1000382EA /* SelectAdvertOnTablet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAdvertOnTablet.swift; sourceTree = "<group>"; };
 		C81D0F3F1F28E499007481A2 /* LogicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C820EF031F2B9BC90036822A /* RemixLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemixLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C820EF031F2B9BC90036822A /* GroupBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroupBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8383DA01F322FE800AD92CF /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		C8383DA11F322FE800AD92CF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8383DA21F322FE800AD92CF /* NavigationAppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationAppCoordinator.swift; sourceTree = "<group>"; };
@@ -207,7 +208,6 @@
 		C8A713501F2B2C5D007FF56A /* GivenTheseGroups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GivenTheseGroups.swift; sourceTree = "<group>"; };
 		C8A713521F2B2CFC007FF56A /* GivenTheseAdverts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GivenTheseAdverts.swift; sourceTree = "<group>"; };
 		C8A713541F2B2D5A007FF56A /* ListDisplaysAdverts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDisplaysAdverts.swift; sourceTree = "<group>"; };
-		CD7CB01E4CC0CBF85A21A50E /* Pods_RemixLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RemixLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,7 +223,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3B5F13F640B7D44A96063DD /* Pods_RemixLite.framework in Frameworks */,
+				602EA8C4A4BA1E62622EF524 /* Pods_GroupBrowser.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,7 +252,7 @@
 				7AEF6ED3EA7AB8909F5D4114 /* Pods_Remix.framework */,
 				9114D7BE59BDE078516E9BE9 /* Pods_LogicTests.framework */,
 				8DEB216AD534D3A58535DB2B /* Pods_AcceptanceTests.framework */,
-				CD7CB01E4CC0CBF85A21A50E /* Pods_RemixLite.framework */,
+				7DCF0A76C8BF67D69D939733 /* Pods_GroupBrowser.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -266,8 +266,8 @@
 				06DC4658A54F932C0655AC7F /* Pods-LogicTests.release.xcconfig */,
 				4289CCA45768224AE5ED488F /* Pods-AcceptanceTests.debug.xcconfig */,
 				6EAFD3BE5E21D8B8DEC0AB35 /* Pods-AcceptanceTests.release.xcconfig */,
-				6C01F80CCBB2ACB2FCE7A5D9 /* Pods-RemixLite.debug.xcconfig */,
-				C20CFE14905ABAC5BA765D98 /* Pods-RemixLite.release.xcconfig */,
+				30A43C5AB424D1E6D5C4362B /* Pods-GroupBrowser.debug.xcconfig */,
+				3C01DDC12D93F4ED8052F734 /* Pods-GroupBrowser.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -276,7 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				C8383D9E1F322FE800AD92CF /* Remix */,
-				C8383DDE1F322FE800AD92CF /* RemixLite */,
+				C8383DDE1F322FE800AD92CF /* GroupBrowser */,
 				C8383DE71F322FE800AD92CF /* Shared */,
 			);
 			path = Apps;
@@ -481,13 +481,13 @@
 			path = UIKit;
 			sourceTree = "<group>";
 		};
-		C8383DDE1F322FE800AD92CF /* RemixLite */ = {
+		C8383DDE1F322FE800AD92CF /* GroupBrowser */ = {
 			isa = PBXGroup;
 			children = (
 				C8383DDF1F322FE800AD92CF /* App */,
 				C8383E801F32713100AD92CF /* Resources */,
 			);
-			path = RemixLite;
+			path = GroupBrowser;
 			sourceTree = "<group>";
 		};
 		C8383DDF1F322FE800AD92CF /* App */ = {
@@ -581,7 +581,7 @@
 				C84C23171F17AB770038E879 /* Remix.app */,
 				C81D0F3F1F28E499007481A2 /* LogicTests.xctest */,
 				C87C49E21F2A9EE400799AD3 /* AcceptanceTests.app */,
-				C820EF031F2B9BC90036822A /* RemixLite.app */,
+				C820EF031F2B9BC90036822A /* GroupBrowser.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -641,9 +641,9 @@
 			productReference = C81D0F3F1F28E499007481A2 /* LogicTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		C820EF021F2B9BC90036822A /* RemixLite */ = {
+		C820EF021F2B9BC90036822A /* GroupBrowser */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C820EF211F2B9BC90036822A /* Build configuration list for PBXNativeTarget "RemixLite" */;
+			buildConfigurationList = C820EF211F2B9BC90036822A /* Build configuration list for PBXNativeTarget "GroupBrowser" */;
 			buildPhases = (
 				8C76691AE6010AF743805F15 /* [CP] Check Pods Manifest.lock */,
 				3C6DDE95E2E234C4945E0550 /* [Amimono] Create filelist per architecture */,
@@ -656,9 +656,9 @@
 			);
 			dependencies = (
 			);
-			name = RemixLite;
-			productName = RemixLite;
-			productReference = C820EF031F2B9BC90036822A /* RemixLite.app */;
+			name = GroupBrowser;
+			productName = GroupBrowser;
+			productReference = C820EF031F2B9BC90036822A /* GroupBrowser.app */;
 			productType = "com.apple.product-type.application";
 		};
 		C84C23161F17AB770038E879 /* Remix */ = {
@@ -740,7 +740,7 @@
 			projectRoot = "";
 			targets = (
 				C84C23161F17AB770038E879 /* Remix */,
-				C820EF021F2B9BC90036822A /* RemixLite */,
+				C820EF021F2B9BC90036822A /* GroupBrowser */,
 				C81D0F3E1F28E499007481A2 /* LogicTests */,
 				C87C49E11F2A9EE400799AD3 /* AcceptanceTests */,
 			);
@@ -960,7 +960,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RemixLite/Pods-RemixLite-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GroupBrowser/Pods-GroupBrowser-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FFE681233226F68F29AA9B96 /* [CP] Copy Pods Resources */ = {
@@ -1174,14 +1174,14 @@
 		};
 		C820EF1D1F2B9BC90036822A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6C01F80CCBB2ACB2FCE7A5D9 /* Pods-RemixLite.debug.xcconfig */;
+			baseConfigurationReference = 30A43C5AB424D1E6D5C4362B /* Pods-GroupBrowser.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3H86HRS574;
-				INFOPLIST_FILE = Apps/RemixLite/Resources/Info.plist;
+				INFOPLIST_FILE = Apps/GroupBrowser/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.cutting.RemixLite;
+				PRODUCT_BUNDLE_IDENTIFIER = io.cutting.GroupBrowser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1190,14 +1190,14 @@
 		};
 		C820EF1E1F2B9BC90036822A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C20CFE14905ABAC5BA765D98 /* Pods-RemixLite.release.xcconfig */;
+			baseConfigurationReference = 3C01DDC12D93F4ED8052F734 /* Pods-GroupBrowser.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3H86HRS574;
-				INFOPLIST_FILE = Apps/RemixLite/Resources/Info.plist;
+				INFOPLIST_FILE = Apps/GroupBrowser/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.cutting.RemixLite;
+				PRODUCT_BUNDLE_IDENTIFIER = io.cutting.GroupBrowser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1387,7 +1387,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C820EF211F2B9BC90036822A /* Build configuration list for PBXNativeTarget "RemixLite" */ = {
+		C820EF211F2B9BC90036822A /* Build configuration list for PBXNativeTarget "GroupBrowser" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C820EF1D1F2B9BC90036822A /* Debug */,

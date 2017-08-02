@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_RemixLiteVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_RemixLiteVersionString[];
+FOUNDATION_EXPORT double Pods_GroupBrowserVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_GroupBrowserVersionString[];
 

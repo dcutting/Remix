@@ -10,7 +10,7 @@ target :Remix do
   pod 'GroupSelectionFeature/UIKit', :path => 'Shared/GroupSelectionFeature'
 end
 
-target :RemixLite do
+target :GroupBrowser do
   pod 'Wireframe/UIKit', :path => 'Shared/Wireframe'
   pod 'Service', :path => 'Shared/Service'
   pod 'GroupSelectionFeature/UIKit', :path => 'Shared/GroupSelectionFeature'

@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C820EF021F2B9BC90036822A"
-               BuildableName = "RemixLite.app"
-               BlueprintName = "RemixLite"
+               BuildableName = "GroupBrowser.app"
+               BlueprintName = "GroupBrowser"
                ReferencedContainer = "container:Remix.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,23 +29,13 @@
       language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C820EF151F2B9BC90036822A"
-               BuildableName = "RemixLiteTests.xctest"
-               BlueprintName = "RemixLiteTests"
-               ReferencedContainer = "container:Remix.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C820EF021F2B9BC90036822A"
-            BuildableName = "RemixLite.app"
-            BlueprintName = "RemixLite"
+            BuildableName = "GroupBrowser.app"
+            BlueprintName = "GroupBrowser"
             ReferencedContainer = "container:Remix.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -68,8 +58,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C820EF021F2B9BC90036822A"
-            BuildableName = "RemixLite.app"
-            BlueprintName = "RemixLite"
+            BuildableName = "GroupBrowser.app"
+            BlueprintName = "GroupBrowser"
             ReferencedContainer = "container:Remix.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -87,8 +77,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C820EF021F2B9BC90036822A"
-            BuildableName = "RemixLite.app"
-            BlueprintName = "RemixLite"
+            BuildableName = "GroupBrowser.app"
+            BlueprintName = "GroupBrowser"
             ReferencedContainer = "container:Remix.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
