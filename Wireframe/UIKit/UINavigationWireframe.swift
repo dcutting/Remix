@@ -46,6 +46,10 @@ public class UINavigationWireframe: UINavigationController, NavigationWireframe 
     public func unsetPopCheckpoint() {
         _ = popCheckpoints.popLast()
     }
+
+    public func setLeftButton(title: String, target: Any, selector: Selector) {
+        topViewController?.navigationItem.leftBarButtonItem = UIBarButtonItem(title: title, style: .plain, target: target, action: selector)
+    }
 }
 
 extension UINavigationWireframe: UINavigationControllerDelegate {

@@ -24,4 +24,5 @@ public protocol NavigationWireframe: Viewable {
     func popToLastCheckpoint()
     func setPopCheckpoint()
     func unsetPopCheckpoint()
+    func setLeftButton(title: String, target: Any, selector: Selector)
 }

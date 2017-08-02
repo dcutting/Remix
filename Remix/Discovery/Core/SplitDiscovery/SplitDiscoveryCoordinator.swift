@@ -107,6 +107,7 @@ extension SplitDiscoveryCoordinator: InsertionCoordinatorDelegate {
         insertionCoordinator = coordinator
         coordinator.start()
         deps.splitWireframe.present(view: navigationWireframe)
+        navigationWireframe.setLeftButton(title: "Cancel", target: self, selector: #selector(finishInsertion))
     }
 
     func didPublishAdvert(advertID: AdvertID) {
@@ -118,7 +119,7 @@ extension SplitDiscoveryCoordinator: InsertionCoordinatorDelegate {
         finishInsertion()
     }
 
-    private func finishInsertion() {
+    @objc private func finishInsertion() {
         deps.splitWireframe.dismiss()
         insertionCoordinator = nil
     }
