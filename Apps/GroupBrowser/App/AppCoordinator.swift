@@ -12,7 +12,7 @@ class AppCoordinator {
     let groupDetailFormatter = GroupDetailFormatter()
     let viewFactory = ItemDetailViewControllerFactory()
 
-    var appCoordinator: GroupSelectionCoordinator?
+    var groupSelectionCoordinator: GroupSelectionCoordinator?
 
     func start(window: UIWindow) {
         window.rootViewController = navigationWireframe.viewController
@@ -25,9 +25,9 @@ extension AppCoordinator: GroupSelectionCoordinatorDelegate {
 
     private func startGroupSelection() {
         navigationWireframe.setPopCheckpoint()
-        appCoordinator = makeGroupSelectionCoordinator()
-        appCoordinator?.delegate = self
-        appCoordinator?.start()
+        groupSelectionCoordinator = makeGroupSelectionCoordinator()
+        groupSelectionCoordinator?.delegate = self
+        groupSelectionCoordinator?.start()
     }
 
     func didSelect(groupID: GroupID?) {
