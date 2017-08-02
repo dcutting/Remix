@@ -57,6 +57,7 @@ extension AutoGroupInsertionCoordinator: TextEntryStepViewDelegate {
     }
 
     func didGoBack(withText text: String) {
+        delegate?.didCancelInsertion()
     }
 }
 

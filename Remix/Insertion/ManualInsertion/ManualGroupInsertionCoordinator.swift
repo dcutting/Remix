@@ -59,6 +59,7 @@ extension ManualGroupInsertionCoordinator: GroupSelectionCoordinatorDelegate {
 
     func didCancelSelection() {
         cleanup()
+        delegate?.didCancelInsertion()
     }
 }
 

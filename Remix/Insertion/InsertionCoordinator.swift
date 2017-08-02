@@ -5,6 +5,7 @@ import Entity
 
 protocol InsertionCoordinatorDelegate: class {
     func didPublishAdvert(advertID: AdvertID)
+    func didCancelInsertion()
 }
 
 protocol InsertionCoordinator: class {

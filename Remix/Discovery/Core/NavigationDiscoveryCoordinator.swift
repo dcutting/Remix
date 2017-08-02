@@ -83,6 +83,10 @@ extension NavigationDiscoveryCoordinator: InsertionCoordinatorDelegate {
         finishInsertion()
     }
 
+    func didCancelInsertion() {
+        finishInsertion()
+    }
+
     private func finishInsertion() {
         insertionCoordinator = nil
         deps.navigationWireframe.popToLastCheckpoint()
