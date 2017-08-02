@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name         = "Services"
+  s.name         = "Service"
   s.version      = "0.0.1"
   s.summary      = "Shared services and gateways"
   s.homepage     = "http://cutting.io"

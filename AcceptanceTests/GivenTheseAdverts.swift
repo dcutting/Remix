@@ -2,7 +2,7 @@
 
 import Foundation
 import Entity
-import Services
+import Service
 
 public let mockAdvertService = MockAdvertService()
 

@@ -2,7 +2,7 @@
 
 import Wireframe
 import Entity
-import Services
+import Service
 import GroupSelection
 
 class AppCoordinator {

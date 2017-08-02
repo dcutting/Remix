@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
     sp.source_files = "Core/**/*"
     sp.dependency "Wireframe/Core"
     sp.dependency "Entity/Core"
-    sp.dependency "Services/GroupService"
+    sp.dependency "Service/GroupService"
   end
 
   s.subspec "UIKit" do |sp|

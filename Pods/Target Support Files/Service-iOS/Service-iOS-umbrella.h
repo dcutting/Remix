@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double ServicesVersionNumber;
-FOUNDATION_EXPORT const unsigned char ServicesVersionString[];
+FOUNDATION_EXPORT double ServiceVersionNumber;
+FOUNDATION_EXPORT const unsigned char ServiceVersionString[];
 

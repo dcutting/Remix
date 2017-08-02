@@ -6,13 +6,13 @@ plugin 'cocoapods-amimono'
 
 target :Remix do
   pod 'Wireframe/UIKit', :path => 'Shared/Wireframe'
-  pod 'Services', :path => 'Shared/Services'
+  pod 'Service', :path => 'Shared/Service'
   pod 'GroupSelection/UIKit', :path => 'Shared/Features/GroupSelection'
 end
 
 target :RemixLite do
   pod 'Wireframe/UIKit', :path => 'Shared/Wireframe'
-  pod 'Services', :path => 'Shared/Services'
+  pod 'Service', :path => 'Shared/Service'
   pod 'GroupSelection/UIKit', :path => 'Shared/Features/GroupSelection'
 end
 
@@ -20,7 +20,7 @@ target :LogicTests do
   platform :osx, '10.12'
   pod 'Wireframe/Fakes', :path => 'Shared/Wireframe'
   pod 'Entity/Tests', :path => 'Shared/Entity'
-  pod 'Services', :path => 'Shared/Services'
+  pod 'Service', :path => 'Shared/Service'
   pod 'GroupSelection/Tests', :path => 'Shared/Features/GroupSelection'
 end
 
@@ -28,7 +28,7 @@ target :AcceptanceTests do
   platform :osx, '10.12'
   pod 'OCSlimProject'
   pod 'Wireframe/Fakes', :path => 'Shared/Wireframe'
-  pod 'Services', :path => 'Shared/Services'
+  pod 'Service', :path => 'Shared/Service'
   pod 'GroupSelection/Fakes', :path => 'Shared/Features/GroupSelection'
 end
 

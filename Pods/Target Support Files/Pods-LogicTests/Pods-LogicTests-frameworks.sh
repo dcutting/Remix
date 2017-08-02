@@ -91,14 +91,14 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Entity-Core-Tests/Entity.framework"
   install_framework "$BUILT_PRODUCTS_DIR/GroupSelection-Core-Tests/GroupSelection.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/Services-OSX/Services.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Service-OSX/Service.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Utility-Core/Utility.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Wireframe-Core-Fakes/Wireframe.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Entity-Core-Tests/Entity.framework"
   install_framework "$BUILT_PRODUCTS_DIR/GroupSelection-Core-Tests/GroupSelection.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/Services-OSX/Services.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Service-OSX/Service.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Utility-Core/Utility.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Wireframe-Core-Fakes/Wireframe.framework"
 fi

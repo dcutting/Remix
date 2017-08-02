@@ -1,7 +1,7 @@
 //  Copyright © 2017 cutting.io. All rights reserved.
 
 import Entity
-import Services
+import Service
 
 class AppCoordinator {
 

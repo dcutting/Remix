@@ -2,7 +2,7 @@
 
 import XCTest
 import Entity
-import Services
+import Service
 
 class AdvertListInteractorTests: XCTestCase {
 
