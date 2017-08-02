@@ -14,6 +14,7 @@ class SplitDiscoveryFeature {
         let itemDetailViewFactory: ItemDetailViewFactory
         let navigationWireframeFactory: NavigationWireframeFactory
         let groupSelectionFeature: GroupSelectionFeature
+        let insertionFeature: InsertionFeature
     }
 
     private let deps: Dependencies
@@ -30,7 +31,8 @@ class SplitDiscoveryFeature {
             detailFormatter: makeDetailFormatter(),
             detailViewFactory: deps.itemDetailViewFactory,
             advertListFeature: makeAdvertListFeature(),
-            groupSelectionFeature: deps.groupSelectionFeature
+            groupSelectionFeature: deps.groupSelectionFeature,
+            insertionFeature: deps.insertionFeature
         )
         return SplitDiscoveryCoordinator(dependencies: coordinatorDeps)
     }

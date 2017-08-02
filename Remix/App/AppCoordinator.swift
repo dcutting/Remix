@@ -53,7 +53,7 @@ class AppCoordinator {
     }
 
     private func start_iPad(window: UIWindow) -> Any {
-        let deps = SplitAppCoordinator.Dependencies(advertService: advertService, groupService: groupService)
+        let deps = SplitAppCoordinator.Dependencies(advertService: advertService, groupService: groupService, groupRecommendationService: groupRecommendationService)
         let coordinator = SplitAppCoordinator(window: window, dependencies: deps)
         coordinator.start()
         return coordinator

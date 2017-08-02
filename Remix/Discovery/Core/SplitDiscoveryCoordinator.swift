@@ -18,11 +18,13 @@ class SplitDiscoveryCoordinator {
 
         let advertListFeature: AdvertListFeature
         let groupSelectionFeature: GroupSelectionFeature
+        let insertionFeature: InsertionFeature
     }
 
     private var deps: Dependencies
     private var advertListCoordinator: AdvertListCoordinator?
     private var groupSelectionCoordinator: GroupSelectionCoordinator?
+    private var insertionCoordinator: InsertionCoordinator?
 
     init(dependencies: Dependencies) {
         deps = dependencies
@@ -62,7 +64,7 @@ extension SplitDiscoveryCoordinator: AdvertListCoordinatorDelegate {
     }
 
     func didSelectNewAdvertAction() {
-        // TODO
+        startInsertion()
     }
 
     func didSelectFiltersAction() {
@@ -93,5 +95,31 @@ extension SplitDiscoveryCoordinator: GroupSelectionCoordinatorDelegate {
     private func finishGroupSelection() {
         deps.splitWireframe.dismiss()
         groupSelectionCoordinator = nil
+    }
+}
+
+extension SplitDiscoveryCoordinator: InsertionCoordinatorDelegate {
+
+    private func startInsertion() {
+        let navigationWireframe = deps.navigationWireframeFactory.make()
+        let coordinator = deps.insertionFeature.makeCoordinatorUsing(navigationWireframe: navigationWireframe)
+        coordinator.delegate = self
+        insertionCoordinator = coordinator
+        coordinator.start()
+        deps.splitWireframe.present(view: navigationWireframe)
+    }
+
+    func didPublishAdvert(advertID: AdvertID) {
+        advertListCoordinator?.reloadAdverts()
+        finishInsertion()
+    }
+
+    func didCancelInsertion() {
+        finishInsertion()
+    }
+
+    private func finishInsertion() {
+        deps.splitWireframe.dismiss()
+        insertionCoordinator = nil
     }
 }
