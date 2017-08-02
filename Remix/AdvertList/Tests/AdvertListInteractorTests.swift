@@ -33,7 +33,7 @@ class AdvertListInteractorTests: XCTestCase {
         mockAdvertService.adverts = mockAdverts
         mockGroupService.groups = mockGroups
 
-        subjectUnderTest.update(for: nil) { (actualAdverts, actualGroups) in
+        subjectUnderTest.updateFilter(for: nil) { (actualAdverts, actualGroups) in
 
             let expectedAdverts = mockAdverts
             XCTAssertEqual(expectedAdverts, actualAdverts)
@@ -60,7 +60,7 @@ class AdvertListInteractorTests: XCTestCase {
         mockAdvertService.adverts = mockAdverts
         mockGroupService.groups = mockGroups
 
-        subjectUnderTest.update(for: "1") { (actualAdverts, actualGroups) in
+        subjectUnderTest.updateFilter(for: "1") { (actualAdverts, actualGroups) in
 
             let expectedAdverts = [
                 mockAdverts[0], mockAdverts[1]
