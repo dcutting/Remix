@@ -1,6 +1,5 @@
 //  Copyright © 2017 cutting.io. All rights reserved.
 
-import Foundation
 import Utility
 import Entity
 import Services
