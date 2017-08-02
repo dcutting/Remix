@@ -1,7 +1,5 @@
 //  Copyright © 2017 cutting.io. All rights reserved.
 
-import Foundation
-
 public protocol Navigatable: Viewable {
     // Implement this in your view if you want to do something when the view is popped
     // from the navigation coordinator, such as notify a delegate that the operation

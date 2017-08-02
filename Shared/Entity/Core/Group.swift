@@ -1,10 +1,9 @@
 //  Copyright © 2017 cutting.io. All rights reserved.
 
-import Foundation
-
 public typealias GroupID = String
 
 public struct Group {
+
     public let groupID: GroupID
     public let parent: GroupID?
     public let children: [GroupID]
@@ -21,6 +20,7 @@ public struct Group {
 }
 
 extension Group: Equatable {
+    
     public static func ==(lhs: Group, rhs: Group) -> Bool {
         return lhs.groupID == rhs.groupID &&
             lhs.parent == rhs.parent &&

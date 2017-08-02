@@ -1,6 +1,5 @@
 //  Copyright © 2017 cutting.io. All rights reserved.
 
-import Foundation
 import Wireframe
 import Entity
 
@@ -12,8 +11,8 @@ public protocol GroupSelectionCoordinatorDelegate: class {
 public class GroupSelectionCoordinator {
 
     public struct Dependencies {
-        let navigationWireframe: NavigationWireframe
-        let groupSelectionViewFactory: GroupSelectionViewFactory
+        let navigator: NavigationWireframe
+        let viewFactory: GroupSelectionViewFactory
         let interactor: GroupSelectionInteractor
         let formatter: GroupSelectionFormatter
     }
@@ -28,49 +27,65 @@ public class GroupSelectionCoordinator {
     }
 
     public func start() {
-        rootView = pushAndUpdateView()
+        pushRootGroupView()
+    }
+}
+
+extension GroupSelectionCoordinator: GroupSelectionViewDelegate {
+
+    public func pushRootGroupView() {
+        rootView = pushGroupView(groupID: nil)
     }
 
-    @discardableResult private func pushAndUpdateView(for groupID: GroupID? = nil) -> GroupSelectionView {
-        let view = deps.groupSelectionViewFactory.make()
+    @discardableResult private func pushGroupView(groupID: GroupID?) -> GroupSelectionView {
+        let view = deps.viewFactory.make()
         view.delegate = self
-        deps.navigationWireframe.push(view: view)
+        deps.navigator.push(view: view)
         update(view: view, for: groupID)
         return view
     }
 
-    private func update(view: GroupSelectionView, for parentGroupID: GroupID?) {
-        deps.interactor.fetchGroups(parentGroupID: parentGroupID) { result in
+    private func update(view: GroupSelectionView, for groupID: GroupID?) {
+        deps.interactor.fetchGroups(parentGroupID: groupID) { result in
             switch result {
             case let .success(groups):
-                let viewData = self.deps.formatter.prepare(groups: groups)
-                view.viewData = viewData
+                self.update(view: view, groups: groups)
             case .error:
                 self.presentError()
             }
         }
     }
 
+    private func update(view: GroupSelectionView, groups: [Group]) {
+        let viewData = deps.formatter.prepare(groups: groups)
+        view.viewData = viewData
+    }
+
     private func presentError() {
         print("could not load child groups")  // See AutoGroupInsertionCoordinator example
     }
-}
-
-extension GroupSelectionCoordinator: GroupSelectionViewDelegate {
 
     public func didSelect(groupID: GroupID) {
+        selectLeafOrViewChildren(groupID: groupID)
+    }
+
+    private func selectLeafOrViewChildren(groupID: GroupID) {
         deps.interactor.findSelectionType(for: groupID) { result in
             switch result {
             case let .success(selectionType):
-                switch selectionType {
-                case .leafGroup:
-                    self.delegate?.didSelect(groupID: groupID)
-                case .parentGroup:
-                    self.pushAndUpdateView(for: groupID)
-                }
+                self.selectLeafOrViewChildren(groupID: groupID, selectionType: selectionType)
             case .error:
                 self.delegate?.didCancelSelection()
             }
+        }
+    }
+
+    private func selectLeafOrViewChildren(groupID: GroupID, selectionType: GroupSelectionInteractor.SelectionType) {
+        switch selectionType {
+        case .leafGroup:
+            delegate?.didSelect(groupID: groupID)
+        case .parentGroup:
+            pushGroupView(groupID: groupID)
         }
     }
 

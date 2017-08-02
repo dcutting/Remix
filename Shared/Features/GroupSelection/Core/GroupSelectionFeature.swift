@@ -25,8 +25,8 @@ public class GroupSelectionFeature {
 
     public func makeCoordinatorUsing(navigationWireframe: NavigationWireframe) -> GroupSelectionCoordinator {
         let coordinatorDeps = GroupSelectionCoordinator.Dependencies(
-            navigationWireframe: navigationWireframe,
-            groupSelectionViewFactory: deps.groupSelectionViewFactory,
+            navigator: navigationWireframe,
+            viewFactory: deps.groupSelectionViewFactory,
             interactor: makeInteractor(),
             formatter: makeFormatter()
         )

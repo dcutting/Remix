@@ -1,6 +1,5 @@
 //  Copyright © 2017 cutting.io. All rights reserved.
 
-import Foundation
 import Utility
 import Entity
 
@@ -26,15 +25,19 @@ public class MockAdvertService: AdvertService {
     }
 
     public func publish(draft: Draft, completion: @escaping (AsyncResult<AdvertID>) -> Void) {
-        let advertID = "\(UUID())"
-        let title = draft.title ?? "<untitled>"
-        let description = ""
+
         guard let groupID = draft.groupID else {
             completion(.error)
             return
         }
+
+        let advertID = "\(UUID())"
+        let title = draft.title ?? "<untitled>"
+        let description = ""
+
         let advert = Advert(advertID: advertID, title: title, description: description, groupID: groupID)
         adverts.append(advert)
+        
         completion(.success(advertID))
     }
 }
