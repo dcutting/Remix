@@ -12,8 +12,8 @@ class CalculatorFormatter {
 
     func prepare(result: CalculatorInteractor.Result) -> CalculatorViewData {
 
-        let first = stringify(result.first)
-        let second = stringify(result.second)
+        let first = stringify(result.augend)
+        let second = stringify(result.addend)
         let spelledOutResult = numberFormatter.string(for: result.sum) ?? ""
 
         return CalculatorViewData(first: first, second: second, result: spelledOutResult)

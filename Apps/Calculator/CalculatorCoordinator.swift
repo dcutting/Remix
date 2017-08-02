@@ -32,12 +32,12 @@ extension CalculatorCoordinator: CalculatorViewDelegate {
     }
 
     func didChange(first: String) {
-        let result = interactor.update(first: first)
+        let result = interactor.update(augend: first)
         updateView(result: result)
     }
 
     func didChange(second: String) {
-        let result = interactor.update(second: second)
+        let result = interactor.update(addend: second)
         updateView(result: result)
     }
 

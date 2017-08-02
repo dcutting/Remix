@@ -3,32 +3,32 @@
 class CalculatorInteractor {
 
     struct Result {
-        let first: Int?
-        let second: Int?
-        let sum: Int?
+        let augend: Int?
+        let addend: Int?
+        let sum: Int
     }
 
     private let service: CalculatorService
 
-    private var first: Int?
-    private var second: Int?
+    private var augend: Int?
+    private var addend: Int?
 
     var result: Result {
-        let sum = [first, second].flatMap { $0 ?? 0 }.reduce(0, +)
-        return Result(first: first, second: second, sum: sum)
+        let sum = [augend, addend].flatMap { $0 ?? 0 }.reduce(0, +)
+        return Result(augend: augend, addend: addend, sum: sum)
     }
 
     init(service: CalculatorService) {
         self.service = service
     }
 
-    func update(first: String) -> Result {
-        self.first = Int(first)
+    func update(augend: String) -> Result {
+        self.augend = Int(augend)
         return result
     }
 
-    func update(second: String) -> Result {
-        self.second = Int(second)
+    func update(addend: String) -> Result {
+        self.addend = Int(addend)
         return result
     }
 }

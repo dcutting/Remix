@@ -29,9 +29,13 @@ class CalculatorViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureObservers()
+        delegate?.viewReady()
+    }
+
+    private func configureObservers() {
         firstTextField?.addTarget(self, action: #selector(firstDidChange), for: .editingChanged)
         secondTextField?.addTarget(self, action: #selector(secondDidChange), for: .editingChanged)
-        delegate?.viewReady()
     }
 
     private func updateView() {
