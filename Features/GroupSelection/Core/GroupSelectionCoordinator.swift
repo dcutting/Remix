@@ -40,10 +40,19 @@ public class GroupSelectionCoordinator {
     }
 
     private func update(view: GroupSelectionView, for parentGroupID: GroupID?) {
-        deps.interactor.fetchGroups(parentGroupID: parentGroupID) { groups in
-            let viewData = self.deps.formatter.prepare(groups: groups)
-            view.viewData = viewData
+        deps.interactor.fetchGroups(parentGroupID: parentGroupID) { result in
+            switch result {
+            case let .success(groups):
+                let viewData = self.deps.formatter.prepare(groups: groups)
+                view.viewData = viewData
+            case .error:
+                self.showErrorToast()
+            }
         }
+    }
+
+    private func showErrorToast() {
+        print("error")  // TODO
     }
 }
 

@@ -46,12 +46,18 @@ class GroupSelectionInteractorTests: XCTestCase {
         ]
         mockGroupService.groups = mockGroups
 
-        subjectUnderTest.fetchGroups(parentGroupID: nil) { actual in
-            let expected = [
-                mockGroups[0],
-                mockGroups[2]
-            ]
-            XCTAssertEqual(expected, actual)
+        subjectUnderTest.fetchGroups(parentGroupID: nil) { result in
+
+            switch result {
+            case let .success(actual):
+                let expected = [
+                    mockGroups[0],
+                    mockGroups[2]
+                ]
+                XCTAssertEqual(expected, actual)
+            default:
+                XCTFail()
+            }
         }
     }
 }

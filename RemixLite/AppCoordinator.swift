@@ -57,12 +57,20 @@ extension AppCoordinator: GroupSelectionCoordinatorDelegate {
     }
 
     private func pushDetailView(for groupID: GroupID) {
-        groupService.fetchGroup(for: groupID) { group in
-            guard let group = group else { return }
-            let detailView = ItemDetailViewControllerFactory().make()
-            detailView.viewData = GroupDetailFormatter().prepare(group: group)
-            self.navigationWireframe.push(view: detailView)
+        groupService.fetchGroup(for: groupID) { result in
+            switch result {
+            case let .success(group):
+                let detailView = ItemDetailViewControllerFactory().make()
+                detailView.viewData = GroupDetailFormatter().prepare(group: group)
+                self.navigationWireframe.push(view: detailView)
+            case .error:
+                self.showErrorToast()
+            }
         }
+    }
+
+    private func showErrorToast() {
+        print("error")  // TODO
     }
 
     private func popToRoot() {

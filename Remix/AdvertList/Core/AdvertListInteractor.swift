@@ -23,12 +23,17 @@ class AdvertListInteractor {
     }
 
     func refetchFilteredAdverts(completion: @escaping (AsyncResult<([Advert], [Group])>) -> Void) {
-        advertService.fetchAdverts { result in
-            switch result {
+        advertService.fetchAdverts { advertsResult in
+            switch advertsResult {
             case let .success(adverts):
-                self.groupService.fetchGroups { groups in
-                    let filteredAdverts = self.filter(adverts: adverts, for: self.filteredGroupID)
-                    completion(.success((filteredAdverts, groups)))
+                self.groupService.fetchGroups { groupsResult in
+                    switch groupsResult {
+                    case let .success(groups):
+                        let filteredAdverts = self.filter(adverts: adverts, for: self.filteredGroupID)
+                        completion(.success((filteredAdverts, groups)))
+                    case .error:
+                        completion(.error)
+                    }
                 }
             case .error:
                 completion(.error)
