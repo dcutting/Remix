@@ -14,10 +14,7 @@ class CalculatorInteractor {
     private var second: Int?
 
     var result: Result {
-        var sum: Int?
-        if let first = first, let second = second {
-            sum = first + second
-        }
+        let sum = [first, second].flatMap { $0 ?? 0 }.reduce(0, +)
         return Result(first: first, second: second, sum: sum)
     }
 
