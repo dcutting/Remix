@@ -302,9 +302,7 @@
 		C820EF041F2B9BC90036822A /* RemixLite */ = {
 			isa = PBXGroup;
 			children = (
-				C820EF051F2B9BC90036822A /* AppDelegate.swift */,
-				C820EF231F2B9D410036822A /* AppCoordinator.swift */,
-				C80F0F8C1F30011A00F61892 /* GroupDetailFormatter.swift */,
+				C8383D141F322CD900AD92CF /* App */,
 				C820EF0C1F2B9BC90036822A /* Assets.xcassets */,
 				C820EF0E1F2B9BC90036822A /* LaunchScreen.storyboard */,
 				C820EF111F2B9BC90036822A /* Info.plist */,
@@ -319,6 +317,42 @@
 				C837B18E1F30E51000D9E81E /* FakeTextEntryStepViewFactory.swift */,
 			);
 			path = Fakes;
+			sourceTree = "<group>";
+		};
+		C8383D121F322C6600AD92CF /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				C84C23461F17AD6A0038E879 /* DiscoveryFeature */,
+				C8C2CAC91F28B3E800F37288 /* AdvertListFeature */,
+				C84C234F1F17AFF00038E879 /* ItemDetailView */,
+				C84C23481F17ADDA0038E879 /* InsertionFeature */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
+		C8383D131F322CBB00AD92CF /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C883C31A1F311BF3004FFE89 /* InsertionFeature.swift */,
+				C883C3121F30EE49004FFE89 /* InsertionCoordinator.swift */,
+				C83A458A1F313DD100437220 /* AlternatingInsertion */,
+				C83A45791F3120E500437220 /* AutoInsertion */,
+				C83A457A1F3120ED00437220 /* ManualInsertion */,
+				C84D01751F309B62003988D6 /* InsertionInteractor.swift */,
+				C84D01791F309BCB003988D6 /* TitleStepFormatter.swift */,
+				C80F0F8E1F3078EC00F61892 /* TextEntryStepView.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		C8383D141F322CD900AD92CF /* App */ = {
+			isa = PBXGroup;
+			children = (
+				C820EF051F2B9BC90036822A /* AppDelegate.swift */,
+				C820EF231F2B9D410036822A /* AppCoordinator.swift */,
+				C80F0F8C1F30011A00F61892 /* GroupDetailFormatter.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 		C83A45791F3120E500437220 /* AutoInsertion */ = {
@@ -377,10 +411,7 @@
 			isa = PBXGroup;
 			children = (
 				C84C233D1F17AC760038E879 /* App */,
-				C84C23461F17AD6A0038E879 /* Discovery */,
-				C8C2CAC91F28B3E800F37288 /* AdvertList */,
-				C84C234F1F17AFF00038E879 /* ItemDetail */,
-				C84C23481F17ADDA0038E879 /* Insertion */,
+				C8383D121F322C6600AD92CF /* Elements */,
 				C84C23211F17AB770038E879 /* Assets.xcassets */,
 				C84C23231F17AB770038E879 /* LaunchScreen.storyboard */,
 				C84C23261F17AB770038E879 /* Info.plist */,
@@ -399,40 +430,33 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		C84C23461F17AD6A0038E879 /* Discovery */ = {
+		C84C23461F17AD6A0038E879 /* DiscoveryFeature */ = {
 			isa = PBXGroup;
 			children = (
 				C8A696771F2A907400C0DEDD /* Core */,
 				C8A696781F2A908900C0DEDD /* Tests */,
 			);
-			path = Discovery;
+			path = DiscoveryFeature;
 			sourceTree = "<group>";
 		};
-		C84C23481F17ADDA0038E879 /* Insertion */ = {
+		C84C23481F17ADDA0038E879 /* InsertionFeature */ = {
 			isa = PBXGroup;
 			children = (
-				C883C31A1F311BF3004FFE89 /* InsertionFeature.swift */,
-				C883C3121F30EE49004FFE89 /* InsertionCoordinator.swift */,
-				C83A458A1F313DD100437220 /* AlternatingInsertion */,
-				C83A45791F3120E500437220 /* AutoInsertion */,
-				C83A457A1F3120ED00437220 /* ManualInsertion */,
-				C84D01751F309B62003988D6 /* InsertionInteractor.swift */,
-				C84D01791F309BCB003988D6 /* TitleStepFormatter.swift */,
-				C80F0F8E1F3078EC00F61892 /* TextEntryStepView.swift */,
+				C8383D131F322CBB00AD92CF /* Core */,
 				C80F0F941F3079D300F61892 /* UIKit */,
 				C837B1891F30E4BF00D9E81E /* Fakes */,
 			);
-			path = Insertion;
+			path = InsertionFeature;
 			sourceTree = "<group>";
 		};
-		C84C234F1F17AFF00038E879 /* ItemDetail */ = {
+		C84C234F1F17AFF00038E879 /* ItemDetailView */ = {
 			isa = PBXGroup;
 			children = (
 				C8A6967C1F2A90B600C0DEDD /* Core */,
 				C87ACD771F28AE1400B1A73C /* UIKit */,
 				C87ACD781F28AEFF00B1A73C /* Fakes */,
 			);
-			path = ItemDetail;
+			path = ItemDetailView;
 			sourceTree = "<group>";
 		};
 		C8519AEC1F2B5BAF00645A20 /* Fakes */ = {
@@ -551,7 +575,7 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
-		C8C2CAC91F28B3E800F37288 /* AdvertList */ = {
+		C8C2CAC91F28B3E800F37288 /* AdvertListFeature */ = {
 			isa = PBXGroup;
 			children = (
 				C8A696791F2A909700C0DEDD /* Core */,
@@ -559,7 +583,7 @@
 				C87ACD791F28AF2500B1A73C /* Tests */,
 				C8519AEC1F2B5BAF00645A20 /* Fakes */,
 			);
-			path = AdvertList;
+			path = AdvertListFeature;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

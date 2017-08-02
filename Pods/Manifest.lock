@@ -35,27 +35,27 @@ PODS:
   - Wireframe/UIKit (0.0.1)
 
 DEPENDENCIES:
-  - Entity/Tests (from `Entity`)
-  - GroupSelection/Fakes (from `Features/GroupSelection`)
-  - GroupSelection/Tests (from `Features/GroupSelection`)
-  - GroupSelection/UIKit (from `Features/GroupSelection`)
+  - Entity/Tests (from `Elements/Entity`)
+  - GroupSelection/Fakes (from `Elements/Features/GroupSelection`)
+  - GroupSelection/Tests (from `Elements/Features/GroupSelection`)
+  - GroupSelection/UIKit (from `Elements/Features/GroupSelection`)
   - OCSlimProject
-  - Services (from `Services`)
-  - Utility (from `Utility`)
-  - Wireframe/Fakes (from `Wireframe`)
-  - Wireframe/UIKit (from `Wireframe`)
+  - Services (from `Elements/Services`)
+  - Utility (from `Elements/Utility`)
+  - Wireframe/Fakes (from `Elements/Wireframe`)
+  - Wireframe/UIKit (from `Elements/Wireframe`)
 
 EXTERNAL SOURCES:
   Entity:
-    :path: Entity
+    :path: Elements/Entity
   GroupSelection:
-    :path: Features/GroupSelection
+    :path: Elements/Features/GroupSelection
   Services:
-    :path: Services
+    :path: Elements/Services
   Utility:
-    :path: Utility
+    :path: Elements/Utility
   Wireframe:
-    :path: Wireframe
+    :path: Elements/Wireframe
 
 SPEC CHECKSUMS:
   cslim: 75bc8dc738cdc5b7d51303f94544dad486bd9d3c
@@ -66,6 +66,6 @@ SPEC CHECKSUMS:
   Utility: 8d67861857a7b10a8ddb28a447004103876a7a92
   Wireframe: 368d9db912ecfb4777ba972350655afe4f730c04
 
-PODFILE CHECKSUM: bd5401933b8d2376e6357969bdf4d26975c6b92d
+PODFILE CHECKSUM: c711d32082365e45548eb608bfe3797abb3c216f
 
 COCOAPODS: 1.2.1
