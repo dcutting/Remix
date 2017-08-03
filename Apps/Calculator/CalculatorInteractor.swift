@@ -3,26 +3,26 @@
 class CalculatorInteractor {
 
     struct Result {
-        let augend: Int?
-        let addend: Int?
+        let firstTerm: Int?
+        let secondTerm: Int?
         let sum: Int
     }
 
-    private var augend: Int?
-    private var addend: Int?
+    private var firstTerm: Int?
+    private var secondTerm: Int?
 
     var result: Result {
-        let sum = [augend, addend].flatMap { $0 ?? 0 }.reduce(0, +)
-        return Result(augend: augend, addend: addend, sum: sum)
+        let sum = [firstTerm, secondTerm].flatMap { $0 ?? 0 }.reduce(0, +)
+        return Result(firstTerm: firstTerm, secondTerm: secondTerm, sum: sum)
     }
 
-    func update(augend: String) -> Result {
-        self.augend = Int(augend)
+    func update(firstTerm: String) -> Result {
+        self.firstTerm = Int(firstTerm)
         return result
     }
 
-    func update(addend: String) -> Result {
-        self.addend = Int(addend)
+    func update(secondTerm: String) -> Result {
+        self.secondTerm = Int(secondTerm)
         return result
     }
 }

@@ -4,21 +4,21 @@ import UIKit
 
 protocol CalculatorViewDelegate: class {
     func viewReady()
-    func didChange(first: String)
-    func didChange(second: String)
+    func didChange(left: String)
+    func didChange(right: String)
     func didTapAbout()
 }
 
 struct CalculatorViewData {
-    let first: String
-    let second: String
+    let left: String
+    let right: String
     let result: String
 }
 
 class CalculatorViewController: UIViewController {
 
-    @IBOutlet weak var firstTextField: UITextField?
-    @IBOutlet weak var secondTextField: UITextField?
+    @IBOutlet weak var leftTextField: UITextField?
+    @IBOutlet weak var rightTextField: UITextField?
     @IBOutlet weak var resultLabel: UILabel?
 
     weak var delegate: CalculatorViewDelegate?
@@ -35,22 +35,22 @@ class CalculatorViewController: UIViewController {
 
     private func updateView() {
         guard isViewLoaded else { return }
-        firstTextField?.text = viewData?.first
-        secondTextField?.text = viewData?.second
+        leftTextField?.text = viewData?.left
+        rightTextField?.text = viewData?.right
         resultLabel?.text = viewData?.result
     }
 }
 
 extension CalculatorViewController {
 
-    @IBAction func firstDidChange(_ sender: Any) {
-        guard let text = firstTextField?.text else { return }
-        delegate?.didChange(first: text)
+    @IBAction func leftDidChange(_ sender: Any) {
+        guard let text = leftTextField?.text else { return }
+        delegate?.didChange(left: text)
     }
 
-    @IBAction func secondDidChange(_ sender: Any) {
-        guard let text = secondTextField?.text else { return }
-        delegate?.didChange(second: text)
+    @IBAction func rightDidChange(_ sender: Any) {
+        guard let text = rightTextField?.text else { return }
+        delegate?.didChange(right: text)
     }
 
     @IBAction func didTapAbout(_ sender: Any) {

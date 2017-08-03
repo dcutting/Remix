@@ -19,28 +19,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="4" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R5u-JJ-T0d">
-                                <rect key="frame" x="56" y="70" width="97" height="33"/>
+                                <rect key="frame" x="53" y="70" width="100" height="33"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="97" id="uvi-XJ-s1o"/>
+                                    <constraint firstAttribute="width" constant="100" id="uvi-XJ-s1o"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
-                                    <action selector="firstDidChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="A3I-j7-gue"/>
+                                    <action selector="leftDidChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="CHd-pV-5yw"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ULP-BG-si0">
-                                <rect key="frame" x="221" y="70" width="97" height="33"/>
+                                <rect key="frame" x="221" y="70" width="100" height="33"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
-                                    <action selector="secondDidChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="mHv-vt-7Yg"/>
+                                    <action selector="rightDidChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="iiC-Su-pxL"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smh-fG-yQx">
-                                <rect key="frame" x="179" y="70" width="16" height="29"/>
+                                <rect key="frame" x="179.5" y="70" width="16" height="29"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -66,23 +66,22 @@
                             <constraint firstItem="smh-fG-yQx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1ZG-lx-mlc"/>
                             <constraint firstItem="R5u-JJ-T0d" firstAttribute="top" secondItem="ULP-BG-si0" secondAttribute="top" id="BdT-Po-uJh"/>
                             <constraint firstItem="Vhv-BH-BP0" firstAttribute="top" secondItem="R5u-JJ-T0d" secondAttribute="bottom" constant="20" id="Sq1-aj-iWR"/>
-                            <constraint firstItem="R5u-JJ-T0d" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="56" id="TON-Ws-mYW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Vhv-BH-BP0" secondAttribute="trailing" constant="20" id="Upb-IY-a6A"/>
                             <constraint firstItem="Vhv-BH-BP0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="VWx-6i-93g"/>
+                            <constraint firstItem="ULP-BG-si0" firstAttribute="leading" secondItem="smh-fG-yQx" secondAttribute="trailing" constant="25.5" id="d0w-4V-uEQ"/>
                             <constraint firstItem="smh-fG-yQx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="d97-GS-v8q"/>
                             <constraint firstItem="R5u-JJ-T0d" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="dFP-dD-KqS"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ULP-BG-si0" secondAttribute="trailing" constant="57" id="dWh-d5-v05"/>
-                            <constraint firstItem="ULP-BG-si0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="R5u-JJ-T0d" secondAttribute="trailing" constant="68" id="f8S-hX-weh"/>
                             <constraint firstItem="EvS-cp-rxd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="gZy-1N-Jlb"/>
+                            <constraint firstItem="smh-fG-yQx" firstAttribute="leading" secondItem="R5u-JJ-T0d" secondAttribute="trailing" constant="26.5" id="iqy-x9-iej"/>
                             <constraint firstAttribute="trailing" secondItem="EvS-cp-rxd" secondAttribute="trailing" constant="5" id="qXz-vv-sG9"/>
                             <constraint firstItem="ULP-BG-si0" firstAttribute="width" secondItem="R5u-JJ-T0d" secondAttribute="width" id="xhl-LB-em7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="firstTextField" destination="R5u-JJ-T0d" id="fv5-5Y-lM1"/>
+                        <outlet property="leftTextField" destination="R5u-JJ-T0d" id="fv5-5Y-lM1"/>
                         <outlet property="resultLabel" destination="Vhv-BH-BP0" id="7xO-4Y-nGK"/>
-                        <outlet property="secondTextField" destination="ULP-BG-si0" id="bJT-3q-ZGn"/>
+                        <outlet property="rightTextField" destination="ULP-BG-si0" id="bJT-3q-ZGn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

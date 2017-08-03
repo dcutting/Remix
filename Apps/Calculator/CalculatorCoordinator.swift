@@ -20,13 +20,13 @@ extension CalculatorCoordinator: CalculatorViewDelegate {
         updateView(result: interactor.result)
     }
 
-    func didChange(first: String) {
-        let result = interactor.update(augend: first)
+    func didChange(left: String) {
+        let result = interactor.update(firstTerm: left)
         updateView(result: result)
     }
 
-    func didChange(second: String) {
-        let result = interactor.update(addend: second)
+    func didChange(right: String) {
+        let result = interactor.update(secondTerm: right)
         updateView(result: result)
     }
 
