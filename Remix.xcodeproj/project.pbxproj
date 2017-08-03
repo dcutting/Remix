@@ -302,9 +302,9 @@
 		C8383D9D1F322FE800AD92CF /* Apps */ = {
 			isa = PBXGroup;
 			children = (
+				C89739F71F32784200FF4F91 /* Calculator */,
 				C8383D9E1F322FE800AD92CF /* Marketplace */,
 				C8383DDE1F322FE800AD92CF /* GroupBrowser */,
-				C89739F71F32784200FF4F91 /* Calculator */,
 				C8383DE71F322FE800AD92CF /* Shared */,
 			);
 			path = Apps;
