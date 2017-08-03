@@ -6,9 +6,9 @@ import Service
 class AutoGroupInsertionFeature: InsertionFeature {
 
     struct Dependencies {
+        let toastWireframeFactory: ToastWireframeFactory
         let advertService: AdvertService
         let groupRecommendationService: GroupRecommendationService
-        let toastWireframeFactory: ToastWireframeFactory
         let textEntryStepViewFactory: TextEntryStepViewFactory
     }
 

@@ -33,9 +33,9 @@ class SelectAdvertOnTablet: NSObject {
         let groupSelectionFeature = GroupSelectionFeature(dependencies: groupSelectionDependencies)
 
         let deps = SplitDiscoveryFeature.Dependencies(
+            navigationWireframeFactory: fakeNavigationWireframeFactory,
             advertService: mockAdvertService,
             itemDetailViewFactory: fakeItemDetailViewFactory,
-            navigationWireframeFactory: fakeNavigationWireframeFactory,
             advertListFeature: makeAdvertListFeature(),
             groupSelectionFeature: groupSelectionFeature,
             insertionFeature: makeInsertionFeature(groupSelectionFeature: groupSelectionFeature)

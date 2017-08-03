@@ -8,9 +8,9 @@ import GroupSelectionFeature
 class SplitDiscoveryFeature {
 
     struct Dependencies {
+        let navigationWireframeFactory: NavigationWireframeFactory
         let advertService: AdvertService
         let itemDetailViewFactory: ItemDetailViewFactory
-        let navigationWireframeFactory: NavigationWireframeFactory
         let advertListFeature: AdvertListFeature
         let groupSelectionFeature: GroupSelectionFeature
         let insertionFeature: InsertionFeature

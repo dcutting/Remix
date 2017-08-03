@@ -33,9 +33,9 @@ class SplitAppCoordinator {
         let groupSelectionFeature = makeGroupSelectionFeature()
         
         let discoveryDeps = SplitDiscoveryFeature.Dependencies(
+            navigationWireframeFactory: UINavigationWireframeFactory(),
             advertService: deps.advertService,
             itemDetailViewFactory: ItemDetailViewControllerFactory(),
-            navigationWireframeFactory: UINavigationWireframeFactory(),
             advertListFeature: makeAdvertListFeature(),
             groupSelectionFeature: groupSelectionFeature,
             insertionFeature: makeInsertionFeature(using: groupSelectionFeature)
@@ -62,14 +62,32 @@ class SplitAppCoordinator {
     }
 
     private func makeInsertionFeature(using groupSelectionFeature: GroupSelectionFeature) -> InsertionFeature {
+        let textEntryStepViewFactory = makeTextEntryStepViewFactory()
+        let manualGroupInsertionFeature = makeManualGroupInsertionFeature(using: groupSelectionFeature, textEntryStepViewFactory: textEntryStepViewFactory)
+        let autoGroupInsertionFeature = makeAutoGroupInsertionFeature(using: textEntryStepViewFactory)
         let featureDeps = AlternatingInsertionFeature.Dependencies(
-            advertService: deps.advertService,
-            groupRecommendationService: deps.groupRecommendationService,
-            toastWireframeFactory: makeToastWireframeFactory(),
-            textEntryStepViewFactory: makeTextEntryStepViewFactory(),
-            groupSelectionFeature: groupSelectionFeature
+            subfeatures: [manualGroupInsertionFeature, autoGroupInsertionFeature]
         )
         return AlternatingInsertionFeature(dependencies: featureDeps)
+    }
+
+    private func makeManualGroupInsertionFeature(using groupSelectionFeature: GroupSelectionFeature, textEntryStepViewFactory: TextEntryStepViewFactory) -> ManualGroupInsertionFeature {
+        let featureDeps = ManualGroupInsertionFeature.Dependencies(
+            advertService: deps.advertService,
+            textEntryStepViewFactory: textEntryStepViewFactory,
+            groupSelectionFeature: groupSelectionFeature
+        )
+        return ManualGroupInsertionFeature(dependencies: featureDeps)
+    }
+
+    private func makeAutoGroupInsertionFeature(using textEntryStepViewFactory: TextEntryStepViewFactory) -> AutoGroupInsertionFeature {
+        let featureDeps = AutoGroupInsertionFeature.Dependencies(
+            toastWireframeFactory: makeToastWireframeFactory(),
+            advertService: deps.advertService,
+            groupRecommendationService: deps.groupRecommendationService,
+            textEntryStepViewFactory: textEntryStepViewFactory
+        )
+        return AutoGroupInsertionFeature(dependencies: featureDeps)
     }
 
     private func makeToastWireframeFactory() -> ToastWireframeFactory {
