@@ -32,7 +32,7 @@ class DiscoveryFeature {
         )
         let feature = NavigationDiscoveryFeature(dependencies: featureDeps)
 
-        return feature.makeCoordinatorUsing(navigationWireframe: navigationWireframe)
+        return feature.makeCoordinator(navigationWireframe: navigationWireframe)
     }
 
     func makeSplitDiscoveryCoordinator(splitWireframe: SplitWireframe) -> SplitDiscoveryCoordinator {
@@ -47,6 +47,6 @@ class DiscoveryFeature {
         )
         let feature = SplitDiscoveryFeature(dependencies: featureDeps)
 
-        return feature.makeCoordinatorUsing(splitWireframe: splitWireframe)
+        return feature.makeCoordinator(splitWireframe: splitWireframe)
     }
 }

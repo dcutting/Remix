@@ -91,6 +91,6 @@ extension AppCoordinator {
         )
         let feature = GroupSelectionFeature(dependencies: deps)
 
-        return feature.makeCoordinatorUsing(navigationWireframe: navigationWireframe)
+        return feature.makeCoordinator(navigationWireframe: navigationWireframe)
     }
 }

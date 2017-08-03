@@ -18,7 +18,7 @@ class ManualGroupInsertionFeature: InsertionFeature {
         deps = dependencies
     }
 
-    func makeCoordinatorUsing(navigationWireframe: NavigationWireframe) -> InsertionCoordinator {
+    func makeCoordinator(navigationWireframe: NavigationWireframe) -> InsertionCoordinator {
         let coordinatorDeps = ManualGroupInsertionCoordinator.Dependencies(
             navigationWireframe: navigationWireframe,
             insertionInteractor: makeInteractor(),

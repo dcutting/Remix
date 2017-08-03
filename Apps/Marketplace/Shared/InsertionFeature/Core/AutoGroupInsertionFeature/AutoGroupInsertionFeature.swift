@@ -18,7 +18,7 @@ class AutoGroupInsertionFeature: InsertionFeature {
         deps = dependencies
     }
 
-    func makeCoordinatorUsing(navigationWireframe: NavigationWireframe) -> InsertionCoordinator {
+    func makeCoordinator(navigationWireframe: NavigationWireframe) -> InsertionCoordinator {
         let coordinatorDeps = AutoGroupInsertionCoordinator.Dependencies(
             navigationWireframe: navigationWireframe,
             toastWireframeFactory: deps.toastWireframeFactory,

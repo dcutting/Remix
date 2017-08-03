@@ -31,7 +31,7 @@ class ManualGroupInsertionCoordinator: InsertionCoordinator {
 extension ManualGroupInsertionCoordinator: GroupSelectionCoordinatorDelegate {
 
     private func startGroupSelection() {
-        let coordinator = deps.groupSelectionFeature.makeCoordinatorUsing(navigationWireframe: deps.navigationWireframe)
+        let coordinator = deps.groupSelectionFeature.makeCoordinator(navigationWireframe: deps.navigationWireframe)
         coordinator.delegate = self
         groupSelectionCoordinator = coordinator
         coordinator.start()

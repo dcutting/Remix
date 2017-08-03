@@ -22,7 +22,7 @@ public class GroupSelectionFeature {
         deps = dependencies
     }
 
-    public func makeCoordinatorUsing(navigationWireframe: NavigationWireframe) -> GroupSelectionCoordinator {
+    public func makeCoordinator(navigationWireframe: NavigationWireframe) -> GroupSelectionCoordinator {
         let coordinatorDeps = GroupSelectionCoordinator.Dependencies(
             navigator: navigationWireframe,
             viewFactory: deps.groupSelectionViewFactory,

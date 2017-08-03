@@ -17,9 +17,9 @@ class AlternatingInsertionFeature: InsertionFeature {
         deps = dependencies
     }
 
-    func makeCoordinatorUsing(navigationWireframe: NavigationWireframe) -> InsertionCoordinator {
+    func makeCoordinator(navigationWireframe: NavigationWireframe) -> InsertionCoordinator {
         let feature = pickNextFeature()
-        return feature.makeCoordinatorUsing(navigationWireframe: navigationWireframe)
+        return feature.makeCoordinator(navigationWireframe: navigationWireframe)
     }
 
     private func pickNextFeature() -> InsertionFeature {

@@ -22,7 +22,7 @@ class SplitDiscoveryFeature {
         deps = dependencies
     }
 
-    func makeCoordinatorUsing(splitWireframe: SplitWireframe) -> SplitDiscoveryCoordinator {
+    func makeCoordinator(splitWireframe: SplitWireframe) -> SplitDiscoveryCoordinator {
         let coordinatorDeps = SplitDiscoveryCoordinator.Dependencies(
             splitWireframe: splitWireframe,
             navigationWireframeFactory: deps.navigationWireframeFactory,

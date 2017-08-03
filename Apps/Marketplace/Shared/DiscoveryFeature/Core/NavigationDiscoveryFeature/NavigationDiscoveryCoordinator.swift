@@ -36,7 +36,7 @@ class NavigationDiscoveryCoordinator {
 extension NavigationDiscoveryCoordinator: AdvertListCoordinatorDelegate {
 
     func startAdvertList() {
-        advertListCoordinator = deps.advertListFeature.makeCoordinatorUsing(navigationWireframe: deps.navigationWireframe)
+        advertListCoordinator = deps.advertListFeature.makeCoordinator(navigationWireframe: deps.navigationWireframe)
         advertListCoordinator?.delegate = self
         advertListCoordinator?.start()
     }
@@ -78,7 +78,7 @@ extension NavigationDiscoveryCoordinator: AdvertListCoordinatorDelegate {
 extension NavigationDiscoveryCoordinator: InsertionCoordinatorDelegate {
 
     private func startInsertion() {
-        let coordinator = deps.insertionFeature.makeCoordinatorUsing(navigationWireframe: deps.navigationWireframe)
+        let coordinator = deps.insertionFeature.makeCoordinator(navigationWireframe: deps.navigationWireframe)
         coordinator.delegate = self
         insertionCoordinator = coordinator
         deps.navigationWireframe.setPopCheckpoint()
@@ -103,7 +103,7 @@ extension NavigationDiscoveryCoordinator: InsertionCoordinatorDelegate {
 extension NavigationDiscoveryCoordinator: GroupSelectionCoordinatorDelegate {
 
     private func startGroupSelection() {
-        let coordinator = deps.groupSelectionFeature.makeCoordinatorUsing(navigationWireframe: deps.navigationWireframe)
+        let coordinator = deps.groupSelectionFeature.makeCoordinator(navigationWireframe: deps.navigationWireframe)
         coordinator.delegate = self
         groupSelectionCoordinator = coordinator
         deps.navigationWireframe.setPopCheckpoint()

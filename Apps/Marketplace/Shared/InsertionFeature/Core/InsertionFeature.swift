@@ -3,5 +3,5 @@
 import Wireframe
 
 protocol InsertionFeature {
-    func makeCoordinatorUsing(navigationWireframe: NavigationWireframe) -> InsertionCoordinator
+    func makeCoordinator(navigationWireframe: NavigationWireframe) -> InsertionCoordinator
 }

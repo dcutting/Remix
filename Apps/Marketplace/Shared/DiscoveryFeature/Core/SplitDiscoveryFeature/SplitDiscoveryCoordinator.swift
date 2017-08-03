@@ -38,7 +38,7 @@ extension SplitDiscoveryCoordinator: AdvertListCoordinatorDelegate {
 
     private func startAdvertList() {
         let navigationWireframe = deps.navigationWireframeFactory.make()
-        let coordinator = deps.advertListFeature.makeCoordinatorUsing(navigationWireframe: navigationWireframe)
+        let coordinator = deps.advertListFeature.makeCoordinator(navigationWireframe: navigationWireframe)
         coordinator.delegate = self
         advertListCoordinator = coordinator
         deps.splitWireframe.master = navigationWireframe
@@ -83,7 +83,7 @@ extension SplitDiscoveryCoordinator: GroupSelectionCoordinatorDelegate {
 
     private func startGroupSelection() {
         let navigationWireframe = deps.navigationWireframeFactory.make()
-        let coordinator = deps.groupSelectionFeature.makeCoordinatorUsing(navigationWireframe: navigationWireframe)
+        let coordinator = deps.groupSelectionFeature.makeCoordinator(navigationWireframe: navigationWireframe)
         coordinator.delegate = self
         groupSelectionCoordinator = coordinator
         coordinator.start()
@@ -109,7 +109,7 @@ extension SplitDiscoveryCoordinator: InsertionCoordinatorDelegate {
 
     private func startInsertion() {
         let navigationWireframe = deps.navigationWireframeFactory.make()
-        let coordinator = deps.insertionFeature.makeCoordinatorUsing(navigationWireframe: navigationWireframe)
+        let coordinator = deps.insertionFeature.makeCoordinator(navigationWireframe: navigationWireframe)
         coordinator.delegate = self
         insertionCoordinator = coordinator
         coordinator.start()

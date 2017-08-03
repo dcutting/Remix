@@ -21,7 +21,7 @@ class NavigationDiscoveryFeature {
         deps = dependencies
     }
 
-    func makeCoordinatorUsing(navigationWireframe: NavigationWireframe) -> NavigationDiscoveryCoordinator {
+    func makeCoordinator(navigationWireframe: NavigationWireframe) -> NavigationDiscoveryCoordinator {
         let coordinatorDeps = NavigationDiscoveryCoordinator.Dependencies(
             navigationWireframe: navigationWireframe,
             interactor: makeInteractor(),

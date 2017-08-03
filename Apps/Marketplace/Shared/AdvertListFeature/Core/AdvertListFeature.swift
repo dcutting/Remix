@@ -18,7 +18,7 @@ class AdvertListFeature {
         deps = dependencies
     }
 
-    func makeCoordinatorUsing(navigationWireframe: NavigationWireframe) -> AdvertListCoordinator {
+    func makeCoordinator(navigationWireframe: NavigationWireframe) -> AdvertListCoordinator {
         let coordinatorDeps = AdvertListCoordinator.Dependencies(
             navigationWireframe: navigationWireframe,
             interactor: makeInteractor(),
