@@ -21,11 +21,11 @@ class PrimeViewController: UIViewController {
         }
     }
 
-    @IBAction func didTapOK(_ sender: Any) {
-        delegate?.didTapOK()
-    }
-
     private func updateView() {
         resultLabel?.text = viewData?.result
+    }
+
+    @IBAction func didTapOK(_ sender: Any) {
+        delegate?.didTapOK()
     }
 }
