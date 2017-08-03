@@ -23,7 +23,7 @@ class AutoGroupInsertionFeature: InsertionFeature {
             navigationWireframe: navigationWireframe,
             toastWireframeFactory: deps.toastWireframeFactory,
             insertionInteractor: makeInteractor(),
-            titleStepFormatter: makeTitleStepFormatter(),
+            titleStepFormatter: TitleStepFormatter(),
             textEntryStepViewFactory: deps.textEntryStepViewFactory
         )
         return AutoGroupInsertionCoordinator(dependencies: coordinatorDeps)
@@ -35,9 +35,5 @@ class AutoGroupInsertionFeature: InsertionFeature {
             insertionInteractor: insertionInteractor,
             groupRecommendationService: deps.groupRecommendationService
         )
-    }
-
-    private func makeTitleStepFormatter() -> TitleStepFormatter {
-        return TitleStepFormatter()
     }
 }

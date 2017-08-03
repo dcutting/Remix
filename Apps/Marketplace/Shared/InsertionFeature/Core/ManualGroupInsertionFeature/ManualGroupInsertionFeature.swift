@@ -22,7 +22,7 @@ class ManualGroupInsertionFeature: InsertionFeature {
         let coordinatorDeps = ManualGroupInsertionCoordinator.Dependencies(
             navigationWireframe: navigationWireframe,
             insertionInteractor: makeInteractor(),
-            titleStepFormatter: makeTitleStepFormatter(),
+            titleStepFormatter: TitleStepFormatter(),
             textEntryStepViewFactory: deps.textEntryStepViewFactory,
             groupSelectionFeature: deps.groupSelectionFeature
         )
@@ -31,9 +31,5 @@ class ManualGroupInsertionFeature: InsertionFeature {
 
     private func makeInteractor() -> InsertionInteractor {
         return InsertionInteractor(advertService: deps.advertService)
-    }
-
-    private func makeTitleStepFormatter() -> TitleStepFormatter {
-        return TitleStepFormatter()
     }
 }

@@ -22,7 +22,7 @@ class AdvertListFeature {
         let coordinatorDeps = AdvertListCoordinator.Dependencies(
             navigationWireframe: navigationWireframe,
             interactor: makeInteractor(),
-            formatter: makeFormatter(),
+            formatter: AdvertListFormatter(),
             viewFactory: deps.advertListViewFactory
         )
         return AdvertListCoordinator(dependencies: coordinatorDeps)
@@ -30,9 +30,5 @@ class AdvertListFeature {
 
     private func makeInteractor() -> AdvertListInteractor {
         return AdvertListInteractor(advertService: deps.advertService, groupService: deps.groupService)
-    }
-
-    private func makeFormatter() -> AdvertListFormatter {
-        return AdvertListFormatter()
     }
 }

@@ -27,17 +27,13 @@ public class GroupSelectionFeature {
             navigator: navigationWireframe,
             viewFactory: deps.groupSelectionViewFactory,
             interactor: makeInteractor(),
-            formatter: makeFormatter()
+            formatter: GroupSelectionFormatter()
         )
         return GroupSelectionCoordinator(dependencies: coordinatorDeps)
     }
 
     private func makeInteractor() -> GroupSelectionInteractor {
         return GroupSelectionInteractor(groupService: deps.groupService)
-    }
-
-    private func makeFormatter() -> GroupSelectionFormatter {
-        return GroupSelectionFormatter()
     }
 }
 

@@ -11,8 +11,7 @@
 		602EA8C4A4BA1E62622EF524 /* Pods_GroupBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DCF0A76C8BF67D69D939733 /* Pods_GroupBrowser.framework */; };
 		C8383DF11F322FE800AD92CF /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8383DA01F322FE800AD92CF /* AppCoordinator.swift */; };
 		C8383DF21F322FE800AD92CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8383DA11F322FE800AD92CF /* AppDelegate.swift */; };
-		C8383DF31F322FE800AD92CF /* NavigationAppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8383DA21F322FE800AD92CF /* NavigationAppCoordinator.swift */; };
-		C8383DF41F322FE800AD92CF /* SplitAppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8383DA31F322FE800AD92CF /* SplitAppCoordinator.swift */; };
+		C8383DF31F322FE800AD92CF /* DiscoveryFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8383DA21F322FE800AD92CF /* DiscoveryFeature.swift */; };
 		C8383DF51F322FE800AD92CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8383DA41F322FE800AD92CF /* Assets.xcassets */; };
 		C8383DF61F322FE800AD92CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8383DA51F322FE800AD92CF /* LaunchScreen.storyboard */; };
 		C8383DF81F322FE800AD92CF /* AdvertListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8383DAB1F322FE800AD92CF /* AdvertListCoordinator.swift */; };
@@ -134,6 +133,8 @@
 		C8C3B6F51F33246B007F229D /* ListDisplaysAdverts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C3B6F01F33246B007F229D /* ListDisplaysAdverts.swift */; };
 		C8C3B6F61F33246B007F229D /* SelectAdvertOnPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C3B6F11F33246B007F229D /* SelectAdvertOnPhone.swift */; };
 		C8C3B6F71F33246B007F229D /* SelectAdvertOnTablet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C3B6F21F33246B007F229D /* SelectAdvertOnTablet.swift */; };
+		C8C3B6F91F3354C8007F229D /* DiscoveryFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8383DA21F322FE800AD92CF /* DiscoveryFeature.swift */; };
+		C8C3B6FA1F3354C8007F229D /* DiscoveryFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8383DA21F322FE800AD92CF /* DiscoveryFeature.swift */; };
 		DB6C496DFCF9FC07E5AE750A /* Pods_LogicTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9114D7BE59BDE078516E9BE9 /* Pods_LogicTests.framework */; };
 		E98C63F88426C5984E425F7C /* Pods_AcceptanceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DEB216AD534D3A58535DB2B /* Pods_AcceptanceTests.framework */; };
 /* End PBXBuildFile section */
@@ -154,8 +155,7 @@
 		C82EE9EAD9E52D124EFE85BB /* Pods-Marketplace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marketplace.release.xcconfig"; path = "Pods/Target Support Files/Pods-Marketplace/Pods-Marketplace.release.xcconfig"; sourceTree = "<group>"; };
 		C8383DA01F322FE800AD92CF /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		C8383DA11F322FE800AD92CF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C8383DA21F322FE800AD92CF /* NavigationAppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationAppCoordinator.swift; sourceTree = "<group>"; };
-		C8383DA31F322FE800AD92CF /* SplitAppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitAppCoordinator.swift; sourceTree = "<group>"; };
+		C8383DA21F322FE800AD92CF /* DiscoveryFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoveryFeature.swift; sourceTree = "<group>"; };
 		C8383DA41F322FE800AD92CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8383DA61F322FE800AD92CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8383DA71F322FE800AD92CF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -326,8 +326,6 @@
 			children = (
 				C8383DA11F322FE800AD92CF /* AppDelegate.swift */,
 				C8383DA01F322FE800AD92CF /* AppCoordinator.swift */,
-				C8383DA21F322FE800AD92CF /* NavigationAppCoordinator.swift */,
-				C8383DA31F322FE800AD92CF /* SplitAppCoordinator.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -335,8 +333,8 @@
 		C8383DA81F322FE800AD92CF /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				C8383DA91F322FE800AD92CF /* AdvertListFeature */,
 				C8383DB81F322FE800AD92CF /* DiscoveryFeature */,
+				C8383DA91F322FE800AD92CF /* AdvertListFeature */,
 				C8383DC61F322FE800AD92CF /* InsertionFeature */,
 			);
 			path = Shared;
@@ -403,10 +401,11 @@
 		C8383DB91F322FE800AD92CF /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				C8383DBC1F322FE800AD92CF /* NavigationDiscoveryFeature */,
-				C8383DBF1F322FE800AD92CF /* SplitDiscoveryFeature */,
+				C8383DA21F322FE800AD92CF /* DiscoveryFeature.swift */,
 				C8383DBB1F322FE800AD92CF /* DiscoveryInteractor.swift */,
 				C8383DBA1F322FE800AD92CF /* AdvertDetailFormatter.swift */,
+				C8383DBC1F322FE800AD92CF /* NavigationDiscoveryFeature */,
+				C8383DBF1F322FE800AD92CF /* SplitDiscoveryFeature */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -454,11 +453,11 @@
 				C8383DD11F322FE800AD92CF /* InsertionFeature.swift */,
 				C8383DD01F322FE800AD92CF /* InsertionCoordinator.swift */,
 				C8383DD21F322FE800AD92CF /* InsertionInteractor.swift */,
+				C8383DD71F322FE800AD92CF /* TitleStepFormatter.swift */,
+				C8383DD61F322FE800AD92CF /* TextEntryStepView.swift */,
 				C8383DC81F322FE800AD92CF /* AlternatingInsertionFeature */,
 				C8383DCA1F322FE800AD92CF /* AutoGroupInsertionFeature */,
 				C8383DD31F322FE800AD92CF /* ManualGroupInsertionFeature */,
-				C8383DD71F322FE800AD92CF /* TitleStepFormatter.swift */,
-				C8383DD61F322FE800AD92CF /* TextEntryStepView.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -1086,6 +1085,7 @@
 				C8383E5E1F32318400AD92CF /* AutoGroupInsertionFeature.swift in Sources */,
 				C8383E6C1F32319F00AD92CF /* AdvertListInteractor.swift in Sources */,
 				C8383E6B1F32319F00AD92CF /* AdvertListFormatter.swift in Sources */,
+				C8C3B6F91F3354C8007F229D /* DiscoveryFeature.swift in Sources */,
 				C8383E6E1F3231AF00AD92CF /* AdvertListViewSpy.swift in Sources */,
 				C8383E731F3231C000AD92CF /* NavigationDiscoveryFeature.swift in Sources */,
 				C8383E641F32318400AD92CF /* InsertionInteractor.swift in Sources */,
@@ -1133,12 +1133,11 @@
 				C8383DFB1F322FE800AD92CF /* AdvertListInteractor.swift in Sources */,
 				C8383E251F322FE800AD92CF /* ItemDetailViewController.swift in Sources */,
 				C8383E051F322FE800AD92CF /* NavigationDiscoveryFeature.swift in Sources */,
-				C8383DF41F322FE800AD92CF /* SplitAppCoordinator.swift in Sources */,
 				C8383E071F322FE800AD92CF /* SplitDiscoveryFeature.swift in Sources */,
 				C8383DF81F322FE800AD92CF /* AdvertListCoordinator.swift in Sources */,
 				C8383E151F322FE800AD92CF /* TextEntryStepView.swift in Sources */,
 				C8383E131F322FE800AD92CF /* ManualGroupInsertionCoordinator.swift in Sources */,
-				C8383DF31F322FE800AD92CF /* NavigationAppCoordinator.swift in Sources */,
+				C8383DF31F322FE800AD92CF /* DiscoveryFeature.swift in Sources */,
 				C8383E031F322FE800AD92CF /* DiscoveryInteractor.swift in Sources */,
 				C8383E0F1F322FE800AD92CF /* MockGroupRecommendationService.swift in Sources */,
 				C8383E161F322FE800AD92CF /* TitleStepFormatter.swift in Sources */,
@@ -1167,6 +1166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8383E431F32312200AD92CF /* AdvertListInteractor.swift in Sources */,
+				C8C3B6FA1F3354C8007F229D /* DiscoveryFeature.swift in Sources */,
 				C8C3B6F31F33246B007F229D /* GivenTheseAdverts.swift in Sources */,
 				C8383E521F32318200AD92CF /* AutoGroupInsertionInteractor.swift in Sources */,
 				C8C3B6F41F33246B007F229D /* GivenTheseGroups.swift in Sources */,

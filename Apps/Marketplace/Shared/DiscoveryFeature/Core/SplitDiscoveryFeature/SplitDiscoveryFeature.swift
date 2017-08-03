@@ -27,7 +27,7 @@ class SplitDiscoveryFeature {
             splitWireframe: splitWireframe,
             navigationWireframeFactory: deps.navigationWireframeFactory,
             interactor: makeInteractor(),
-            detailFormatter: makeDetailFormatter(),
+            detailFormatter: AdvertDetailFormatter(),
             detailViewFactory: deps.itemDetailViewFactory,
             advertListFeature: deps.advertListFeature,
             groupSelectionFeature: deps.groupSelectionFeature,
@@ -38,9 +38,5 @@ class SplitDiscoveryFeature {
 
     private func makeInteractor() -> DiscoveryInteractor {
         return DiscoveryInteractor(advertService: deps.advertService)
-    }
-
-    private func makeDetailFormatter() -> AdvertDetailFormatter {
-        return AdvertDetailFormatter()
     }
 }
