@@ -52,10 +52,13 @@ extension CalculatorCoordinator: SumViewDelegate {
 extension CalculatorCoordinator: PrimeViewControllerDelegate {
 
     private func showPrimeView(number: Int) {
+
         let view = makePrimeView()
         view.delegate = self
-        sumView?.present(view, animated: true)
         primeView = view
+
+        sumView?.present(view, animated: true)
+
         analyseForPrimality(number: number)
     }
 
