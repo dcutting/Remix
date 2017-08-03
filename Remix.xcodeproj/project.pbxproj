@@ -227,6 +227,7 @@
 		C8C3B6F01F33246B007F229D /* ListDisplaysAdverts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDisplaysAdverts.swift; sourceTree = "<group>"; };
 		C8C3B6F11F33246B007F229D /* SelectAdvertOnPhone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectAdvertOnPhone.swift; sourceTree = "<group>"; };
 		C8C3B6F21F33246B007F229D /* SelectAdvertOnTablet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectAdvertOnTablet.swift; sourceTree = "<group>"; };
+		C8C3B6F81F332949007F229D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		FF37998CCE504E02185F8EE4 /* Pods-Marketplace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marketplace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Marketplace/Pods-Marketplace.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -595,6 +596,7 @@
 		C84C230E1F17AB770038E879 = {
 			isa = PBXGroup;
 			children = (
+				C8C3B6F81F332949007F229D /* README.md */,
 				C8383D9D1F322FE800AD92CF /* Apps */,
 				C87C49E31F2A9EE400799AD3 /* AcceptanceTests */,
 				C84C23181F17AB770038E879 /* Products */,
