@@ -34,7 +34,7 @@ A more complex app that lets users browse a collection of classified adverts, fi
 
 It remixes components in several ways:
 
-* Two advert insertion flows share some of the same views, formatter and interactor but in different
+* Two advert insertion flows share some of the same views, formatter and interactor but have different flows
 * `GroupSelectionFeature` is used both for selecting a group for filtering the list of adverts, and for selecting a group when inserting a new advert
 * `TextEntryStepView` is used in both insertion flows
 * Generic `ItemDetailView` is used to display details about an advert
