@@ -30,13 +30,7 @@ class CalculatorViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureObservers()
         delegate?.viewReady()
-    }
-
-    private func configureObservers() {
-        firstTextField?.addTarget(self, action: #selector(firstDidChange), for: .editingChanged)
-        secondTextField?.addTarget(self, action: #selector(secondDidChange), for: .editingChanged)
     }
 
     private func updateView() {
@@ -49,12 +43,12 @@ class CalculatorViewController: UIViewController {
 
 extension CalculatorViewController {
 
-    @objc func firstDidChange() {
+    @IBAction func firstDidChange(_ sender: Any) {
         guard let text = firstTextField?.text else { return }
         delegate?.didChange(first: text)
     }
 
-    @objc func secondDidChange() {
+    @IBAction func secondDidChange(_ sender: Any) {
         guard let text = secondTextField?.text else { return }
         delegate?.didChange(second: text)
     }
