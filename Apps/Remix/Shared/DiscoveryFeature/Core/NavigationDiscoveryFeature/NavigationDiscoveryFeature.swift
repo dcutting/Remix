@@ -9,9 +9,8 @@ class NavigationDiscoveryFeature {
 
     struct Dependencies {
         let advertService: AdvertService
-        let groupService: GroupService
-        let advertListViewFactory: AdvertListViewFactory
         let itemDetailViewFactory: ItemDetailViewFactory
+        let advertListFeature: AdvertListFeature
         let insertionFeature: InsertionFeature
         let groupSelectionFeature: GroupSelectionFeature
     }
@@ -28,7 +27,7 @@ class NavigationDiscoveryFeature {
             interactor: makeInteractor(),
             detailFormatter: makeDetailFormatter(),
             detailViewFactory: deps.itemDetailViewFactory,
-            advertListFeature: makeAdvertListFeature(),
+            advertListFeature: deps.advertListFeature,
             insertionFeature: deps.insertionFeature,
             groupSelectionFeature: deps.groupSelectionFeature
         )
@@ -41,10 +40,5 @@ class NavigationDiscoveryFeature {
 
     private func makeDetailFormatter() -> AdvertDetailFormatter {
         return AdvertDetailFormatter()
-    }
-
-    private func makeAdvertListFeature() -> AdvertListFeature {
-        let featureDeps = AdvertListFeature.Dependencies(advertService: deps.advertService, groupService: deps.groupService, advertListViewFactory: deps.advertListViewFactory)
-        return AdvertListFeature(dependencies: featureDeps)
     }
 }

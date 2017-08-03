@@ -34,10 +34,9 @@ class SplitAppCoordinator {
         
         let discoveryDeps = SplitDiscoveryFeature.Dependencies(
             advertService: deps.advertService,
-            groupService: deps.groupService,
-            advertListViewFactory: AdvertListViewControllerFactory(),
             itemDetailViewFactory: ItemDetailViewControllerFactory(),
             navigationWireframeFactory: UINavigationWireframeFactory(),
+            advertListFeature: makeAdvertListFeature(),
             groupSelectionFeature: groupSelectionFeature,
             insertionFeature: makeInsertionFeature(using: groupSelectionFeature)
         )
@@ -47,6 +46,19 @@ class SplitAppCoordinator {
     private func makeGroupSelectionFeature() -> GroupSelectionFeature {
         let featureDeps = GroupSelectionFeature.Dependencies(groupService: deps.groupService, groupSelectionViewFactory: GroupSelectionViewControllerFactory())
         return GroupSelectionFeature(dependencies: featureDeps)
+    }
+
+    private func makeAdvertListFeature() -> AdvertListFeature {
+        let featureDeps = AdvertListFeature.Dependencies(
+            advertService: deps.advertService,
+            groupService: deps.groupService,
+            advertListViewFactory: makeAdvertListViewFactory()
+        )
+        return AdvertListFeature(dependencies: featureDeps)
+    }
+
+    private func makeAdvertListViewFactory() -> AdvertListViewFactory {
+        return AdvertListViewControllerFactory()
     }
 
     private func makeInsertionFeature(using groupSelectionFeature: GroupSelectionFeature) -> InsertionFeature {

@@ -9,10 +9,9 @@ class SplitDiscoveryFeature {
 
     struct Dependencies {
         let advertService: AdvertService
-        let groupService: GroupService
-        let advertListViewFactory: AdvertListViewFactory
         let itemDetailViewFactory: ItemDetailViewFactory
         let navigationWireframeFactory: NavigationWireframeFactory
+        let advertListFeature: AdvertListFeature
         let groupSelectionFeature: GroupSelectionFeature
         let insertionFeature: InsertionFeature
     }
@@ -30,7 +29,7 @@ class SplitDiscoveryFeature {
             interactor: makeInteractor(),
             detailFormatter: makeDetailFormatter(),
             detailViewFactory: deps.itemDetailViewFactory,
-            advertListFeature: makeAdvertListFeature(),
+            advertListFeature: deps.advertListFeature,
             groupSelectionFeature: deps.groupSelectionFeature,
             insertionFeature: deps.insertionFeature
         )
@@ -43,10 +42,5 @@ class SplitDiscoveryFeature {
 
     private func makeDetailFormatter() -> AdvertDetailFormatter {
         return AdvertDetailFormatter()
-    }
-
-    private func makeAdvertListFeature() -> AdvertListFeature {
-        let featureDeps = AdvertListFeature.Dependencies(advertService: deps.advertService, groupService: deps.groupService, advertListViewFactory: deps.advertListViewFactory)
-        return AdvertListFeature(dependencies: featureDeps)
     }
 }

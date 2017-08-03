@@ -17,24 +17,35 @@ class SelectAdvertOnPhone: NSObject {
     var navigationDiscoveryCoordinator: NavigationDiscoveryCoordinator?
 
     @objc override init() {
-        let fakeAdvertListViewFactory = FakeAdvertListViewFactory(fake: advertListViewSpy)
 
         let fakeItemDetailViewFactory = FakeItemDetailViewFactory(fake: itemDetailViewSpy)
 
         super.init()
 
+        let advertListFeature = makeAdvertListFeature()
         let groupSelectionFeature = makeGroupSelectionFeature()
         let insertionFeature = makeInsertionFeature(groupSelectionFeature: groupSelectionFeature)
 
         let deps = NavigationDiscoveryFeature.Dependencies(
             advertService: mockAdvertService,
-            groupService: mockGroupService,
-            advertListViewFactory: fakeAdvertListViewFactory,
             itemDetailViewFactory: fakeItemDetailViewFactory,
+            advertListFeature: advertListFeature,
             insertionFeature: insertionFeature,
             groupSelectionFeature: groupSelectionFeature)
         let feature = NavigationDiscoveryFeature(dependencies: deps)
         navigationDiscoveryCoordinator = feature.makeCoordinatorUsing(navigationWireframe: navigationWireframeSpy)
+    }
+
+    private func makeAdvertListFeature() -> AdvertListFeature {
+
+        let fakeAdvertListViewFactory = FakeAdvertListViewFactory(fake: advertListViewSpy)
+
+        let featureDeps = AdvertListFeature.Dependencies(
+            advertService: mockAdvertService,
+            groupService: mockGroupService,
+            advertListViewFactory: fakeAdvertListViewFactory
+        )
+        return AdvertListFeature(dependencies: featureDeps)
     }
 
     private func makeGroupSelectionFeature() -> GroupSelectionFeature {
