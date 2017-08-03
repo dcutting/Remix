@@ -20,7 +20,7 @@ class ListDisplaysAdverts: NSObject {
             groupService: mockGroupService,
             advertListViewFactory: fakeAdvertListViewFactory)
         let feature = AdvertListFeature(dependencies: deps)
-        let coordinator = feature.makeCoordinatorUsing(navigationWireframe: navigationWireframeSpy)
+        let coordinator = feature.makeCoordinator(navigationWireframe: navigationWireframeSpy)
 
         coordinator.start()
 

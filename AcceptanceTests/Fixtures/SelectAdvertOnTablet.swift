@@ -12,7 +12,6 @@ class SelectAdvertOnTablet: NSObject {
 
     let advertListViewSpy = AdvertListViewSpy()
     let itemDetailViewSpy = ItemDetailViewSpy()
-    let navigationWireframeSpy = NavigationWireframeSpy()
     let splitWireframeSpy = SplitWireframeSpy()
 
     var splitDiscoveryCoordinator: SplitDiscoveryCoordinator?
@@ -20,53 +19,10 @@ class SelectAdvertOnTablet: NSObject {
     @objc override init() {
         super.init()
 
-        let fakeItemDetailViewFactory = FakeItemDetailViewFactory(fake: itemDetailViewSpy)
+        let featureFactory = TestableDiscoveryFeatureFactory(advertListView: advertListViewSpy, itemDetailView: itemDetailViewSpy)
+        let feature = featureFactory.make()
 
-        let fakeNavigationWireframeFactory = FakeNavigationWireframeFactory(fake: navigationWireframeSpy)
-
-        let groupSelectionViewSpy = GroupSelectionViewSpy()
-        let fakeGroupSelectionViewFactory = FakeGroupSelectionViewFactory(fake: groupSelectionViewSpy)
-
-        let groupSelectionDependencies = GroupSelectionFeature.Dependencies(
-            groupService: mockGroupService,
-            groupSelectionViewFactory: fakeGroupSelectionViewFactory)
-        let groupSelectionFeature = GroupSelectionFeature(dependencies: groupSelectionDependencies)
-
-        let deps = SplitDiscoveryFeature.Dependencies(
-            navigationWireframeFactory: fakeNavigationWireframeFactory,
-            advertService: mockAdvertService,
-            itemDetailViewFactory: fakeItemDetailViewFactory,
-            advertListFeature: makeAdvertListFeature(),
-            groupSelectionFeature: groupSelectionFeature,
-            insertionFeature: makeInsertionFeature(groupSelectionFeature: groupSelectionFeature)
-        )
-        let feature = SplitDiscoveryFeature(dependencies: deps)
-        splitDiscoveryCoordinator = feature.makeCoordinatorUsing(splitWireframe: splitWireframeSpy)
-    }
-
-    private func makeAdvertListFeature() -> AdvertListFeature {
-
-        let fakeAdvertListViewFactory = FakeAdvertListViewFactory(fake: advertListViewSpy)
-
-        let featureDeps = AdvertListFeature.Dependencies(
-            advertService: mockAdvertService,
-            groupService: mockGroupService,
-            advertListViewFactory: fakeAdvertListViewFactory
-        )
-        return AdvertListFeature(dependencies: featureDeps)
-    }
-
-    private func makeInsertionFeature(groupSelectionFeature: GroupSelectionFeature) -> ManualGroupInsertionFeature {
-        let featureDeps = ManualGroupInsertionFeature.Dependencies(
-            advertService: mockAdvertService,
-            textEntryStepViewFactory: makeTextEntryStepViewFactory(),
-            groupSelectionFeature: groupSelectionFeature
-        )
-        return ManualGroupInsertionFeature(dependencies: featureDeps)
-    }
-
-    private func makeTextEntryStepViewFactory() -> TextEntryStepViewFactory {
-        return FakeTextEntryStepViewFactory(fake: TextEntryStepViewSpy())
+        splitDiscoveryCoordinator = feature.makeSplitDiscoveryCoordinator(splitWireframe: splitWireframeSpy)
     }
 
     @objc func selectAdvert(_ advertID: String) -> Bool {
@@ -88,4 +44,3 @@ class SelectAdvertOnTablet: NSObject {
         return itemDetailViewSpy.viewData?.title ?? ""
     }
 }
-

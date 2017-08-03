@@ -34,6 +34,13 @@ class AppCoordinator {
         coordinator.start()
         return coordinator
     }
+}
+
+
+
+/* Dependency injection. */
+
+extension AppCoordinator {
 
     private func makeDiscoveryFeature() -> DiscoveryFeature {
 

@@ -128,6 +128,7 @@
 		C8973A0C1F32797400FF4F91 /* CalculatorFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8973A0B1F32797400FF4F91 /* CalculatorFormatter.swift */; };
 		C8973A0E1F32798F00FF4F91 /* CalculatorInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8973A0D1F32798F00FF4F91 /* CalculatorInteractor.swift */; };
 		C8973A101F3279F300FF4F91 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8973A0F1F3279F300FF4F91 /* AppCoordinator.swift */; };
+		C8B37D3F1F33656000A88542 /* TestableDiscoveryFeatureFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B37D3E1F33656000A88542 /* TestableDiscoveryFeatureFactory.swift */; };
 		C8C3B6F31F33246B007F229D /* GivenTheseAdverts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C3B6EE1F33246B007F229D /* GivenTheseAdverts.swift */; };
 		C8C3B6F41F33246B007F229D /* GivenTheseGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C3B6EF1F33246B007F229D /* GivenTheseGroups.swift */; };
 		C8C3B6F51F33246B007F229D /* ListDisplaysAdverts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C3B6F01F33246B007F229D /* ListDisplaysAdverts.swift */; };
@@ -222,6 +223,7 @@
 		C8973A0B1F32797400FF4F91 /* CalculatorFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorFormatter.swift; sourceTree = "<group>"; };
 		C8973A0D1F32798F00FF4F91 /* CalculatorInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorInteractor.swift; sourceTree = "<group>"; };
 		C8973A0F1F3279F300FF4F91 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		C8B37D3E1F33656000A88542 /* TestableDiscoveryFeatureFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestableDiscoveryFeatureFactory.swift; sourceTree = "<group>"; };
 		C8C3B6EE1F33246B007F229D /* GivenTheseAdverts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GivenTheseAdverts.swift; sourceTree = "<group>"; };
 		C8C3B6EF1F33246B007F229D /* GivenTheseGroups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GivenTheseGroups.swift; sourceTree = "<group>"; };
 		C8C3B6F01F33246B007F229D /* ListDisplaysAdverts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDisplaysAdverts.swift; sourceTree = "<group>"; };
@@ -620,6 +622,7 @@
 			isa = PBXGroup;
 			children = (
 				C8C3B6ED1F33246B007F229D /* Fixtures */,
+				C8B37D401F33657300A88542 /* Helpers */,
 				C87C49E41F2A9EE500799AD3 /* Supporting Files */,
 			);
 			path = AcceptanceTests;
@@ -659,6 +662,14 @@
 				C8973A041F32784200FF4F91 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		C8B37D401F33657300A88542 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C8B37D3E1F33656000A88542 /* TestableDiscoveryFeatureFactory.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		C8C3B6ED1F33246B007F229D /* Fixtures */ = {
@@ -1196,6 +1207,7 @@
 				C8383E461F32312200AD92CF /* FakeAdvertListViewFactory.swift in Sources */,
 				C8383E7B1F32320600AD92CF /* FakeItemDetailViewFactory.swift in Sources */,
 				C8383E471F32313200AD92CF /* AdvertDetailFormatter.swift in Sources */,
+				C8B37D3F1F33656000A88542 /* TestableDiscoveryFeatureFactory.swift in Sources */,
 				C8383E4E1F32317100AD92CF /* TextEntryStepViewSpy.swift in Sources */,
 				C8383E551F32318200AD92CF /* InsertionCoordinator.swift in Sources */,
 				C8383E411F32312200AD92CF /* AdvertListFeature.swift in Sources */,
