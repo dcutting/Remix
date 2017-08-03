@@ -2,7 +2,7 @@
 
 import Foundation
 
-class CalculatorFormatter {
+class SumFormatter {
 
     let numberFormatter = NumberFormatter()
 
@@ -10,13 +10,13 @@ class CalculatorFormatter {
         numberFormatter.numberStyle = .spellOut
     }
 
-    func prepare(result: CalculatorInteractor.Result) -> CalculatorViewData {
+    func prepare(result: SumInteractor.Result) -> SumViewData {
 
         let left = stringify(result.firstTerm)
         let right = stringify(result.secondTerm)
         let spelledOutResult = numberFormatter.string(for: result.sum) ?? ""
 
-        return CalculatorViewData(left: left, right: right, result: spelledOutResult)
+        return SumViewData(left: left, right: right, result: spelledOutResult)
     }
 
     private func stringify(_ int: Int?) -> String {

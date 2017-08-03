@@ -2,27 +2,27 @@
 
 import UIKit
 
-protocol CalculatorViewDelegate: class {
+protocol SumViewDelegate: class {
     func viewReady()
     func didChange(left: String)
     func didChange(right: String)
     func didTapAbout()
 }
 
-struct CalculatorViewData {
+struct SumViewData {
     let left: String
     let right: String
     let result: String
 }
 
-class CalculatorViewController: UIViewController {
+class SumViewController: UIViewController {
 
     @IBOutlet weak var leftTextField: UITextField?
     @IBOutlet weak var rightTextField: UITextField?
     @IBOutlet weak var resultLabel: UILabel?
 
-    weak var delegate: CalculatorViewDelegate?
-    var viewData: CalculatorViewData? {
+    weak var delegate: SumViewDelegate?
+    var viewData: SumViewData? {
         didSet {
             updateView()
         }
@@ -41,7 +41,7 @@ class CalculatorViewController: UIViewController {
     }
 }
 
-extension CalculatorViewController {
+extension SumViewController {
 
     @IBAction func leftDidChange(_ sender: Any) {
         guard let text = leftTextField?.text else { return }

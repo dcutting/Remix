@@ -4,9 +4,9 @@ import UIKit
 
 class CalculatorCoordinator {
 
-    let interactor = CalculatorInteractor()
-    let formatter = CalculatorFormatter()
-    var view: CalculatorViewController?
+    let interactor = SumInteractor()
+    let formatter = SumFormatter()
+    var view: SumViewController?
 
     func start() {
         view = makeCalculatorView()
@@ -14,7 +14,7 @@ class CalculatorCoordinator {
     }
 }
 
-extension CalculatorCoordinator: CalculatorViewDelegate {
+extension CalculatorCoordinator: SumViewDelegate {
 
     func viewReady() {
         updateView(result: interactor.result)
@@ -30,7 +30,7 @@ extension CalculatorCoordinator: CalculatorViewDelegate {
         updateView(result: result)
     }
 
-    private func updateView(result: CalculatorInteractor.Result) {
+    private func updateView(result: SumInteractor.Result) {
         let viewData = formatter.prepare(result: result)
         view?.viewData = viewData
     }
@@ -47,9 +47,9 @@ extension CalculatorCoordinator: CalculatorViewDelegate {
 
 extension CalculatorCoordinator {
 
-    private func makeCalculatorView() -> CalculatorViewController {
-        let storyboard = UIStoryboard(name: "CalculatorViewController", bundle: nil)
-        guard let viewController = storyboard.instantiateInitialViewController() as? CalculatorViewController else { preconditionFailure() }
+    private func makeCalculatorView() -> SumViewController {
+        let storyboard = UIStoryboard(name: "SumViewController", bundle: nil)
+        guard let viewController = storyboard.instantiateInitialViewController() as? SumViewController else { preconditionFailure() }
         return viewController
     }
 

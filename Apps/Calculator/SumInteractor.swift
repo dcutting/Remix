@@ -1,6 +1,6 @@
 //  Copyright © 2017 cutting.io. All rights reserved.
 
-class CalculatorInteractor {
+class SumInteractor {
 
     struct Result {
         let firstTerm: Int?
