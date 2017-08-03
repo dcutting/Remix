@@ -120,6 +120,10 @@
 		C8383E7E1F32320700AD92CF /* ItemDetailViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8383DED1F322FE800AD92CF /* ItemDetailViewSpy.swift */; };
 		C87C49E61F2A9EE500799AD3 /* AcceptanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C87C49E51F2A9EE500799AD3 /* AcceptanceTests.m */; };
 		C87DE6E01F33D31C00219ED6 /* SumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C864D9AC1F33D26100CDF10E /* SumViewController.swift */; };
+		C87DE6F31F33E8C200219ED6 /* PrimeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87DE6EC1F33E8A500219ED6 /* PrimeInteractor.swift */; };
+		C87DE6F41F33E8C200219ED6 /* PrimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87DE6EB1F33E8A500219ED6 /* PrimeFormatter.swift */; };
+		C87DE6F51F33E8C200219ED6 /* PrimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87DE6ED1F33E8A500219ED6 /* PrimeViewController.swift */; };
+		C87DE6F61F33E8C200219ED6 /* PrimeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C87DE6EE1F33E8A500219ED6 /* PrimeViewController.storyboard */; };
 		C89739F91F32784200FF4F91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89739F81F32784200FF4F91 /* AppDelegate.swift */; };
 		C89739FE1F32784200FF4F91 /* SumViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C89739FC1F32784200FF4F91 /* SumViewController.storyboard */; };
 		C8973A001F32784200FF4F91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C89739FF1F32784200FF4F91 /* Assets.xcassets */; };
@@ -213,6 +217,10 @@
 		C87C49EA1F2A9EE500799AD3 /* SlimTables.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SlimTables.h; sourceTree = "<group>"; };
 		C87C49EB1F2A9EE500799AD3 /* AcceptanceTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AcceptanceTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		C87C49EE1F2A9EE500799AD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C87DE6EB1F33E8A500219ED6 /* PrimeFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimeFormatter.swift; sourceTree = "<group>"; };
+		C87DE6EC1F33E8A500219ED6 /* PrimeInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimeInteractor.swift; sourceTree = "<group>"; };
+		C87DE6ED1F33E8A500219ED6 /* PrimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimeViewController.swift; sourceTree = "<group>"; };
+		C87DE6EE1F33E8A500219ED6 /* PrimeViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PrimeViewController.storyboard; sourceTree = "<group>"; };
 		C89739F61F32784200FF4F91 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C89739F81F32784200FF4F91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C89739FD1F32784200FF4F91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SumViewController.storyboard; sourceTree = "<group>"; };
@@ -649,6 +657,10 @@
 				C8973A0B1F32797400FF4F91 /* SumFormatter.swift */,
 				C864D9AC1F33D26100CDF10E /* SumViewController.swift */,
 				C89739FC1F32784200FF4F91 /* SumViewController.storyboard */,
+				C87DE6EC1F33E8A500219ED6 /* PrimeInteractor.swift */,
+				C87DE6EB1F33E8A500219ED6 /* PrimeFormatter.swift */,
+				C87DE6ED1F33E8A500219ED6 /* PrimeViewController.swift */,
+				C87DE6EE1F33E8A500219ED6 /* PrimeViewController.storyboard */,
 				C8973A081F32789200FF4F91 /* Resources */,
 			);
 			path = Calculator;
@@ -876,6 +888,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8973A031F32784200FF4F91 /* LaunchScreen.storyboard in Resources */,
+				C87DE6F61F33E8C200219ED6 /* PrimeViewController.storyboard in Resources */,
 				C8973A001F32784200FF4F91 /* Assets.xcassets in Resources */,
 				C89739FE1F32784200FF4F91 /* SumViewController.storyboard in Resources */,
 			);
@@ -1222,7 +1235,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C87DE6F41F33E8C200219ED6 /* PrimeFormatter.swift in Sources */,
 				C8973A101F3279F300FF4F91 /* AppCoordinator.swift in Sources */,
+				C87DE6F31F33E8C200219ED6 /* PrimeInteractor.swift in Sources */,
+				C87DE6F51F33E8C200219ED6 /* PrimeViewController.swift in Sources */,
 				C8973A0A1F32795600FF4F91 /* CalculatorCoordinator.swift in Sources */,
 				C87DE6E01F33D31C00219ED6 /* SumViewController.swift in Sources */,
 				C8973A0C1F32797400FF4F91 /* SumFormatter.swift in Sources */,
