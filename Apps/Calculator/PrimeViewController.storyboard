@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13168.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XG8-ok-gMN">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13147.4"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Prime View Controller-->
+        <scene sceneID="b79-oe-sh5">
+            <objects>
+                <viewController id="XG8-ok-gMN" customClass="PrimeViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BEk-c1-tNr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pz-Ov-pGi">
+                                <rect key="frame" x="20" y="20" width="335" height="575"/>
+                                <string key="text">6 is not prime
+:(</string>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="56"/>
+                                <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgi-zR-HGa">
+                                <rect key="frame" x="172" y="603" width="30" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Llw-si-Mbm"/>
+                                </constraints>
+                                <state key="normal" title="OK"/>
+                                <connections>
+                                    <action selector="didTapOK:" destination="XG8-ok-gMN" eventType="touchUpInside" id="Vf0-tP-BRM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1pz-Ov-pGi" firstAttribute="leading" secondItem="2Wh-4i-IKI" secondAttribute="leading" constant="20" id="3Lh-oV-uup"/>
+                            <constraint firstItem="zgi-zR-HGa" firstAttribute="centerX" secondItem="BEk-c1-tNr" secondAttribute="centerX" id="4Sc-aE-TON"/>
+                            <constraint firstItem="zgi-zR-HGa" firstAttribute="top" secondItem="1pz-Ov-pGi" secondAttribute="bottom" constant="8" id="Ku1-yN-b19"/>
+                            <constraint firstItem="1pz-Ov-pGi" firstAttribute="top" secondItem="2Wh-4i-IKI" secondAttribute="top" id="fqb-AR-0yW"/>
+                            <constraint firstItem="2Wh-4i-IKI" firstAttribute="bottom" secondItem="zgi-zR-HGa" secondAttribute="bottom" constant="20" id="moB-dh-G98"/>
+                            <constraint firstItem="2Wh-4i-IKI" firstAttribute="trailing" secondItem="1pz-Ov-pGi" secondAttribute="trailing" constant="20" id="o7N-eO-EwG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2Wh-4i-IKI"/>
+                    </view>
+                    <connections>
+                        <outlet property="resultLabel" destination="1pz-Ov-pGi" id="p6J-pE-zky"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zij-5e-DHX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-186.40000000000001" y="139.880059970015"/>
+        </scene>
+    </scenes>
+</document>

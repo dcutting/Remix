@@ -6,7 +6,7 @@ protocol SumViewDelegate: class {
     func viewReady()
     func didChange(left: String)
     func didChange(right: String)
-    func didTapAbout()
+    func didTapAnalyse()
 }
 
 struct SumViewData {
@@ -53,7 +53,7 @@ extension SumViewController {
         delegate?.didChange(right: text)
     }
 
-    @IBAction func didTapAbout(_ sender: Any) {
-        delegate?.didTapAbout()
+    @IBAction func didTapAnalyse(_ sender: Any) {
+        delegate?.didTapAnalyse()
     }
 }

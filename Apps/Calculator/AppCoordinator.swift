@@ -8,6 +8,6 @@ class AppCoordinator {
 
     func start(window: UIWindow) {
         calculator.start()
-        window.rootViewController = calculator.view
+        window.rootViewController = calculator.sumView
     }
 }
