@@ -26,25 +26,35 @@
                                 <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgi-zR-HGa">
-                                <rect key="frame" x="172" y="603" width="30" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4E-3g-sCS">
+                                <rect key="frame" x="137" y="603" width="100" height="44"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="Llw-si-Mbm"/>
+                                    <constraint firstAttribute="width" constant="100" id="owI-fi-gU4"/>
+                                    <constraint firstAttribute="height" constant="44" id="px2-8O-6ns"/>
                                 </constraints>
-                                <state key="normal" title="OK"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="OK">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="didTapOK:" destination="XG8-ok-gMN" eventType="touchUpInside" id="Vf0-tP-BRM"/>
+                                    <action selector="didTapOK:" destination="XG8-ok-gMN" eventType="touchUpInside" id="GGH-nX-eJh"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="1pz-Ov-pGi" firstAttribute="leading" secondItem="2Wh-4i-IKI" secondAttribute="leading" constant="20" id="3Lh-oV-uup"/>
-                            <constraint firstItem="zgi-zR-HGa" firstAttribute="centerX" secondItem="BEk-c1-tNr" secondAttribute="centerX" id="4Sc-aE-TON"/>
-                            <constraint firstItem="zgi-zR-HGa" firstAttribute="top" secondItem="1pz-Ov-pGi" secondAttribute="bottom" constant="8" id="Ku1-yN-b19"/>
-                            <constraint firstItem="1pz-Ov-pGi" firstAttribute="top" secondItem="2Wh-4i-IKI" secondAttribute="top" id="fqb-AR-0yW"/>
-                            <constraint firstItem="2Wh-4i-IKI" firstAttribute="bottom" secondItem="zgi-zR-HGa" secondAttribute="bottom" constant="20" id="moB-dh-G98"/>
-                            <constraint firstItem="2Wh-4i-IKI" firstAttribute="trailing" secondItem="1pz-Ov-pGi" secondAttribute="trailing" constant="20" id="o7N-eO-EwG"/>
+                            <constraint firstItem="1pz-Ov-pGi" firstAttribute="leading" secondItem="2Wh-4i-IKI" secondAttribute="leading" constant="20" id="0kJ-tL-0VR"/>
+                            <constraint firstItem="1pz-Ov-pGi" firstAttribute="top" secondItem="2Wh-4i-IKI" secondAttribute="top" id="37m-91-bQI"/>
+                            <constraint firstItem="H4E-3g-sCS" firstAttribute="top" secondItem="1pz-Ov-pGi" secondAttribute="bottom" constant="8" id="DBL-Ye-RLE"/>
+                            <constraint firstItem="2Wh-4i-IKI" firstAttribute="trailing" secondItem="1pz-Ov-pGi" secondAttribute="trailing" constant="20" id="DV8-fo-bNi"/>
+                            <constraint firstItem="H4E-3g-sCS" firstAttribute="centerX" secondItem="BEk-c1-tNr" secondAttribute="centerX" id="T9j-oS-NnA"/>
+                            <constraint firstItem="2Wh-4i-IKI" firstAttribute="bottom" secondItem="H4E-3g-sCS" secondAttribute="bottom" constant="20" id="tA0-MQ-Wqh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2Wh-4i-IKI"/>
                     </view>
