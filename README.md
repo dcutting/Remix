@@ -28,19 +28,19 @@ This workspace contains several sample iOS applications demonstrating the Remix 
 
 Simplest possible demonstration of Remix that includes all the major elements.
 
-![RemixElements](Docs/RemixElements.pdf)
+![RemixElements](Docs/RemixElements.png)
 
 ### GroupBrowser
 
 Simple app that uses the `GroupSelectionFeature` as a browser hooked up to a generic `ItemDetailView` to display details of the group.
 
-![GroupBrowserMap](Docs/GroupBrowserMap.pdf)
+![GroupBrowserMap](Docs/GroupBrowserMap.png)
 
 ### Marketplace
 
 A more complex app that lets users browse a collection of classified adverts, filter them by group, and create new adverts.
 
-![MarketplaceMap](Docs/MarketplaceMap.pdf)
+![MarketplaceMap](Docs/MarketplaceMap.png)
 
 It remixes components in several ways:
 
