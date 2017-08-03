@@ -356,10 +356,10 @@
 		C8383DAA1F322FE800AD92CF /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				C8383DAB1F322FE800AD92CF /* AdvertListCoordinator.swift */,
 				C8383DAC1F322FE800AD92CF /* AdvertListFeature.swift */,
-				C8383DAD1F322FE800AD92CF /* AdvertListFormatter.swift */,
+				C8383DAB1F322FE800AD92CF /* AdvertListCoordinator.swift */,
 				C8383DAE1F322FE800AD92CF /* AdvertListInteractor.swift */,
+				C8383DAD1F322FE800AD92CF /* AdvertListFormatter.swift */,
 				C8383DAF1F322FE800AD92CF /* AdvertListView.swift */,
 			);
 			path = Core;
@@ -403,10 +403,10 @@
 		C8383DB91F322FE800AD92CF /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				C8383DBA1F322FE800AD92CF /* AdvertDetailFormatter.swift */,
-				C8383DBB1F322FE800AD92CF /* DiscoveryInteractor.swift */,
 				C8383DBC1F322FE800AD92CF /* NavigationDiscoveryFeature */,
 				C8383DBF1F322FE800AD92CF /* SplitDiscoveryFeature */,
+				C8383DBB1F322FE800AD92CF /* DiscoveryInteractor.swift */,
+				C8383DBA1F322FE800AD92CF /* AdvertDetailFormatter.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -414,8 +414,8 @@
 		C8383DBC1F322FE800AD92CF /* NavigationDiscoveryFeature */ = {
 			isa = PBXGroup;
 			children = (
-				C8383DBD1F322FE800AD92CF /* NavigationDiscoveryCoordinator.swift */,
 				C8383DBE1F322FE800AD92CF /* NavigationDiscoveryFeature.swift */,
+				C8383DBD1F322FE800AD92CF /* NavigationDiscoveryCoordinator.swift */,
 			);
 			path = NavigationDiscoveryFeature;
 			sourceTree = "<group>";
@@ -423,8 +423,8 @@
 		C8383DBF1F322FE800AD92CF /* SplitDiscoveryFeature */ = {
 			isa = PBXGroup;
 			children = (
-				C8383DC01F322FE800AD92CF /* SplitDiscoveryCoordinator.swift */,
 				C8383DC11F322FE800AD92CF /* SplitDiscoveryFeature.swift */,
+				C8383DC01F322FE800AD92CF /* SplitDiscoveryCoordinator.swift */,
 			);
 			path = SplitDiscoveryFeature;
 			sourceTree = "<group>";
@@ -451,14 +451,14 @@
 		C8383DC71F322FE800AD92CF /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				C8383DD11F322FE800AD92CF /* InsertionFeature.swift */,
+				C8383DD01F322FE800AD92CF /* InsertionCoordinator.swift */,
+				C8383DD21F322FE800AD92CF /* InsertionInteractor.swift */,
 				C8383DC81F322FE800AD92CF /* AlternatingInsertionFeature */,
 				C8383DCA1F322FE800AD92CF /* AutoGroupInsertionFeature */,
-				C8383DD01F322FE800AD92CF /* InsertionCoordinator.swift */,
-				C8383DD11F322FE800AD92CF /* InsertionFeature.swift */,
-				C8383DD21F322FE800AD92CF /* InsertionInteractor.swift */,
 				C8383DD31F322FE800AD92CF /* ManualGroupInsertionFeature */,
-				C8383DD61F322FE800AD92CF /* TextEntryStepView.swift */,
 				C8383DD71F322FE800AD92CF /* TitleStepFormatter.swift */,
+				C8383DD61F322FE800AD92CF /* TextEntryStepView.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -474,8 +474,8 @@
 		C8383DCA1F322FE800AD92CF /* AutoGroupInsertionFeature */ = {
 			isa = PBXGroup;
 			children = (
-				C8383DCB1F322FE800AD92CF /* AutoGroupInsertionCoordinator.swift */,
 				C8383DCC1F322FE800AD92CF /* AutoGroupInsertionFeature.swift */,
+				C8383DCB1F322FE800AD92CF /* AutoGroupInsertionCoordinator.swift */,
 				C8383DCD1F322FE800AD92CF /* AutoGroupInsertionInteractor.swift */,
 				C8383DCE1F322FE800AD92CF /* GroupRecommendationService.swift */,
 				C8383DCF1F322FE800AD92CF /* MockGroupRecommendationService.swift */,
@@ -486,8 +486,8 @@
 		C8383DD31F322FE800AD92CF /* ManualGroupInsertionFeature */ = {
 			isa = PBXGroup;
 			children = (
-				C8383DD41F322FE800AD92CF /* ManualGroupInsertionCoordinator.swift */,
 				C8383DD51F322FE800AD92CF /* ManualGroupInsertionFeature.swift */,
+				C8383DD41F322FE800AD92CF /* ManualGroupInsertionCoordinator.swift */,
 			);
 			path = ManualGroupInsertionFeature;
 			sourceTree = "<group>";
