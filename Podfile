@@ -4,7 +4,7 @@ use_frameworks!
 
 plugin 'cocoapods-amimono'
 
-target :Remix do
+target :Marketplace do
   pod 'Wireframe/UIKit', :path => 'Shared/Wireframe'
   pod 'Service', :path => 'Shared/Service'
   pod 'GroupSelectionFeature/UIKit', :path => 'Shared/GroupSelectionFeature'

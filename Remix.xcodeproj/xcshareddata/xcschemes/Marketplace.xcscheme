@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C84C23161F17AB770038E879"
-               BuildableName = "Remix.app"
-               BlueprintName = "Remix"
+               BuildableName = "Marketplace.app"
+               BlueprintName = "Marketplace"
                ReferencedContainer = "container:Remix.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -35,8 +35,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C84C23161F17AB770038E879"
-            BuildableName = "Remix.app"
-            BlueprintName = "Remix"
+            BuildableName = "Marketplace.app"
+            BlueprintName = "Marketplace"
             ReferencedContainer = "container:Remix.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -59,8 +59,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C84C23161F17AB770038E879"
-            BuildableName = "Remix.app"
-            BlueprintName = "Remix"
+            BuildableName = "Marketplace.app"
+            BlueprintName = "Marketplace"
             ReferencedContainer = "container:Remix.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -78,8 +78,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C84C23161F17AB770038E879"
-            BuildableName = "Remix.app"
-            BlueprintName = "Remix"
+            BuildableName = "Marketplace.app"
+            BlueprintName = "Marketplace"
             ReferencedContainer = "container:Remix.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
