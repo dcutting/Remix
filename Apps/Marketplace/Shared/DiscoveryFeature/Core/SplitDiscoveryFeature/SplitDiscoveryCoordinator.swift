@@ -71,7 +71,7 @@ extension SplitDiscoveryCoordinator: AdvertListCoordinatorDelegate {
     }
 
     func didSelectNewAdvertAction() {
-        startInsertion()
+        startAdvertInsertion()
     }
 
     func didSelectFiltersAction() {
@@ -107,26 +107,26 @@ extension SplitDiscoveryCoordinator: GroupSelectionCoordinatorDelegate {
 
 extension SplitDiscoveryCoordinator: InsertionCoordinatorDelegate {
 
-    private func startInsertion() {
+    private func startAdvertInsertion() {
         let navigationWireframe = deps.navigationWireframeFactory.make()
         let coordinator = deps.insertionFeature.makeCoordinator(navigationWireframe: navigationWireframe)
         coordinator.delegate = self
         insertionCoordinator = coordinator
         coordinator.start()
         deps.splitWireframe.present(view: navigationWireframe)
-        navigationWireframe.setLeftButton(title: "Cancel", target: self, selector: #selector(finishInsertion))
+        navigationWireframe.setLeftButton(title: "Cancel", target: self, selector: #selector(finishAdvertInsertion))
     }
 
     func didPublishAdvert(advertID: AdvertID) {
         advertListCoordinator?.reloadAdverts()
-        finishInsertion()
+        finishAdvertInsertion()
     }
 
     func didCancelInsertion() {
-        finishInsertion()
+        finishAdvertInsertion()
     }
 
-    @objc private func finishInsertion() {
+    @objc private func finishAdvertInsertion() {
         deps.splitWireframe.dismiss()
         insertionCoordinator = nil
     }

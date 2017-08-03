@@ -67,7 +67,7 @@ extension NavigationDiscoveryCoordinator: AdvertListCoordinatorDelegate {
     }
 
     func didSelectNewAdvertAction() {
-        startInsertion()
+        startAdvertInsertion()
     }
 
     func didSelectFiltersAction() {
@@ -77,7 +77,7 @@ extension NavigationDiscoveryCoordinator: AdvertListCoordinatorDelegate {
 
 extension NavigationDiscoveryCoordinator: InsertionCoordinatorDelegate {
 
-    private func startInsertion() {
+    private func startAdvertInsertion() {
         let coordinator = deps.insertionFeature.makeCoordinator(navigationWireframe: deps.navigationWireframe)
         coordinator.delegate = self
         insertionCoordinator = coordinator
@@ -87,14 +87,14 @@ extension NavigationDiscoveryCoordinator: InsertionCoordinatorDelegate {
 
     func didPublishAdvert(advertID: AdvertID) {
         advertListCoordinator?.reloadAdverts()
-        finishInsertion()
+        finishAdvertInsertion()
     }
 
     func didCancelInsertion() {
-        finishInsertion()
+        finishAdvertInsertion()
     }
 
-    private func finishInsertion() {
+    private func finishAdvertInsertion() {
         insertionCoordinator = nil
         deps.navigationWireframe.popToLastCheckpoint()
     }
