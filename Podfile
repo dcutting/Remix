@@ -4,13 +4,17 @@ use_frameworks!
 
 plugin 'cocoapods-amimono'
 
-target :Marketplace do
+target :Calculator do
+  pod 'Wireframe/UIKit', :path => 'Shared/Wireframe'
+end
+
+target :GroupBrowser do
   pod 'Wireframe/UIKit', :path => 'Shared/Wireframe'
   pod 'Service', :path => 'Shared/Service'
   pod 'GroupSelectionFeature/UIKit', :path => 'Shared/GroupSelectionFeature'
 end
 
-target :GroupBrowser do
+target :Marketplace do
   pod 'Wireframe/UIKit', :path => 'Shared/Wireframe'
   pod 'Service', :path => 'Shared/Service'
   pod 'GroupSelectionFeature/UIKit', :path => 'Shared/GroupSelectionFeature'

@@ -91,16 +91,10 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Utility/Utility.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Wireframe-Core-UIKit/Wireframe.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/Entity-Core-iOS/Entity.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/GroupSelectionFeature-Core-UIKit/GroupSelectionFeature.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/Service-iOS/Service.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Utility/Utility.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Wireframe-Core-UIKit/Wireframe.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/Entity-Core-iOS/Entity.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/GroupSelectionFeature-Core-UIKit/GroupSelectionFeature.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/Service-iOS/Service.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

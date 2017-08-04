@@ -32,7 +32,8 @@ PODS:
   - Wireframe/Core (0.0.1)
   - Wireframe/Fakes (0.0.1):
     - Wireframe/Core
-  - Wireframe/UIKit (0.0.1)
+  - Wireframe/UIKit (0.0.1):
+    - Wireframe/Core
 
 DEPENDENCIES:
   - Entity/Tests (from `Shared/Entity`)
@@ -64,8 +65,8 @@ SPEC CHECKSUMS:
   OCSlimProject: a24337484ec168d7983ef507f75624bb8de21c15
   Service: 12b284cc040172c00c15b2648cdbd3e4bd74aad4
   Utility: 8d67861857a7b10a8ddb28a447004103876a7a92
-  Wireframe: 368d9db912ecfb4777ba972350655afe4f730c04
+  Wireframe: '0697fe00ec45efc6c686d48efb3d60daa299cf05'
 
-PODFILE CHECKSUM: 250628e8fd9d6ad5f979ec1829801b639e87777b
+PODFILE CHECKSUM: d0c26818bb614a2c72c867785bfdbd6fb0ddbb6c
 
 COCOAPODS: 1.2.1

@@ -2,20 +2,16 @@
 
 import UIKit
 
-protocol SumViewDelegate: class {
-    func viewReady()
-    func didChange(left: String)
-    func didChange(right: String)
-    func didTapAnalyse()
+class SumViewControllerFactory: SumViewFactory {
+
+    func make() -> SumView {
+        let storyboard = UIStoryboard(name: "SumViewController", bundle: nil)
+        guard let viewController = storyboard.instantiateInitialViewController() as? SumViewController else { preconditionFailure() }
+        return viewController
+    }
 }
 
-struct SumViewData {
-    let left: String
-    let right: String
-    let result: String
-}
-
-class SumViewController: UIViewController {
+class SumViewController: UIViewController, SumView {
 
     @IBOutlet weak var leftTextField: UITextField?
     @IBOutlet weak var rightTextField: UITextField?

@@ -1,16 +1,16 @@
 //  Copyright © 2017 cutting.io. All rights reserved.
 
-import UIKit
-
 class CalculatorCoordinator {
 
     let sumInteractor = SumInteractor()
     let sumFormatter = SumFormatter()
-    var sumView: SumViewController?
+    let sumViewFactory = SumViewControllerFactory()
+    var sumView: SumView?
 
     let primeInteractor = PrimeInteractor()
     let primeFormatter = PrimeFormatter()
-    var primeView: PrimeViewController?
+    let primeViewFactory = PrimeViewControllerFactory()
+    var primeView: PrimeView?
 
     func start() {
         showSumView()
@@ -20,7 +20,7 @@ class CalculatorCoordinator {
 extension CalculatorCoordinator: SumViewDelegate {
 
     func showSumView() {
-        sumView = makeSumView()
+        sumView = sumViewFactory.make()
         sumView?.delegate = self
     }
 
@@ -49,15 +49,15 @@ extension CalculatorCoordinator: SumViewDelegate {
     }
 }
 
-extension CalculatorCoordinator: PrimeViewControllerDelegate {
+extension CalculatorCoordinator: PrimeViewDelegate {
 
     private func showPrimeView(number: Int) {
 
-        let view = makePrimeView()
+        let view = primeViewFactory.make()
         view.delegate = self
         primeView = view
 
-        sumView?.present(view, animated: true)
+        sumView?.present(view: view)
 
         analyseForPrimality(number: number)
     }
@@ -69,22 +69,7 @@ extension CalculatorCoordinator: PrimeViewControllerDelegate {
     }
 
     func didTapOK() {
-        sumView?.dismiss(animated: true)
+        sumView?.dismiss()
         primeView = nil
-    }
-}
-
-extension CalculatorCoordinator {
-
-    private func makeSumView() -> SumViewController {
-        let storyboard = UIStoryboard(name: "SumViewController", bundle: nil)
-        guard let viewController = storyboard.instantiateInitialViewController() as? SumViewController else { preconditionFailure() }
-        return viewController
-    }
-
-    private func makePrimeView() -> PrimeViewController {
-        let storyboard = UIStoryboard(name: "PrimeViewController", bundle: nil)
-        guard let viewController = storyboard.instantiateInitialViewController() as? PrimeViewController else { preconditionFailure() }
-        return viewController
     }
 }
