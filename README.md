@@ -1,4 +1,4 @@
-# Remix
+![Remix](Docs/Remix.png)
 
 This workspace contains several sample iOS applications demonstrating the Remix architecture.
 
