@@ -26,8 +26,12 @@ class SumViewController: UIViewController, SumView {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateView()
         delegate?.viewReady()
     }
+}
+
+extension SumViewController {
 
     private func updateView() {
         guard isViewLoaded else { return }

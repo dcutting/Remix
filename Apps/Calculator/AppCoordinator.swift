@@ -4,7 +4,14 @@ import UIKit
 
 class AppCoordinator {
 
-    var calculator = CalculatorCoordinator()
+    let calculator: CalculatorCoordinator
+
+    init() {
+        let sumViewFactory = SumViewControllerFactory()
+        let primeViewFactory = PrimeViewControllerFactory()
+
+        calculator = CalculatorCoordinator(sumViewFactory: sumViewFactory, primeViewFactory: primeViewFactory)
+    }
 
     func start(window: UIWindow) {
         calculator.start()

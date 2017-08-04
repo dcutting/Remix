@@ -4,13 +4,19 @@ class CalculatorCoordinator {
 
     let sumInteractor = SumInteractor()
     let sumFormatter = SumFormatter()
-    let sumViewFactory = SumViewControllerFactory()
     var sumView: SumView?
 
     let primeInteractor = PrimeInteractor()
     let primeFormatter = PrimeFormatter()
-    let primeViewFactory = PrimeViewControllerFactory()
     var primeView: PrimeView?
+
+    let sumViewFactory: SumViewFactory
+    let primeViewFactory: PrimeViewFactory
+
+    init(sumViewFactory: SumViewFactory, primeViewFactory: PrimeViewFactory) {
+        self.sumViewFactory = sumViewFactory
+        self.primeViewFactory = primeViewFactory
+    }
 
     func start() {
         showSumView()
@@ -57,9 +63,9 @@ extension CalculatorCoordinator: PrimeViewDelegate {
         view.delegate = self
         primeView = view
 
-        sumView?.present(view: view)
-
         analyseForPrimality(number: number)
+
+        sumView?.present(view: view)
     }
 
     private func analyseForPrimality(number: Int) {

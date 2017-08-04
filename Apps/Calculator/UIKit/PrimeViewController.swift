@@ -22,9 +22,21 @@ class PrimeViewController: UIViewController, PrimeView {
         }
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        updateView()
+    }
+}
+
+extension PrimeViewController {
+
     private func updateView() {
+        guard isViewLoaded else { return }
         resultLabel?.text = viewData?.result
     }
+}
+
+extension PrimeViewController {
 
     @IBAction func didTapOK(_ sender: Any) {
         delegate?.didTapOK()
