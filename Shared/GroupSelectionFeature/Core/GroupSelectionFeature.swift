@@ -36,4 +36,3 @@ public class GroupSelectionFeature {
         return GroupSelectionInteractor(groupService: deps.groupService)
     }
 }
-
