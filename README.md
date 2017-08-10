@@ -4,6 +4,8 @@ This is the main page for the Remix iOS architecture and in-depth example apps.
 
 See the [RemixBytes](https://github.com/dcutting/RemixBytes) repo for the sample project that accompanies the [iOSCon Bytes talk](https://skillsmatter.com/meetups/9135-ioscon-bytes-with-dan-cutting).
 
+**Note: These examples require Xcode 9 and Swift 4.**
+
 ## Motivation
 
 * Many apps with similar features
