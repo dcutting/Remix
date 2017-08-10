@@ -165,8 +165,21 @@ It remixes views/interactors/features in several ways:
 * Generic `ItemDetailView` is used to display details about an advert
 * Different flows for iPhone and iPad using all the same features
 
-## Points of interest
+## Tests
+
+The workspace contains unit tests and acceptance tests. Neither depend on UIKit and run as very fast Mac logic tests without a simulator.
+
+You can run the unit tests using `Product > Test` with the `LogicTests` target.
+
+The acceptance tests use [FitNesse](http://www.fitnesse.org) (although they could also be written as normal XCTests if desired):
+
+* Build the `AcceptanceTests` target
+* Run the `./LaunchFitnesse` script in the root directory. This fires up the FitNesse wiki which contains some acceptance tests
+* Follow the link to [Remix acceptance tests](http://localhost:8080/Remix) and hit the `Suite` button at the top of the page
+* Supporting code ("fixtures") for these tests is in the `AcceptanceTests/Fixtures` directory
+
+## CocoaPods
 
 * Features can be moved into their own pods for extra isolation and reuse
-* This could result in many dynamic frameworks, but these can be statically relinked for fast launch time
-* Unit tests and acceptance tests don't depend on UIKit and run as very fast Mac logic tests without a simulator
+	- E.g., the `GroupSelectionFeature` is a separate pod, as are the common `Entity` and `Service` objects
+* This could result in many dynamic frameworks, but these can be statically relinked for fast launch time (e.g., using [`cocoapods-amimono`](https://github.com/Ruenzuo/cocoapods-amimono))
