@@ -2,6 +2,8 @@
 
 This is the main page for the Remix iOS architecture and in-depth example apps.
 
+See the [RemixStarBrowser](https://github.com/dcutting/RemixStarBrowser) repo for a sample project that demoes the acceptance testing concepts in the [ExpertTalks Mobile talk](https://www.meetup.com/Expert-Talks-Mobile/events/245156555).
+
 See the [RemixBytes](https://github.com/dcutting/RemixBytes) repo for the sample project that accompanies the [iOSCon Bytes talk](https://skillsmatter.com/meetups/9135-ioscon-bytes-with-dan-cutting).
 
 **Note: These examples require Xcode 9 and Swift 4.**
