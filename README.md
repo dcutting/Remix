@@ -2,9 +2,11 @@
 
 This is the main page for the Remix iOS architecture and in-depth example apps.
 
-See the [RemixStarBrowser](https://github.com/dcutting/RemixStarBrowser) repo for a sample project that demoes the acceptance testing concepts in the [ExpertTalks Mobile talk](https://www.meetup.com/Expert-Talks-Mobile/events/245156555).
+See the [RemixStarBrowser](https://github.com/dcutting/RemixStarBrowser) repo for a sample project that demoes the acceptance testing concepts in the iOSCon 2018 talk and the [ExpertTalks Mobile talk](https://www.meetup.com/Expert-Talks-Mobile/events/245156555).
 
 See the [RemixBytes](https://github.com/dcutting/RemixBytes) repo for the sample project that accompanies the [iOSCon Bytes talk](https://skillsmatter.com/meetups/9135-ioscon-bytes-with-dan-cutting).
+
+You may also be interested in [Muck](https://github.com/dcutting/Muck), a dependency analyser for your Swift code that can report how "clean" your architecture is according to the metrics in Uncle Bob's [Clean Architecture](https://www.amazon.co.uk/Clean-Architecture-Craftsmans-Software-Structure/dp/0134494164).
 
 **Note: These examples require Xcode 9 and Swift 4.**
 
